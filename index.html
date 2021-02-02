@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Emerald 0x611 ACE generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ace_js.bc.js"></script>
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column">
+        <h2>Main code</h2>
+        <select id="select">
+          <option value="empty" selected>Empty</option>
+          <option value="backyard">Access backyard</option>
+          <option value="pid">Read PID</option>
+        </select>
+        <textarea id="main"></textarea>
+        <button id="compute" type="button">Compute</button>
+        <h2>Exit codes</h2>
+        <textarea id="secondary"></textarea>
+      </div>
+      <div class="column">
+        <h2>Result</h2>
+        <textarea id="output" readonly></textarea>
+      </div>
+    </div>
+  </body>
+</html>
