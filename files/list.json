@@ -1,10 +1,25 @@
 [
   {
-    "name": "Access backyard",
-    "eng": "backyard.txt"
+    "name": "Change trainer name",
+    "eng": "misc/ChangeTrainerNameENG.txt",
+	"ger": "misc/ChangeTrainerNameGER.txt"
   },
   {
     "name": "Read Pokemon PID",
-    "eng": "pid.txt"
+    "eng": "pkmn/ReadPidENG.txt",
+	"fra": "pkmn/ReadPidFRA.txt"
+  },
+  {
+    "name": "Read Pokemon OTID",
+    "eng": "pkmn/ReadOtidENG.txt",
+	"fra": "pkmn/ReadOtidFRA.txt"
+  },
+  {
+    "name": "Change Pokemon species",
+    "eng": "pkmn/ChangeSpeciesENG.txt"
+  },
+  {
+    "name": "Alter Pokemon checksum",
+    "eng": "pkmn/AlterChecksumENG.txt"
   }
 ]
