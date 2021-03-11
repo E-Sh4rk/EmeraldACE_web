@@ -21,5 +21,9 @@
   {
     "name": "Alter Pokemon checksum",
     "eng": "pkmn/AlterChecksumENG.txt"
+  },
+  {
+    "name": "Change PRNG Seed",
+    "eng": "misc/ChangePrngSeedENG.txt"
   }
 ]
