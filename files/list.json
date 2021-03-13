@@ -1,5 +1,9 @@
 [
   {
+    "name": "Change PRNG Seed",
+    "eng": "misc/ChangePrngSeedENG.txt"
+  },
+  {
     "name": "Change trainer name",
     "eng": "misc/ChangeTrainerNameENG.txt",
 	"ger": "misc/ChangeTrainerNameGER.txt"
@@ -15,15 +19,23 @@
 	"fra": "pkmn/ReadOtidFRA.txt"
   },
   {
+    "name": "Read Pokemon IVEA field",
+    "eng": "pkmn/ReadIveaENG.txt",
+	"fra": "pkmn/ReadIveaFRA.txt"
+  },
+  {
+    "name": "Change Pokemon IVs",
+    "eng": "pkmn/ChangeIvsENG.txt",
+	"fra": "pkmn/ChangeIvsFRA.txt"
+  },
+  {
     "name": "Change Pokemon species",
-    "eng": "pkmn/ChangeSpeciesENG.txt"
+    "eng": "pkmn/ChangeSpeciesENG.txt",
+	"fra": "pkmn/ChangeSpeciesFRA.txt"
   },
   {
     "name": "Alter Pokemon checksum",
-    "eng": "pkmn/AlterChecksumENG.txt"
-  },
-  {
-    "name": "Change PRNG Seed",
-    "eng": "misc/ChangePrngSeedENG.txt"
+    "eng": "pkmn/AlterChecksumENG.txt",
+	"fra": "pkmn/AlterChecksumFRA.txt"
   }
 ]

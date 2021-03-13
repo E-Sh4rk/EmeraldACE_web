@@ -1,5 +1,5 @@
-@@ title = "Alter Checksum (ENG)"
-@@ exit = "CertificateENG"
+@@ title = "Alter Checksum (FRA)"
+@@ exit = "CertificateFRA"
 
 checksum_diff = 0
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9

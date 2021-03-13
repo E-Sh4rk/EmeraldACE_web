@@ -3,17 +3,16 @@
 @@
 
 ; Store the PID of the second pokemon in the team in its attack and defense stats
-; PID=attack + defense*(2^16)
+; PID=attack + defense*65536
 
-; movs r12, #0x20244ec ? ; r12=Pokemon_party
-MOVS r12, #0xee0000
-ADC r12, r12, #0xeb0000
-ADC r12, r12, #0x288000
-ADC r12, r12, #0xc400
-ADC r12, r12, #0xec
+; movs r12, { 0x20244ec + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
+MOVS r12, #0x2a40000
+SBC r12, r12, #0xa10000
+SBC r12, r12, #0xba00
+SBC r12, r12, #0xad
 
-ldrh r11, [r12, #0x64]  ; Load lowPID of Pkmn 2
-ldrh r10, [r12, #0x66]  ; Load highPID of Pkmn 2
+ldrh r11, [r12, #0x0]  ; Load lowPID of Pkmn 2
+ldrh r0,  [r12, #0x2]  ; Load highPID of Pkmn 2
 
-strh r11, [r12, #0xBE] ; Store lowPID in Attack stat
-strh r10, [r12, #0xC0] ; Store highPID in Defense stat
+strh r11, [r12, #90]! ; Store lowPID in Attack stat
+strh r0,  [r12, #2]!  ; Store highPID in Defense stat

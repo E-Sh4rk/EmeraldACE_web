@@ -1,6 +1,6 @@
-@@ title = "Change species (ENG)"
+@@ title = "Change species (FRA)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateENG"
+@@ exit = "CertificateFRA"
 
 pid = 0
 otid = 0
