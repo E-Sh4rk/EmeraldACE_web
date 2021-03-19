@@ -37,5 +37,15 @@
     "name": "Alter Pokemon checksum",
     "eng": "pkmn/AlterChecksumENG.txt",
 	"fra": "pkmn/AlterChecksumFRA.txt"
+  },
+  {
+    "name": "Create Pokemon species from nothing",
+    "eng": "pkmn/PokemonFromNothingENG.txt",
+	"fra": "pkmn/PokemonFromNothingFRA.txt"
+  },
+  {
+    "name": "Thumb->ARM bootstrap",
+    "eng": "misc/ThumbArmBootstrapENG.txt",
+	"fra": "misc/ThumbArmBootstrapFRA.txt"
   }
 ]
