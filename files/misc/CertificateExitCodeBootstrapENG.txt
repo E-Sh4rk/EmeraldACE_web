@@ -3,6 +3,8 @@
 @@ exit = "CertificateBootstrapped"
 @@
 
+; /!\ For now, this code is only available for console or accurate emulators (mGBA >= 0.9)
+
 ; This code can be used to generate a pokemon that contains ARM code
 ; designed to store the address of the Certificate exit code routine
 ; in r0, thus allowing to use very short exit codes in the box names
