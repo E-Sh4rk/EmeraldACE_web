@@ -12,7 +12,7 @@ SBC r12, r12, #0xba00
 SBC r12, r12, #0xad
 
 ldrh r11, [r12, #0x4]  ; Load lowPID of Pkmn 2
-ldrh r0,  [r12, #0x6]  ; Load highPID of Pkmn 2
+strh r11, [r12, #90] ; Store lowPID in Attack stat
 
-strh r11, [r12, #90]! ; Store lowPID in Attack stat
-strh r0,  [r12, #2]!  ; Store highPID in Defense stat
+ldrh r11,  [r12, #0x6]  ; Load highPID of Pkmn 2
+strh r11,  [r12, #92]  ; Store highPID in Defense stat

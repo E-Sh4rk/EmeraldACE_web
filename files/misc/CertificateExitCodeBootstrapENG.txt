@@ -1,0 +1,39 @@
+@@ title = "Certificate Exit Code Bootstrap (ENG)"
+@@ author = "E-Sh4rk"
+@@ exit = "CertificateBootstrapped"
+@@
+
+; This code can be used to generate a pokemon that contains ARM code
+; designed to store the address of the Certificate exit code routine
+; in r0, thus allowing to use very short exit codes in the box names
+; (only box 14 will be used by the exit code).
+; Before using this code, you should use the code "Create Pokemon from nothing"
+; in order to generate a pokemon of species 0xFF.
+; Directly after, you should execute this code. The resulting pokemon will be
+; in Box 10 Slot 19. You should then move this pokemon somewhere in box 14
+; (but not in the last slot).
+; Now, you will be able to use the exit code CertificateBootstrapped.
+; Note that you shouldn't change the name of Box 14, if you do you will have
+; to run a code with the exit code CertificateFullENG in order to reset it
+; before being able to use the exit code CertificateBootstrapped again.
+; Finally, please note that you cannot use the exit code CertificateBootstrapped
+; if the code you are trying to execute modify the value of r0.
+; In this case, you have to use the exit code CerificateShortENG instead.
+
+; === WRITE POKEMON NAME 0-3 ===
+sbc r11, r15, #0x2940            ; r11 = &Box10Slot19 + 9
+movs r12, #0xE59F0002 ?          ; E59F0002  LDR r0, [r15, #2]
+str r12, [r11]!                  ; Write on characters 0-3 of the pokemon name
+
+; === WRITE POKEMON NAME 4-7 ===
+adc r11, r11, 0x3                ; r11 = &Box10Slot19 + 12
+movs r12, #0xE2AFF044 ?          ; E2AFF044  ADC pc, pc, #0x44
+str r12, [r11]!                  ; Write on characters 4-7 of the pokemon name
+
+; === WRITE POKEMON ORIGINAL TRAINER NAME ===
+adc r11, r11, 0xB                ; r11 = &Box10Slot19 + 23
+ADC r12, lr, #0xee000            ; LR=080069E7
+ADC r12, r12, #0x39000
+ADC r12, r12, #0xa200
+ADC r0, r12, #0xce               ; R0=8137CB5=????ENG
+str r0, [r11]!                   ; Write on the original trainer name

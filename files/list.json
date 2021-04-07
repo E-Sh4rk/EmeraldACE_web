@@ -47,5 +47,9 @@
     "name": "Thumb->ARM bootstrap",
     "eng": "misc/ThumbArmBootstrapENG.txt",
 	"fra": "misc/ThumbArmBootstrapFRA.txt"
+  },
+  {
+    "name": "Certificate Exit Code Bootstrap",
+    "eng": "misc/CertificateExitCodeBootstrapENG.txt"
   }
 ]
