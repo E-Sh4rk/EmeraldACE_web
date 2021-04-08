@@ -1,6 +1,9 @@
 @@ title = "Change PRNG Seed (ENG)"
 @@ exit = "CertificateENG"
 
+; Please set the seed below.
+; If your seed is written in hexadecimal, you must use the prefix 0x.
+; For instance, for the seed 1234ABCD, you must write 0x1234ABCD.
 seed = 0
 
 @@
