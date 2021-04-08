@@ -1,14 +1,14 @@
 @@ title = "BETA: Change and freeze PRNG Seed (ENG)"
-@@ exit = "CertificateBootstrapped"
+@@ exit = "Bootstrapped"
 
 seed = 0
 
 @@
 
-; NOTE: This has only be tested on route 117 with method H4.
-; TODO: Test with other methods (determine cycle offset, etc.).
+; NOTE: This has only be tested on route 117 with method H1.
+; TODO: Test with other methods
 
-; As this code uses the exit code CertificateBootstrapped,
+; As this code uses the exit code Bootstrapped,
 ; you have to setup the certificate exit code bootstrap before using it.
 
 ; If you have a stable way of triggering ACE (0x40E9 for instance),

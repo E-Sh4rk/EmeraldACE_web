@@ -1,6 +1,6 @@
 @@ title = "Certificate Exit Code Bootstrap (ENG)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateBootstrapped"
+@@ exit = "Bootstrapped"
 @@
 
 ; /!\ For now, this code is only available for console or accurate emulators (mGBA >= 0.9)
@@ -11,14 +11,15 @@
 ; (only box 14 will be used by the exit code).
 ; Before using this code, you should use the code "Create Pokemon from nothing"
 ; in order to generate a pokemon of species 0xFF.
-; Directly after, you should execute this code. The resulting pokemon will be
-; in Box 10 Slot 19. You should then move this pokemon somewhere in box 14
+; Directly after, you should execute this code without changing the name of Box 14.
+; The resulting pokemon will be in Box 10 Slot 19.
+; You should then move this pokemon somewhere in box 14
 ; (but not in the last slot).
-; Now, you will be able to use the exit code CertificateBootstrapped.
+; Now, you will be able to use the exit code Bootstrapped.
 ; Note that you shouldn't change the name of Box 14, if you do you will have
 ; to run a code with the exit code CertificateFullENG in order to reset it
-; before being able to use the exit code CertificateBootstrapped again.
-; Finally, please note that you cannot use the exit code CertificateBootstrapped
+; before being able to use the exit code Bootstrapped again.
+; Finally, please note that you cannot use the exit code Bootstrapped
 ; if the code you are trying to execute modify the value of r0.
 ; In this case, you have to use the exit code CerificateShortENG instead.
 
