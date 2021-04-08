@@ -2,7 +2,7 @@
 @@ author = "E-Sh4rk"
 @@ exit = "CertificateFullENG"
 
-species = 0
+species = 0xFF     ; Please set the species you want (it should not be 0)
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 @@
