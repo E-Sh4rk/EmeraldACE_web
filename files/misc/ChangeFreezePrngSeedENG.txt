@@ -1,0 +1,47 @@
+@@ title = "BETA: Change and freeze PRNG Seed (ENG)"
+@@ exit = "CertificateBootstrapped"
+
+seed = 0
+
+@@
+
+; NOTE: This has only be tested on route 117 with method H4.
+; TODO: Test with other methods (determine cycle offset, etc.).
+
+; As this code uses the exit code CertificateBootstrapped,
+; you have to setup the certificate exit code bootstrap before using it.
+
+; If you have a stable way of triggering ACE (0x40E9 for instance),
+; you should capture a new pokemon, name it ␣ ␣ D n ’ J k l ␣ ␣
+; and place it in the pc, in the slot just after your exit code bootstrap.
+; This will change the exit routine so that it stays in the summary page
+; instead of opening the certificate. More precisely, it does the following:
+; adcs r0, lr, 0
+; ldrh r12, [pc], 0x44
+; Doing that will prevent closing the menu and having to open it back,
+; thus it avoids some potential cycle advance. This way, for method H4,
+; the seed you should write is always your target seed minus 2 cycles.
+
+; If you have no stable ACE trigger, you have to open the menu quickly
+; after the certificate closes. In this case, you should aim for:
+; Your target seed - 2 cycles - 3 cycles* - a little amount of cycles**
+; * closing the certificate advances 3 cycles
+; ** the map events (in particular npcs) can advance some more cycles
+; (the less npcs there are, the less cycles it will advance)
+
+; gBattleTypeFlags: 02022fec
+; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
+movs r11, 0x0A20 ;
+movs r12, 0x02022fee ?
+strh r11, [r12], 0xA
+
+; inBattle: 30026F9   ; 30026F8 = 02022fee + FDF70A
+; bit 1 of inBattle must be activated (but preferably not bit 0 and 2)
+adc r12, 0xFDF700 ?
+strh r11, [r12], 0xc8
+
+; PRNG state location: 3005D80 = 30026F8 + 3688
+adc r12, 0x35c0 ?
+
+movs r11, { seed }  ?
+str r11, [r12]!                %%  Store new seed in PRNG state location
