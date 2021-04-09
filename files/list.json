@@ -1,7 +1,8 @@
 [
   {
     "name": "Change PRNG Seed",
-    "eng": "misc/ChangePrngSeedENG.txt"
+    "eng": "misc/ChangePrngSeedENG.txt",
+	"fra": "misc/ChangePrngSeedFRA.txt"
   },
   {
     "name": "Change trainer name",

@@ -2,11 +2,15 @@
 @@ exit = "Bootstrapped"
 
 seed = 0x1234ABCD     ; Should not be 0
+; The seed you write above must be:
+; For Sweet Scent (will always be H1): 2 cycles before your target seed*
+; For Rayquaza and kyogre: 3 cycles before your target seed
+; For Beldum: 4 cycles before your target seed
+; For Wynaut: 6 cycles before your target seed
+
+; * see below for more info
 
 @@
-
-; NOTE: This has only be tested on route 117 with method H1.
-; TODO: Test with other methods
 
 ; As this code uses the exit code Bootstrapped,
 ; you have to setup the certificate exit code bootstrap before using it.
@@ -18,12 +22,12 @@ seed = 0x1234ABCD     ; Should not be 0
 ; instead of opening the certificate. More precisely, it does the following:
 ; adcs r0, lr, 0
 ; ldrh r12, [pc], 0x44
-; Doing that will prevent closing the menu and having to open it back,
-; thus it avoids some potential cycle advance. This way, for method H4,
-; the seed you should write is always your target seed minus 2 cycles.
+; Doing that will prevent closing the menu and having to open it back for the
+; sweet scent method, thus it avoids some potential cycle advance.
 
-; If you have no stable ACE trigger, you have to open the menu quickly
-; after the certificate closes. In this case, you should aim for:
+; If you have no stable ACE trigger and want to use the sweet scent method,
+; you have to open the menu quickly after the certificate closes.
+; In this case, the seed you write above must be:
 ; Your target seed - 2 cycles - 3 cycles* - a little amount of cycles**
 ; * closing the certificate advances 3 cycles
 ; ** the map events (in particular npcs) can advance some more cycles
