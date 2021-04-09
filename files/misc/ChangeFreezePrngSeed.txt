@@ -1,4 +1,4 @@
-@@ title = "BETA: Change and freeze PRNG Seed (ENG)"
+@@ title = "BETA: Change and freeze PRNG Seed (ENG/FRA)"
 @@ exit = "Bootstrapped"
 
 seed = 0x1234ABCD     ; Should not be 0
@@ -17,7 +17,8 @@ seed = 0x1234ABCD     ; Should not be 0
 
 ; If you have a stable way of triggering ACE (0x40E9 for instance),
 ; you should capture a new pokemon, name it ␣ ␣ D n ’ J k l ␣ ␣
-; and place it in the pc, in the slot just after your exit code bootstrap.
+; and place it in the pc, in the slot just after your exit code bootstrap
+; (it should not be the last slot of box 14).
 ; This will change the exit routine so that it stays in the summary page
 ; instead of opening the certificate. More precisely, it does the following:
 ; adcs r0, lr, 0

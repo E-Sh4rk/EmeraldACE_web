@@ -51,10 +51,12 @@
   },
   {
     "name": "Certificate Exit Code Bootstrap",
-    "eng": "misc/CertificateExitCodeBootstrapENG.txt"
+    "eng": "misc/CertificateExitCodeBootstrapENG.txt",
+	"fra": "misc/CertificateExitCodeBootstrapFRA.txt"
   },
   {
     "name": "BETA: Change and freeze PRNG Seed",
-    "eng": "misc/ChangeFreezePrngSeedENG.txt"
+    "eng": "misc/ChangeFreezePrngSeed.txt",
+	"fra": "misc/ChangeFreezePrngSeed.txt"
   }
 ]
