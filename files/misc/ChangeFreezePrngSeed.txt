@@ -15,7 +15,13 @@ seed = 0x1234ABCD     ; Should not be 0
 ; As this code uses the exit code Bootstrapped,
 ; you have to setup the certificate exit code bootstrap before using it.
 
-; If you have a stable way of triggering ACE (0x40E9 for instance),
+; For stationnary pokemons, once the code has been executed and that you have
+; exited the menu, you should start the encounter as soon as possible to
+; avoid additional rng cycles due to the map events (npc's rng, etc).
+
+; For wild pokemons, you should use sweet scent just after executing the code,
+; without exiting the pokemon menu. For that,
+; if you have a stable way of triggering ACE (0x40E9 for instance),
 ; you should capture a new pokemon, name it ␣ ␣ D n ’ J k l ␣ ␣
 ; and place it in the pc, in the slot just after your exit code bootstrap
 ; (it should not be the last slot of box 14).
@@ -25,6 +31,9 @@ seed = 0x1234ABCD     ; Should not be 0
 ; ldrh r12, [pc], 0x44
 ; Doing that will prevent closing the menu and having to open it back for the
 ; sweet scent method, thus it avoids some potential cycle advance.
+; Note that if you are using a semi-stable species such as the french 0x40ED,
+; you might need to open the summary of an adjacent pokemon, go to the moves
+; page, and then switch to the 0x40ED moves page to avoid a crash.
 
 ; If you have no stable ACE trigger and want to use the sweet scent method,
 ; you have to open the menu quickly after the certificate closes.
@@ -32,7 +41,7 @@ seed = 0x1234ABCD     ; Should not be 0
 ; Your target seed - 2 cycles - 3 cycles* - a little amount of cycles**
 ; * closing the certificate advances 3 cycles
 ; ** the map events (in particular npcs) can advance some more cycles
-; (the less npcs there are, the less cycles it will advance)
+; (the less npcs there are, the less cycles will be advanced)
 
 ; gBattleTypeFlags: 02022fec
 ; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
