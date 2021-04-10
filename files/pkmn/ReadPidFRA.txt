@@ -1,9 +1,10 @@
 @@ title = "Read PID (FRA)"
-@@ exit = "CertificateFRA"
+@@ exit = "CertificateFullFRA"
 @@
 
 ; Store the PID of the second pokemon in the team in its attack and defense stats
 ; PID=attack + defense*(2^16)
+
 
 ; movs r12, { 0x20244ec + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
 MOVS r12, #0x2a40000

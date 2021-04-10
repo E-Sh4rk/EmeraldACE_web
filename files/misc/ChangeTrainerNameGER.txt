@@ -1,6 +1,6 @@
 @@ title = "Change trainer name (GER)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateGER" ; Warning: Change to CertificateShortGER to preserve box 14 name
+@@ exit = "CertificateGER" ; Note: Change to CertificateShortGER to preserve box 14 name
 
 letter1 = 0
 letter2 = 0

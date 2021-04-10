@@ -1,6 +1,6 @@
 @@ title = "Change species (FRA)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateFRA"
+@@ exit = "CertificateFRA" ; Note: Change to CertificateShortFRA to preserve box 14 name
 
 pid = 0
 otid = 0

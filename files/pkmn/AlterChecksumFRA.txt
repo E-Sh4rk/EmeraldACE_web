@@ -1,5 +1,5 @@
 @@ title = "Alter Checksum (FRA)"
-@@ exit = "CertificateFRA"
+@@ exit = "CertificateFullFRA"
 
 checksum_diff = 0  ; Please set the checksum_diff you want (it should not be 0)
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9

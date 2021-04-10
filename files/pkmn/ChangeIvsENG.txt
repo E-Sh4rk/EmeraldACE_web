@@ -1,10 +1,10 @@
 @@ title = "Change IVs (ENG)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateENG"
+@@ exit = "CertificateENG" ; Note: Change to CertificateShortENG to preserve box 14 name
 
 pid = 0
 otid = 0
-cur_encoded_ivea = 0
+cur_encoded_ivea = 0 ; Use the code "Read IVEA field" to determine the value of cur_encoded_ivea
 new_hp = 31
 new_atk = 31
 new_def = 31
@@ -33,7 +33,6 @@ checksum_diff ? = ((new_ivea & 0xFFFF) + (new_ivea >> 16)) - ((cur_ivea & 0xFFFF
 
 @@
 
-; Use the code "Read IVEA field" to determine the value of cur_encoded_ivea.
 ; The Pokemon must be located in Box 10 Slot 19.
 ; Use the Alter_checksum code directly after this one
 ; (without looking at the box 10, or the Pokemon will be turned into a bad egg).

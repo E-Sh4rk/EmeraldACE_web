@@ -1,6 +1,6 @@
 @@ title = "Change species (ENG)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateENG"
+@@ exit = "CertificateENG" ; Note: Change to CertificateShortENG to preserve box 14 name
 
 pid = 0
 otid = 0
