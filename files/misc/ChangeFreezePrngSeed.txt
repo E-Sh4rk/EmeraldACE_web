@@ -1,14 +1,21 @@
 @@ title = "BETA: Change and freeze PRNG Seed (ENG/FRA)"
+@@ author = "E-Sh4rk & Shao"
 @@ exit = "Bootstrapped"
 
 seed = 0x1234ABCD     ; Should not be 0
 ; The seed you write above must be:
-; For Sweet Scent (will always be H1): 2 cycles before your target seed*
-; For Rayquaza and kyogre: 3 cycles before your target seed
-; For Beldum: 4 cycles before your target seed
-; For Wynaut: 6 cycles before your target seed
+; For wild pokemons with Sweet Scent (will always be H1): 2 cycles before your target seed
+; For Rayquaza, Deoxys, Kyogre, Regirock (and probably others): 3 cycles before your target seed
+; For Sudowoodo: 6 cycles before your target seed (3 + 3 for the menu navigation involved for using the Wailmer Pail)
+; For Beldum (pokeball): 4 cycles before your target seed (battle must be engaged as fast as possible after closing the menu)
+; For Electrode: 5 cycles before your target seed if both Electrodes are present, 4 cycles otherwise
 
-; * see below for more info
+; In general: Exiting the pokemon menu (or the bag, or the pokedex, etc) advances 3 cycles due the the ASLR.
+; Additionaly, moving npc's and some other map elements will advance some cycles when closing the menu,
+; and will also advance some cycles regularly (more or less) when not in a menu/animation/battle.
+
+; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
+; but for those without NPCs the results are very consistent.
 
 @@
 
@@ -17,31 +24,25 @@ seed = 0x1234ABCD     ; Should not be 0
 
 ; For stationnary pokemons, once the code has been executed and that you have
 ; exited the menu, you should start the encounter as soon as possible to
-; avoid additional rng cycles due to the map events (npc's rng, etc).
+; avoid additional rng cycles due to the map events (moving npc's, etc).
 
 ; For wild pokemons, you should use sweet scent just after executing the code,
-; without exiting the pokemon menu. For that,
-; if you have a stable way of triggering ACE (0x40E9 for instance),
-; you should capture a new pokemon, name it ␣ ␣ D n ’ J k l ␣ ␣
+; without exiting the menu to avoid additional cycles. For that,
+; you must have a stable way of triggering ACE (for instance 0x40E9 (ENG) or 0x40ED (FRA)),
+; then you should capture a new pokemon and rename it ␣ ␣ D n ’ J k l ␣ ␣
 ; and place it in the pc, in the slot just after your exit code bootstrap
 ; (it should not be the last slot of box 14).
 ; This will change the exit routine so that it stays in the summary page
 ; instead of opening the certificate. More precisely, it does the following:
 ; adcs r0, lr, 0
 ; ldrh r12, [pc], 0x44
-; Doing that will prevent closing the menu and having to open it back for the
-; sweet scent method, thus it avoids some potential cycle advance.
+; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
+; thus it avoids some additional cycles advance that might have depended on the map.
 ; Note that if you are using a semi-stable species such as the french 0x40ED,
 ; you might need to open the summary of an adjacent pokemon, go to the moves
 ; page, and then switch to the 0x40ED moves page to avoid a crash.
 
-; If you have no stable ACE trigger and want to use the sweet scent method,
-; you have to open the menu quickly after the certificate closes.
-; In this case, the seed you write above must be:
-; Your target seed - 2 cycles - 3 cycles* - a little amount of cycles**
-; * closing the certificate advances 3 cycles
-; ** the map events (in particular npcs) can advance some more cycles
-; (the less npcs there are, the less cycles will be advanced)
+
 
 ; gBattleTypeFlags: 02022fec
 ; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated

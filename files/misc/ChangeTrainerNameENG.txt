@@ -1,6 +1,6 @@
 @@ title = "Change trainer name (ENG)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateENG"
+@@ exit = "CertificateENG" ; Warning: Change to CertificateShortENG to preserve box 14 name
 
 letter1 = 0
 letter2 = 0

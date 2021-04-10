@@ -6,7 +6,7 @@
 ; Adapted from https://pastebin.com/Sz2Aiu6p
 
 ; This code must be executed just after the "Create Pokemon From Nothing" code,
-; with the species set to 0x40E9. The content of boxes 11-14 must remain unchanged.
+; with the species set to 0x40E9. The name of boxes 11-14 must remain unchanged.
 ; A pokemon with the name [x♂zN 6FFxC] must be in the box 10 slot 20.
 ; Then, this code must be executed by viewing the summary of the 0x40E9 species.
 ; The pokemon in box 10 slot 20 will be transformed into a bad egg.

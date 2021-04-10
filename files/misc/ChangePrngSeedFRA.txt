@@ -1,5 +1,5 @@
 @@ title = "Change PRNG Seed (FRA)"
-@@ exit = "CertificateFRA"
+@@ exit = "CertificateFRA" ; Warning: Change to CertificateShortFRA to preserve box 14 name
 
 ; Please set the seed below (it should not be 0).
 ; If your seed is written in hexadecimal, you must use the prefix 0x.
