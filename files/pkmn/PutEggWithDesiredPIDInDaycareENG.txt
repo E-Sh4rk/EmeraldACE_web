@@ -1,0 +1,24 @@
+@@ title = "Put Egg With Desired PID In Daycare"
+@@ author = "Shao"
+@@ exit = "CertificateENG"; 
+
+;Note: Change exit to "CertificateShortENG" to keep bx, r0 in box 14 name if desired
+
+; Breeding Outcomes
+; With Ditto + Any species, you get the Any species, including Ditto
+; With a Female + non Female pairing, you get the Female
+; With just one Ditto, you get a Bulbasaur
+; With just one Female, you get the same species
+; With two Females, you get the second species you deposited
+; All other situations seem to produce a glitch Pokemon
+
+; Replace the below default with your desired PID
+; Do not request a PID of 0, it will not generate an egg
+
+pid = 0x96E4
+
+@@
+
+sbc r11, pc, 0x900A     ?
+mov r12,     {pid}      ?
+str r12,     [r11]!
