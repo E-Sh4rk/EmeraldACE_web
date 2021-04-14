@@ -58,5 +58,9 @@
     "name": "BETA: Change and freeze PRNG Seed",
     "eng": "misc/ChangeFreezePrngSeed.txt",
 	"fra": "misc/ChangeFreezePrngSeed.txt"
+  },
+  {
+    "name": "Put Egg With Any PID In Daycare",
+    "eng": "pkmn/PutEggWithDesiredPIDInDaycareENG.txt",
   }
 ]
