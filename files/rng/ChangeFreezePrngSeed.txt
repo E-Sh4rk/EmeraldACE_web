@@ -1,4 +1,4 @@
-@@ title = "BETA: Change and freeze PRNG Seed (ENG/FRA)"
+@@ title = "Change and freeze PRNG Seed (ENG/FRA)"
 @@ author = "E-Sh4rk & Shao"
 @@ exit = "Bootstrapped"
 
