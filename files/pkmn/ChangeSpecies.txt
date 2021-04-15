@@ -26,8 +26,6 @@ checksum_diff ? = new_species - cur_species
 @@
 
 ; The Pokemon must be located in Box 10 Slot 19.
-; Use the Alter_checksum code directly after this one
-; (without looking at the box 10, or the Pokemon will be turned into a bad egg).
 
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
