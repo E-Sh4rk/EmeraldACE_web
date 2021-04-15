@@ -2,65 +2,78 @@
   {
     "name": "Change PRNG Seed",
     "eng": "misc/ChangePrngSeedENG.txt",
-	"fra": "misc/ChangePrngSeedFRA.txt"
+	"fra": "misc/ChangePrngSeedFRA.txt",
+    "cat": ["rng"]
   },
   {
     "name": "Change trainer name",
     "eng": "misc/ChangeTrainerNameENG.txt",
-	"ger": "misc/ChangeTrainerNameGER.txt"
+	"ger": "misc/ChangeTrainerNameGER.txt",
+    "cat": ["misc"]
   },
   {
     "name": "Read Pokemon PID",
     "eng": "pkmn/ReadPidENG.txt",
-	"fra": "pkmn/ReadPidFRA.txt"
+	"fra": "pkmn/ReadPidFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon OTID",
     "eng": "pkmn/ReadOtidENG.txt",
-	"fra": "pkmn/ReadOtidFRA.txt"
+	"fra": "pkmn/ReadOtidFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon IVEA field",
     "eng": "pkmn/ReadIveaENG.txt",
-	"fra": "pkmn/ReadIveaFRA.txt"
+	"fra": "pkmn/ReadIveaFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon IVs",
     "eng": "pkmn/ChangeIvsENG.txt",
-	"fra": "pkmn/ChangeIvsFRA.txt"
+	"fra": "pkmn/ChangeIvsFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon species",
     "eng": "pkmn/ChangeSpeciesENG.txt",
-	"fra": "pkmn/ChangeSpeciesFRA.txt"
+	"fra": "pkmn/ChangeSpeciesFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Alter Pokemon checksum",
     "eng": "pkmn/AlterChecksumENG.txt",
-	"fra": "pkmn/AlterChecksumFRA.txt"
+	"fra": "pkmn/AlterChecksumFRA.txt",
+    "cat": ["pkmn"]
   },
   {
     "name": "Create Pokemon species from nothing",
     "eng": "pkmn/PokemonFromNothingENG.txt",
-	"fra": "pkmn/PokemonFromNothingFRA.txt"
+	"fra": "pkmn/PokemonFromNothingFRA.txt",
+    "cat": ["pkmn","bootstraps"]
   },
   {
     "name": "Thumb->ARM bootstrap",
     "eng": "misc/ThumbArmBootstrapENG.txt",
-	"fra": "misc/ThumbArmBootstrapFRA.txt"
+	"fra": "misc/ThumbArmBootstrapFRA.txt",
+    "cat": ["bootstraps"]
   },
   {
     "name": "Certificate Exit Code Bootstrap",
     "eng": "misc/CertificateExitCodeBootstrapENG.txt",
-	"fra": "misc/CertificateExitCodeBootstrapFRA.txt"
+	"fra": "misc/CertificateExitCodeBootstrapFRA.txt",
+    "cat": ["bootstraps"]
   },
   {
     "name": "BETA: Change and freeze PRNG Seed",
     "eng": "misc/ChangeFreezePrngSeed.txt",
-	"fra": "misc/ChangeFreezePrngSeed.txt"
+	"fra": "misc/ChangeFreezePrngSeed.txt",
+    "cat": ["rng"]
   },
   {
     "name": "Put Egg With Any PID In Daycare",
-    "eng": "pkmn/PutEggWithDesiredPIDInDaycareENG.txt"
+    "eng": "pkmn/PutEggWithDesiredPIDInDaycareENG.txt",
+    "cat": ["rng"]
   }
 ]

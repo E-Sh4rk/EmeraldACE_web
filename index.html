@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Pokemon Emerald 0x611 ACE generator</title>
-    <link rel="stylesheet" href="style.css?5">
-    <script src="ace_js.bc.js?34"></script>
-    <script src="scripts.js?4"></script>
+    <link rel="stylesheet" href="style.css?6">
+    <script src="ace_js.bc.js?35"></script>
+    <script src="scripts.js?5"></script>
   </head>
   <body>
     <div class="row">
       <div id="mainTab" class="column tabcontent-active">
         <h2><a class="tablinks-active">Main code</a> /
             <a class="tablinks" onclick="openTab(event,'secondaryTab');">Exit codes</a>
-			(<a href="doc/index.html">documentation</a>)</h2>
+            (<a href="doc/index.html">documentation</a>)</h2>
         
         <div class="row">
           <select id="lang" class="left">
@@ -22,7 +22,14 @@
             <option value="ita">Italian</option>
             <option value="ger">German</option>
           </select>
-          <select id="select">
+          <select id="cat" class="middle">
+            <option value="">All categories</option>
+            <option value="pkmn">Pokemon data alteration</option>
+            <option value="rng">RNG and PID manipulation</option>
+            <option value="bootstraps">ACE bootstraps</option>
+            <option value="misc">Misc</option>
+          </select>
+          <select id="select" class="right">
             <option value='' selected>----------</option>
           </select>
         </div>
@@ -33,7 +40,7 @@
       <div id="secondaryTab" class="column tabcontent">
         <h2><a class="tablinks" onclick="openTab(event,'mainTab');">Main code</a> /
             <a class="tablinks-active">Exit codes</a>
-			(<a href="doc/index.html">documentation</a>)</h2>
+            (<a href="doc/index.html">documentation</a>)</h2>
 
         <textarea id="secondary" spellcheck="false"></textarea>
       </div>
