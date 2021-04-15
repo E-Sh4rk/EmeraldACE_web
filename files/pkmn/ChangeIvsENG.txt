@@ -4,16 +4,28 @@
 
 pid = 0
 otid = 0
-cur_encoded_ivea = 0 ; Use the code "Read IVEA field" to determine the value of cur_encoded_ivea
 new_hp = 31
 new_atk = 31
 new_def = 31
 new_speed = 31
 new_spe_atk = 31
 new_spe_def = 31
+; You must set either the variable cur_encoded_ivea (use the code "Read IVEA field" to determine its value)...
+cur_encoded_ivea = 0
+; ... OR the variables cur_hp,cur_atk,cur_def,cur_speed,cur_spe_atk,cur_spe_def and ability
+cur_hp = 0
+cur_atk = 0
+cur_def = 0
+cur_speed = 0
+cur_spe_atk = 0
+cur_spe_def = 0
+ability = 0      ; First ability: 0  /  Second ability: 1
 
+; DO NOT MODIFY THE PARAMETERS BELOW
 key = pid ^ otid
-cur_ivea = cur_encoded_ivea ^ key
+cur_ivea_computed = (ability << 31) | cur_hp | (cur_atk << 5) | (cur_def << 10) | \
+           (cur_speed << 15) | (cur_spe_atk << 20) | (cur_spe_def << 25)
+cur_ivea = cur_encoded_ivea == 0 ? cur_ivea_computed : cur_encoded_ivea ^ key
 egg_ability = cur_ivea & 0xC0000000
 new_ivea = egg_ability | new_hp | (new_atk << 5) | (new_def << 10) | \
            (new_speed << 15) | (new_spe_atk << 20) | (new_spe_def << 25)
@@ -40,5 +52,5 @@ checksum_diff ? = ((new_ivea & 0xFFFF) + (new_ivea >> 16)) - ((cur_ivea & 0xFFFF
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
 movs r12, {new_encoded_ivea} ?
-movs r0, {offset-7} ?
-str r12, [r11, r0]!
+adc r11, r11, {offset-7} ?
+str r12, [r11, 0]!

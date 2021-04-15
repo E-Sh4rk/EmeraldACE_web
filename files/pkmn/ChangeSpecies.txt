@@ -1,12 +1,14 @@
-@@ title = "Change species (FRA)"
+@@ title = "Change species (with exit code bootstrap) (ENG/FRA)"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateFRA" ; Note: Change to CertificateShortFRA to preserve box 14 name
+@@ exit = "Bootstrapped"
 
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
 otid = 0
 cur_species = 0
 new_species = 0
-inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 pmod = pid % 24
 growth_substructure_position = \
@@ -28,6 +30,10 @@ checksum_diff ? = new_species - cur_species
 ; (without looking at the box 10, or the Pokemon will be turned into a bad egg).
 
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+LDRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Load checksum
+ADC r12, r12, {checksum_diff & 0xFFFF} ?
+STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
 
 movs r12, {encoded_species} ?
 adc r11, r11, {offset-(inaccurate_emu?7:9)} ?

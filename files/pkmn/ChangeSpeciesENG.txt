@@ -30,5 +30,5 @@ checksum_diff ? = new_species - cur_species
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
 movs r12, {encoded_species} ?
-movs r0, {offset-(inaccurate_emu?7:9)} ?
-strh r12, [r11, r0]!
+adc r11, r11, {offset-(inaccurate_emu?7:9)} ?
+strh r12, [r11, 0]!

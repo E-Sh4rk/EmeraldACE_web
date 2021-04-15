@@ -36,9 +36,21 @@
     "cat": ["pkmn"]
   },
   {
+    "name": "Change Pokemon IVs (with exit code bootstrap)",
+    "eng": "pkmn/ChangeIvs.txt",
+	  "fra": "pkmn/ChangeIvs.txt",
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Change Pokemon species",
     "eng": "pkmn/ChangeSpeciesENG.txt",
 	  "fra": "pkmn/ChangeSpeciesFRA.txt",
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon species (with exit code bootstrap)",
+    "eng": "pkmn/ChangeSpecies.txt",
+	  "fra": "pkmn/ChangeSpecies.txt",
     "cat": ["pkmn"]
   },
   {
