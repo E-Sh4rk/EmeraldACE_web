@@ -42,6 +42,18 @@
     "cat": ["pkmn"]
   },
   {
+    "name": "Read Pokemon EVs field (with exit code bootstrap)",
+    "eng": "pkmn/ReadEvs.txt",
+	  "fra": "pkmn/ReadEvs.txt",
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon EVs (with exit code bootstrap)",
+    "eng": "pkmn/ChangeEvs.txt",
+	  "fra": "pkmn/ChangeEvs.txt",
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Change Pokemon species",
     "eng": "pkmn/ChangeSpeciesENG.txt",
 	  "fra": "pkmn/ChangeSpeciesFRA.txt",
