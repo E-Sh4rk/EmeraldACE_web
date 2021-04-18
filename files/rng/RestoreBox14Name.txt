@@ -1,0 +1,26 @@
+@@ title = "Restore 'BX r0' in box 14 name"
+@@ author = "E-Sh4rk"
+@@
+
+; This code writes the command BX r0 in the box 14 name
+; (required if you want to use a code with a bootstrapped exit code).
+; An exit code bootstrap pokemon must be present in the box 14 before using this code.
+
+0
+0
+0
+0
+0
+0
+0
+0
+adcs r12, pc, #0x38           ;  R12=&Box14Name + 3
+mvn r11, #0xE1                ;  R11=notE1=FFFFFF1E
+bic r11, r11, #0xED00000      ;  R11=R11 and notED00000=F12FFF1E
+bic r11, r11, #0x1000000E     ;  R11=R11 and not1000000E=E12FFF10=bx r0 opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+0
+0
+0
+0
+0
