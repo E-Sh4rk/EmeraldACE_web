@@ -90,6 +90,12 @@
     "cat": ["bootstraps"]
   },
   {
+    "name": "Restore 'BX r0' in box 14 name",
+    "eng": "bootstraps/RestoreBox14Name.txt",
+	  "fra": "bootstraps/RestoreBox14Name.txt",
+    "cat": ["bootstraps"]
+  },
+  {
     "name": "Change and freeze PRNG Seed",
     "eng": "rng/ChangeFreezePrngSeed.txt",
 	  "fra": "rng/ChangeFreezePrngSeed.txt",
