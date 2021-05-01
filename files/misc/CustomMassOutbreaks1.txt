@@ -1,0 +1,33 @@
+@@ title = "Custom Mass Outbreaks (1) (with exit code bootstrap) (ENG/FRA)"
+@@ exit = "Bootstrapped"
+
+; Execute this code to setup a custom mass outbreak.
+; Then, you have to execute the code (2).
+; If you want to change the species, level or location of the current custom mass outbreaks,
+; you do not need to re-execute code (1): you can directly execute code (2).
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+days_left = 0xFFFF
+move1 = 0xA6
+move2 = 0xA6
+move3 = 0xA6
+move4 = 0xA6
+
+@@
+
+; CustomOutbreaks = BoxNames - 95BC
+sbc r11, pc, {0x95BC + 8 - 1 - 4*4} ?
+
+; 00-2D-0XXX 0000-00-00 00A6-00A6 00A6-00A6 0B00-64-00
+; Gr N° Spec Unk2 U1 Lv Mov2 Mov1 Mov4 Mov3 Days Pr U4
+
+movs r12, { (days_left << 16) | 0x6400 } ?
+str r12, [r11, 0]!
+sbc r11, r11, 3
+
+movs r12, { (move4 << 16) | move3 } ?
+str r12, [r11, 0]!
+sbc r11, r11, 3
+
+movs r12, { (move2 << 16) | move1 } ?
+str r12, [r11, 0]!

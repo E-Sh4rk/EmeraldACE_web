@@ -12,6 +12,36 @@
     "cat": ["misc"]
   },
   {
+    "name": "Teach any move to a pokemon (with exit code bootstrap)",
+    "eng": "misc/TeachAnyMove.txt",
+	  "fra": "misc/TeachAnyMove.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Get any item at the lottery (with exit code bootstrap)",
+    "eng": "misc/GetAnyItemLottery.txt",
+	  "fra": "misc/GetAnyItemLottery.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Custom Mass Outbreaks 1 (with exit code bootstrap)",
+    "eng": "misc/CustomMassOutbreaks1.txt",
+	  "fra": "misc/CustomMassOutbreaks1.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Custom Mass Outbreaks 2 (with exit code bootstrap)",
+    "eng": "misc/CustomMassOutbreaks2.txt",
+	  "fra": "misc/CustomMassOutbreaks2.txt",
+    "cat": ["misc"]
+  },
+   {
+    "name": "End Custom Mass Outbreaks (with exit code bootstrap)",
+    "eng": "misc/EndCustomMassOutbreaks.txt",
+	  "fra": "misc/EndCustomMassOutbreaks.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Read Pokemon PID",
     "eng": "pkmn/ReadPidENG.txt",
 	  "fra": "pkmn/ReadPidFRA.txt",
@@ -63,6 +93,12 @@
     "name": "Change Pokemon species (with exit code bootstrap)",
     "eng": "pkmn/ChangeSpecies.txt",
 	  "fra": "pkmn/ChangeSpecies.txt",
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon ribbons and obedience (with exit code bootstrap)",
+    "eng": "pkmn/ChangeRibbonsObedience.txt",
+	  "fra": "pkmn/ChangeRibbonsObedience.txt",
     "cat": ["pkmn"]
   },
   {

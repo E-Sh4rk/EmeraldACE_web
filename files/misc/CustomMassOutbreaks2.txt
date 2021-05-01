@@ -1,0 +1,28 @@
+@@ title = "Custom Mass Outbreaks (2) (with exit code bootstrap) (ENG/FRA)"
+@@ exit = "Bootstrapped"
+
+; Before executing this code, you should have executed code (1) once.
+; You do not need to re-execute code (1) if you just want to change the species,
+; level or location of the current custom mass outbreaks.
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+species = 1      ; You can set it to 0 to disable the custom mass outbreak
+; https://github.com/pret/pokeemerald/blob/master/include/constants/map_groups.h
+map_group = 0
+map_num = 16
+level = 0
+
+@@
+
+; CustomOutbreaks = BoxNames - 95BC
+sbc r11, pc, {0x95BC + 8 - 1 - 1*4} ?
+
+; 00-2D-0XXX 0000-00-00 00A6-00A6 00A6-00A6 0B00-64-00
+; Gr N° Spec Unk2 U1 Lv Mov2 Mov1 Mov4 Mov3 Days Pr U4
+
+movs r12, { level } ?
+str r12, [r11, 0]!
+sbc r11, r11, 3
+
+movs r12, { (map_group << 24) | (map_num << 16) | species } ?
+str r12, [r11, 0]!
