@@ -15,13 +15,13 @@ level = 0
 @@
 
 ; CustomOutbreaks = BoxNames - 95BC
-sbc r11, pc, {0x95BC + 8 - 1 - 1*4} ?
+sbc r11, pc, {0x95BC + 8 - 1 - 1*4 + 0xC00} ?
 
 ; 00-2D-0XXX 0000-00-00 00A6-00A6 00A6-00A6 0B00-64-00
 ; Gr N° Spec Unk2 U1 Lv Mov2 Mov1 Mov4 Mov3 Days Pr U4
 
 movs r12, { level } ?
-str r12, [r11, 0]!
+str r12, [r11, 0xC00]!
 sbc r11, r11, 3
 
 movs r12, { (map_group << 24) | (map_num << 16) | species } ?
