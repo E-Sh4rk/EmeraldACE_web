@@ -6,6 +6,12 @@
     "cat": ["rng"]
   },
   {
+    "name": "Change trainer TID and SID",
+    "eng": "misc/ChangeTrainerTidSidENG.txt",
+	  "fra": "misc/ChangeTrainerTidSidFRA.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Change trainer name",
     "eng": "misc/ChangeTrainerNameENG.txt",
 	  "ger": "misc/ChangeTrainerNameGER.txt",
