@@ -147,5 +147,11 @@
     "name": "Put Egg With Any PID In Daycare",
     "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
     "cat": ["rng"]
+  },
+  {
+    "name": "Change Pokemon Pkrs and Origins (with exit code bootstrap)",
+    "eng": "pkmn/ChangePokerusOrigin.txt",
+	  "fra": "pkmn/ChangePokerusOrigin.txt",
+    "cat": ["pkmn"]
   }
 ]
