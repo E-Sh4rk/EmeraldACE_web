@@ -6,9 +6,9 @@
     "cat": ["rng"]
   },
   {
-    "name": "Change trainer TID and SID",
-    "eng": "misc/ChangeTrainerTidSidENG.txt",
-	  "fra": "misc/ChangeTrainerTidSidFRA.txt",
+    "name": "Change trainer TID and SID (with exit code bootstrap)",
+    "eng": "misc/ChangeTrainerTidSid.txt",
+	  "fra": "misc/ChangeTrainerTidSid.txt",
     "cat": ["misc"]
   },
   {

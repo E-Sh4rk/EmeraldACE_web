@@ -1,0 +1,16 @@
+@@ title = "Change Trainer TID & SID (with exit code bootstrap) (ENG/FRA)"
+@@ exit = "Bootstrapped"
+
+tid = 0
+sid = 0
+inaccurate_emu = 0
+
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+@@
+
+sbc r11,pc,{0xD0EE-1+(inaccurate_emu ? 8 : 10)} ?
+movs r12, {tid} ?
+strh r12, [r11]!
+movs r12, {sid} ?
+strh r12, [r11, 2]
