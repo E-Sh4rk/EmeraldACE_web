@@ -120,6 +120,12 @@
     "cat": ["pkmn","bootstraps"]
   },
   {
+    "name": "Create Pokemon species from nothing (with exit code bootstrap)",
+    "eng": "pkmn/PokemonFromNothing.txt",
+	   "fra": "pkmn/PokemonFromNothing.txt",
+    "cat": ["pkmn","bootstraps"]
+  },
+  {
     "name": "Thumb->ARM bootstrap",
     "eng": "bootstraps/ThumbArmBootstrapENG.txt",
 	  "fra": "bootstraps/ThumbArmBootstrapFRA.txt",

@@ -5,9 +5,10 @@
 species = 0xFF     ; Please set the species you want (it should not be 0)
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
-@@
-
 ; The Box 10 Slot 19 must be empty. A pokemon will appear there after execution of the code.
+; NOTE: The Pokemon created with this method will disappear if moved using the group selection.
+
+@@
 
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
