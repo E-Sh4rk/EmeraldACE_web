@@ -5,13 +5,14 @@
 
 ; Adapted from https://pastebin.com/Sz2Aiu6p
 
-; This code must be executed just after the "Create Pokemon From Nothing" code,
-; with the species set to 0x40ED. The name of boxes 11-14 must remain unchanged.
-; A pokemon with the name [x♂zN 6FFxC] must be in the box 10 slot 20.
-; Then, this code must be executed by viewing the summary of the 0x40ED species.
+; This code must be executed after the "Create Pokemon From Nothing" code, with the species set to 0x40ED.
+; After that, you should not modify the names of the boxes 11-14 (they must be the same for this code).
+; Then, put any pokemon with the name [x♂zN 6FFxC] in the box 10 slot 20.
+; At this point, you should save your game and reload your save in order to reinitialize the value of some registers.
+; Then, write this code (boxes 1-10) and execute it by viewing the summary of the 0x40ED species.
 ; The pokemon in box 10 slot 20 will be transformed into a bad egg.
-; This bad egg must be placed somewhere in Box 13 when you want to execute
-; a 0x611 ACE code by viewing the summary of the 0x40ED species.
+; This bad egg must be placed somewhere in Box 12 (not the first row), Box 13 or Box 14
+; when you want to execute an ARM ACE code by viewing the summary of the 0x40ED species.
 
 0xC8EEB5EC
 ; PUSH r2-r3,r5-r7,lr       B5EC @ preserve necessary registers
