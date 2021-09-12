@@ -26,7 +26,7 @@
 0x0000BDEC
 ; POP r2-r3,r5-r7,pc      BDEC
 
-sbc r11,pc,0x2940   ; r11=&PID-0x34
+sbc r11,pc,0x2940   ; r11=&PID-0x35
 strh r10,[r11,54]
 strh r10,[r11,56]
 strh r10,[r11,58]
