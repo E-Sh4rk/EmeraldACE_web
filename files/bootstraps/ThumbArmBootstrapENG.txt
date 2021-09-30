@@ -15,7 +15,10 @@
 ; when you want to execute an ARM ACE code by using a Thumb ACE species.
 
 ; NOTE: If you plan to use this code with 0x40E9, be aware that the 0x40E9 species is only stable
-; in its non-shiny form, thus you shouldn't obtain 0x40E9 with the code "Create Pokemon species from nothing"
+; in its non-shiny form, thus you shouldn't obtain 0x40E9 with the code "Create Pokemon species from nothing".
+; If you want a stable shiny Thumb ACE species, you can use 0x45BB, however only the move and contest summary pages
+; are stable, so you might need to open the summary of an adjacent pokemon, go to the moves page,
+; and then switch to the 0x45BB moves page to avoid a crash).
 
 0xC8EEB5EC
 ; PUSH r2-r3,r5-r7,lr       B5EC @ preserve necessary registers
