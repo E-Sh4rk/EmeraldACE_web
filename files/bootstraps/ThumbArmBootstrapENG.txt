@@ -5,14 +5,17 @@
 
 ; Adapted from https://pastebin.com/Sz2Aiu6p
 
-; This code must be executed after the "Create Pokemon From Nothing" code, with the species set to 0x40E9.
-; After that, you should not modify the names of the boxes 11-14 (they must be the same for this code).
+; This code must be executed after any code that uses the exit code CertificateFullENG.
+; You should not modify the names of the boxes 11-14 between (they are the same for this code).
 ; Then, put any pokemon with the name [x♂zN 6FFxC] in the box 10 slot 20.
 ; At this point, you should save your game and reload your save in order to reinitialize the value of some registers.
-; Then, write this code (boxes 1-10) and execute it by viewing the summary of the 0x40E9 species.
+; Then, write this code (boxes 1-10) and execute it by triggering ACE with your Thumb ACE species.
 ; The pokemon in box 10 slot 20 will be transformed into a bad egg.
 ; This bad egg must be placed somewhere in Box 12 (not the first row), Box 13 or Box 14
-; when you want to execute an ARM ACE code by viewing the summary of the 0x40E9 species.
+; when you want to execute an ARM ACE code by using a Thumb ACE species.
+
+; NOTE: If you plan to use this code with 0x40E9, be aware that the 0x40E9 species is only stable
+; in its non-shiny form, thus you shouldn't obtain 0x40E9 with the code "Create Pokemon species from nothing"
 
 0xC8EEB5EC
 ; PUSH r2-r3,r5-r7,lr       B5EC @ preserve necessary registers

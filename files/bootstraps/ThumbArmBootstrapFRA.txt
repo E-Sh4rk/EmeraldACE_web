@@ -5,7 +5,7 @@
 
 ; Adapted from https://pastebin.com/Sz2Aiu6p
 
-; This code must be executed after the "Create Pokemon From Nothing" code, with the species set to 0x40ED.
+; This code must be executed after the "Create Pokemon species from nothing" code, with the species set to 0x40ED.
 ; After that, you should not modify the names of the boxes 11-14 (they must be the same for this code).
 ; Then, put any pokemon with the name [x♂zN 6FFxC] in the box 10 slot 20.
 ; At this point, you should save your game and reload your save in order to reinitialize the value of some registers.
