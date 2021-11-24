@@ -1,0 +1,39 @@
+@@ title = "Change move (with exit code bootstrap) (ENG/FRA)"
+@@ author = "Shao"
+@@ exit = "Bootstrapped"
+
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+pid = 0
+otid = 0
+cur_move = 0
+new_move = 0
+which_move = 0; 0-3
+
+pmod = pid % 24
+attack_substructure_position = \
+    pmod == 6  | pmod == 7  | pmod == 8  | pmod == 9  | \
+    pmod == 10  | pmod == 11 ? 0 : \
+    pmod == 0  | pmod == 1  | pmod == 14 | pmod == 15 | \
+    pmod == 20 | pmod == 21 ? 1 : \
+    pmod == 2  | pmod == 4 | pmod == 12 | pmod == 17 | \
+    pmod == 18 | pmod == 23 ? 2 : 3
+key = pid ^ otid
+encoded_move = (new_move ^ (key >> (which_move % 2 ? 16:0))) & 0xFFFF
+offset = 32 + 12*attack_substructure_position + 2*which_move
+checksum_diff ? = new_move - cur_move
+
+@@
+
+; The Pokemon must be located in Box 10 Slot 19.
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+LDRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Load checksum
+ADC r12, r12, {checksum_diff & 0xFFFF} ?
+STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
+
+movs r12, {encoded_move} ?
+adc r11, r11, {offset-(inaccurate_emu?7:9)} ?
+strh r12, [r11, 0]!
