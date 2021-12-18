@@ -157,7 +157,13 @@
   {
     "name": "Change Pokemon Pkrs and Origins (with exit code bootstrap)",
     "eng": "pkmn/ChangePokerusOrigin.txt",
-	  "fra": "pkmn/ChangePokerusOrigin.txt",
-    "cat": ["pkmn"]
+    "fra": "pkmn/ChangePokerusOrigin.txt",
+    "cat": [ "pkmn" ]
+  },
+  {
+    "name": "Change Pokemon Move (with exit code bootstrap)",
+    "eng": "pkmn/ChangePokemonMove.txt",
+    "fra": "pkmn/ChangePokemonMove.txt",
+    "cat": [ "pkmn" ]
   }
 ]
