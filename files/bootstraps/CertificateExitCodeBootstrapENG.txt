@@ -30,7 +30,7 @@ str r12, [r11]!                  ; Write on characters 0-3 of the pokemon name
 
 ; === WRITE POKEMON NAME 4-7 ===
 adc r11, r11, 0x3                ; r11 = &Box10Slot19 + 12
-movs r12, #0xE2AFF044 ?          ; E2AFF044  ADC pc, pc, #0x44
+movs r12, #0xE28FF044 ?          ; E28FF044  ADD pc, pc, #0x44
 str r12, [r11]!                  ; Write on characters 4-7 of the pokemon name
 
 ; === WRITE POKEMON ORIGINAL TRAINER NAME ===
