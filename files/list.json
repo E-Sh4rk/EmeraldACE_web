@@ -72,7 +72,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Change Pokemon IVs (with exit code bootstrap)",
+    "name": "Change Pokemon IVs and ability  (with exit code bootstrap)",
     "eng": "pkmn/ChangeIvs.txt",
 	  "fra": "pkmn/ChangeIvs.txt",
     "cat": ["pkmn"]

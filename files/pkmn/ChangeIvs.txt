@@ -1,9 +1,9 @@
-@@ title = "Change IVs (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Change IVs and ability (with exit code bootstrap) (ENG/FRA)"
 @@ author = "E-Sh4rk"
 @@ exit = "Bootstrapped"
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
-; The Pokemon must be located in Box 10 Slot 19.
+; The Pokemon must be located in Box 10 Slot 19. It should NOT be an egg.
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
@@ -14,6 +14,7 @@ new_def = 31
 new_speed = 31
 new_spe_atk = 31
 new_spe_def = 31
+new_ability = 0      ; First ability: 0  /  Second ability: 1
 ; You must set either the variable cur_encoded_ivea (use the code "Read IVEA field" to determine its value)...
 cur_encoded_ivea = 0
 ; ... OR the variables cur_hp,cur_atk,cur_def,cur_speed,cur_spe_atk,cur_spe_def and ability
@@ -23,15 +24,14 @@ cur_def = 0
 cur_speed = 0
 cur_spe_atk = 0
 cur_spe_def = 0
-ability = 0      ; First ability: 0  /  Second ability: 1
+cur_ability = 0      ; First ability: 0  /  Second ability: 1
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
 key = pid ^ otid
-cur_ivea_computed = (ability << 31) | cur_hp | (cur_atk << 5) | (cur_def << 10) | \
+cur_ivea_computed = (cur_ability << 31) | cur_hp | (cur_atk << 5) | (cur_def << 10) | \
            (cur_speed << 15) | (cur_spe_atk << 20) | (cur_spe_def << 25)
 cur_ivea = cur_encoded_ivea == 0 ? cur_ivea_computed : cur_encoded_ivea ^ key
-egg_ability = cur_ivea & 0xC0000000
-new_ivea = egg_ability | new_hp | (new_atk << 5) | (new_def << 10) | \
+new_ivea = (new_ability << 31) | new_hp | (new_atk << 5) | (new_def << 10) | \
            (new_speed << 15) | (new_spe_atk << 20) | (new_spe_def << 25)
 new_encoded_ivea = new_ivea ^ key
 
@@ -58,4 +58,3 @@ STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
 movs r12, {new_encoded_ivea} ?
 adc r11, r11, {offset-7} ?
 str r12, [r11, 0]!
-
