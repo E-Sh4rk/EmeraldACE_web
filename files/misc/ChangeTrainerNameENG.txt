@@ -6,7 +6,15 @@ letter1 = 0
 letter2 = 0
 letter3 = 0
 letter4 = 0
-start   = 0 ; 0 for characters 1-4, 1 for characters 5-8, 2 for characters 9-10
+start   = 0 ; 0 for characters 1-4, 1 for characters 5-8
+
+; Player names end with 0xFF, so you can choose up to 7 characters
+; freely but must end with 0xFF. The 0xFF should immediately follow the
+; last character you choose. So for example, to make your name MAY, you 
+; would use letter1=0xC7, letter2=0xBB, letter3=0xD3, and letter4=0xFF
+; and you would select start=0. There would be no need to use start=1 
+; for a name that short. Find encoding info at 
+; https://bulbapedia.bulbagarden.net/wiki/Character_encoding_(Generation_III)
 
 le_encoding = letter1 | (letter2 << 8) | (letter3 << 16) | (letter4 << 24)
 offset = 0xD0F8 + 8 - start*4
