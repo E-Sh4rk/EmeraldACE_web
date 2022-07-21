@@ -1,0 +1,17 @@
+@@ title = "Lemon’s Emerald Roamer Method"
+@@ author = "Lemon (glitch) & E-Sh4rk (code)"
+@@ exit = "CertificateFull{LANG}"
+
+; Based on https://docs.google.com/document/d/1q5alCGdi71nj_6XD8Qvn8sCCtDcSMz3fCN04uaxwxMo
+; Before executing, make sure you have already passed the initial roamer generation in the story.
+; This code must only be executed once. Executing it multiple times will alter other flags.
+
+@@
+
+; #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
+; https://github.com/pret/pokeemerald/blob/c9c754be061c6400a0eaf60a01ccd0dcafb01b91/include/constants/flags.h#L1403
+
+sbc r11, pc, 0xADD3 ?   ; SYSTEM_FLAGS + 0x30
+ldrh r12, [r11]
+sbc r12, r12, 0 ?   ; To reverse: adc r12, r12, 1 ?
+strh r12, [r11]
