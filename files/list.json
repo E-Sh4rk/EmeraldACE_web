@@ -2,159 +2,165 @@
   {
     "name": "Change PRNG Seed",
     "eng": "rng/ChangePrngSeedENG.txt",
-	  "fra": "rng/ChangePrngSeedFRA.txt",
+    "fra": "rng/ChangePrngSeedFRA.txt",
     "cat": ["rng"]
   },
   {
     "name": "Change trainer TID and SID (with exit code bootstrap)",
     "eng": "misc/ChangeTrainerTidSid.txt",
-	  "fra": "misc/ChangeTrainerTidSid.txt",
+    "fra": "misc/ChangeTrainerTidSid.txt",
     "cat": ["misc"]
   },
   {
     "name": "Change trainer name",
     "eng": "misc/ChangeTrainerNameENG.txt",
-	  "ger": "misc/ChangeTrainerNameGER.txt",
+    "ger": "misc/ChangeTrainerNameGER.txt",
     "cat": ["misc"]
   },
   {
     "name": "Teach any move to a pokemon (with exit code bootstrap)",
     "eng": "misc/TeachAnyMove.txt",
-	  "fra": "misc/TeachAnyMove.txt",
+    "fra": "misc/TeachAnyMove.txt",
     "cat": ["misc"]
   },
   {
     "name": "Get any item at the lottery (with exit code bootstrap)",
     "eng": "misc/GetAnyItemLottery.txt",
-	  "fra": "misc/GetAnyItemLottery.txt",
+    "fra": "misc/GetAnyItemLottery.txt",
     "cat": ["misc"]
   },
   {
     "name": "Custom Mass Outbreaks 1 (with exit code bootstrap)",
     "eng": "misc/CustomMassOutbreaks1.txt",
-	  "fra": "misc/CustomMassOutbreaks1.txt",
+    "fra": "misc/CustomMassOutbreaks1.txt",
     "cat": ["misc"]
   },
   {
     "name": "Custom Mass Outbreaks 2 (with exit code bootstrap)",
     "eng": "misc/CustomMassOutbreaks2.txt",
-	  "fra": "misc/CustomMassOutbreaks2.txt",
+    "fra": "misc/CustomMassOutbreaks2.txt",
     "cat": ["misc"]
   },
    {
     "name": "End Custom Mass Outbreaks (with exit code bootstrap)",
     "eng": "misc/EndCustomMassOutbreaks.txt",
-	  "fra": "misc/EndCustomMassOutbreaks.txt",
+    "fra": "misc/EndCustomMassOutbreaks.txt",
     "cat": ["misc"]
   },
   {
     "name": "Read Pokemon PID",
     "eng": "pkmn/ReadPidENG.txt",
-	  "fra": "pkmn/ReadPidFRA.txt",
+    "fra": "pkmn/ReadPidFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon OTID",
     "eng": "pkmn/ReadOtidENG.txt",
-	  "fra": "pkmn/ReadOtidFRA.txt",
+    "fra": "pkmn/ReadOtidFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon IVEA field",
     "eng": "pkmn/ReadIveaENG.txt",
-	  "fra": "pkmn/ReadIveaFRA.txt",
+    "fra": "pkmn/ReadIveaFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon IVs",
     "eng": "pkmn/ChangeIvsENG.txt",
-	  "fra": "pkmn/ChangeIvsFRA.txt",
+    "fra": "pkmn/ChangeIvsFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon IVs and ability  (with exit code bootstrap)",
     "eng": "pkmn/ChangeIvs.txt",
-	  "fra": "pkmn/ChangeIvs.txt",
+    "fra": "pkmn/ChangeIvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon EVs field (with exit code bootstrap)",
     "eng": "pkmn/ReadEvs.txt",
-	  "fra": "pkmn/ReadEvs.txt",
+    "fra": "pkmn/ReadEvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon EVs (with exit code bootstrap)",
     "eng": "pkmn/ChangeEvs.txt",
-	  "fra": "pkmn/ChangeEvs.txt",
+    "fra": "pkmn/ChangeEvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon species",
     "eng": "pkmn/ChangeSpeciesENG.txt",
-	  "fra": "pkmn/ChangeSpeciesFRA.txt",
+    "fra": "pkmn/ChangeSpeciesFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon species (with exit code bootstrap)",
     "eng": "pkmn/ChangeSpecies.txt",
-	  "fra": "pkmn/ChangeSpecies.txt",
+    "fra": "pkmn/ChangeSpecies.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon ribbons and obedience (with exit code bootstrap)",
     "eng": "pkmn/ChangeRibbonsObedience.txt",
-	  "fra": "pkmn/ChangeRibbonsObedience.txt",
+    "fra": "pkmn/ChangeRibbonsObedience.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Alter Pokemon checksum",
     "eng": "pkmn/AlterChecksumENG.txt",
-	  "fra": "pkmn/AlterChecksumFRA.txt",
+    "fra": "pkmn/AlterChecksumFRA.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Create Pokemon species from nothing",
     "eng": "pkmn/PokemonFromNothingENG.txt",
-	  "fra": "pkmn/PokemonFromNothingFRA.txt",
+    "fra": "pkmn/PokemonFromNothingFRA.txt",
     "jap": "pkmn/PokemonFromNothingJAP.txt",
     "cat": ["pkmn","bootstraps"]
   },
   {
     "name": "Create Pokemon species from nothing (with exit code bootstrap)",
     "eng": "pkmn/PokemonFromNothing.txt",
-	   "fra": "pkmn/PokemonFromNothing.txt",
+     "fra": "pkmn/PokemonFromNothing.txt",
     "jap": "pkmn/PokemonFromNothing.txt",
     "cat": ["pkmn","bootstraps"]
   },
   {
     "name": "Thumb->ARM bootstrap",
     "eng": "bootstraps/ThumbArmBootstrapENG.txt",
-	  "fra": "bootstraps/ThumbArmBootstrapFRA.txt",
+    "fra": "bootstraps/ThumbArmBootstrapFRA.txt",
     "cat": ["bootstraps"]
   },
   {
     "name": "Certificate Exit Code Bootstrap",
     "eng": "bootstraps/CertificateExitCodeBootstrapENG.txt",
-	  "fra": "bootstraps/CertificateExitCodeBootstrapFRA.txt",
+    "fra": "bootstraps/CertificateExitCodeBootstrapFRA.txt",
     "jap": "bootstraps/CertificateExitCodeBootstrapJAP.txt",
     "cat": ["bootstraps"]
   },
   {
     "name": "Restore 'BX r0' in box 14 name",
     "eng": "bootstraps/RestoreBox14Name.txt",
-	  "fra": "bootstraps/RestoreBox14Name.txt",
+    "fra": "bootstraps/RestoreBox14Name.txt",
     "cat": ["bootstraps"]
   },
   {
     "name": "Change and freeze PRNG Seed",
     "eng": "rng/ChangeFreezePrngSeed.txt",
-	  "fra": "rng/ChangeFreezePrngSeed.txt",
+    "fra": "rng/ChangeFreezePrngSeed.txt",
     "cat": ["rng"]
   },
   {
     "name": "Put Egg With Any PID In Daycare",
     "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Lemon's roamer method",
+    "eng": "rng/LemonMethodRoamingENG.txt",
+    "fra": "rng/LemonMethodRoamingFRA.txt",
     "cat": ["rng"]
   },
   {
