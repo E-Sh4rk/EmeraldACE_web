@@ -159,8 +159,11 @@
   },
   {
     "name": "Lemon's roamer method",
-    "eng": "rng/LemonMethodRoamingENG.txt",
-    "fra": "rng/LemonMethodRoamingFRA.txt",
+    "eng": "rng/LemonMethodRoaming.txt",
+    "fra": "rng/LemonMethodRoaming.txt",
+    "ger": "rng/LemonMethodRoaming.txt",
+    "spa": "rng/LemonMethodRoaming.txt",
+    "ita": "rng/LemonMethodRoaming.txt",
     "cat": ["rng"]
   },
   {
