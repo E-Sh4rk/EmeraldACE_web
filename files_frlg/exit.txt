@@ -2,14 +2,14 @@
 @@ start = 80
 @@
 
-sbc r12, pc, FF               ;  R12=PC-FF-1
-sbc r12, r12, 32              ;  R12=R12-32-1
-adc r0, r12, 0                ;  R0=R12+0
-sbc r11, pc, CD               ;  R11=PC-CD-1
-mvn r12, EE00000              ;  R12=notEE00000=F11FFFFF
-sbc r12, r12, ED              ;  R12=R12-ED-1=F11FFF11
-sbc r12, r12, FF00000         ;  R12=R12-FF00000-1=E12FFF10="bx r0" opcode
-str r12, [r11, EE]!           ;  Store bx r0 opcode
+sbc r12, pc, 0xFF               ;  R12=PC-FF-1
+sbc r12, r12, 0x32              ;  R12=R12-32-1
+adc r0, r12, 0x0                ;  R0=R12+0
+sbc r11, pc, 0xCD               ;  R11=PC-CD-1
+mvn r12, 0xEE00000              ;  R12=notEE00000=F11FFFFF
+sbc r12, r12, 0xED              ;  R12=R12-ED-1=F11FFF11
+sbc r12, r12, 0xFF00000         ;  R12=R12-FF00000-1=E12FFF10="bx r0" opcode
+str r12, [r11, 0xEE]!           ;  Store bx r0 opcode
 
 ====================
 
@@ -17,15 +17,15 @@ str r12, [r11, EE]!           ;  Store bx r0 opcode
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 300              ;  R12=R12+300=80CA303
-adc r0,r12, C2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x300              ;  R12=R12+300=80CA303
+adc r0,r12, 0xC2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 
 ====================
 
@@ -33,15 +33,15 @@ adc r0,r12, C2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 300              ;  R12=R12+300=80CA303
-adc r0,r12, D6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x300              ;  R12=R12+300=80CA303
+adc r0,r12, 0xD6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 
 ====================
 
@@ -49,15 +49,15 @@ adc r0,r12, D6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, DA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xDA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 
 ====================
 
@@ -65,15 +65,15 @@ adc r0,r12, DA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 34C0             ;  R12=R12+34C0=80CA4C3
-adc r0,r12, BA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x34C0             ;  R12=R12+34C0=80CA4C3
+adc r0,r12, 0xBA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 
 ====================
 
@@ -81,15 +81,15 @@ adc r0,r12, BA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3580             ;  R12=R12+3580=80CA583
-adc r0,r12, C2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3580             ;  R12=R12+3580=80CA583
+adc r0,r12, 0xC2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 
 ====================
 
@@ -97,15 +97,15 @@ adc r0,r12, C2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3580             ;  R12=R12+3580=80CA583
-adc r0,r12, BA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3580             ;  R12=R12+3580=80CA583
+adc r0,r12, 0xBA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 
 ====================
 
@@ -113,15 +113,15 @@ adc r0,r12, BA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 2E0              ;  R12=R12+2E0=80CA2E3
-adc r0,r12, B6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x2E0              ;  R12=R12+2E0=80CA2E3
+adc r0,r12, 0xB6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 
 ====================
 
@@ -129,15 +129,15 @@ adc r0,r12, B6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 2E0              ;  R12=R12+2E0=80CA2E3
-adc r0,r12, CA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x2E0              ;  R12=R12+2E0=80CA2E3
+adc r0,r12, 0xCA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 
 ====================
 
@@ -145,15 +145,15 @@ adc r0,r12, CA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, AE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xAE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 
 ====================
 
@@ -161,15 +161,15 @@ adc r0,r12, AE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, CE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER  
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xCE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER  
 
 ====================
 
@@ -177,15 +177,15 @@ adc r0,r12, CE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3540             ;  R12=R12+3540=80CA543
-adc r0,r12, D6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA  
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3540             ;  R12=R12+3540=80CA543
+adc r0,r12, 0xD6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA  
 
 ====================
 
@@ -193,15 +193,15 @@ adc r0,r12, D6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3540             ;  R12=R12+3540=80CA543
-adc r0,r12, CE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3540             ;  R12=R12+3540=80CA543
+adc r0,r12, 0xCE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 
 ====================
 
@@ -209,15 +209,15 @@ adc r0,r12, CE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, DF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 
 ====================
 
@@ -225,15 +225,15 @@ sbc r0,r12, DF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, CB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 
 ====================
 
@@ -241,15 +241,15 @@ sbc r0,r12, CB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, D3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 
 ====================
 
@@ -257,15 +257,15 @@ sbc r0,r12, D3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, BF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 
 ====================
 
@@ -273,16 +273,16 @@ sbc r0,r12, BF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, 3740             ;  R12=R12+3740=8003743
-sbc r12,r12, AC000            ;  R12=R12-AC000-1=7F57742
-adc r12,r12, FF000            ;  R12=R12+FF000=8056742
-adc r0,r12, CF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0x3740             ;  R12=R12+3740=8003743
+sbc r12,r12, 0xAC000            ;  R12=R12-AC000-1=7F57742
+adc r12,r12, 0xFF000            ;  R12=R12+FF000=8056742
+adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 
 ====================
 
@@ -290,15 +290,15 @@ adc r0,r12, CF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-adc r0,r12, 0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 
 ====================
 
@@ -306,15 +306,15 @@ adc r0,r12, 0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, A900000             ;  R12=A900000
-sbc r12,r12, 28C0000          ;  R12=R12-28C0000-1=803FFFF
-adc r12,r12, 2A400            ;  R12=R12-2A400-1=8015BFE
-sbc r0,r12, A4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworldENG_1.0
+movs r12, 0xA900000             ;  R12=A900000
+sbc r12,r12, 0x28C0000          ;  R12=R12-28C0000-1=803FFFF
+adc r12,r12, 0x2A400            ;  R12=R12-2A400-1=8015BFE
+sbc r0,r12, 0xA4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworldENG_1.0
 
 ====================
 
@@ -322,16 +322,16 @@ sbc r0,r12, A4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, BE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworldENG_1.1
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xBE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworldENG_1.1
 
 ====================
 
@@ -339,16 +339,16 @@ sbc r0,r12, BE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldITA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldITA
 
 ====================
 
@@ -356,16 +356,16 @@ sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldGER
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldGER
 
 ====================
 
@@ -373,15 +373,15 @@ sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, B800             ;  R12=R12+B800=800B803
-adc r12,r12, A200             ;  R12=R12+A200=8015A03
-adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xB800             ;  R12=R12+B800=800B803
+adc r12,r12, 0xA200             ;  R12=R12+A200=8015A03
+adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSPA
 
 ====================
 
@@ -389,15 +389,15 @@ adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSP
 @@ start = 72
 @@
 
-mvn r11, EE00000              ;  R11=notEE00000=F11FFFFF
-sbc r11, r11, ED              ;  R11=R12-ED-1=F11FFF11
-sbc r11, r11, FF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, 30               ;  R12=PC+30
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!               ;  Store bx r0 opcode in [r12]
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, B800             ;  R12=R12+B800=800B803
-adc r12,r12, A200             ;  R12=R12+A200=8015A03
-adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xB800             ;  R12=R12+B800=800B803
+adc r12,r12, 0xA200             ;  R12=R12+A200=8015A03
+adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldFRA
 
 ====================
 
@@ -405,10 +405,10 @@ adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldFR
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 300              ;  R12=R12+300=80CA303
-adc r0,r12, C2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x300              ;  R12=R12+300=80CA303
+adc r0,r12, 0xC2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 
 ====================
 
@@ -416,10 +416,10 @@ adc r0,r12, C2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 300              ;  R12=R12+300=80CA303
-adc r0,r12, D6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x300              ;  R12=R12+300=80CA303
+adc r0,r12, 0xD6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 
 ====================
 
@@ -427,10 +427,10 @@ adc r0,r12, D6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, DA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xDA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 
 ====================
 
@@ -438,10 +438,10 @@ adc r0,r12, DA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 34C0             ;  R12=R12+34C0=80CA4C3
-adc r0,r12, BA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x34C0             ;  R12=R12+34C0=80CA4C3
+adc r0,r12, 0xBA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 
 ====================
 
@@ -449,10 +449,10 @@ adc r0,r12, BA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3580             ;  R12=R12+3580=80CA583
-adc r0,r12, C2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3580             ;  R12=R12+3580=80CA583
+adc r0,r12, 0xC2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 
 ====================
 
@@ -460,10 +460,10 @@ adc r0,r12, C2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3580             ;  R12=R12+3580=80CA583
-adc r0,r12, BA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3580             ;  R12=R12+3580=80CA583
+adc r0,r12, 0xBA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 
 ====================
 
@@ -471,10 +471,10 @@ adc r0,r12, BA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 2E0              ;  R12=R12+2E0=80CA2E3
-adc r0,r12, B6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x2E0              ;  R12=R12+2E0=80CA2E3
+adc r0,r12, 0xB6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 
 ====================
 
@@ -482,10 +482,10 @@ adc r0,r12, B6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, CA000            ;  R12=R12+CA000=80CA003
-adc r12,r12, 2E0              ;  R12=R12+2E0=80CA2E3
-adc r0,r12, CA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xCA000            ;  R12=R12+CA000=80CA003
+adc r12,r12, 0x2E0              ;  R12=R12+2E0=80CA2E3
+adc r0,r12, 0xCA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 
 ====================
 
@@ -493,10 +493,10 @@ adc r0,r12, CA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, AE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xAE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 
 ====================
 
@@ -504,10 +504,10 @@ adc r0,r12, AE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3480             ;  R12=R12+3480=80CA483
-adc r0,r12, CE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER  
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3480             ;  R12=R12+3480=80CA483
+adc r0,r12, 0xCE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER  
 
 ====================
 
@@ -515,10 +515,10 @@ adc r0,r12, CE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3540             ;  R12=R12+3540=80CA543
-adc r0,r12, D6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA  
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3540             ;  R12=R12+3540=80CA543
+adc r0,r12, 0xD6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA  
 
 ====================
 
@@ -526,10 +526,10 @@ adc r0,r12, D6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, C7000            ;  R12=R12+C7000=80C7003
-adc r12,r12, 3540             ;  R12=R12+3540=80CA543
-adc r0,r12, CE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xC7000            ;  R12=R12+C7000=80C7003
+adc r12,r12, 0x3540             ;  R12=R12+3540=80CA543
+adc r0,r12, 0xCE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 
 ====================
 
@@ -537,10 +537,10 @@ adc r0,r12, CE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, DF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 
 ====================
 
@@ -548,10 +548,10 @@ sbc r0,r12, DF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, CB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 
 ====================
 
@@ -559,10 +559,10 @@ sbc r0,r12, CB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, D3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 
 ====================
 
@@ -570,10 +570,10 @@ sbc r0,r12, D3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-sbc r0,r12, BF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 
 ====================
 
@@ -581,11 +581,11 @@ sbc r0,r12, BF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, 3740             ;  R12=R12+3740=8003743
-sbc r12,r12, AC000            ;  R12=R12-AC000-1=7F57742
-adc r12,r12, FF000            ;  R12=R12+FF000=8056742
-adc r0,r12, CF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0x3740             ;  R12=R12+3740=8003743
+sbc r12,r12, 0xAC000            ;  R12=R12-AC000-1=7F57742
+adc r12,r12, 0xFF000            ;  R12=R12+FF000=8056742
+adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 
 ====================
 
@@ -593,10 +593,10 @@ adc r0,r12, CF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 2E000            ;  R12=R12+2E000=802DFFD
-adc r12,r12, 28800            ;  R12=R12+28800=80567FD
-adc r0,r12, 0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
+adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
+adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 
 ====================
 
@@ -604,10 +604,10 @@ adc r0,r12, 0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 @@ start = 72
 @@
 
-movs r12, A900000             ;  R12=A900000
-sbc r12,r12, 28C0000          ;  R12=R12-28C0000-1=803FFFF
-adc r12,r12, 2A400            ;  R12=R12-2A400-1=8015BFE
-sbc r0,r12, A4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworldENG_1.0
+movs r12, 0xA900000             ;  R12=A900000
+sbc r12,r12, 0x28C0000          ;  R12=R12-28C0000-1=803FFFF
+adc r12,r12, 0x2A400            ;  R12=R12-2A400-1=8015BFE
+sbc r0,r12, 0xA4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworldENG_1.0
 
 ====================
 
@@ -615,11 +615,11 @@ sbc r0,r12, A4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, BE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworldENG_1.1
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xBE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworldENG_1.1
 
 ====================
 
@@ -627,11 +627,11 @@ sbc r0,r12, BE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldITA
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldITA
 
 ====================
 
@@ -639,11 +639,11 @@ sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-mvn r12, 8000003              ;  R12=notF8000002=7FFFFFD
-sbc r12,r12, 2A000            ;  R12=R12-2A000-1=7FD5FFC
-adc r12,r12, 30               ;  R12=R12+30=7FD602C
-adc r12,r12, 3FC00            ;  R12=R12+3FC00=8015C2C
-sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldGER
+mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+sbc r12,r12, 0x2A000            ;  R12=R12-2A000-1=7FD5FFC
+adc r12,r12, 0x30               ;  R12=R12+30=7FD602C
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8015C2C
+sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworldGER
 
 ====================
 
@@ -651,10 +651,10 @@ sbc r0,r12, ED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverworld
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, B800             ;  R12=R12+B800=800B803
-adc r12,r12, A200             ;  R12=R12+A200=8015A03
-adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSPA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xB800             ;  R12=R12+B800=800B803
+adc r12,r12, 0xA200             ;  R12=R12+A200=8015A03
+adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSPA
 
 ====================
 
@@ -662,7 +662,7 @@ adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldSP
 @@ start = 72
 @@
 
-movs r12, 8000003             ;  R12=8000003
-adc r12,r12, B800             ;  R12=R12+B800=800B803
-adc r12,r12, A200             ;  R12=R12+A200=8015A03
-adc r0,r12, C6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldFRA
+movs r12, 0x8000003             ;  R12=8000003
+adc r12,r12, 0xB800             ;  R12=R12+B800=800B803
+adc r12,r12, 0xA200             ;  R12=R12+A200=8015A03
+adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworldFRA
