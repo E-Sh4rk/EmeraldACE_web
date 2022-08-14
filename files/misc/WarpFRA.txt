@@ -1,0 +1,24 @@
+@@ title = "Warp to any map (FRA)"
+@@ author = "Sleipnir17 & E-Sh4rk"
+@@ exit = null
+
+map_id = 0x6B18    ; See https://pastebin.com/Wqsi1EcZ
+
+@@
+
+mvn r12,0xE1
+bic r12,r12,0xED00000
+bic r11,r12,0x1000000E       ;  R11=bx r0 opcpde
+adc r12,lr,0xB0000
+sbc r12,r12,0x30000
+sbc r12,r12,0xAE0
+adc r0,r12,0xD8              ;  R0=CB2_LoadMap2FRA
+adcs r12,pc,0x3B
+str r11, [r12]!              ;  Store bx r0 opcode in [r12] (1 byte before box 14 name)
+sbc r12,lr, 0xD00
+adcs r12,r12, 0x3000000
+bic r12,r12, 0xC8000000
+ldr r11, [r12, 0xA6]!        ;  Load map index address in r11
+movs r12, {map_id} ?3
+strh r12, [r11, 4]           ;  Store new map index in map index address
+

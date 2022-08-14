@@ -177,5 +177,10 @@
     "eng": "pkmn/ChangePokemonMove.txt",
     "fra": "pkmn/ChangePokemonMove.txt",
     "cat": [ "pkmn" ]
+  },
+  {
+    "name": "Warp in any map",
+    "fra": "misc/WarpFRA.txt",
+    "cat": [ "misc" ]
   }
 ]
