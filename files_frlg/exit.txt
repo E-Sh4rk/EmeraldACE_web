@@ -13,7 +13,7 @@ str r12, [r11, 0xEE]!           ;  Store bx r0 opcode
 
 ====================
 
-@@ filename = "WhiteOutENG_FR1.0"
+@@ filename = "WhiteOut_FR_ENG0"
 @@ start = 72
 @@
 
@@ -29,7 +29,7 @@ adc r0,r12, 0xC2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 
 ====================
 
-@@ filename = "WhiteOutENG_FR1.1"
+@@ filename = "WhiteOut_FR_ENG1"
 @@ start = 72
 @@
 
@@ -45,7 +45,7 @@ adc r0,r12, 0xD6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 
 ====================
 
-@@ filename = "WhiteOutITA_FR"
+@@ filename = "WhiteOut_FR_ITA"
 @@ start = 72
 @@
 
@@ -61,7 +61,7 @@ adc r0,r12, 0xDA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 
 ====================
 
-@@ filename = "WhiteOutGER_FR"
+@@ filename = "WhiteOut_FR_GER"
 @@ start = 72
 @@
 
@@ -77,7 +77,7 @@ adc r0,r12, 0xBA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 
 ====================
 
-@@ filename = "WhiteOutSPA_FR"
+@@ filename = "WhiteOut_FR_SPA"
 @@ start = 72
 @@
 
@@ -93,7 +93,7 @@ adc r0,r12, 0xC2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 
 ====================
 
-@@ filename = "WhiteOutFRA_FR"
+@@ filename = "WhiteOut_FR_FRA"
 @@ start = 72
 @@
 
@@ -109,7 +109,7 @@ adc r0,r12, 0xBA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 
 ====================
 
-@@ filename = "WhiteOutENG_LG1.0"
+@@ filename = "WhiteOut_LG_ENG0"
 @@ start = 72
 @@
 
@@ -125,7 +125,7 @@ adc r0,r12, 0xB6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 
 ====================
 
-@@ filename = "WhiteOutENG_LG1.1"
+@@ filename = "WhiteOut_LG_ENG1"
 @@ start = 72
 @@
 
@@ -141,7 +141,7 @@ adc r0,r12, 0xCA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 
 ====================
 
-@@ filename = "WhiteOutITA_LG"
+@@ filename = "WhiteOut_LG_ITA"
 @@ start = 72
 @@
 
@@ -157,7 +157,7 @@ adc r0,r12, 0xAE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 
 ====================
 
-@@ filename = "WhiteOutGER_LG"
+@@ filename = "WhiteOut_LG_GER"
 @@ start = 72
 @@
 
@@ -173,7 +173,7 @@ adc r0,r12, 0xCE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER
 
 ====================
 
-@@ filename = "WhiteOutSPA_LG"
+@@ filename = "WhiteOut_LG_SPA"
 @@ start = 72
 @@
 
@@ -189,7 +189,7 @@ adc r0,r12, 0xD6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA
 
 ====================
 
-@@ filename = "WhiteOutFRA_LG"
+@@ filename = "WhiteOut_LG_FRA"
 @@ start = 72
 @@
 
@@ -205,7 +205,7 @@ adc r0,r12, 0xCE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 
 ====================
 
-@@ filename = "LoadMapENG_1.0"
+@@ filename = "LoadMap_ENG0"
 @@ start = 72
 @@
 
@@ -221,7 +221,7 @@ sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 
 ====================
 
-@@ filename = "LoadMapENG_1.1"
+@@ filename = "LoadMap_ENG1"
 @@ start = 72
 @@
 
@@ -237,7 +237,7 @@ sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 
 ====================
 
-@@ filename = "LoadMapITA"
+@@ filename = "LoadMap_ITA"
 @@ start = 72
 @@
 
@@ -253,7 +253,7 @@ sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 
 ====================
 
-@@ filename = "LoadMapGER"
+@@ filename = "LoadMap_GER"
 @@ start = 72
 @@
 
@@ -269,7 +269,7 @@ sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 
 ====================
 
-@@ filename = "LoadMapSPA"
+@@ filename = "LoadMap_SPA"
 @@ start = 72
 @@
 
@@ -286,7 +286,7 @@ adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 
 ====================
 
-@@ filename = "LoadMapFRA"
+@@ filename = "LoadMap_FRA"
 @@ start = 72
 @@
 
@@ -302,7 +302,7 @@ adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 
 ====================
 
-@@ filename = "ReturnToOverworldENG_1.0"
+@@ filename = "ReturnToOverworld_ENG0"
 @@ start = 72
 @@
 
@@ -318,7 +318,7 @@ sbc r0,r12, 0xA4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldENG_1.1"
+@@ filename = "ReturnToOverworld_ENG1"
 @@ start = 72
 @@
 
@@ -335,7 +335,7 @@ sbc r0,r12, 0xBE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldITA"
+@@ filename = "ReturnToOverworld_ITA"
 @@ start = 72
 @@
 
@@ -352,7 +352,7 @@ sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldGER"
+@@ filename = "ReturnToOverworld_GER"
 @@ start = 72
 @@
 
@@ -369,7 +369,7 @@ sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldSPA"
+@@ filename = "ReturnToOverworld_SPA"
 @@ start = 72
 @@
 
@@ -385,7 +385,7 @@ adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworld
 
 ====================
 
-@@ filename = "ReturnToOverworldFRA"
+@@ filename = "ReturnToOverworld_FRA"
 @@ start = 72
 @@
 
@@ -401,7 +401,7 @@ adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworld
 
 ====================
 
-@@ filename = "WhiteOutShortENG_FR1.0"
+@@ filename = "WhiteOutShort_FR_ENG0"
 @@ start = 92
 @@
 
@@ -412,7 +412,7 @@ adc r0,r12, 0xC2                ;  R0=R12+C2=80CA3C5=SetCB2WhiteOutFrENG_1.0
 
 ====================
 
-@@ filename = "WhiteOutShortENG_FR1.1"
+@@ filename = "WhiteOutShort_FR_ENG1"
 @@ start = 92
 @@
 
@@ -423,7 +423,7 @@ adc r0,r12, 0xD6                ;  R0=R12+D6=80CA3D9=SetCB2WhiteOutFrENG_1.1
 
 ====================
 
-@@ filename = "WhiteOutShortITA_FR"
+@@ filename = "WhiteOutShort_FR_ITA"
 @@ start = 92
 @@
 
@@ -434,7 +434,7 @@ adc r0,r12, 0xDA                ;  R0=R12+DA=80CA55D=SetCB2WhiteOutFrITA
 
 ====================
 
-@@ filename = "WhiteOutShortGER_FR"
+@@ filename = "WhiteOutShort_FR_GER"
 @@ start = 92
 @@
 
@@ -445,7 +445,7 @@ adc r0,r12, 0xBA                ;  R0=R12+BA=80CA57D=SetCB2WhiteOutFrGER
 
 ====================
 
-@@ filename = "WhiteOutShortSPA_FR"
+@@ filename = "WhiteOutShort_FR_SPA"
 @@ start = 92
 @@
 
@@ -456,7 +456,7 @@ adc r0,r12, 0xC2                ;  R0=R12+C2=80CA645=SetCB2WhiteOutFrSPA
 
 ====================
 
-@@ filename = "WhiteOutShortFRA_FR"
+@@ filename = "WhiteOutShort_FR_FRA"
 @@ start = 92
 @@
 
@@ -467,7 +467,7 @@ adc r0,r12, 0xBA                ;  R0=R12+BA=80CA63D=SetCB2WhiteOutFrFRA
 
 ====================
 
-@@ filename = "WhiteOutShortENG_LG1.0"
+@@ filename = "WhiteOutShort_LG_ENG0"
 @@ start = 92
 @@
 
@@ -478,7 +478,7 @@ adc r0,r12, 0xB6                ;  R0=R12+B6=80CA399=SetCB2WhiteOutLgENG_1.0
 
 ====================
 
-@@ filename = "WhiteOutShortENG_LG1.1"
+@@ filename = "WhiteOutShort_LG_ENG1"
 @@ start = 92
 @@
 
@@ -489,7 +489,7 @@ adc r0,r12, 0xCA                ;  R0=R12+CA=80CA3AD=SetCB2WhiteOutLgENG_1.1
 
 ====================
 
-@@ filename = "WhiteOutShortITA_LG"
+@@ filename = "WhiteOutShort_LG_ITA"
 @@ start = 92
 @@
 
@@ -500,7 +500,7 @@ adc r0,r12, 0xAE                ;  %%  R0=R12+AE=80CA531=SetCB2WhiteOutLgITA
 
 ====================
 
-@@ filename = "WhiteOutShortGER_LG"
+@@ filename = "WhiteOutShort_LG_GER"
 @@ start = 92
 @@
 
@@ -511,7 +511,7 @@ adc r0,r12, 0xCE                ;  R0=R12+CE=80CA551=SetCB2WhiteOutLgGER
 
 ====================
 
-@@ filename = "WhiteOutShortSPA_LG"
+@@ filename = "WhiteOutShort_LG_SPA"
 @@ start = 92
 @@
 
@@ -522,7 +522,7 @@ adc r0,r12, 0xD6                ;  R0=R12+D6=80CA619=SetCB2WhiteOutLgSPA
 
 ====================
 
-@@ filename = "WhiteOutShortFRA_LG"
+@@ filename = "WhiteOutShort_LG_FRA"
 @@ start = 92
 @@
 
@@ -533,7 +533,7 @@ adc r0,r12, 0xCE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 
 ====================
 
-@@ filename = "LoadMapShortENG_1.0"
+@@ filename = "LoadMapShort_ENG0"
 @@ start = 92
 @@
 
@@ -544,7 +544,7 @@ sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 
 ====================
 
-@@ filename = "LoadMapShortENG_1.1"
+@@ filename = "LoadMapShort_ENG1"
 @@ start = 92
 @@
 
@@ -555,7 +555,7 @@ sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 
 ====================
 
-@@ filename = "LoadMapShortITA"
+@@ filename = "LoadMapShort_ITA"
 @@ start = 92
 @@
 
@@ -566,7 +566,7 @@ sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 
 ====================
 
-@@ filename = "LoadMapShortGER"
+@@ filename = "LoadMapShort_GER"
 @@ start = 92
 @@
 
@@ -577,7 +577,7 @@ sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 
 ====================
 
-@@ filename = "LoadMapShortSPA"
+@@ filename = "LoadMapShort_SPA"
 @@ start = 92
 @@
 
@@ -589,7 +589,7 @@ adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 
 ====================
 
-@@ filename = "LoadMapShortFRA"
+@@ filename = "LoadMapShort_FRA"
 @@ start = 92
 @@
 
@@ -600,7 +600,7 @@ adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 
 ====================
 
-@@ filename = "ReturnToOverworldShortENG_1.0"
+@@ filename = "ReturnToOverworldShort_ENG0"
 @@ start = 92
 @@
 
@@ -611,7 +611,7 @@ sbc r0,r12, 0xA4                ;  R0=R12-A4-1=8015B59=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldShortENG_1.1"
+@@ filename = "ReturnToOverworldShort_ENG1"
 @@ start = 92
 @@
 
@@ -623,7 +623,7 @@ sbc r0,r12, 0xBE                ;  R0=R12-BE-1=8015B6D=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldShortITA"
+@@ filename = "ReturnToOverworldShort_ITA"
 @@ start = 92
 @@
 
@@ -635,7 +635,7 @@ sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldShortGER"
+@@ filename = "ReturnToOverworldShort_GER"
 @@ start = 92
 @@
 
@@ -647,7 +647,7 @@ sbc r0,r12, 0xED                ;  R0=R12-ED-1=8015ADD=ReturnFromBattleToOverwor
 
 ====================
 
-@@ filename = "ReturnToOverworldShortSPA"
+@@ filename = "ReturnToOverworldShort_SPA"
 @@ start = 92
 @@
 
@@ -658,7 +658,7 @@ adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworld
 
 ====================
 
-@@ filename = "ReturnToOverworldShortFRA"
+@@ filename = "ReturnToOverworldShort_FRA"
 @@ start = 92
 @@
 
