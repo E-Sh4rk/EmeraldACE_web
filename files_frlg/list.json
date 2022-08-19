@@ -1,2 +1,13 @@
 [
+  {
+    "name": "Change PRNG seed and teleport",
+    "eng0": "rng/SeedChangeAndWarp.txt",
+    "eng1": "rng/SeedChangeAndWarp.txt",
+    "fra": "rng/SeedChangeAndWarp.txt",
+    "ger": "rng/SeedChangeAndWarp.txt",
+    "spa": "rng/SeedChangeAndWarp.txt",
+    "ita": "rng/SeedChangeAndWarp.txt",
+    "game":  ["fr", "lg"]
+    "cat": ["rng"]
+  }
 ]
