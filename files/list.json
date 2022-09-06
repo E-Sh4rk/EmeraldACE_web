@@ -115,8 +115,11 @@
   },
   {
     "name": "Create Pokemon species from nothing",
-    "eng": "pkmn/PokemonFromNothingENG.txt",
-    "fra": "pkmn/PokemonFromNothingFRA.txt",
+    "eng": "pkmn/PokemonFromNothingEU.txt",
+    "fra": "pkmn/PokemonFromNothingEU.txt",
+    "ger": "pkmn/PokemonFromNothingEU.txt",
+    "spa": "pkmn/PokemonFromNothingEU.txt",
+    "ita": "pkmn/PokemonFromNothingEU.txt",
     "jap": "pkmn/PokemonFromNothingJAP.txt",
     "cat": ["pkmn","bootstraps"]
   },
@@ -137,6 +140,9 @@
     "name": "Certificate Exit Code Bootstrap",
     "eng": "bootstraps/CertificateExitCodeBootstrapENG.txt",
     "fra": "bootstraps/CertificateExitCodeBootstrapFRA.txt",
+    "ger": "bootstraps/CertificateExitCodeBootstrapGER.txt",
+    "spa": "bootstraps/CertificateExitCodeBootstrapSPA.txt",
+    "ita": "bootstraps/CertificateExitCodeBootstrapITA.txt",
     "jap": "bootstraps/CertificateExitCodeBootstrapJAP.txt",
     "cat": ["bootstraps"]
   },
