@@ -115,12 +115,12 @@
   },
   {
     "name": "Create Pokemon species from nothing",
-    "eng": "pkmn/PokemonFromNothingEU.txt",
-    "fra": "pkmn/PokemonFromNothingEU.txt",
-    "ger": "pkmn/PokemonFromNothingEU.txt",
-    "spa": "pkmn/PokemonFromNothingEU.txt",
-    "ita": "pkmn/PokemonFromNothingEU.txt",
-    "jap": "pkmn/PokemonFromNothingJAP.txt",
+    "eng": "pkmn/PokemonFromNothingNoBootstrap.txt",
+    "fra": "pkmn/PokemonFromNothingNoBootstrap.txt",
+    "ger": "pkmn/PokemonFromNothingNoBootstrap.txt",
+    "spa": "pkmn/PokemonFromNothingNoBootstrap.txt",
+    "ita": "pkmn/PokemonFromNothingNoBootstrap.txt",
+    "jap": "pkmn/PokemonFromNothingNoBootstrap.txt",
     "cat": ["pkmn","bootstraps"]
   },
   {
