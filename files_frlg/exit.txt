@@ -214,7 +214,7 @@ sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
@@ -230,7 +230,7 @@ sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
@@ -246,7 +246,7 @@ sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
@@ -262,7 +262,7 @@ sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
@@ -295,7 +295,7 @@ sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, 0x30               ;  R12=PC+30
 str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
@@ -537,7 +537,7 @@ adc r0,r12, 0xCE                ;  R0=R12+CE=80CA611=SetCB2WhiteOutLgFRA
 @@ start = 92
 @@
 
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
@@ -548,7 +548,7 @@ sbc r0,r12, 0xDF                ;  R0=R12-DF-1=805671D=CB2_LoadMap2ENG_1.0
 @@ start = 92
 @@
 
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
@@ -559,7 +559,7 @@ sbc r0,r12, 0xCB                ;  R0=R12-CB-1=8056731=CB2_LoadMap2ENG_1.1
 @@ start = 92
 @@
 
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
@@ -570,7 +570,7 @@ sbc r0,r12, 0xD3                ;  R0=R12-D3-1=8056729=CB2_LoadMap2ITA
 @@ start = 92
 @@
 
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
@@ -593,7 +593,7 @@ adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
 @@ start = 92
 @@
 
-mvn r12, 0x8000003              ;  R12=notF8000002=7FFFFFD
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0x2E000            ;  R12=R12+2E000=802DFFD
 adc r12,r12, 0x28800            ;  R12=R12+28800=80567FD
 adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
