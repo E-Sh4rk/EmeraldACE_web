@@ -49,14 +49,20 @@
   },
   {
     "name": "Read Pokemon PID",
-    "eng": "pkmn/ReadPidENG.txt",
-    "fra": "pkmn/ReadPidFRA.txt",
+    "eng": "pkmn/ReadPid.txt",
+    "fra": "pkmn/ReadPid.txt",
+    "ger": "pkmn/ReadPid.txt",
+    "spa": "pkmn/ReadPid.txt",
+    "ita": "pkmn/ReadPid.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon OTID",
-    "eng": "pkmn/ReadOtidENG.txt",
-    "fra": "pkmn/ReadOtidFRA.txt",
+    "eng": "pkmn/ReadOtid.txt",
+    "fra": "pkmn/ReadOtid.txt",
+    "ger": "pkmn/ReadOtid.txt",
+    "spa": "pkmn/ReadOtid.txt",
+    "ita": "pkmn/ReadOtid.txt",
     "cat": ["pkmn"]
   },
   {

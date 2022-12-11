@@ -1,5 +1,5 @@
-@@ title = "Read PID (ENG)"
-@@ exit = "CertificateFullENG"
+@@ title = "Read PID"
+@@ exit = "CertificateFull{LANG}"
 @@
 
 ; Store the PID of the second pokemon in the team in its attack and defense stats
