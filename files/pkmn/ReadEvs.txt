@@ -1,4 +1,4 @@
-@@ title = "Read EVs field (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Read EVs field (with exit code bootstrap)"
 @@ exit = "Bootstrapped"
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14

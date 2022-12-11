@@ -1,4 +1,4 @@
-@@ title = "Change Pokerus and Origin Data (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Change Pokerus and Origin Data (with exit code bootstrap)"
 @@ author = "Shao"
 @@ exit = "Bootstrapped"
 

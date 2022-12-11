@@ -67,56 +67,83 @@
   },
   {
     "name": "Read Pokemon IVEA field",
-    "eng": "pkmn/ReadIveaENG.txt",
-    "fra": "pkmn/ReadIveaFRA.txt",
+    "eng": "pkmn/ReadIveaNB.txt",
+    "fra": "pkmn/ReadIveaNB.txt",
+    "ger": "pkmn/ReadIveaNB.txt",
+    "spa": "pkmn/ReadIveaNB.txt",
+    "ita": "pkmn/ReadIveaNB.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon IVs",
-    "eng": "pkmn/ChangeIvsENG.txt",
-    "fra": "pkmn/ChangeIvsFRA.txt",
+    "eng": "pkmn/ChangeIvsNB.txt",
+    "fra": "pkmn/ChangeIvsNB.txt",
+    "ger": "pkmn/ChangeIvsNB.txt",
+    "spa": "pkmn/ChangeIvsNB.txt",
+    "ita": "pkmn/ChangeIvsNB.txt",
     "cat": ["pkmn"]
   },
   {
-    "name": "Change Pokemon IVs and ability  (with exit code bootstrap)",
+    "name": "Change Pokemon IVs and ability (with exit code bootstrap)",
     "eng": "pkmn/ChangeIvs.txt",
     "fra": "pkmn/ChangeIvs.txt",
+    "ger": "pkmn/ChangeIvs.txt",
+    "spa": "pkmn/ChangeIvs.txt",
+    "ita": "pkmn/ChangeIvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon EVs field (with exit code bootstrap)",
     "eng": "pkmn/ReadEvs.txt",
     "fra": "pkmn/ReadEvs.txt",
+    "ger": "pkmn/ReadEvs.txt",
+    "spa": "pkmn/ReadEvs.txt",
+    "ita": "pkmn/ReadEvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon EVs (with exit code bootstrap)",
     "eng": "pkmn/ChangeEvs.txt",
     "fra": "pkmn/ChangeEvs.txt",
+    "ger": "pkmn/ChangeEvs.txt",
+    "spa": "pkmn/ChangeEvs.txt",
+    "ita": "pkmn/ChangeEvs.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon species",
-    "eng": "pkmn/ChangeSpeciesENG.txt",
-    "fra": "pkmn/ChangeSpeciesFRA.txt",
+    "eng": "pkmn/ChangeSpeciesNB.txt",
+    "fra": "pkmn/ChangeSpeciesNB.txt",
+    "ger": "pkmn/ChangeSpeciesNB.txt",
+    "spa": "pkmn/ChangeSpeciesNB.txt",
+    "ita": "pkmn/ChangeSpeciesNB.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon species (with exit code bootstrap)",
     "eng": "pkmn/ChangeSpecies.txt",
     "fra": "pkmn/ChangeSpecies.txt",
+    "ger": "pkmn/ChangeSpecies.txt",
+    "spa": "pkmn/ChangeSpecies.txt",
+    "ita": "pkmn/ChangeSpecies.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Change Pokemon ribbons and obedience (with exit code bootstrap)",
     "eng": "pkmn/ChangeRibbonsObedience.txt",
     "fra": "pkmn/ChangeRibbonsObedience.txt",
+    "ger": "pkmn/ChangeRibbonsObedience.txt",
+    "spa": "pkmn/ChangeRibbonsObedience.txt",
+    "ita": "pkmn/ChangeRibbonsObedience.txt",
     "cat": ["pkmn"]
   },
   {
     "name": "Alter Pokemon checksum",
-    "eng": "pkmn/AlterChecksumENG.txt",
-    "fra": "pkmn/AlterChecksumFRA.txt",
+    "eng": "pkmn/AlterChecksum.txt",
+    "fra": "pkmn/AlterChecksum.txt",
+    "ger": "pkmn/AlterChecksum.txt",
+    "spa": "pkmn/AlterChecksum.txt",
+    "ita": "pkmn/AlterChecksum.txt",
     "cat": ["pkmn"]
   },
   {
@@ -132,7 +159,10 @@
   {
     "name": "Create Pokemon species from nothing (with exit code bootstrap)",
     "eng": "pkmn/PokemonFromNothing.txt",
-     "fra": "pkmn/PokemonFromNothing.txt",
+    "fra": "pkmn/PokemonFromNothing.txt",
+    "ger": "pkmn/PokemonFromNothing.txt",
+    "spa": "pkmn/PokemonFromNothing.txt",
+    "ita": "pkmn/PokemonFromNothing.txt",
     "jap": "pkmn/PokemonFromNothing.txt",
     "cat": ["pkmn","bootstraps"]
   },
@@ -156,6 +186,9 @@
     "name": "Restore 'BX r0' in box 14 name",
     "eng": "bootstraps/RestoreBox14Name.txt",
     "fra": "bootstraps/RestoreBox14Name.txt",
+    "ger": "bootstraps/RestoreBox14Name.txt",
+    "spa": "bootstraps/RestoreBox14Name.txt",
+    "ita": "bootstraps/RestoreBox14Name.txt",
     "cat": ["bootstraps"]
   },
   {
@@ -182,12 +215,18 @@
     "name": "Change Pokemon Pkrs and Origins (with exit code bootstrap)",
     "eng": "pkmn/ChangePokerusOrigin.txt",
     "fra": "pkmn/ChangePokerusOrigin.txt",
+    "ger": "pkmn/ChangePokerusOrigin.txt",
+    "spa": "pkmn/ChangePokerusOrigin.txt",
+    "ita": "pkmn/ChangePokerusOrigin.txt",
     "cat": [ "pkmn" ]
   },
   {
     "name": "Change Pokemon Move (with exit code bootstrap)",
     "eng": "pkmn/ChangePokemonMove.txt",
     "fra": "pkmn/ChangePokemonMove.txt",
+    "ger": "pkmn/ChangePokemonMove.txt",
+    "spa": "pkmn/ChangePokemonMove.txt",
+    "ita": "pkmn/ChangePokemonMove.txt",
     "cat": [ "pkmn" ]
   },
   {

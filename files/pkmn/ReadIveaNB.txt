@@ -1,5 +1,5 @@
-@@ title = "Read IVEA field (FRA)"
-@@ exit = "CertificateFullFRA"
+@@ title = "Read IVEA field"
+@@ exit = "CertificateFull{LANG}"
 
 pid = 0
 

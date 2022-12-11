@@ -1,4 +1,4 @@
-@@ title = "Change move (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Change move (with exit code bootstrap)"
 @@ author = "Shao"
 @@ exit = "Bootstrapped"
 

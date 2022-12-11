@@ -1,4 +1,4 @@
-@@ title = "Change species (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Change species (with exit code bootstrap)"
 @@ author = "E-Sh4rk"
 @@ exit = "Bootstrapped"
 

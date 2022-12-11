@@ -1,6 +1,6 @@
-@@ title = "Change IVs (FRA)"
+@@ title = "Change IVs"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateFRA" ; Note: Change to CertificateShortFRA to preserve box 14 name
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
 
 pid = 0
 otid = 0
