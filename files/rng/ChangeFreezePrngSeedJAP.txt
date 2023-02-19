@@ -1,0 +1,59 @@
+@@ title = "Change and freeze PRNG Seed (JAP)"
+@@ author = "E-Sh4rk & Shao"
+@@ exit = "Bootstrapped"
+
+seed = 0x1234ABCD     ; Should not be 0
+; The seed you write above must be:
+; For wild pokemons with Sweet Scent (will always be H1): 2 cycles before your target seed
+; For mass outbreaks with Sweet Scent (will always be H1): 1 cycle before your target seed
+; For Rayquaza, Deoxys, Kyogre, Regirock (and probably others): 3 cycles before your target seed
+; For Sudowoodo: 6 cycles before your target seed (3 + 3 for the menu navigation involved for using the Wailmer Pail)
+; For Beldum (pokeball): 4 cycles before your target seed (battle must be engaged as fast as possible after closing the menu)
+; For Electrode: 5 cycles before your target seed if both Electrodes are present, 4 cycles otherwise
+
+; In general: Exiting the pokemon menu (or the bag, or the pokedex, etc) advances 3 cycles due the the ASLR.
+; Additionaly, moving npc's and some other map elements will advance some cycles when closing the menu,
+; and will also advance some cycles regularly (more or less) when not in a menu/animation/battle.
+
+; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
+; but for those without NPCs the results are very consistent.
+
+; Here is a tool to show the vicinity of your target seed: https://e-sh4rk.github.io/EmeraldACE_web/scripts/seed/
+
+@@
+
+; As this code uses the exit code Bootstrapped,
+; you have to setup the certificate exit code bootstrap before using it.
+
+; For stationnary pokemons, once the code has been executed and that you have
+; exited the menu, you should start the encounter as soon as possible to
+; avoid additional rng cycles due to the map events (moving npc's, etc).
+
+; For wild pokemons, you should use sweet scent just after executing the code,
+; without exiting the menu to avoid additional cycles. For that,
+; you must have a stable way of triggering ARM ACE (for instance 0x079D),
+; then you should generate a new raw pokemon of species 0xFF, nickname it _ _ D n
+; and place it in the pc, in the slot just after your exit code bootstrap.
+; This will change the exit routine so that it stays in the summary page
+; instead of opening the certificate. More precisely, it does the following:
+; adcs r0, lr, 0
+; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
+; thus it avoids some additional cycles advance that might have depended on the map.
+
+
+; gBattleTypeFlags: 02022C90
+; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
+movs r11, 0x0A20 ;
+movs r12, 0x02022c92 ?
+strh r11, [r12], 0x6
+
+; inBattle: 3002799   ; 3002798 = 02022c92 + FDFB06
+; bit 1 of inBattle must be activated (but preferably not bit 0 and 2)
+add r12, 0xFDFB00 ?
+strh r11, [r12], 0x4A
+
+; PRNG state location: 3005AE0 = 3002798 + 3348
+add r12, 0x3300 ?
+
+movs r11, { seed }  ?
+str r11, [r12]!                %%  Store new seed in PRNG state location

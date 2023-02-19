@@ -195,6 +195,7 @@
     "name": "Change and freeze PRNG Seed",
     "eng": "rng/ChangeFreezePrngSeed.txt",
     "fra": "rng/ChangeFreezePrngSeed.txt",
+	"jap": "rng/ChangeFreezePrngSeedJAP.txt",
     "cat": ["rng"]
   },
   {
