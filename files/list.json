@@ -75,7 +75,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Change Pokemon IVs",
+    "name": "Change Pokemon IVs and ability",
     "eng": "pkmn/ChangeIvsNB.txt",
     "fra": "pkmn/ChangeIvsNB.txt",
     "ger": "pkmn/ChangeIvsNB.txt",
