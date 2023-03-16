@@ -1,0 +1,39 @@
+@@ title = "Read contest stats field (with exit code bootstrap)"
+@@ exit = "Bootstrapped"
+
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+; It stores the (encoded) contest stats fields of the second pokemon in the team in the following stats:
+; - Field 1 (Coolness/Beauty) -> attack stat of the second pkmn
+; - Field 2 (Cuteness/Smartness) -> defense stat of the second pkmn
+; - Field 3 (Toughness/Feel) -> attack stat of the first pkmn
+
+pid = 0
+
+; DO NOT MODIFY THE PARAMETERS BELOW
+pmod = pid % 24
+ev_substructure_position = \
+    pmod == 12 | pmod == 13 | pmod == 14 | pmod == 15 | \
+    pmod == 16 | pmod == 17 ? 0 : \
+    pmod == 2  | pmod == 3  | pmod == 8  | pmod == 9  | \
+    pmod == 22 | pmod == 23 ? 1 : \
+    pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
+    pmod == 19 | pmod == 21 ? 2 : 3
+offset = 32 + 12*ev_substructure_position + 6
+
+@@
+
+; movs r12, { 0x20244ec + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
+MOVS r12, #0x2a40000
+SBC r12, r12, #0xa10000
+SBC r12, r12, #0xba00
+SBC r12, r12, #0xad
+
+ldrh r11, [r12, {offset}]     ; Load field 1 of Pkmn 2
+ldrh r10,  [r12, {offset+2}]  ; Load field 2 of Pkmn 2
+
+strh r11, [r12, #90] ; Store field 1 in Attack stat
+strh r10, [r12, #92] ; Store field 2 in Defense stat
+
+ldrh r11, [r12, {offset+4}]    ; Load field 3 of Pkmn 2
+sbc r12, r12, 0xBA
+strh r11, [r12, {0xBB-10}]     ; Store field 3 in Attack stat of first pokemon

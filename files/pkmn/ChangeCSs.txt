@@ -1,0 +1,72 @@
+@@ title = "Change contest stats (with exit code bootstrap)"
+@@ author = "E-Sh4rk"
+@@ exit = "Bootstrapped"
+
+; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+; The Pokemon must be located in Box 10 Slot 19.
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+pid = 0
+otid = 0
+new_coolness = 0
+new_beauty = 0
+new_cuteness = 0
+new_smartness = 0
+new_toughness = 0
+new_feel = 0
+; You must set either the variables cur_encoded_evsX (use the code "Read contest stats field" to determine their values)...
+cur_encoded_1 = 0
+cur_encoded_2 = 0
+cur_encoded_3 = 0
+; ... OR the variables cur_coolness,cur_beauty,cur_cuteness,cur_smartness,cur_toughness,cur_feel
+cur_coolness = 0
+cur_beauty = 0
+cur_cuteness = 0
+cur_smartness = 0
+cur_toughness = 0
+cur_feel = 0
+
+; DO NOT MODIFY THE PARAMETERS BELOW
+key = pid ^ otid
+
+cur_1_computed = cur_coolness | (cur_beauty << 8)
+cur_2_computed = cur_cuteness| (cur_smartness << 8)
+cur_3_computed = cur_toughness | (cur_feel << 8)
+
+cur_1 = cur_encoded_1 == 0 ? cur_1_computed : cur_encoded_1 ^ (key >> 16)
+cur_2 = cur_encoded_2 == 0 ? cur_2_computed : cur_encoded_2 ^ (key & 0xFFFF)
+cur_3 = cur_encoded_3 == 0 ? cur_3_computed : cur_encoded_3 ^ (key >> 16)
+
+new_1 = new_coolness | (new_beauty << 8)
+new_2 = new_cuteness| (new_smartness << 8)
+new_3 = new_toughness | (new_feel << 8)
+new_encoded_1 = new_1 ^ (key >> 16)
+new_encoded_2 = new_2 ^ (key & 0xFFFF)
+new_encoded_3 = new_3 ^ (key >> 16)
+
+pmod = pid % 24
+ev_substructure_position = \
+    pmod == 12 | pmod == 13 | pmod == 14 | pmod == 15 | \
+    pmod == 16 | pmod == 17 ? 0 : \
+    pmod == 2  | pmod == 3  | pmod == 8  | pmod == 9  | \
+    pmod == 22 | pmod == 23 ? 1 : \
+    pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
+    pmod == 19 | pmod == 21 ? 2 : 3
+base_offset = inaccurate_emu ? -7 : -9
+offset = base_offset + 32 + 12*ev_substructure_position + 6
+checksum_diff = (new_1 + new_2 + new_3) - (cur_1 + cur_2 + cur_3)
+
+@@
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+LDRH r12, [r11, {base_offset + 28}]       ; Load checksum
+ADC r12, r12, {checksum_diff & 0xFFFF} ?
+STRH r12, [r11, {base_offset + 28}]       ; Write checksum
+
+movs r12, {new_encoded_1 + (new_encoded_2 << 16)} ?
+adc r11, r11, {offset} ?
+str r12, [r11, 0]!
+
+movs r12, {new_encoded_3} ?
+strh r12, [r11, 4]

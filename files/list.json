@@ -111,6 +111,24 @@
     "cat": ["pkmn"]
   },
   {
+    "name": "Read Pokemon contest stats field (with exit code bootstrap)",
+    "eng": "pkmn/ReadCSs.txt",
+    "fra": "pkmn/ReadCSs.txt",
+    "ger": "pkmn/ReadCSs.txt",
+    "spa": "pkmn/ReadCSs.txt",
+    "ita": "pkmn/ReadCSs.txt",
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon contest stats (with exit code bootstrap)",
+    "eng": "pkmn/ChangeCSs.txt",
+    "fra": "pkmn/ChangeCSs.txt",
+    "ger": "pkmn/ChangeCSs.txt",
+    "spa": "pkmn/ChangeCSs.txt",
+    "ita": "pkmn/ChangeCSs.txt",
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Change Pokemon species",
     "eng": "pkmn/ChangeSpeciesNB.txt",
     "fra": "pkmn/ChangeSpeciesNB.txt",
