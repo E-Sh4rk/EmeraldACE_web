@@ -1,0 +1,34 @@
+@@ title = "Change experience"
+@@ author = "leo60228"
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
+
+pid = 0
+otid = 0
+cur_exp = 0
+new_exp = 0
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+pmod = pid % 24
+growth_substructure_position = \
+    pmod == 0  | pmod == 1  | pmod == 2  | pmod == 3  | \
+    pmod == 4  | pmod == 5 ? 0 : \
+    pmod == 6  | pmod == 7  | pmod == 12 | pmod == 13 | \
+    pmod == 18 | pmod == 19 ? 1 : \
+    pmod == 8  | pmod == 10 | pmod == 14 | pmod == 16 | \
+    pmod == 20 | pmod == 22 ? 2 : 3
+key = pid ^ otid
+encoded_exp = new_exp ^ key
+offset = 32 + 12*growth_substructure_position + 4
+checksum_diff ? = new_exp - cur_exp
+
+@@
+
+; The Pokemon must be located in Box 10 Slot 19.
+; Use the Alter_checksum code directly after this one
+; (without looking at the box 10, or the Pokemon will be turned into a bad egg).
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+movs r12, {encoded_species} ?
+adc r11, r11, {offset-(inaccurate_emu?7:9)} ?
+strh r12, [r11, 0]!

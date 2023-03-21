@@ -147,6 +147,24 @@
     "cat": ["pkmn"]
   },
   {
+    "name": "Change Pokemon experience",
+    "eng": "pkmn/ChangeExpNB.txt",
+    "fra": "pkmn/ChangeExpNB.txt",
+    "ger": "pkmn/ChangeExpNB.txt",
+    "spa": "pkmn/ChangeExpNB.txt",
+    "ita": "pkmn/ChangeExpNB.txt",
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon experience (with exit code bootstrap)",
+    "eng": "pkmn/ChangeExp.txt",
+    "fra": "pkmn/ChangeExp.txt",
+    "ger": "pkmn/ChangeExp.txt",
+    "spa": "pkmn/ChangeExp.txt",
+    "ita": "pkmn/ChangeExp.txt",
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Change Pokemon ribbons and obedience (with exit code bootstrap)",
     "eng": "pkmn/ChangeRibbonsObedience.txt",
     "fra": "pkmn/ChangeRibbonsObedience.txt",
