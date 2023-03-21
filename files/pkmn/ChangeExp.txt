@@ -33,6 +33,6 @@ LDRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Load checksum
 ADC r12, r12, {checksum_diff & 0xFFFF} ?
 STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
 
-movs r12, {encoded_species} ?
+movs r12, {encoded_exp} ?
 adc r11, r11, {offset-(inaccurate_emu?7:9)} ?
 strh r12, [r11, 0]!
