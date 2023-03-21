@@ -21,7 +21,7 @@ growth_substructure_position = \
 key = pid ^ otid
 encoded_exp = new_exp ^ key
 offset = 32 + 12*growth_substructure_position + 4
-checksum_diff = new_exp - cur_exp
+checksum_diff = ((new_exp & 0xFFFF) + (new_exp >> 16)) - ((cur_exp & 0xFFFF) + (cur_exp >> 16))
 
 @@
 
