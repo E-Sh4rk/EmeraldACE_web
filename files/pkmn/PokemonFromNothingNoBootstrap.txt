@@ -12,6 +12,6 @@ inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
-movs r12, {species & 0xFFFF} ?
+mov r12, {species & 0xFFFF} ?
 strh r12, [r11, {28-(inaccurate_emu?7:9)}]!
 strh r12, [r11, 4]!

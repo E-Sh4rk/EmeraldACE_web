@@ -43,8 +43,8 @@ seed = 0x1234ABCD     ; Should not be 0
 
 ; gBattleTypeFlags: 02022C90
 ; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
-movs r11, 0x0A20 ;
-movs r12, 0x02022c92 ?
+mov r11, 0x0A20 ;
+mov r12, 0x02022c92 ?
 strh r11, [r12], 0x6
 
 ; inBattle: 3002799   ; 3002798 = 02022c92 + FDFB06
@@ -55,5 +55,5 @@ strh r11, [r12], 0x4A
 ; PRNG state location: 3005AE0 = 3002798 + 3348
 add r12, 0x3300 ?
 
-movs r11, { seed }  ?
+mov r11, { seed }  ?
 str r11, [r12]!                %%  Store new seed in PRNG state location
