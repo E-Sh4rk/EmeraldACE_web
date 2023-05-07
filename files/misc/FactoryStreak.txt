@@ -13,6 +13,6 @@ mode=0    ; 0 for single, 1 for double
 ; + 2 for open level
 ; + 4 for double
 
-sbc r11, pc, {0xC316 + 10 - 2*lvl - 4*mode} ?   ; SYSTEM_FLAGS + 0x30
+sbc r11, pc, {0xC316 + 10 - 2*lvl - 4*mode - 1} ?
 movs r12, {streak} ?
 strh r12, [r11]
