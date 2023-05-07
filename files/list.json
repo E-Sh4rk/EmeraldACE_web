@@ -270,14 +270,5 @@
     "name": "Warp in any map",
     "fra": "misc/WarpFRA.txt",
     "cat": [ "misc" ]
-  },
-  {
-    "name": "Change current streak at battle factory",
-    "eng": "misc/FactoryStreak.txt",
-    "fra": "misc/FactoryStreak.txt",
-    "ger": "misc/FactoryStreak.txt",
-    "spa": "misc/FactoryStreak.txt",
-    "ita": "misc/FactoryStreak.txt",
-    "cat": [ "misc" ]
   }
 ]
