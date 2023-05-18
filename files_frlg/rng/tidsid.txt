@@ -1,0 +1,17 @@
+@@ title = "Change TID SID"
+@@ author = "Shao & Papa Jefe"
+@@ exit = "CommonExit"
+
+tid = 00000
+sid = 00000
+
+@@
+
+
+
+sbc r0, pc, #0xE2
+sbcs r12, r15, #0xd100
+movs r11, {tid} ?
+strh r11, [r12, #0x30] 
+movs r11, {sid} ?
+strh r11, [r12, #0x32] 
