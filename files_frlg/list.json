@@ -9,5 +9,16 @@
     "ita": "rng/SeedChangeAndWarpEU.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
+  },
+  {
+    "name": "Change TID and SID",
+    "eng1": "rng/tidsid.txt",
+    "eng0": "rng/tidsid.txt",
+    "fra": "rng/tidsid.txt",
+    "ger": "rng/tidsid.txt",
+    "spa": "rng/tidsid.txt",
+    "ita": "rng/tidsid.txt",
+    "game": ["fr", "lg"],
+    "cat": ["rng"]
   }
 ]
