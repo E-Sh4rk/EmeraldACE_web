@@ -1,6 +1,6 @@
 @@ title = "Level Pokemon in Daycare to 100"
 @@ author = "Shao + PapaJefe"
-@@ exit = "Bootstrapped"; 
+@@ exit = "CertificateENG"; 
 
 ;This code instantly levels the Pokemon in Daycare slots 1 & 2 to 100, by adding a sufficient number steps to the counter to cap out any Pokemon's EXP. You can use it with either 1 or 2 Pokemon at a time. Just insert desired Pokemon, execute code, and take them out.
 
