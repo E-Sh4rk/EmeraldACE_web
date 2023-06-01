@@ -279,5 +279,14 @@
     "name": "Warp in any map",
     "fra": "misc/WarpFRA.txt",
     "cat": [ "misc" ]
+  },
+  {
+    "name": "Change Roamer Species",
+    "eng": "misc/ChangeRoamerSpecies.txt",
+    "fra": "misc/ChangeRoamerSpecies.txt",
+    "ger": "misc/ChangeRoamerSpecies.txt",
+    "spa": "misc/ChangeRoamerSpecies.txt",
+    "ita": "misc/ChangeRoamerSpecies.txt",
+    "cat": ["misc"]
   }
 ]
