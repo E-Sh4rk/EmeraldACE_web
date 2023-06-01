@@ -1,0 +1,20 @@
+@@ title = "Change Roamer Species"
+@@ author = "Sleipnir"
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as PID and IVs will be the ones from the last active roamer.
+
+species_index = 0
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+sbc r11,pc,0xBA00
+adc r11,r11,0X29C0
+movs r12, {species_index & 0xFFFF} ?
+strh r12, [r11,{inaccurate_emu ? 0xD1 : 0xCF}]  %%    Store species index in roamer location
+movs r12,0XEE
+sbc r12,r12,0XEC
+strb r12, [r11,{inaccurate_emu ? 0xDC : 0xDA}]  %%    Activate roamer
