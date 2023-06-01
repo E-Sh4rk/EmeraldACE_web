@@ -267,6 +267,15 @@
     "cat": [ "pkmn" ]
   },
   {
+    "name": "Level Pokemon in DayCare to 100",
+    "eng": "misc/Daycare100.txt",
+    "fra": "misc/Daycare100.txt",
+    "ger": "misc/Daycare100.txt",
+    "spa": "misc/Daycare100.txt",
+    "ita": "misc/Daycare100.txt",
+    "cat": [ "misc" ]
+  },
+  {
     "name": "Warp in any map",
     "fra": "misc/WarpFRA.txt",
     "cat": [ "misc" ]
