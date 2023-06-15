@@ -290,7 +290,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Change Current Streak (with exit code bootstrap)",
+    "name": "Change Current Streak at Battle Factory (with exit code bootstrap)",
     "eng": "misc/ChangeCurrentStreakBF.txt",
     "fra": "misc/ChangeCurrentStreakBF.txt",
     "ger": "misc/ChangeCurrentStreakBF.txt",
