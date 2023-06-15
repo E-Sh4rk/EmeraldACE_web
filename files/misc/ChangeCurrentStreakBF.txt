@@ -1,0 +1,31 @@
+@@ title = "Change current streak at battle factory"
+@@ author = "E-Sh4rk"
+@@ exit = "Bootstrapped"
+
+; This code requires the exit code bootstrap
+
+streak=41
+lvl=0     ; 0 for level50, 1 for open level
+mode=0    ; 0 for single, 1 for double
+already_active=0   ; 0 if no current streak, 1 otherwise
+
+; DO NOT MODIFY
+activeflag = already_active ? 0 : 1 << (8+lvl)
+
+@@
+
+; gSaveBlock2Ptr->frontier.factoryWinStreaks (0xDE2 offset from gSaveBlock2Ptr)
+; -0xC316 offset from box 1 name
+; + 2 for open level
+; + 4 for double
+; gSaveBlock2Ptr->frontier.winStreakActiveFlags (0xCDC offset from gSaveBlock2Ptr)
+; -0xC41C offset from box 1 name, -0x106 from factoryWinStreaks
+
+sbc r11, pc, {0xC316 + 10 - 2*lvl - 4*mode - 1} ?
+movs r12, {streak} ?
+strh r12, [r11]
+
+sbc r11, r11, {0x106 + (2*lvl + 4*mode) - 2*mode - 1} ?
+ldrh r12, [r11]
+adc r12, r12, {activeflag} ?
+strh r12, [r11]
