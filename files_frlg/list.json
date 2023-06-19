@@ -7,6 +7,8 @@
     "ger": "rng/SeedChangeAndWarpEU.txt",
     "spa": "rng/SeedChangeAndWarpEU.txt",
     "ita": "rng/SeedChangeAndWarpEU.txt",
+    "jap0": "rng/SeedChangeAndWarpJP0.txt",
+    "jap1": "rng/SeedChangeAndWarpJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
   },
