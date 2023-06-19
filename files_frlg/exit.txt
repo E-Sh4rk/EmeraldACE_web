@@ -610,11 +610,12 @@ ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2JAP_1.0
 ====================
 
 @@ filename = "LoadMapShort_JAP1"
-@@ start = 104
+@@ start = 96
 @@
 
-ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2JAP_1.1
-0x08055FB9                      ;  Data loaded, not executed
+ldr r0, [r15]                   ;  Load CB2_LoadMap2JAP_1.1 - 4
+0x08055FB5                      ;  Data loaded, not executed
+add r0, r0, 4                   ;  R0=Load CB2_LoadMap2JAP_1.1
 
 ====================
 
