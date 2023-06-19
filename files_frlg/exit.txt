@@ -600,6 +600,24 @@ adc r0,r12, 0x0                 ;  R0=R12+0=80567FD=CB2_LoadMap2FRA
 
 ====================
 
+@@ filename = "LoadMapShort_JAP0"
+@@ start = 104
+@@
+
+ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2JAP_1.0
+0x08055FDD                      ;  Data loaded, not executed
+
+====================
+
+@@ filename = "LoadMapShort_JAP1"
+@@ start = 104
+@@
+
+ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2JAP_1.1
+0x08055FB9                      ;  Data loaded, not executed
+
+====================
+
 @@ filename = "ReturnToOverworldShort_ENG0"
 @@ start = 92
 @@
