@@ -297,5 +297,14 @@
     "spa": "misc/ChangeCurrentStreakBF.txt",
     "ita": "misc/ChangeCurrentStreakBF.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokemon OT name",
+    "eng": "pkmn/ChangeOTName.txt",
+    "fra": "pkmn/ChangeOTName.txt",
+    "ger": "pkmn/ChangeOTName.txt",
+    "spa": "pkmn/ChangeOTName.txt",
+    "ita": "pkmn/ChangeOTName.txt",
+    "cat": ["pkmn"]
   }
 ]

@@ -1,0 +1,25 @@
+@@ title = "Change Pokemon OT Name"
+@@ author = "E-Sh4rk"
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
+
+; The Pokemon must be located in Box 10 Slot 19.
+; Charset: https://bulbapedia.bulbagarden.net/wiki/Character_encoding_(Generation_III)
+letter1 = 0
+letter2 = 0
+letter3 = 0
+letter4 = 0
+start   = 0 ; 0 for characters 1-4, 1 for characters 5-7
+; For characters 5-7, letter4 corresponds to marking. You can set it to 0.
+
+; Don't touch parameters below
+
+le_encoding = letter1 | (letter2 << 8) | (letter3 << 16) | (letter4 << 24)
+offset = 20 - 9 + start*4
+
+@@
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+adc r11, r11, {offset}   ?
+movs r12, {le_encoding}  ?
+str r12, [r11, #0]!
