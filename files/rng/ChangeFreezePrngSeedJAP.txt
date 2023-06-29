@@ -39,6 +39,8 @@ seed = 0x1234ABCD     ; Should not be 0
 ; adcs r0, lr, 0
 ; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
 ; thus it avoids some additional cycles advance that might have depended on the map.
+; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
+
 
 
 ; gBattleTypeFlags: 02022C90

@@ -34,14 +34,15 @@ seed = 0x1234ABCD     ; Should not be 0
 ; you must have a stable way of triggering ACE (for instance 0x40E9 (ENG) or 0x40ED (FRA)),
 ; then you should capture a new pokemon and rename it ␣ ␣ D n ’ J k l ␣ ␣
 ; and place it in the pc, in the slot just after your exit code bootstrap
-; (it should not be the last slot of box 14).
+; (it should not be the last slot of box 14 and the next slot should be free).
 ; This will change the exit routine so that it stays in the summary page
 ; instead of opening the certificate. More precisely, it does the following:
 ; adcs r0, lr, 0
 ; ldrh r12, [pc], 0x44
 ; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
 ; thus it avoids some additional cycles advance that might have depended on the map.
-; Note that if you are using a semi-stable species such as the french 0x40ED,
+; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
+; Also note that if you are using a semi-stable species such as the french 0x40ED,
 ; you might need to open the summary of an adjacent pokemon, go to the moves
 ; page, and then switch to the 0x40ED moves page to avoid a crash.
 
