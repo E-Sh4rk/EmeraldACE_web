@@ -89,8 +89,8 @@ adc r0,r12, 0xD1                ;  R0=R12+D1=8014085=ReturnFromBattleToOverworld
 
 mvn r11, 0xFF00000              ;  R11=notFF00000=F00FFFFF
 sbc r11, r11, 0xEE00000         ;  R11=R11-EE00000-1=E12FFFFE
-sbc r11, r11, 0xED              ;  R11=R12-ED-1=E12FFF10="bx r0" opcode
-str r11, [r12, 0x30]            ;  Store bx r0 opcode in [r12]
+sbc r11, r11, 0xED              ;  R11=R11-ED-1=E12FFF10="bx r0" opcode
+str r11, [r15, 0x30]            ;  Store bx r0 opcode in [r12]
 mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0xCF00             ;  R12=R12+CF00=800CEFD
 adc r12,r12, 0x3FC0             ;  R12=R12+3FC0=8010EBD
