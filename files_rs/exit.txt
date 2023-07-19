@@ -1,1 +1,97 @@
+@@ filename = "ReturnToOverworld_ENG"
+@@ start = 72
+@@
 
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
+str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x394              ;  R12=R12+394=8000391
+sbc r12,r12, 0x2C000            ;  R12=R12-2C000-1=7FD4390
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8013F90
+sbc r0,r12, 0xDE                ;  R0=R12-DE-1=8013EB1=ReturnFromBattleToOverworldENG
+
+====================
+
+@@ filename = "ReturnToOverworld_ITA"
+@@ start = 72
+@@
+
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
+str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x394              ;  R12=R12+394=8000391
+sbc r12,r12, 0x2C000            ;  R12=R12-2C000-1=7FD4390
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8013F90
+adc r0,r12, 0xED                ;  R0=R12+ED=801407D=ReturnFromBattleToOverworldITA
+
+====================
+
+@@ filename = "ReturnToOverworld_GER"
+@@ start = 72
+@@
+
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
+str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x3B8              ;  R12=R12+B8=80003B5
+sbc r12,r12, 0x2C000            ;  R12=R12-2C000-1=7FD43B4
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8013FB4
+adc r0,r12, 0xD1                ;  R0=R12+D1=8014085=ReturnFromBattleToOverworldGER
+
+====================
+
+@@ filename = "ReturnToOverworld_SPA"
+@@ start = 72
+@@
+
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
+str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x394              ;  R12=R12+394=8000391
+sbc r12,r12, 0x2C000            ;  R12=R12-2C000-1=7FD4390
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8013F90
+adc r0,r12, 0xED                ;  R0=R12+ED=801407D=ReturnFromBattleToOverworldSPA
+
+====================
+
+@@ filename = "ReturnToOverworld_FRA"
+@@ start = 72
+@@
+
+mvn r11, 0xEE00000              ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, 0x30               ;  R12=PC+30
+str r11, [r12]!                 ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0x3B8              ;  R12=R12+B8=80003B5
+sbc r12,r12, 0x2C000            ;  R12=R12-2C000-1=7FD43B4
+adc r12,r12, 0x3FC00            ;  R12=R12+3FC00=8013FB4
+adc r0,r12, 0xD1                ;  R0=R12+D1=8014085=ReturnFromBattleToOverworldFRA
+
+====================
+
+@@ filename = "ReturnToOverworld_JAP"
+@@ start = 80
+@@
+
+mvn r11, 0xFF00000              ;  R11=notFF00000=F00FFFFF
+sbc r11, r11, 0xEE00000         ;  R11=R11-EE00000-1=E12FFFFE
+sbc r11, r11, 0xED              ;  R11=R12-ED-1=E12FFF10="bx r0" opcode
+str r11, [r12, 0x30]            ;  Store bx r0 opcode in [r12]
+mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
+adc r12,r12, 0xCF00             ;  R12=R12+CF00=800CEFD
+adc r12,r12, 0x3FC0             ;  R12=R12+3FC0=8010EBD
+adc r0,r12, 0x2FC               ;  R0=R12+2FC=80111B9=ReturnFromBattleToOverworldJAP
