@@ -287,6 +287,7 @@
     "ger": "misc/ChangeRoamerSpecies.txt",
     "spa": "misc/ChangeRoamerSpecies.txt",
     "ita": "misc/ChangeRoamerSpecies.txt",
+    "jap": "misc/ChangeRoamerSpeciesJAP.txt",
     "cat": ["misc"]
   },
   {
