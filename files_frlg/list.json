@@ -22,5 +22,18 @@
     "ita": "rng/tidsid.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
+  },
+  {
+    "name": "Change Roamer Species",
+    "eng1": "misc/ChangeRoamerSpecies.txt",
+    "eng0": "misc/ChangeRoamerSpecies.txt",
+    "fra": "misc/ChangeRoamerSpecies.txt",
+    "ger": "misc/ChangeRoamerSpecies.txt",
+    "spa": "misc/ChangeRoamerSpecies.txt",
+    "ita": "misc/ChangeRoamerSpecies.txt",
+    "jap0": "misc/ChangeRoamerSpeciesJAP.txt",
+    "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
