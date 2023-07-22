@@ -1,0 +1,21 @@
+@@ title = "Change Roamer Species"
+@@ author = "Sleipnir"
+@@ exit = "CommonExitJAP"
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as PID and IVs will be the ones from the last active roamer.
+; If you activated the roamer with this code you'll not see it in the Pokédex untill you do
+; some kind of refresh, such as going indoor or flying somewhere
+; The species you must look the area for is still the regular roamer species, not the new one.
+
+species_index = 0xFB
+
+@@
+
+0x4700A000            %%  Switch to ARM
+movs r12,0X1
+sbc r11,pc,0x9100
+strb r12, [r11,0xCC]  %%    Activate roamer
+mov r12, {species_index & 0xFFFF} ?
+strh r12, [r11,0xC1]  %%    Store species index in roamer location
