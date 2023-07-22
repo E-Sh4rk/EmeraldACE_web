@@ -13,6 +13,18 @@ str r12, [r11, 0xEE]!           ;  Store bx r0 opcode
 
 ====================
 
+@@ filename = "CommonExitJAP"
+@@ start = 96
+@@
+
+sbc r0, pc, 0x144               ;  R0=PC-140-1
+mvn r12, 0xEE00000              ;  R12=notEE00000=F11FFFFF
+sbc r12, r12, 0xED              ;  R12=R12-ED-1=F11FFF11
+sbc r12, r12, 0xFF00000         ;  R12=R12-FF00000-1=E12FFF10="bx r0" opcode
+str r12, [pc, 0xC]!             ;  Store bx r0 opcode
+
+====================
+
 @@ filename = "WhiteOut_FR_ENG0"
 @@ start = 72
 @@
