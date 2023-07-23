@@ -14,7 +14,7 @@
     "ita0": "misc/ChangeRoamerSpecies.txt",
     "jap0": "misc/ChangeRoamerSpeciesJAP.txt",
     "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
-    "game": ["r", "s"],
+    "game": ["ruby", "sapp"],
     "cat": ["misc"]
   }
 ]
