@@ -1,6 +1,6 @@
 @@ title = "Change Roamer Species"
 @@ author = "Sleipnir"
-@@ exit = "ReturnToOverworld_{LANG}"
+@@ exit = "ReturnToOverworld_{LANGNR}"
 
 ; This code can be executed both if you already have an active roamer or not,
 ; either way the chosen roamer will be active.
