@@ -1,3 +1,20 @@
 [
-
+  {
+    "name": "Change Roamer Species",
+    "eng2": "misc/ChangeRoamerSpecies.txt",
+    "eng1": "misc/ChangeRoamerSpecies.txt",
+    "eng0": "misc/ChangeRoamerSpecies.txt",
+    "fra1": "misc/ChangeRoamerSpecies.txt",
+    "fra0": "misc/ChangeRoamerSpecies.txt",
+    "ger1": "misc/ChangeRoamerSpecies.txt",
+    "ger0": "misc/ChangeRoamerSpecies.txt",
+    "spa1": "misc/ChangeRoamerSpecies.txt",
+    "spa0": "misc/ChangeRoamerSpecies.txt",
+    "ita1": "misc/ChangeRoamerSpecies.txt",
+    "ita0": "misc/ChangeRoamerSpecies.txt",
+    "jap0": "misc/ChangeRoamerSpeciesJAP.txt",
+    "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
+    "game": ["r", "s"],
+    "cat": ["misc"]
+  }
 ]
