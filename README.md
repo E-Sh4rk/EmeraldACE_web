@@ -1,4 +1,3 @@
 # EmeraldACE_web
-Web repository featuring tools about Pokemon Emerald Arbitrary Code Execution
 
-[https://e-sh4rk.github.io/EmeraldACE_web/](https://e-sh4rk.github.io/EmeraldACE_web/)
+Web repository that stores predefined ACE codes for [https://e-sh4rk.github.io/CodeGenerator/](https://e-sh4rk.github.io/CodeGenerator/)
