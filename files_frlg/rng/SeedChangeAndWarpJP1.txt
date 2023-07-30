@@ -3,7 +3,7 @@
 @@ exit = "LoadMapShort_JAP1"
 
 ; This code will set the current seed to the value specified in "seed" and will teleport to the location corresponding to the value specified in "map_id"
-; If you don't know how to properly use this code you can check this guide: https://e-sh4rk.github.io/EmeraldACE_web/doc/SeedChangeAndWarp_Guide.pdf
+; If you don't know how to properly use this code you can check this guide: https://e-sh4rk.github.io/CodeGenerator/doc/SeedChangeAndWarp_Guide.pdf
 ; Please set the seed and the map_id below.
 ; If your seed or map_id are written in hexadecimal, you must use the prefix 0x.
 ; For instance, for the seed 1234ABCD, you must write 0x1234ABCD.

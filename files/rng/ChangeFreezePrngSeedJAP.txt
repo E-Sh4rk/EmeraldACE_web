@@ -18,7 +18,7 @@ seed = 0x1234ABCD     ; Should not be 0
 ; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
 ; but for those without NPCs the results are very consistent.
 
-; Here is a tool to show the vicinity of your target seed: https://e-sh4rk.github.io/EmeraldACE_web/scripts/seed/
+; Here is a tool to show the vicinity of your target seed: https://e-sh4rk.github.io/CodeGenerator/scripts/seed/
 
 @@
 
