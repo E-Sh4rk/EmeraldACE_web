@@ -291,6 +291,26 @@
     "cat": ["misc"]
   },
   {
+    "name": "Change Roamer IVs",
+    "eng": "misc/ChangeRoamerIVs.txt",
+    "fra": "misc/ChangeRoamerIVs.txt",
+    "ger": "misc/ChangeRoamerIVs.txt",
+    "spa": "misc/ChangeRoamerIVs.txt",
+    "ita": "misc/ChangeRoamerIVs.txt",
+    "jap": "misc/ChangeRoamerIVsJAP.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Roamer PID",
+    "eng": "misc/ChangeRoamerPID.txt",
+    "fra": "misc/ChangeRoamerPID.txt",
+    "ger": "misc/ChangeRoamerPID.txt",
+    "spa": "misc/ChangeRoamerPID.txt",
+    "ita": "misc/ChangeRoamerPID.txt",
+    "jap": "misc/ChangeRoamerPIDJAP.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Change Current Streak at Battle Factory (with exit code bootstrap)",
     "eng": "misc/ChangeCurrentStreakBF.txt",
     "fra": "misc/ChangeCurrentStreakBF.txt",
