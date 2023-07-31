@@ -1,0 +1,19 @@
+@@ title = "Change Roamer PID"
+@@ author = "Sleipnir"
+@@ exit = "ReturnToOverworld_{LANGNR}"
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as species and IVs will be the ones from the last active roamer.
+
+PID = 0x1234ABCD
+
+@@
+
+adcs r11,pc,0x2C0
+movs r12,0XEE
+sbc r11,r11,0XFF00
+sbc r12,r12,0XEC
+strb r12, [r11,0xE0]       %%    Activate roamer
+movs r12, {PID} ?
+str r12, [r11, 0xD1]!      %%    Store PID in roamer location
