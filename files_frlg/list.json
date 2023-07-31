@@ -35,5 +35,31 @@
     "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Roamer IVs",
+    "eng1": "misc/ChangeRoamerIVs.txt",
+    "eng0": "misc/ChangeRoamerIVs.txt",
+    "fra": "misc/ChangeRoamerIVs.txt",
+    "ger": "misc/ChangeRoamerIVs.txt",
+    "spa": "misc/ChangeRoamerIVs.txt",
+    "ita": "misc/ChangeRoamerIVs.txt",
+    "jap0": "misc/ChangeRoamerIVsJAP.txt",
+    "jap1": "misc/ChangeRoamerIVsJAP.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Roamer PID",
+    "eng1": "misc/ChangeRoamerPID.txt",
+    "eng0": "misc/ChangeRoamerPID.txt",
+    "fra": "misc/ChangeRoamerPID.txt",
+    "ger": "misc/ChangeRoamerPID.txt",
+    "spa": "misc/ChangeRoamerPID.txt",
+    "ita": "misc/ChangeRoamerPID.txt",
+    "jap0": "misc/ChangeRoamerPIDJAP.txt",
+    "jap1": "misc/ChangeRoamerPIDJAP.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
