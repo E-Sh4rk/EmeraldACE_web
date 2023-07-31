@@ -1,0 +1,18 @@
+@@ title = "Change Roamer PID"
+@@ author = "Sleipnir"
+@@ exit = "CommonExitJAP"
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as species and IVs will be the ones from the last active roamer.
+
+PID = 0x1234ABCD
+
+@@
+
+0x4700A000             %%    Switch to ARM
+movs r12,0X1
+sbc r11,pc,0x9100
+strb r12, [r11,0xCC]   %%    Activate roamer
+movs r12, {PID} ?
+str r12, [r11, 0xBD]!  %%    Store PID in roamer location
