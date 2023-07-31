@@ -1,0 +1,20 @@
+@@ title = "Change Roamer PID"
+@@ author = "Sleipnir"
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as species and IVs will be the ones from the last active roamer.
+
+PID = 0x1234ABCD
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+sbc r11,pc,0xBA00
+adc r11,r11,0X29C0
+mvn r12,0X3FC
+bic r12,r12,0XE2
+strb r12, [r11,{inaccurate_emu ? 0xDC : 0xDA}]  %%    Activate roamer
+movs r12, {PID} ?
+str r12, [r11, 0xCD]!                           %%    Store PID in roamer location

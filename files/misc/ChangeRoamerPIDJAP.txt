@@ -1,0 +1,18 @@
+@@ title = "Change Roamer PID"
+@@ author = "Sleipnir"
+@@ exit = "CertificateJAP"
+
+; This code can be executed both if you already have an active roamer or not,
+; either way the chosen roamer will be active.
+; Features such as species and IVs will be the ones from the last active roamer.
+
+PID = 0x1234ABCD
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+sbc r11,pc,0x9000
+movs r12, {PID} ?
+str r12, [r11, 0x8D]!  %%    Store PID in roamer location
+movs r12,0X1
+strb r12, [r11,{inaccurate_emu ? 0x9C : 0x9A}]  %%    Activate roamer
