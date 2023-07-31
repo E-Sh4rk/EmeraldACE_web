@@ -1,10 +1,10 @@
 @@ filename = "CertificateENG"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1                ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000       ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E      ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30            ;  R12=PC+30
 str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 sbc r12,lr, #0x2C40           ;  R12=LR-2C40-1
@@ -16,12 +16,12 @@ sbc r0,r12, #0xB0             ;  R0=R12-B0-1=????ENG
 ====================
 
 @@ filename = "CertificateFRA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1                ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000       ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E      ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30            ;  R12=PC+30
 str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE30            ;  R12=LR+E30
@@ -32,12 +32,12 @@ adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
 ====================
 
 @@ filename = "CertificateGER"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1                  ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000         ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E        ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30              ;  R12=PC+30
 str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE10              ;  R12=LR+E10
@@ -48,12 +48,12 @@ adc r0,r12, #0xE2               ;  R0=R12+E2=????GER
 ====================
 
 @@ filename = "CertificateITA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1                ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000       ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E      ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30            ;  R12=PC+30
 str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE00            ;  R12=LR+E00
@@ -64,12 +64,12 @@ adc r0,r12, #0xDE             ;  R0=R12+DE=????ITA
 ====================
 
 @@ filename = "CertificateSPA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1                ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000       ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E      ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30            ;  R12=PC+30
 str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE10            ;  R12=LR+E10
@@ -95,12 +95,12 @@ BX r0
 ====================
 
 @@ filename = "WhiteOutENG"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1            ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000   ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E  ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000        ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED        ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30        ;  R12=PC+30
 str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xDC0        ;  R12=LR+DC0
@@ -111,12 +111,12 @@ adc r0,r12, #0xD6         ;  R0=R12+D6=SetCB2WhiteOutENG
 ====================
 
 @@ filename = "WhiteOutFRA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1            ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000   ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E  ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000        ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED        ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30        ;  R12=PC+30
 str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xA10        ;  R12=LR+A10
@@ -127,12 +127,12 @@ adc r0,r12, #0xC8         ;  R0=R12+C8=SetCB2WhiteOutFRA
 ====================
 
 @@ filename = "WhiteOutGER"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1            ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000   ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E  ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000        ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED        ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30        ;  R12=PC+30
 str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xA10        ;  R12=LR+A10
@@ -143,12 +143,12 @@ adc r0,r12, #0xA8         ;  R0=R12+A8=SetCB2WhiteOutGER
 ====================
 
 @@ filename = "WhiteOutITA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1            ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000   ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E  ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000        ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED        ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30        ;  R12=PC+30
 str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xB80        ;  R12=LR+B80
@@ -159,12 +159,12 @@ sbc r0,r12, #0xDD         ;  R0=R12-DD-1=SetCB2WhiteOutITA
 ====================
 
 @@ filename = "WhiteOutSPA"
-@@ start = 64
+@@ start = 72
 @@
 
-mvn r12, #0xE1            ;  R12=notE1=FFFFFF1E
-bic r12,r12, #0xED00000   ;  R12=R12 and notED00000=F12FFF1E
-bic r11,r12, #0x1000000E  ;  R11=R12 and not1000000E=E12FFF10=bx r0 opcpde
+mvn r11, 0xEE00000        ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED        ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
 adcs r12,pc, #0x30        ;  R12=PC+30
 str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xB80        ;  R12=LR+B80
