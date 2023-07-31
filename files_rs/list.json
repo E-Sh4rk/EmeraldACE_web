@@ -16,5 +16,41 @@
     "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Roamer IVs",
+    "eng2": "misc/ChangeRoamerIVs.txt",
+    "eng1": "misc/ChangeRoamerIVs.txt",
+    "eng0": "misc/ChangeRoamerIVs.txt",
+    "fra1": "misc/ChangeRoamerIVs.txt",
+    "fra0": "misc/ChangeRoamerIVs.txt",
+    "ger1": "misc/ChangeRoamerIVs.txt",
+    "ger0": "misc/ChangeRoamerIVs.txt",
+    "spa1": "misc/ChangeRoamerIVs.txt",
+    "spa0": "misc/ChangeRoamerIVs.txt",
+    "ita1": "misc/ChangeRoamerIVs.txt",
+    "ita0": "misc/ChangeRoamerIVs.txt",
+    "jap0": "misc/ChangeRoamerIVsJAP.txt",
+    "jap1": "misc/ChangeRoamerIVsJAP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Roamer PID",
+    "eng2": "misc/ChangeRoamerPID.txt",
+    "eng1": "misc/ChangeRoamerPID.txt",
+    "eng0": "misc/ChangeRoamerPID.txt",
+    "fra1": "misc/ChangeRoamerPID.txt",
+    "fra0": "misc/ChangeRoamerPID.txt",
+    "ger1": "misc/ChangeRoamerPID.txt",
+    "ger0": "misc/ChangeRoamerPID.txt",
+    "spa1": "misc/ChangeRoamerPID.txt",
+    "spa0": "misc/ChangeRoamerPID.txt",
+    "ita1": "misc/ChangeRoamerPID.txt",
+    "ita0": "misc/ChangeRoamerPID.txt",
+    "jap0": "misc/ChangeRoamerPIDJAP.txt",
+    "jap1": "misc/ChangeRoamerPIDJAP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
   }
 ]
