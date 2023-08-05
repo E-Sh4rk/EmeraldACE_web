@@ -11,7 +11,7 @@ sbc r12,lr, #0x2C40           ;  R12=LR-2C40-1
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
 adc r12,r12, #0x3FC0          ;  R12=R12+3FC0
-sbc r0,r12, #0xB0             ;  R0=R12-B0-1=????ENG
+sbc r0,r12, #0xB0             ;  R0=R12-B0-1=DiplomaENG
 
 ====================
 
@@ -27,7 +27,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE30            ;  R12=LR+E30
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
+adc r0,r12, #0xE2             ;  R0=R12+E2=DiplomaFRA
 
 ====================
 
@@ -38,12 +38,12 @@ adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
 mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
 sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
 sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-adcs r12,pc, #0x30              ;  R12=PC+30
-str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
-adc r12,lr, #0xE10              ;  R12=LR+E10
-adc r12,r12, #0xD30000          ;  R12=R12+D30000
-bic r12,r12, #0xC00000          ;  R12=R12 and notC00000
-adc r0,r12, #0xE2               ;  R0=R12+E2=????GER
+adcs r12,pc, #0x30            ;  R12=PC+30
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adc r12,lr, #0xE10            ;  R12=LR+E10
+adc r12,r12, #0xD30000        ;  R12=R12+D30000
+bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
+adc r0,r12, #0xE2             ;  R0=R12+E2=DiplomaGER
 
 ====================
 
@@ -59,7 +59,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE00            ;  R12=LR+E00
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xDE             ;  R0=R12+DE=????ITA
+adc r0,r12, #0xDE             ;  R0=R12+DE=DiplomaITA
 
 ====================
 
@@ -75,7 +75,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE10            ;  R12=LR+E10
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xD6             ;  R0=R12+D6=????SPA
+adc r0,r12, #0xD6             ;  R0=R12+D6=DiplomaSPA
 
 ====================
 
@@ -196,7 +196,7 @@ BX r0
 ADC r12, lr, #0xee000         ; LR=080069E7
 ADC r12, r12, #0x39000
 ADC r12, r12, #0xa200
-ADC r0, r12, #0xce            ; R0=8137CB5=????ENG
+ADC r0, r12, #0xce            ; R0=8137CB5=DiplomaENG
 
 ====================
 
@@ -207,7 +207,7 @@ ADC r0, r12, #0xce            ; R0=8137CB5=????ENG
 adc r12,lr, #0xE30            ;  R12=LR+E30
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
+adc r0,r12, #0xE2             ;  R0=R12+E2=DiplomaFRA
 
 ====================
 
@@ -218,7 +218,7 @@ adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
 adc r12,lr, #0xE10              ;  R12=LR+E10
 adc r12,r12, #0xD30000          ;  R12=R12+D30000
 bic r12,r12, #0xC00000          ;  R12=R12 and notC00000
-adc r0,r12, #0xE2               ;  R0=R12+E2=????GER
+adc r0,r12, #0xE2               ;  R0=R12+E2=DiplomaGER
 
 ====================
 
@@ -229,7 +229,7 @@ adc r0,r12, #0xE2               ;  R0=R12+E2=????GER
 adc r12,lr, #0xE00            ;  R12=LR+E00
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xDE             ;  R0=R12+DE=????ITA
+adc r0,r12, #0xDE             ;  R0=R12+DE=DiplomaITA
 
 ====================
 
@@ -240,7 +240,7 @@ adc r0,r12, #0xDE             ;  R0=R12+DE=????ITA
 adc r12,lr, #0xE10            ;  R12=LR+E10
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xD6             ;  R0=R12+D6=????SPA
+adc r0,r12, #0xD6             ;  R0=R12+D6=DiplomaSPA
 
 ====================
 
@@ -334,7 +334,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 ADC r12, lr, #0xee000         ; LR=080069E7
 ADC r12, r12, #0x39000
 ADC r12, r12, #0xa200
-ADC r0, r12, #0xce            ; R0=8137CB5=????ENG
+ADC r0, r12, #0xce            ; R0=8137CB5=DiplomaENG
 0
 
 ====================
@@ -352,7 +352,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE30            ;  R12=LR+E30
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xE2             ;  R0=R12+E2=????FRA
+adc r0,r12, #0xE2             ;  R0=R12+E2=DiplomaFRA
 0                             ;  Fill box 14 with space
 
 ====================
@@ -370,7 +370,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE10            ;  R12=LR+E10
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xE2             ;  R0=R12+E2=????GER
+adc r0,r12, #0xE2             ;  R0=R12+E2=DiplomaGER
 0                             ;  Fill box 14 with space
 
 ====================
@@ -388,7 +388,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE00            ;  R12=LR+E00
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xDE             ;  R0=R12+DE=????ITA
+adc r0,r12, #0xDE             ;  R0=R12+DE=DiplomaITA
 0                             ;  Fill box 14 with space
 
 ====================
@@ -406,7 +406,7 @@ str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
 adc r12,lr, #0xE10            ;  R12=LR+E10
 adc r12,r12, #0xD30000        ;  R12=R12+D30000
 bic r12,r12, #0xC00000        ;  R12=R12 and notC00000
-adc r0,r12, #0xD6             ;  R0=R12+D6=????SPA
+adc r0,r12, #0xD6             ;  R0=R12+D6=DiplomaSPA
 0                             ;  Fill box 14 with space
 
 ====================
@@ -433,11 +433,11 @@ SUB r0, r0, #0xda
 @@ start = 64
 @@
 
-adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
-mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
-bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
-sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adcs r12, pc, #0x30       ;  R12=&Box14Name + 3
+mvn r11, 0xEE             ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000  ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 
 adc r12,lr, #0xDC0        ;  R12=LR+DC0
 adc r12,r12, #0xD30000    ;  R12=R12+D30000
@@ -451,11 +451,11 @@ adc r0,r12, #0xD6         ;  R0=R12+D6=SetCB2WhiteOutENG
 @@ start = 64
 @@
 
-adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
-mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
-bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
-sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adcs r12, pc, #0x30       ;  R12=&Box14Name + 3
+mvn r11, 0xEE             ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000  ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 
 adc r12,lr, #0xA10        ;  R12=LR+A10
 adc r12,r12, #0xD30000    ;  R12=R12+D30000
@@ -469,11 +469,11 @@ adc r0,r12, #0xC8         ;  R0=R12+C8=SetCB2WhiteOutFRA
 @@ start = 64
 @@
 
-adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
-mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
-bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
-sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adcs r12, pc, #0x30       ;  R12=&Box14Name + 3
+mvn r11, 0xEE             ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000  ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 
 adc r12,lr, #0xA10        ;  R12=LR+A10
 adc r12,r12, #0xD30000    ;  R12=R12+D30000
@@ -487,11 +487,11 @@ adc r0,r12, #0xA8         ;  R0=R12+A8=SetCB2WhiteOutGER
 @@ start = 64
 @@
 
-adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
-mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
-bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
-sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adcs r12, pc, #0x30       ;  R12=&Box14Name + 3
+mvn r11, 0xEE             ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000  ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 
 adc r12,lr, #0xB80        ;  R12=LR+B80
 adc r12,r12, #0xD30000    ;  R12=R12+D30000
@@ -505,11 +505,11 @@ sbc r0,r12, #0xDD         ;  R0=R12-DD-1=SetCB2WhiteOutITA
 @@ start = 64
 @@
 
-adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
-mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
-bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
-sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
-str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+adcs r12, pc, #0x30       ;  R12=&Box14Name + 3
+mvn r11, 0xEE             ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000  ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000   ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!       ;  Store bx r0 opcode in [r12]
 
 adc r12,lr, #0xB80        ;  R12=LR+B80
 adc r12,r12, #0xD30000    ;  R12=R12+D30000
