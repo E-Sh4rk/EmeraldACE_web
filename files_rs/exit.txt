@@ -95,3 +95,68 @@ mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
 adc r12,r12, 0xCF00             ;  R12=R12+CF00=800CEFD
 adc r12,r12, 0x3FC0             ;  R12=R12+3FC0=8010EBD
 adc r0,r12, 0x2FC               ;  R0=R12+2FC=80111B9=ReturnFromBattleToOverworldJAP
+
+====================
+
+@@ filename = "ReturnToOverworldShort_ENG"
+@@ start = 92
+@@
+
+movs r12, 0x8000003       %%  R12=8000003
+0xE0ACC9EC                %%  R12=R12+ROR19(R12)=R12+6100=8006103
+adc r12,r12, 0xDD00       %%  R12=R12+DD00=8013E03
+adc r0,r12,0xAE           %%  R0=R12+AE=8013EB1=ReturnFromBattleToOverworldENG
+
+====================
+
+@@ filename = "ReturnToOverworldShort_ITA"
+@@ start = 92
+@@
+
+movs r12, 0xA50           %%  R12=A50
+0xE0ECCDEC                %%  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003    %%  R12=R12+8000003=8013FB2
+adc r0,r12,0xCB           %%  R0=R12+CB=801407D=ReturnFromBattleToOverworldITA
+
+====================
+
+@@ filename = "ReturnToOverworldShort_GER"
+@@ start = 92
+@@
+
+movs r12, 0xA50           %%  R12=A50
+0xE0ECCDEC                %%  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003    %%  R12=R12+8000003=8013FB2
+adc r0,r12,0xD3           %%  R0=R12+D3=8014085=ReturnFromBattleToOverworldGER
+
+====================
+
+@@ filename = "ReturnToOverworldShort_SPA"
+@@ start = 92
+@@
+
+movs r12, 0xA50           %%  R12=A50
+0xE0ECCDEC                %%  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003    %%  R12=R12+8000003=8013FB2
+adc r0,r12,0xCB           %%  R0=R12+CB=801407D=ReturnFromBattleToOverworldSPA
+
+====================
+
+@@ filename = "ReturnToOverworldShort_FRA"
+@@ start = 92
+@@
+
+movs r12, 0xA50           %%  R12=A50
+0xE0ECCDEC                %%  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003    %%  R12=R12+8000003=8013FB2
+adc r0,r12,0xD3           %%  R0=R12+D3=8014085=ReturnFromBattleToOverworldFRA
+
+====================
+
+@@ filename = "ReturnToOverworldShort_JAP"
+@@ start = 96
+@@
+
+ldr r0, [r15]                   ;  Load ReturnFromBattleToOverworldJAP - 4
+0x080111B5                      ;  Data loaded, not executed
+add r0, r0, 4                   ;  R0=Load ReturnFromBattleToOverworldJAP
