@@ -92,7 +92,7 @@ sbc r11, r11, 0xEE00000         ;  R11=R11-EE00000-1=E12FFFFE
 sbc r11, r11, 0xED              ;  R11=R11-ED-1=E12FFF10="bx r0" opcode
 str r11, [r15, 0x30]            ;  Store bx r0 opcode in pc+0x30
 mvn r12, 0xF8000002             ;  R12=notF8000002=7FFFFFD
-adc r12,r12, 0xCF00             ;  R12=R12+CF00=800CEFD
+adcs r12,r12, 0xCF00            ;  R12=R12+CF00=800CEFD
 adc r12,r12, 0x3FC0             ;  R12=R12+3FC0=8010EBD
 adc r0,r12, 0x2FC               ;  R0=R12+2FC=80111B9=ReturnFromBattleToOverworldJAP
 
