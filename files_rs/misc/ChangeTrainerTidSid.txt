@@ -1,0 +1,17 @@
+@@ title = "Change Trainer TID & SID"
+@@ author = "Sleipnir"
+@@ exit = "ReturnToOverworldShort_{LANGNR}"
+
+; this code needs a glitched box 14 name, guide here: https://e-sh4rk.github.io/EmeraldACE_web/doc/RS_Short_Exit_Codes_Guide.pdf
+
+tid = 0
+sid = 0
+
+@@
+
+sbc r11,r15,0x3700
+sbc r11,r11,0xFF00
+movs r12, {tid} ?
+strh r12, [r11, 0xC4]!
+movs r12, {sid} ?
+strh r12, [r11, 0x2]
