@@ -52,5 +52,23 @@
     "jap1": "misc/ChangeRoamerPIDJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Trainer TID & SID",
+    "eng2": "misc/ChangeTrainerTidSid.txt",
+    "eng1": "misc/ChangeTrainerTidSid.txt",
+    "eng0": "misc/ChangeTrainerTidSid.txt",
+    "fra1": "misc/ChangeTrainerTidSid.txt",
+    "fra0": "misc/ChangeTrainerTidSid.txt",
+    "ger1": "misc/ChangeTrainerTidSid.txt",
+    "ger0": "misc/ChangeTrainerTidSid.txt",
+    "spa1": "misc/ChangeTrainerTidSid.txt",
+    "spa0": "misc/ChangeTrainerTidSid.txt",
+    "ita1": "misc/ChangeTrainerTidSid.txt",
+    "ita0": "misc/ChangeTrainerTidSid.txt",
+    "jap0": "misc/ChangeTrainerTidSidJAP.txt",
+    "jap1": "misc/ChangeTrainerTidSidJAP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
   }
 ]
