@@ -8,12 +8,12 @@
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
 otid = 0
-new_coolness = 0
-new_beauty = 0
-new_cuteness = 0
-new_smartness = 0
-new_toughness = 0
-new_feel = 0
+new_coolness = 255
+new_beauty = 255
+new_cuteness = 255
+new_smartness = 255
+new_toughness = 255
+new_feel = 255
 ; You must set either the variables cur_encoded_evsX (use the code "Read contest stats field" to determine their values)...
 cur_encoded_1 = 0
 cur_encoded_2 = 0
@@ -64,9 +64,10 @@ LDRH r12, [r11, {base_offset + 28}]       ; Load checksum
 ADC r12, r12, {checksum_diff & 0xFFFF} ?
 STRH r12, [r11, {base_offset + 28}]       ; Write checksum
 
-movs r12, {new_encoded_1 + (new_encoded_2 << 16)} ?
+movs r12, {new_encoded_1} ?
 adc r11, r11, {offset} ?
+strh r12, [r11], 2
+
+movs r12, {new_encoded_2 + (new_encoded_3 << 16)} ?
 str r12, [r11, 0]!
 
-movs r12, {new_encoded_3} ?
-strh r12, [r11, 4]
