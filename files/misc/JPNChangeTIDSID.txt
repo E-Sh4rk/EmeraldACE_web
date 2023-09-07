@@ -1,0 +1,37 @@
+@@ title = "Change TID or SID (JAP)"
+@@ author = "Sleipnir (Shao Translation)"
+@@ exit = null
+
+; Uses species 0x085F execution in Japanese Emerald.
+; Remember to double-check the smaller "lowercase" Japanese characters.
+; For example: ィ vs. イ
+
+ChangeTIDorSID = 0   ; 0 for SID, 2 for TID
+Value = 00000
+
+xx ?= (Value & 0xFF00)>>8
+XX ?= (Value & 0xFF)
+neg = 0x80000000
+
+zz?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+yy?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+ZZ?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+YY?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+ydata = ((yy<<8)|YY)|0x00FF0000
+address = 0xD110|ChangeTIDorSID
+zdata = ((zz<<8)|ZZ)|0xFF000000
+
+
+
+@@
+
+  0x4806A108 %% R1=PC+20+4
+  0x48041A09 %% R1=R1-R0=TID/SID location
+  0x4A0500FF
+  0xE0001880 %% R0=R0+R2=FFyyYY+FF00zzZZ=FFFFxxXX=new TID/SID
+  0x8008FF00
+  0x00004770
+  {ydata}
+  {address}
+  {zdata}
