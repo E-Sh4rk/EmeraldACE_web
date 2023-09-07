@@ -1,4 +1,4 @@
-@@ title = "Change TID or SID (0x085F)"
+@@ title = "Change TID or SID (JAP)"
 @@ author = "Sleipnir (Shao Translation)"
 @@ exit = null
 
