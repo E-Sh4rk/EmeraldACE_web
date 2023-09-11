@@ -5,6 +5,9 @@
 ; This code can be executed both if you already have an active roamer or not,
 ; either way the chosen roamer will be active.
 ; Features such as species and PID will be the ones from the last active roamer.
+; Because of the roamer bug not all IVs will be kept: defense, speed, sp.attack and
+; sp.defense will still be 0 and attack will be lower or equal to 7. HPs and ability
+; can be manipulated regularly
 
 hp = 0
 atk = 0
