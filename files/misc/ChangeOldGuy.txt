@@ -1,0 +1,35 @@
+@@ title = "Change Mauville's old guy type"
+@@ author = "Sleipnir"
+@@ exit = "Bootstrapped"
+
+; This code requires a stable ACE Pokémon to work. You'll need to exit the summary manually.
+; An exit bootstrap is not needed, even though the exit seems to imply so.
+; Input the type you want for your old guy before computing.
+
+bard = 0x0
+hipster = 0x58
+story_teller = 0x7C
+giddy = 0x86
+trader = 0xB2
+
+; INPUT TYPE:
+type = giddy   ; input bard, hipster, story_teller, giddy or trader
+
+ENG = 0x81200A1
+ITA = 0x811FCB1
+GER = 0x811FCC5
+SPA = 0x811FCB9
+FRA = 0x811FCE5
+JAP = 0x81205C1
+initial_address = {LANG}
+address = initial_address + type
+
+@@
+
+mvn r11, 0xEE00000            ;  R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            ;  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r12, pc, 0x388            ;  R12=PC-388-1
+str r11, [r12, 0x3ED]!        ;  Store bx r0
+movs r12, {address}?          ;  R12=address
+adc r0, r12, 0                ;  R0=address
