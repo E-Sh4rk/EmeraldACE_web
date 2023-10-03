@@ -328,5 +328,15 @@
     "spa": "pkmn/ChangeOTName.txt",
     "ita": "pkmn/ChangeOTName.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Old Guy type",
+    "eng": "misc/ChangeOldGuy.txt",
+    "fra": "misc/ChangeOldGuy.txt",
+    "ger": "misc/ChangeOldGuy.txt",
+    "spa": "misc/ChangeOldGuy.txt",
+    "ita": "misc/ChangeOldGuy.txt",
+    "jap": "misc/ChangeOldGuy.txt",
+    "cat": ["misc"]
   }
 ]
