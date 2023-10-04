@@ -1,8 +1,11 @@
 [
   {
     "name": "Change PRNG Seed",
-    "eng": "rng/ChangePrngSeedENG.txt",
-    "fra": "rng/ChangePrngSeedFRA.txt",
+    "eng": "rng/ChangePrngSeedNon-JAP.txt",
+    "fra": "rng/ChangePrngSeedNon-JAP.txt",
+    "ger": "rng/ChangePrngSeedNon-JAP.txt",
+    "spa": "rng/ChangePrngSeedNon-JAP.txt",
+    "ita": "rng/ChangePrngSeedNon-JAP.txt",
     "cat": ["rng"]
   },
   {
