@@ -12,7 +12,19 @@
     "name": "Change trainer TID and SID (with exit code bootstrap)",
     "eng": "misc/ChangeTrainerTidSid.txt",
     "fra": "misc/ChangeTrainerTidSid.txt",
-	"jap": "misc/ChangeTrainerTidSidJAP.txt",
+    "ger": "misc/ChangeTrainerTidSid.txt",
+    "spa": "misc/ChangeTrainerTidSid.txt",
+    "ita": "misc/ChangeTrainerTidSid.txt",
+    "jap": "misc/ChangeTrainerTidSidJAP.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change trainer SID",
+    "eng": "misc/ChangeSID.txt",
+    "fra": "misc/ChangeSID.txt",
+    "ger": "misc/ChangeSID.txt",
+    "spa": "misc/ChangeSID.txt",
+    "ita": "misc/ChangeSID.txt",
     "cat": ["misc"]
   },
   {
