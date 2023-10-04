@@ -1,10 +1,10 @@
-@@ title = "Change PRNG Seed (ENG)"
-@@ exit = "CertificateENG" ; Note: Change to CertificateShortENG to preserve box 14 name
+@@ title = "Change PRNG Seed (Non-JAP)"
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
 
 ; Please set the seed below (it should not be 0).
 ; If your seed is written in hexadecimal, you must use the prefix 0x.
 ; For instance, for the seed 1234ABCD, you must write 0x1234ABCD.
-seed = 0x1234ABCD
+seed = 0x000005a0
 
 @@
 
