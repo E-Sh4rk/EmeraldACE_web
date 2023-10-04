@@ -1,4 +1,4 @@
-@@ title = "Change Trainer TID & SID (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Change Trainer TID & SID (with exit code bootstrap)"
 @@ exit = "Bootstrapped"
 
 tid = 0
