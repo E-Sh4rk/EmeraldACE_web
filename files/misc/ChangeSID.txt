@@ -1,0 +1,13 @@
+@@ title = "Change Trainer SID"
+@@ exit = "Certificate{LANG}"
+
+sid = 00000
+inaccurate_emu = 0
+
+; If you experience issues on emulator, try setting inaccurate_emu to 1.  
+
+@@
+
+sbc r11,pc,{0xD0EE-1+(inaccurate_emu ? 8 : 10)} ?
+movs r12, {sid} ?
+strh r12, [r11, 2]
