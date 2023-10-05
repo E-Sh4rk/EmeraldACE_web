@@ -1,0 +1,42 @@
+@@ title = "Change PRNG Seed (0x085F)"
+@@ author = "Sleipnir (Shao + Papa Jefe Translation)"
+@@ exit = null
+
+; Uses species 0x085F execution in Japanese Emerald.
+; Remember to double-check the smaller "lowercase" Japanese characters.
+; For example: ィ vs. イ
+
+Seed = 0x1234ABCD
+
+xx ?= (Seed & 0xFF000000)>>24
+XX ?= (Seed & 0xFF0000)>>16
+yy ?= (Seed & 0xFF00)>>8
+YY ?= (Seed & 0xFF)
+neg = 0x80000000
+
+ww?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+zz?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
+ZWdata = ((zz<<24)|(ZZ<<16)|(ww<<8)|WW)
+address = 0x03005AE0
+
+@@
+
+0x48044908	%%	R1=03005AE0=seed location, R0=uuUUvvVV
+0x18804A05	%%	R0=R0+R2=uuUUvvVV+wwWWzzZZ=xxXXyyYY=new
+0x600800FF	%%	Store new seed
+0x00004770
+0x0000FF00
+{UVdata}
+0x01FF0000
+{ZWdata}
+{address}
+
