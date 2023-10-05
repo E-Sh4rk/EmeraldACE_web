@@ -6,6 +6,7 @@
     "ger": "rng/ChangePrngSeedNon-JAP.txt",
     "spa": "rng/ChangePrngSeedNon-JAP.txt",
     "ita": "rng/ChangePrngSeedNon-JAP.txt",
+    "jap": "rng/ChangePRNGSeedJAP.txt",
     "cat": ["rng"]
   },
   {
