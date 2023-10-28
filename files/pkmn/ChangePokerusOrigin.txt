@@ -12,8 +12,8 @@ cur_pkrs =       0x00 ; 0x0-0xFF
 new_pkrs =       0x00 ; 0x0-0xFF
 cur_loc =        0x0F ; 0x0-0xFF   
 new_loc =        0xFF ; 0x0-0xFF
-cur_met_lvl =      31 ; 0-127
-new_met_lvl =     127 ; 0-127
+cur_met_lvl =      31 ; 0-127 (0 if hatched from an egg)
+new_met_lvl =     127 ; 0-127 (0 if hatched from an egg)
 ; Games are 1-15, non-glitch options presented here for ease of use
 cur_origin_game =   3 ; 1=Sapphire,2=Ruby,3=Emerald,4=FireRed,5=LeafGreen, 
 new_origin_game =  15 ; 15=Colo/XD
