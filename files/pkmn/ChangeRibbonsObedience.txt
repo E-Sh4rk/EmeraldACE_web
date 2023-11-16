@@ -9,9 +9,9 @@ inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
 otid = 0
 new_ribbons = 0xFC924
-new_obedience = 0    ; 1 for mew or deoxys, 0 otherwise
+new_obedience = 0
 cur_ribbons = 0
-cur_obedience = 0    ; 1 for mew or deoxys, 0 otherwise
+cur_obedience = 0  ; 1 for Mew, Deoxys, Lugia, Ho-oh, southern island Lati@s, and 0 otherwise
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
 key = pid ^ otid
