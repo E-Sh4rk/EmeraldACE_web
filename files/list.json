@@ -354,5 +354,14 @@
     "ita": "misc/ChangeOldGuy.txt",
     "jap": "misc/ChangeOldGuy.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Read Pokemon Pokerus field",
+    "eng": "pkmn/ReadPkrus.txt",
+    "fra": "pkmn/ReadPkrus.txt",
+    "ger": "pkmn/ReadPkrus.txt",
+    "spa": "pkmn/ReadPkrus.txt",
+    "ita": "pkmn/ReadPkrus.txt",
+    "cat": ["pkmn"]
   }
 ]
