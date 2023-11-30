@@ -1,0 +1,24 @@
+@@ title = "Read PID from Party Slot 4"
+@@ author = "Papa Jefe & im a blisy"
+@@ exit = "CommonExit"
+@@
+
+; Store the PID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
+; Pokemon in 3rd Party Slot must have no stats bigger than 2 digits. 
+; PID1 = Atk, PID2 = Def, PID3 = SpA, PID4 = SpDef
+; Convert Decimal Stat Values in-game, to Hex
+
+
+movs r12, { 0x2024284 + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
+
+ldrb r11, [r12, #200]  ; Load 1st PID Byte of Pkmn 4
+strb r11, [r12, #198]   ; Store lowPID in SpD stat
+
+ldrb r11, [r12, #201]  ; Load 2nd PID Byte of Pkmn 4
+strb r11, [r12, #196]   ; Store lowPID in SpA stat
+
+ldrb r11, [r12, #202]  ; Load 3rd PID Byte of Pkmn 4
+strb r11, [r12, #192]   ; Store highPID in Def stat
+
+ldrb r11,  [r12, #203]  ; Load 4th PID Byte of Pkmn 4
+strb r11,  [r12, #190]    ; Store highPID in Atk stat
