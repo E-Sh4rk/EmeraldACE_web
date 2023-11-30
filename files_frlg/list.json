@@ -61,5 +61,12 @@
     "jap1": "misc/ChangeRoamerPIDJAP.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Read Pokemon PID",
+    "eng1": "misc/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "eng0": "misc/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
