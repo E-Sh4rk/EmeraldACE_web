@@ -98,7 +98,7 @@ BX r0
 @@ start = 84
 @@
 
-LDR r0, [pc, {inaccurate_emu ? 0x0 : 0x2}]
+LDR r0, [pc, -{inaccurate_emu ? 0x0 : 0x2}]
 BX r0
 0x08137D25
 
