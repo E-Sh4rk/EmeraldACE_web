@@ -94,6 +94,16 @@ BX r0
 
 ====================
 
+@@ filename = "CertificateJAPmod"
+@@ start = 84
+@@
+
+LDR r0, [pc, {inaccurate_emu ? 0x0 : 0x2}]
+BX r0
+0x08137D25
+
+====================
+
 @@ filename = "WhiteOutENG"
 @@ start = 72
 @@
