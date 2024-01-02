@@ -593,11 +593,10 @@ sbc r0,r12, 0xBF                ;  R0=R12-BF-1=805673D=CB2_LoadMap2GER
 @@ start = 92
 @@
 
-movs r12, 0x8000003             ;  R12=8000003
-adc r12,r12, 0x3740             ;  R12=R12+3740=8003743
-sbc r12,r12, 0xAC000            ;  R12=R12-AC000-1=7F57742
-adc r12,r12, 0xFF000            ;  R12=R12+FF000=8056742
-adc r0,r12, 0xCF                ;  R0=R12+CF=8056811=CB2_LoadMap2SPA
+movs r12, 0xAD                  ;  R12=AD
+0xE0ECCAEC                      ;  R12=ROR21(R12)-R12-1=56800-R12-1=56752
+adc r12,r12, 0x8000003          ;  R12=R12+8000003=8056755
+adc r0,r12, 0xBC                ;  R0=R12+BC=8056811=CB2_LoadMap2SPA
 
 ====================
 
