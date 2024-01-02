@@ -160,3 +160,103 @@ adc r0,r12,0xD3           %%  R0=R12+D3=8014085=ReturnFromBattleToOverworldFRA
 ldr r0, [r15]                   ;  Load ReturnFromBattleToOverworldJAP - 4
 0x080111B5                      ;  Data loaded, not executed
 add r0, r0, 4                   ;  R0=Load ReturnFromBattleToOverworldJAP
+
+====================
+
+@@ filename = "ReturnToOverworldFull_ENG"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30             ;  R12=&Box14Name + 3
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
+movs r12, 0x8000003             ;  R12=8000003
+0xE0ACC9EC                      ;  R12=R12+ROR19(R12)=R12+6100=8006103
+adc r12,r12, 0xDD00             ;  R12=R12+DD00=8013E03
+adc r0,r12,0xAE                 ;  R0=R12+AE=8013EB1=ReturnFromBattleToOverworldENG
+0xBFBFBFFF
+
+====================
+
+@@ filename = "ReturnToOverworldFull_ITA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30             ;  R12=&Box14Name + 3
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
+movs r12, 0xA50                 ;  R12=A50
+0xE0ECCDEC                      ;  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003          ;  R12=R12+8000003=8013FB2
+adc r0,r12,0xCB                 ;  R0=R12+CB=801407D=ReturnFromBattleToOverworldITA
+0xBFBFBFFF
+
+====================
+
+@@ filename = "ReturnToOverworldFull_GER"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30             ;  R12=&Box14Name + 3
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
+movs r12, 0xA50                 ;  R12=A50
+0xE0ECCDEC                      ;  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003          ;  R12=R12+8000003=8013FB2
+adc r0,r12,0xD3                 ;  R0=R12+D3=8014085=ReturnFromBattleToOverworldGER
+0xBFBFBFFF
+
+====================
+
+@@ filename = "ReturnToOverworldFull_SPA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30             ;  R12=&Box14Name + 3
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
+movs r12, 0xA50                 ;  R12=A50
+0xE0ECCDEC                      ;  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003          ;  R12=R12+8000003=8013FB2
+adc r0,r12,0xCB                 ;  R0=R12+CB=801407D=ReturnFromBattleToOverworldSPA
+0xBFBFBFFF
+
+====================
+
+@@ filename = "ReturnToOverworldFull_FRA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30             ;  R12=&Box14Name + 3
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!             ;  Store bx r0 opcode in [r12]
+movs r12, 0xA50                 ;  R12=A50
+0xE0ECCDEC                      ;  R12=ROR27(R12)-R12-1=14A00-R12-1=13FAF
+adc r12,r12, 0x8000003          ;  R12=R12+8000003=8013FB2
+adc r0,r12,0xD3                 ;  R0=R12+D3=8014085=ReturnFromBattleToOverworldFRA
+0xBFBFBFFF
+
+====================
+
+@@ filename = "ReturnToOverworldFull_JAP"
+@@ start = 68
+@@
+
+mvn r11, 0xEE                   ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000        ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000         ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r15, 0x1C]            ;  Store bx r0 opcode in pc+0x1C
+movs r12, 0x11000               ;  R12=11000
+adc r12,r12, 0x1B8              ;  R12=R12+C1B8=111B8
+adc r0,r12, 0x8000001           ;  R0=R12+8000001=80111B9=ReturnFromBattleToOverworldJAP
+0xBFBFBFFF
