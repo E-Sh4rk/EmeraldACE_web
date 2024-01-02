@@ -70,5 +70,23 @@
     "jap1": "misc/ChangeTrainerTidSidJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
+  },
+    {
+    "name": "Create Pokemon species from nothing",
+    "eng2": "pkmn/PokemonFromNothing.txt",
+    "eng1": "pkmn/PokemonFromNothing.txt",
+    "eng0": "pkmn/PokemonFromNothing.txt",
+    "fra1": "pkmn/PokemonFromNothing.txt",
+    "fra0": "pkmn/PokemonFromNothing.txt",
+    "ger1": "pkmn/PokemonFromNothing.txt",
+    "ger0": "pkmn/PokemonFromNothing.txt",
+    "spa1": "pkmn/PokemonFromNothing.txt",
+    "spa0": "pkmn/PokemonFromNothing.txt",
+    "ita1": "pkmn/PokemonFromNothing.txt",
+    "ita0": "pkmn/PokemonFromNothing.txt",
+    "jap0": "pkmn/PokemonFromNothingJAP.txt",
+    "jap1": "pkmn/PokemonFromNothingJAP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["pkmn","bootstraps"]
   }
 ]
