@@ -347,6 +347,15 @@
     "cat": ["pkmn"]
   },
   {
+    "name": "Change Pokemon nickname",
+    "eng": "pkmn/ChangeNickname.txt",
+    "fra": "pkmn/ChangeNickname.txt",
+    "ger": "pkmn/ChangeNickname.txt",
+    "spa": "pkmn/ChangeNickname.txt",
+    "ita": "pkmn/ChangeNickname.txt",
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Change Old Guy type",
     "eng": "misc/ChangeOldGuy.txt",
     "fra": "misc/ChangeOldGuy.txt",
