@@ -13,5 +13,5 @@ species = 0xFF     ; Please set the species you want (it should not be 0)
 sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
 
 mov r12, {species & 0xFFFF} ?
-strh r12, [r11, 17]!
-strh r12, [r11, 4]!
+strh r12, [r11, 0x11]!
+strh r12, [r11, 0x4]!
