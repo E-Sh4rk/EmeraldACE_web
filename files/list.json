@@ -224,6 +224,7 @@
     "name": "Thumb->ARM bootstrap",
     "eng": "bootstraps/ThumbArmBootstrapENG.txt",
     "fra": "bootstraps/ThumbArmBootstrapFRA.txt",
+    "ita": "bootstraps/ThumbArmBootstrapITA.txt",
     "cat": ["bootstraps"]
   },
   {

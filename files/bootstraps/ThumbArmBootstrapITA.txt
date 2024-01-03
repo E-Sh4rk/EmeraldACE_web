@@ -1,0 +1,39 @@
+@@ title = "Thumb->ARM Bootstrap (ITA)"
+@@ author = "Merrp"
+@@ exit = "CertificateShortITA"
+@@
+
+; Adapted from https://pastebin.com/Sz2Aiu6p
+
+; This code must be executed after the "Create Pokemon species from nothing" code, with the species set to 0x45B7.
+; After that, you should not modify the names of the boxes 11-14 (they must be the same for this code).
+; Then, put any pokemon with the name [x♂zN 6FFxC] in the box 10 slot 20.
+; At this point, you should save your game and reload your save in order to reinitialize the value of some registers.
+; Then, write this code (boxes 1-10) and execute it by viewing the summary of the 0x45B7 species.
+; The pokemon in box 10 slot 20 will be transformed into a bad egg.
+; This bad egg must be placed somewhere in Box 12 (not the first row), Box 13 or Box 14
+; when you want to execute an ARM ACE code by viewing the summary of the 0x45B7 species.
+
+0xC8EEB5EC
+; PUSH r2-r3,r5-r7,lr       B5EC @ preserve necessary registers
+; LDMIA r0!,r1-r3,r5-r7     C8EE @ do not touch r4!
+
+0xC0C0A700
+; ADD r7,pc,nn              A700
+; STMIA r0!,r6,r7           C0C0 @ store new jump address
+
+0xD200D2FF ; THUMB Filler
+
+0x0000BDEC
+; POP r2-r3,r5-r7,pc      BDEC
+
+sbc r11,pc,0x2940   ; r11=&PID-0x35
+strh r10,[r11,54]
+strh r10,[r11,56]
+strh r10,[r11,58]
+strh r10,[r11,59]!
+strh r12,[r11,14]!  ; r11=&OT
+movs r12,0x3B0      ; r12=000003B0   
+adc r12,0xDF0000    ; r12=00DF03B0
+adc r12,0xE000000E  ; r12=E0DF03BE (ldrh! r12, [pc+xx])
+str r12,[r11]!      ; store OT
