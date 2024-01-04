@@ -1,0 +1,44 @@
+@@ title = "Return Exit Code Bootstrap (JAP)"
+@@ author = "E-Sh4rk, Sleipnir"
+@@ exit = "Bootstrapped"
+@@
+
+; This code can be used to generate a pokemon that contains THUMB code
+; designed to store the address of the return from battle exit code routine
+; in r0, thus allowing to use very short exit codes in the box names
+; (only box 14 will be used by the exit code), as well as to switch
+; execution mode from THUMB to ARM.
+; Before using this code, you should use the code "Create Pokemon from nothing"
+; in order to generate a pokemon of species 0xFF.
+; Directly after, you should execute this code without changing the name of Box 14.
+; The resulting pokemon will be in Box 10 Slot 19.
+; You should then move this pokemon somewhere in box 14 slot 29
+; Now, you will be able to use the exit code Bootstrapped.
+; Note that you shouldn't change the name of Box 14, if you do you will have
+; to run a code with the exit code ReturnToOverworldFull_ENG in order to reset it
+; before being able to use the exit code Bootstrapped again.
+; Finally, please note that you cannot use the exit code Bootstrapped
+; if the code you are trying to execute modify the value of r0.
+; In this case, you have to use the exit code ReturnToOverworldShort_ENG instead.
+
+; === WRITE POKEMON NAME 0-3 ===
+0x4700A000
+sbc r11, r15, 0x2940             ; r11 = &Box10Slot19 + 11
+movs r12, 0x34800                ; r12 = 34800
+adc r12, r12, 0xA0000002         ; r12 = A0034802
+adc r12, r12, 0x1100000          ; r12 = A1134802
+str r12, [r11]!                  ; Write on characters 0-3 of the pokemon name
+
+; === WRITE POKEMON NAME 4-7 ===
+adc r11, r11, 0x3                ; r11 = &Box10Slot19 + 14
+movs r12, 0x4700                 ; r12 = 4700
+adc r12, r12, 0x8                ; r12 = 4708
+str r12, [r11]!                  ; Write on characters 4-7 of the pokemon name
+
+; === WRITE POKEMON ORIGINAL TRAINER NAME ===
+sbc r11, r11, 0xE7               ; r11 = &Box10Slot19 - 218
+movs r12, 0x11000                ; r12 = 11000
+adc r12, r12, 0x1B8              ; r12 = 111B8
+adc r0, r12, 0x8000001           ; r0 = 80111B9 = ReturnFromBattleToOverworld
+str r0, [r11, 0xEE]!             ; Write on the original trainer name
+0
