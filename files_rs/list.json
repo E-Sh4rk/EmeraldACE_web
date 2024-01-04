@@ -103,7 +103,7 @@
     "ita1": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
     "ita0": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
     "jap0": "bootstraps/ReturnExitCodeBootstrapJAP.txt",
-    "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
+    "jap1": "bootstraps/ReturnExitCodeBootstrapJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["bootstraps"]
   }
