@@ -88,5 +88,23 @@
     "jap1": "pkmn/PokemonFromNothingJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["pkmn","bootstraps"]
+  },
+  {
+    "name": "Return Exit Code Bootstrap",
+    "eng2": "bootstraps/ReturnExitCodeBootstrapENG.txt",
+    "eng1": "bootstraps/ReturnExitCodeBootstrapENG.txt",
+    "eng0": "bootstraps/ReturnExitCodeBootstrapENG.txt",
+    "fra1": "bootstraps/ReturnExitCodeBootstrapGER&FRA.txt",
+    "fra0": "bootstraps/ReturnExitCodeBootstrapGER&FRA.txt",
+    "ger1": "bootstraps/ReturnExitCodeBootstrapGER&FRA.txt",
+    "ger0": "bootstraps/ReturnExitCodeBootstrapGER&FRA.txt",
+    "spa1": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
+    "spa0": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
+    "ita1": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
+    "ita0": "bootstraps/ReturnExitCodeBootstrapITA&SPA.txt",
+    "jap0": "bootstraps/ReturnExitCodeBootstrapJAP.txt",
+    "jap1": "misc/ChangeRoamerSpeciesJAP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["bootstraps"]
   }
 ]
