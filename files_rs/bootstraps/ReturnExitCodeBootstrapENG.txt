@@ -1,0 +1,47 @@
+@@ title = "Return Exit Code Bootstrap (ENG)"
+@@ author = "E-Sh4rk, Sleipnir"
+@@ exit = "Bootstrapped"
+@@
+
+; This code can be used to generate a pokemon that contains ARM code
+; designed to store the address of the return from battle exit code routine
+; in r0, thus allowing to use very short exit codes in the box names
+; (only box 14 will be used by the exit code).
+; Before using this code, you should use the code "Create Pokemon from nothing"
+; in order to generate a pokemon of species 0xFF.
+; Directly after, you should execute this code without changing the name of Box 14.
+; The resulting pokemon will be in Box 10 Slot 19.
+; You should then move this pokemon somewhere in box 14 slot 29
+; Now, you will be able to use the exit code Bootstrapped.
+; Note that you shouldn't change the name of Box 14, if you do you will have
+; to run a code with the exit code ReturnToOverworldFull_ENG in order to reset it
+; before being able to use the exit code Bootstrapped again.
+; Finally, please note that you cannot use the exit code Bootstrapped
+; if the code you are trying to execute modify the value of r0.
+; In this case, you have to use the exit code ReturnToOverworldShort_ENG instead.
+
+; === WRITE POKEMON NAME 0-3 ===
+movs r12, 0xE5                   ; r12 = E5
+sbc r11, r15, 0x2940             ; r11 = &Box10Slot19 + 11
+adc r12, r12, 0xFF0000           ; r12 = FF00E5
+bic r12, r12, 0xE600000          ; r12 = 9F00E5
+adc r12, r12, 0xE5000000         ; r12 = E59F00E5
+sbc r12, r12, 0xE0               ; r12 = E59F0004 = LDR r0, [r15, #4] opcode
+str r12, [r11]!                  ; Write on characters 0-3 of the pokemon name
+
+; === WRITE POKEMON NAME 4-7 ===
+adc r11, r11, 0x3                ; r11 = &Box10Slot19 + 14
+movs r12, 0xFF000                ; r12 = FF000
+adc r12, r12, 0x32800000         ; r12 = 328FF000
+adc r12, r12, 0xB000000E         ; r12 = E28FF00E
+adc r12, r12, 0x36               ; r12 = E28FF044 = ADD pc, pc, #0x44
+str r12, [r11]!                  ; Write on characters 4-7 of the pokemon name
+
+; === WRITE POKEMON ORIGINAL TRAINER NAME ===
+sbc r11, r11, 0xE7               ; r11 = &Box10Slot19 - 218
+movs r12, 0x3FC00                ; r12 = 3FC00
+adc r12, r12, 0x390              ; r12 = 3FF90
+sbc r12, r12, 0x2C000            ; r12 = 13F8F
+adc r12, r12, 0x8000003          ; r12 = 8013F92
+sbc r0, r12, 0xE0                ; r0 = 8013EB1 = ReturnFromBattleToOverworld
+str r0, [r11, 0xEE]!             ; Write on the original trainer name
