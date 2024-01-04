@@ -260,3 +260,9 @@ movs r12, 0x11000               ;  R12=11000
 adc r12,r12, 0x1B8              ;  R12=R12+C1B8=111B8
 adc r0,r12, 0x8000001           ;  R0=R12+8000001=80111B9=ReturnFromBattleToOverworldJAP
 0xBFBFBFFF
+
+====================
+
+@@ filename = "Bootstrapped"
+@@ start = 116
+@@
