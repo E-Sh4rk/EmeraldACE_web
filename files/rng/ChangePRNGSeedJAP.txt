@@ -25,7 +25,7 @@ ZZ?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6
 VV?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
 
 UVdata = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
-ZWdata = ((zz<<24)|(ZZ<<16)|(ww<<8)|WW)
+ZWdata = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
 address = 0x03005AE0
 
 @@
