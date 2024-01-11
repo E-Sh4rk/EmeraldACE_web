@@ -281,6 +281,11 @@
     "ita": "pkmn/ChangePokerusOrigin.txt",
     "cat": [ "pkmn" ]
   },
+	  {
+    "name": "Change Pokemon Pkrs and Origins",
+    "jap": "pkmn/ChangePokerusOriginJAP.txt",
+    "cat": [ "pkmn" ]
+  },
   {
     "name": "Change Pokemon Move (with exit code bootstrap)",
     "eng": "pkmn/ChangePokemonMove.txt",
