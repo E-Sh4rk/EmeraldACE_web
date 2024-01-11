@@ -1,0 +1,67 @@
+@@ title = "Change Pokerus and Origin Data"
+@@ author = "E-Sh4rk"
+@@ exit = "CertificateJAPmod"
+
+; The Pokemon to modify the data of must be located in Box 10 Slot 19.
+
+inaccurate_emu =       0    ; Set to 1 if you are using an emulator < mgba 0.9
+pid =         0xA7C3510F    ; Set to PID of pokemon to change data of
+otid =        0xABCD1234    ; Set to OTID (SIDTID) of pokemon to change data of
+
+cur_loc =           0x0F    ; 0x0-0xFF   
+new_loc =           0xFF    ; 0x0-0xFF
+
+cur_met_lvl =         31    ; 0-127 (0 if hatched from an egg)
+new_met_lvl =        127    ; 0-127 (0 if hatched from an egg)
+
+; Games are 1-15, non-glitch options presented here for ease of use
+cur_origin_game =      3    ; 1=Sapphire,2=Ruby,3=Emerald,4=FireRed,5=LeafGreen, 
+new_origin_game =     15    ; 15=Colo/XD
+
+; Balls are 0-15, non-glitch options are presented here for ease of use
+cur_ball =             1    ; 1=Master, 2=Ultra, 3=Great, 4=Poke, 5=Safari, 6=Net 
+new_ball =             4    ; 7=Dive, 8=Nest, 9=Repeat, 10=Timer, 11=Luxury,12=Premier
+
+cur_ot_gender =        0    ; 0 = Male, 1 = Female
+new_ot_gender =        1
+
+; You must set either the variable cur_encoded_pkrs (use the code "Read Pokemon Pokerus field" to determine its value)...
+cur_encoded_pkrs = 0x100    ; 0x0-0xFF
+; ... OR the variable cur_pkrs (in this case you must keep the default cur_encoded_pkrs = 0x100)
+cur_pkrs =          0x00    ; 0x0-0xFF
+new_pkrs =          0x00    ; 0x0-0xFF
+
+; DO NOT MODIFY THE PARAMETERS BELOW
+key = pid ^ otid
+cur_pkrs = cur_encoded_pkrs == 0x100 ? cur_pkrs : cur_encoded_pkrs ^ (key & 255)
+new_field = new_pkrs | (new_loc << 8) | ((new_met_lvl & 127) << 16) |\
+            ((new_origin_game & 15) << 23) | ((new_ball & 15) << 27) |\
+            ((new_ot_gender & 1) << 31)
+cur_field = cur_pkrs | (cur_loc << 8) | ((cur_met_lvl & 127) << 16) |\
+            ((cur_origin_game & 15) << 23) | ((cur_ball & 15) << 27) |\
+            ((cur_ot_gender & 1) << 31)
+new_encoded_field = new_field ^ key
+
+pmod = pid % 24
+misc_substructure_position = \
+    pmod == 18 | pmod == 19 | pmod == 20 | pmod == 21 | \
+    pmod == 22 | pmod == 23 ? 0 : \
+    pmod == 4  | pmod == 5  | pmod == 10 | pmod == 11 | \
+    pmod == 16 | pmod == 17 ? 1 : \
+    pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
+    pmod == 13 | pmod == 15 ? 2 : 3
+offset = 32 + 12*misc_substructure_position
+
+checksum_diff = ((new_field & 0xFFFF) + (new_field >> 16)) - ((cur_field & 0xFFFF) + (cur_field >> 16))
+
+@@
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+LDRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Load checksum
+ADC r12, r12, {checksum_diff & 0xFFFF} ?
+STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
+
+movs r12, {new_encoded_field} ?
+adc r11, r11, {offset-7} ?
+str r12, [r11, 0]!
