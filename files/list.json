@@ -188,6 +188,10 @@
     "ger": "pkmn/ChangeRibbonsObedience.txt",
     "spa": "pkmn/ChangeRibbonsObedience.txt",
     "ita": "pkmn/ChangeRibbonsObedience.txt",
+    "cat": ["pkmn"]
+  },
+	  {
+    "name": "Change Pokemon ribbons and obedience",
     "jap": "pkmn/ChangeRibbonsObedienceJAP.txt",
     "cat": ["pkmn"]
   },
