@@ -1,4 +1,4 @@
-@@ title = "Change ribbons and obedience (with exit code bootstrap)"
+@@ title = "Change ribbons and obedience"
 @@ author = "E-Sh4rk"
 @@ exit = "CertificateJAPmod"
 
