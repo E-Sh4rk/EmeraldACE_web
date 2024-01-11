@@ -1,5 +1,5 @@
 @@ title = "Read Pokérus field"
-@@ exit = "CertificateFullENG"
+@@ exit = "CertificateFull{LANG}"
 
 pid = 0
 
