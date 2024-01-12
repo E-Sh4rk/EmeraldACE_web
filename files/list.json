@@ -383,6 +383,7 @@
     "ger": "pkmn/ReadPkrus.txt",
     "spa": "pkmn/ReadPkrus.txt",
     "ita": "pkmn/ReadPkrus.txt",
+    "jap": "pkmn/ReadPkrusJAP.txt",
     "cat": ["pkmn"]
   }
 ]
