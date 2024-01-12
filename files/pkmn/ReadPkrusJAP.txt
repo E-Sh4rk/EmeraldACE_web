@@ -1,0 +1,28 @@
+@@ title = "Read Pokérus field"
+@@ exit = "CertificateJAP"
+
+pid = 0x12345678
+
+pmod = pid % 24
+misc_substructure_position = \
+    pmod == 18 | pmod == 19 | pmod == 20 | pmod == 21 | \
+    pmod == 22 | pmod == 23 ? 0 : \
+    pmod == 4  | pmod == 5  | pmod == 10 | pmod == 11 | \
+    pmod == 16 | pmod == 17 ? 1 : \
+    pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
+    pmod == 13 | pmod == 15 ? 2 : 3
+offset = 32 + 12*misc_substructure_position
+
+@@
+
+; Store the (encoded) Pokérus field of the second pokemon in the team in its attack stat
+
+
+MOV r12, #0x2000000
+ADC r12, r12, #0x24000
+ADC r12, r12, #0x1f4           ; r12 = &Trainer_party + 100 (second pkmn)
+ADC r10, r12, {offset} ?
+
+ldrb r11, [r10]                ; Load Pokérus of Pkmn 2
+
+strh r11, [r12, #90]           ; Store Pokérus in Attack stat
