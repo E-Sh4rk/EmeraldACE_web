@@ -6,6 +6,10 @@
     "ger": "rng/ChangePrngSeedNon-JAP.txt",
     "spa": "rng/ChangePrngSeedNon-JAP.txt",
     "ita": "rng/ChangePrngSeedNon-JAP.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Change PRNG Seed (for 0x085F)",
     "jap": "rng/ChangePRNGSeedJAP.txt",
     "cat": ["rng"]
   },
@@ -16,6 +20,10 @@
     "ger": "misc/ChangeTrainerTidSid.txt",
     "spa": "misc/ChangeTrainerTidSid.txt",
     "ita": "misc/ChangeTrainerTidSid.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change trainer TID and SID (for 0x085F)",
     "jap": "misc/ChangeTrainerTidSidJAP.txt",
     "cat": ["misc"]
   },

@@ -1,4 +1,4 @@
-@@ title = "Change PRNG Seed (0x085F)"
+@@ title = "Change PRNG Seed (JAP, 0x085F)"
 @@ author = "Sleipnir (Shao + Papa Jefe Translation)"
 @@ exit = null
 
