@@ -27,7 +27,7 @@ movs r11, {(X<<28)|(x<<24)|(slot<<16)|0x17B} ?5 %%  R11 = Xx0Z017B
 0
 str  r11, [r12]!
 
-movs r11, {0x0200|(Y<<4)|y} ?5    %% R11=02Yy
+movs r11, {0xD0200|(Y<<4)|y} ?5    %% R11=D02Yy
 strh r11, [r12, {inaccurate_emu ? 2 : 4}]
 sbc r12,r12, 0xED              %%  R12=R12-ED
 sbc r11,r12, 0xCC              %%  R11=R12-CC
