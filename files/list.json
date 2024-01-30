@@ -43,12 +43,6 @@
     "cat": ["misc"]
   },
   {
-    "name": "Teach any move to a pokemon (with exit code bootstrap)",
-    "eng": "misc/TeachAnyMove.txt",
-    "fra": "misc/TeachAnyMove.txt",
-    "cat": ["misc"]
-  },
-  {
     "name": "Get any item at the lottery (with exit code bootstrap)",
     "eng": "misc/GetAnyItemLottery.txt",
     "fra": "misc/GetAnyItemLottery.txt",
