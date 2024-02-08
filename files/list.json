@@ -43,27 +43,48 @@
     "cat": ["misc"]
   },
   {
+    "name": "Teach any move to a pokemon (with exit code bootstrap)",
+    "eng": "misc/TeachAnyMove.txt",
+    "fra": "misc/TeachAnyMove.txt",
+	"ger": "misc/TeachAnyMove.txt",
+	"spa": "misc/TeachAnyMove.txt",
+	"ita": "misc/TeachAnyMove.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Get any item at the lottery (with exit code bootstrap)",
     "eng": "misc/GetAnyItemLottery.txt",
     "fra": "misc/GetAnyItemLottery.txt",
+	"ger": "misc/GetAnyItemLottery.txt",
+	"spa": "misc/GetAnyItemLottery.txt",
+	"ita": "misc/GetAnyItemLottery.txt",
     "cat": ["misc"]
   },
   {
     "name": "Custom Mass Outbreaks 1 (with exit code bootstrap)",
     "eng": "misc/CustomMassOutbreaks1.txt",
     "fra": "misc/CustomMassOutbreaks1.txt",
+	"ger": "misc/CustomMassOutbreaks1.txt",
+    "spa": "misc/CustomMassOutbreaks1.txt",
+    "ita": "misc/CustomMassOutbreaks1.txt",
     "cat": ["misc"]
   },
   {
     "name": "Custom Mass Outbreaks 2 (with exit code bootstrap)",
     "eng": "misc/CustomMassOutbreaks2.txt",
     "fra": "misc/CustomMassOutbreaks2.txt",
+	"ger": "misc/CustomMassOutbreaks2.txt",
+    "spa": "misc/CustomMassOutbreaks2.txt",
+    "ita": "misc/CustomMassOutbreaks2.txt",
     "cat": ["misc"]
   },
    {
     "name": "End Custom Mass Outbreaks (with exit code bootstrap)",
     "eng": "misc/EndCustomMassOutbreaks.txt",
     "fra": "misc/EndCustomMassOutbreaks.txt",
+	"ger": "misc/EndCustomMassOutbreaks.txt",
+	"spa": "misc/EndCustomMassOutbreaks.txt",
+	"ita": "misc/EndCustomMassOutbreaks.txt",
     "cat": ["misc"]
   },
   {
