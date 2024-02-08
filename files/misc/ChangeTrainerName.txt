@@ -1,13 +1,12 @@
-@@ title = "Change trainer name (GER)"
+@@ title = "Change trainer name"
 @@ author = "E-Sh4rk"
-@@ exit = "CertificateGER" ; Note: Change to CertificateShortGER to preserve box 14 name
+@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
 
 letter1 = 0
 letter2 = 0
 letter3 = 0
 letter4 = 0
 start   = 0 ; 0 for characters 1-4, 1 for characters 5-8
-
 
 ; Player names end with 0xFF, so you can choose up to 7 characters
 ; freely but must end with 0xFF. The 0xFF should immediately follow the
