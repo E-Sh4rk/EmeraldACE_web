@@ -5,6 +5,9 @@
 ; Store the PID of the second pokemon in the team in its attack and defense stats
 ; PID=attack + (defense*65536)
 
+; NOTE: This code does NOT work for Deoxys because Deoxys stats are computed differently.
+; If you want to apply this code on Deoxys, please use Sleipnir's code instead: https://pastebin.com/dFLaf2TB
+
 
 ; movs r12, { 0x20244ec + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
 MOVS r12, #0x2a40000
