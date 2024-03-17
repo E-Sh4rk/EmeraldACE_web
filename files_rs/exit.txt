@@ -263,6 +263,183 @@ adc r0,r12, 0x8000001           ;  R0=R12+8000001=80111B9=ReturnFromBattleToOver
 
 ====================
 
+@@ filename = "LoadMapShort_R_ENG0"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA8000               ; r12=A8000
+adc r12, r12, 0xA20             ; r12=A8A20
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805450D
+
+====================
+
+@@ filename = "LoadMapShort_R_ENG1"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA8000               ; r12=A8000
+adc r12, r12, 0xA60             ; r12=A8A60
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805452D
+
+====================
+
+@@ filename = "LoadMapShort_R_ENG2"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA8000               ; r12=A8000
+adc r12, r12, 0xA60             ; r12=A8A60
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805452D
+
+====================
+
+@@ filename = "LoadMapShort_S_ENG0"
+@@ start = 92
+@@
+
+movs r12, 0xA6000               ; r12=A6000
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+adcs r12, r12, 0x2980           ; r12=A8981
+adc r12, r12, 0xA7              ; r12=A8A28
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054511
+
+====================
+
+@@ filename = "LoadMapShort_S_ENG1"
+@@ start = 92
+@@
+
+movs r12, 0xA8000               ; r12=A8000
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+adcs r12, r12, 0xA30            ; r12=A8A31
+adc r12, r12, 0x37              ; r12=A8A68
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054531
+
+====================
+
+@@ filename = "LoadMapShort_S_ENG2"
+@@ start = 92
+@@
+
+movs r12, 0xA8000               ; r12=A8000
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+adcs r12, r12, 0xA30            ; r12=A8A31
+adc r12, r12, 0x37              ; r12=A8A68
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054531
+
+====================
+
+@@ filename = "LoadMapShort_R_ITA"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002
+movs r12, 0xA9000               ; r12=A9000
+adc r12, r12, 0xC8              ; r12=A90C8
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054861
+
+====================
+
+@@ filename = "LoadMapShort_S_ITA"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA9000               ; r12=A9000
+adc r12, r12, 0xD0              ; r12=A90D0
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054865
+
+====================
+
+@@ filename = "LoadMapShort_R_GER"
+@@ start = 92
+@@
+
+movs r12, 0xA6000               ; r12=A6000
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+adcs r12, r12, 0x2FC0           ; r12=A8FC1
+adc r12, r12, 0xDF              ; r12=A90A0
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805484D
+
+====================
+
+@@ filename = "LoadMapShort_S_GER"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA9000               ; r12=A9000
+adc r12, r12, 0xA8              ; r12=A90A8
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054851
+
+====================
+
+@@ filename = "LoadMapShort_R_SPA"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA9000               ; r12=A9000
+adc r12, r12, 0x298             ; r12=A9298
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054949
+
+====================
+
+@@ filename = "LoadMapShort_S_SPA"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA9000               ; r12=A9000
+adc r12, r12, 0x2A0             ; r12=A92A0
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805494D
+
+====================
+
+@@ filename = "LoadMapShort_R_FRA"
+@@ start = 92
+@@
+
+movs r12, 0xA6000               ; r12=A6000
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+adcs r12, r12, 0x3240           ; r12=A9241
+adc r12, r12, 0x37              ; r12=A9278
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=8054939
+
+====================
+
+@@ filename = "LoadMapShort_S_FRA"
+@@ start = 96
+@@
+
+0xE3FFB3BE                      ; mvns r11, 0xF8000002 ; r11=7FFFFFD
+movs r12, 0xA6000               ; r12=A6000
+adc r12, r12, 0x3280            ; r12=A9280
+0xE0AB00EC                      ; adc r0, r11, (r12ROR1) ; r0=805493D
+
+====================
+
+@@ filename = "LoadMapShort_R_JAP"
+@@ start = 104
+@@
+
+ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2RJAP
+0x08051781                      ;  Data loaded, not executed
+
+====================
+
+@@ filename = "LoadMapShort_S_JAP"
+@@ start = 104
+@@
+
+ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2SJAP
+0x08051785                      ;  Data loaded, not executed
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@
