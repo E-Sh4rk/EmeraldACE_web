@@ -1,0 +1,24 @@
+@@ title = "Change PRNG Seed and Teleport (JAP)"
+@@ author = "Sleipnir17"
+@@ exit = "LoadMapShort_{GAME}_{LANGNR}"
+
+; This code will set the current seed to the value specified in "seed" and will teleport to the location corresponding to the value specified in "map_id"
+; If you don't know how to properly use this code you can check this guide: https://e-sh4rk.github.io/EmeraldACE_web/doc/SeedChangeAndWarpRS_Guide.pdf
+; Please set the seed and the map_id below.
+; If your seed or map_id are written in hexadecimal, you must use the prefix 0x.
+; For instance, for the seed 1234ABCD, you must write 0x1234ABCD.
+seed = 0x1234ABCD
+map_id = 0x1234
+
+@@
+
+0x4700A000                     %%  Switch to ARM
+sbc r11,r15, 0x73              %%  R11=PC-73-1=2038098
+movs r10, 0xFF0                %%  R10=FF0
+adc r11,r11, 0x2D400           %%  R11=R11+2D400=2065498
+adc r10,r10, 0x3000000         %%  R10=R10+3000000=3000FF0
+adc r10,r10, 0x3700            %%  R10=R10+3700=30046F0
+mov r12, { map_id } ?
+strh r12, [r11]                %%  Store new map_id
+mov r12, { seed } ?
+str r12, [r10, 0x58]!          %%  Store new seed in PRNG state location
