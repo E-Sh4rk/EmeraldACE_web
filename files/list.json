@@ -381,6 +381,7 @@
     "ger": "pkmn/ChangeOTName.txt",
     "spa": "pkmn/ChangeOTName.txt",
     "ita": "pkmn/ChangeOTName.txt",
+    "jap": "pkmn/ChangeOTNameJAP.txt",
     "cat": ["pkmn"]
   },
   {
@@ -390,6 +391,7 @@
     "ger": "pkmn/ChangeNickname.txt",
     "spa": "pkmn/ChangeNickname.txt",
     "ita": "pkmn/ChangeNickname.txt",
+    "jap": "pkmn/ChangeNicknameJAP.txt",
     "cat": ["pkmn"]
   },
   {

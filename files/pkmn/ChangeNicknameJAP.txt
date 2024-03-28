@@ -1,6 +1,6 @@
 @@ title = "Change Pokemon Nickname"
 @@ author = "E-Sh4rk"
-@@ exit = "Certificate{LANG}" ; Note: Change to CertificateShort{LANG} to preserve box 14 name
+@@ exit = "CertificateJAPmod"
 
 ; The Pokemon must be located in Box 10 Slot 19.
 ; Charset: https://bulbapedia.bulbagarden.net/wiki/Character_encoding_(Generation_III)
