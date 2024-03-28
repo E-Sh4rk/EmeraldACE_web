@@ -16,6 +16,7 @@ start   = 0 ; 0 for characters 1-4, 1 for characters 5-8, 2 for characters 9-10
 
 le_encoding = letter1 | (letter2 << 8) | (letter3 << 16) | (letter4 << 24)
 offset = 8 + 0x37 + start*4
+inaccurate_emu = 0
 
 @@
 
