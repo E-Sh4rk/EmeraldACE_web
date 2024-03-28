@@ -263,7 +263,7 @@ adc r0,r12, 0x8000001           ;  R0=R12+8000001=80111B9=ReturnFromBattleToOver
 
 ====================
 
-@@ filename = "LoadMapShort_R_ENG0"
+@@ filename = "LoadMapShort_RUBY_ENG0"
 @@ start = 96
 @@
 
@@ -274,7 +274,7 @@ adc r12, r12, 0xA20             ; r12=A8A20
 
 ====================
 
-@@ filename = "LoadMapShort_R_ENG1"
+@@ filename = "LoadMapShort_RUBY_ENG1"
 @@ start = 96
 @@
 
@@ -285,7 +285,7 @@ adc r12, r12, 0xA60             ; r12=A8A60
 
 ====================
 
-@@ filename = "LoadMapShort_R_ENG2"
+@@ filename = "LoadMapShort_RUBY_ENG2"
 @@ start = 96
 @@
 
@@ -296,7 +296,7 @@ adc r12, r12, 0xA60             ; r12=A8A60
 
 ====================
 
-@@ filename = "LoadMapShort_S_ENG0"
+@@ filename = "LoadMapShort_SAPP_ENG0"
 @@ start = 92
 @@
 
@@ -308,7 +308,7 @@ adc r12, r12, 0xA7              ; r12=A8A28
 
 ====================
 
-@@ filename = "LoadMapShort_S_ENG1"
+@@ filename = "LoadMapShort_SAPP_ENG1"
 @@ start = 92
 @@
 
@@ -320,7 +320,7 @@ adc r12, r12, 0x37              ; r12=A8A68
 
 ====================
 
-@@ filename = "LoadMapShort_S_ENG2"
+@@ filename = "LoadMapShort_SAPP_ENG2"
 @@ start = 92
 @@
 
@@ -332,7 +332,7 @@ adc r12, r12, 0x37              ; r12=A8A68
 
 ====================
 
-@@ filename = "LoadMapShort_R_ITA"
+@@ filename = "LoadMapShort_RUBY_ITA"
 @@ start = 96
 @@
 
@@ -343,7 +343,7 @@ adc r12, r12, 0xC8              ; r12=A90C8
 
 ====================
 
-@@ filename = "LoadMapShort_S_ITA"
+@@ filename = "LoadMapShort_SAPP_ITA"
 @@ start = 96
 @@
 
@@ -354,7 +354,7 @@ adc r12, r12, 0xD0              ; r12=A90D0
 
 ====================
 
-@@ filename = "LoadMapShort_R_GER"
+@@ filename = "LoadMapShort_RUBY_GER"
 @@ start = 92
 @@
 
@@ -366,7 +366,7 @@ adc r12, r12, 0xDF              ; r12=A90A0
 
 ====================
 
-@@ filename = "LoadMapShort_S_GER"
+@@ filename = "LoadMapShort_SAPP_GER"
 @@ start = 96
 @@
 
@@ -377,7 +377,7 @@ adc r12, r12, 0xA8              ; r12=A90A8
 
 ====================
 
-@@ filename = "LoadMapShort_R_SPA"
+@@ filename = "LoadMapShort_RUBY_SPA"
 @@ start = 96
 @@
 
@@ -388,7 +388,7 @@ adc r12, r12, 0x298             ; r12=A9298
 
 ====================
 
-@@ filename = "LoadMapShort_S_SPA"
+@@ filename = "LoadMapShort_SAPP_SPA"
 @@ start = 96
 @@
 
@@ -399,7 +399,7 @@ adc r12, r12, 0x2A0             ; r12=A92A0
 
 ====================
 
-@@ filename = "LoadMapShort_R_FRA"
+@@ filename = "LoadMapShort_RUBY_FRA"
 @@ start = 92
 @@
 
@@ -411,7 +411,7 @@ adc r12, r12, 0x37              ; r12=A9278
 
 ====================
 
-@@ filename = "LoadMapShort_S_FRA"
+@@ filename = "LoadMapShort_SAPP_FRA"
 @@ start = 96
 @@
 
@@ -422,7 +422,7 @@ adc r12, r12, 0x3280            ; r12=A9280
 
 ====================
 
-@@ filename = "LoadMapShort_R_JAP"
+@@ filename = "LoadMapShort_RUBY_JAP"
 @@ start = 104
 @@
 
@@ -431,7 +431,7 @@ ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2RJAP
 
 ====================
 
-@@ filename = "LoadMapShort_S_JAP"
+@@ filename = "LoadMapShort_SAPP_JAP"
 @@ start = 104
 @@
 
