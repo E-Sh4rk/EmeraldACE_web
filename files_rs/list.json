@@ -106,5 +106,23 @@
     "jap1": "bootstraps/ReturnExitCodeBootstrapJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["bootstraps"]
+  },
+    {
+    "name": "Change PRNG seed and teleport",
+    "eng2": "rng/SeedChangeAndWarpENG.txt",
+    "eng1": "rng/SeedChangeAndWarpENG.txt",
+    "eng0": "rng/SeedChangeAndWarpENG.txt",
+    "fra1": "rng/SeedChangeAndWarpEU.txt",
+    "fra0": "rng/SeedChangeAndWarpEU.txt",
+    "ger1": "rng/SeedChangeAndWarpEU.txt",
+    "ger0": "rng/SeedChangeAndWarpEU.txt",
+    "spa1": "rng/SeedChangeAndWarpEU.txt",
+    "spa0": "rng/SeedChangeAndWarpEU.txt",
+    "ita1": "rng/SeedChangeAndWarpEU.txt",
+    "ita0": "rng/SeedChangeAndWarpEU.txt",
+    "jap0": "rng/SeedChangeAndWarpJP.txt",
+    "jap1": "rng/SeedChangeAndWarpJP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["rng"]
   }
 ]
