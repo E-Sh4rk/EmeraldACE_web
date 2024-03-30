@@ -16,8 +16,8 @@ sbc r11,r15, 0xB3              %%  R11=PC-B3-1=2038338
 adc r11,r11, 0x2D400           %%  R11=R11+2D400=2065738
 movs r10, 0xFF0                %%  R10=FF0
 adc r10,r10, 0x3000000         %%  R10=R10+3000000=3000FF0
-adc r10,r10, 0x3740            %%  R10=R10+3740=3004730
+adc r10,r10, 0x3780            %%  R10=R10+3780=3004770
 movs r12, { map_id } ?
 strh r12, [r11]                %%  Store new map_id
 movs r12, { seed } ?
-str r12, [r10, 0xE8]!          %%  Store new seed in PRNG state location (+10)
+str r12, [r10, 0xB8]!          %%  Store new seed in PRNG state location
