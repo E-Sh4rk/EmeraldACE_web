@@ -1,4 +1,4 @@
-@@ title = "Custom Mass Outbreaks (2) (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Custom Mass Outbreaks (2) (with exit code bootstrap)"
 @@ exit = "Bootstrapped"
 
 ; Before executing this code, you should have executed code (1) once.

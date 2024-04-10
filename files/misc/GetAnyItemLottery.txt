@@ -1,6 +1,6 @@
-@@ title = "Get any item at the lottery (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Get any item at the lottery"
 @@ author = "Sleipnir"
-@@ exit = "Bootstrapped"
+@@ exit = "CertificateFull{LANG}"
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
 

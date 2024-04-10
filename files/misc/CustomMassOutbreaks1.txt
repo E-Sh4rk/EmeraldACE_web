@@ -1,4 +1,4 @@
-@@ title = "Custom Mass Outbreaks (1) (with exit code bootstrap) (ENG/FRA)"
+@@ title = "Custom Mass Outbreaks (1) (with exit code bootstrap)"
 @@ exit = "Bootstrapped"
 
 ; Execute this code to setup a custom mass outbreak.
