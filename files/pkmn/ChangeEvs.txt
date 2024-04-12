@@ -3,7 +3,10 @@
 @@ exit = "Bootstrapped"
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
-; The Pokemon must be located in Box 10 Slot 19.
+; This code changes the EVs of the pokemon in Box 10 Slot 19.
+; Stat changes due to the EV change will be applied immediately, as opposed to requiring a level up.
+; The value of OTID is TID + (SID * 65536)
+; the current stat parameters below represent the current EVs the pokemon has in the corresponding stat, NOT the value of the stat itself.
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
