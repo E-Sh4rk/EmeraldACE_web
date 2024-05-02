@@ -10,6 +10,8 @@ seed = 0x1234ABCD     ; Should not be 0
 ; For Sudowoodo: 6 cycles before your target seed (3 + 3 for the menu navigation involved for using the Wailmer Pail)
 ; For Beldum (pokeball): 4 cycles before your target seed (battle must be engaged as fast as possible after closing the menu)
 ; For Electrode: 5 cycles before your target seed if both Electrodes are present, 4 cycles otherwise
+; For Hoenn starter: 7 cycles before your target seed
+; For Johto starter: 8 cycles before your target seed
 
 ; In general: Exiting the pokemon menu (or the bag, or the pokedex, etc) advances 3 cycles due the the ASLR.
 ; Additionaly, moving npc's and some other map elements will advance some cycles when closing the menu,
