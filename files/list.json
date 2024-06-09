@@ -285,6 +285,11 @@
     "cat": ["rng"]
   },
   {
+    "name": "Change and freeze PRNG Seed (for 0x085F)",
+    "jap": "rng/ChangeFreezePrngSeedJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
     "name": "Put Egg With Any PID In Daycare",
     "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
     "cat": ["rng"]
