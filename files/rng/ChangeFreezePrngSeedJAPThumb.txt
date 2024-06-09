@@ -1,0 +1,90 @@
+@@ title = "Change and freeze PRNG Seed (JAP, Thumb)"
+@@ author = "E-Sh4rk & Shao (kazu Translation)"
+@@ exit = null
+
+; This code is in Thumb, do not use with an ARM Pokemon (like 0x0615 or 0x6789)
+
+Seed = 0x1234ABCD     ; Should not be 0
+
+; 'べ' in Box 3 should be typed from the blue (Hiragana) layer
+; 'ベ' in Box 5 should be typed from the red (Katakana) layer
+
+; The seed you write above must be:
+; For wild pokemons with Sweet Scent (will always be H1): 2 cycles before your target seed
+; For mass outbreaks with Sweet Scent (will always be H1): 1 cycle before your target seed
+; For Rayquaza, Deoxys, Kyogre, Regirock (and probably others): 3 cycles before your target seed
+; For Sudowoodo: 6 cycles before your target seed (3 + 3 for the menu navigation involved for using the Wailmer Pail)
+; For Beldum (pokeball): 4 cycles before your target seed (battle must be engaged as fast as possible after closing the menu)
+; For Electrode: 5 cycles before your target seed if both Electrodes are present, 4 cycles otherwise
+; For Hoenn starter: 7 cycles before your target seed
+; For Johto starter: 8 cycles before your target seed
+
+; In general: Exiting the pokemon menu (or the bag, or the pokedex, etc) advances 3 cycles due the the ASLR.
+; Additionaly, moving npc's and some other map elements will advance some cycles when closing the menu,
+; and will also advance some cycles regularly (more or less) when not in a menu/animation/battle.
+
+; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
+; but for those without NPCs the results are very consistent.
+
+; Here is a tool to show the vicinity of your target seed: https://e-sh4rk.github.io/CodeGenerator/scripts/seed/
+
+; For stationary pokemons, once the code has been executed and that you have
+; exited the menu, you should start the encounter as soon as possible to
+; avoid additional rng cycles due to the map events (moving npc's, etc).
+
+; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
+
+xx ?= (Seed & 0xFF000000)>>24
+XX ?= (Seed & 0xFF0000)>>16
+yy ?= (Seed & 0xFF00)>>8
+YY ?= (Seed & 0xFF)
+neg = 0x80000000
+
+ww?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+zz?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
+ZWdata = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
+address = 0x03005AE0
+
+@@
+
+0x21064808
+; ldr r0, [pc, #0x20] ; 4808 @ r0 = gBattleTypeFlags (0x02022c90)
+; mov r1, #0x6 ; 2106 @ bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
+0x48086001
+; str r1, [r0] ; 6001
+; ldr r0 [pc, #0x20] ; 4808 @ r0 = inBattle (0x03002799)
+0x210200FF
+; 00FF @ filler
+; mov r0, #0x2 ; 2102 @ bit 1 of inBattle must be activated (but preferably not bit 0 and 2)
+0xE0007001
+; strb r1, [r0] ; 7001
+; b #0x4 ; E000
+0x4807FFFF
+; FFFF @ bad filler
+; ldr r0, [pc, #0x1C] ; 4807 @ r0 = PRNG state (0x0x03005AE0)
+0x4A0A4908
+; ldr r1, [pc, #0x20] ; 4908 @ r1 = uuUUvvVV
+; ldr r2, [pc, #0x28] ; 4A0A @ r2 = wwWWzzZZ
+0x00FF1889
+; add r1, r1, r2 ; 1889 @ r1 + r2 = xxXXyyYY
+; 00FF @ filler
+0x47706001
+; str r1, [r0] ; 6001
+; bx lr ; 4770
+0xFFFFFFFF ; filler
+0x02022C90
+0x03002799
+{address}
+0x5151FF00
+{UVdata}
+0x51FF0000
+{ZWdata}
