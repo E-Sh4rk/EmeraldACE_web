@@ -1,0 +1,60 @@
+@@ title = "Put Egg With Desired PID In Daycare"
+@@ author = "Shao (kazu translation)"
+@@ exit = null 
+
+; This code is in Thumb, do not use with an ARM Pokemon (like 0x615 or 0x6789)
+
+; Breeding Outcomes
+; With Ditto + Any species, you get the Any species, including Ditto
+; With a Female + non Female pairing, you get the Female
+; With just one Ditto, you get a Bulbasaur
+; With just one Female, you get the same species
+; With two Females, you get the second species you deposited
+; All other situations seem to produce a glitch Pokemon
+
+; Replace the below default with your desired PID
+; Do not request a PID of 0, it will not generate an egg
+
+pid = 0x1234abcd
+
+xx ?= (pid & 0xFF000000)>>24
+XX ?= (pid & 0xFF0000)>>16
+yy ?= (pid & 0xFF00)>>8
+YY ?= (pid & 0xFF)
+neg = 0x80000000
+
+ww?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+zz?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
+ZWdata = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
+
+@@
+
+0x48064679
+; mov r1, pc ; 4679
+; ldr r0, [pc, #0x18] ; 4806 @ r0 = 0x9008
+0x48071A09
+; sub r1, r1, r0 ; 1A09 @ r1 - r0 = stored PID of daycare egg
+; ldr r0, [pc, #0x1C] ; 4807 @ r0 = uuUUvvVV
+0x4A0700FF
+; 00FF @ filler
+; ldr r2, [pc, #0x1C] ; 4A07 @ r2 = wwWWzzZZ
+0xE0001880
+; add r0, r0, r2 ; 1880 @ r0 + r2 = xxXXyyYY
+; b #4 ; E000
+0x6008FFFF
+; FFFF @ bad filler
+; str r0, [r1] ; 6008
+0x4770
+; bx lr ; 4770
+0x9008
+{UVdata}
+{ZWdata}
