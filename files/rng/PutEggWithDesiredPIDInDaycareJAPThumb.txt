@@ -1,4 +1,4 @@
-@@ title = "Put Egg With Desired PID In Daycare"
+@@ title = "Put Egg With Desired PID In Daycare (JAP, Thumb)"
 @@ author = "Shao (kazu translation)"
 @@ exit = null 
 

@@ -10,7 +10,7 @@
   },
   {
     "name": "Change PRNG Seed (for 0x085F)",
-    "jap": "rng/ChangePRNGSeedJAP.txt",
+    "jap": "rng/ChangePRNGSeedJAPThumb.txt",
     "cat": ["rng"]
   },
   {
@@ -24,7 +24,7 @@
   },
   {
     "name": "Change trainer TID and SID (for 0x085F)",
-    "jap": "misc/ChangeTrainerTidSidJAP.txt",
+    "jap": "misc/ChangeTrainerTidSidJAPThumb.txt",
     "cat": ["misc"]
   },
   {
@@ -292,6 +292,11 @@
   {
     "name": "Put Egg With Any PID In Daycare",
     "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Put Egg With Any PID In Daycare (for 0x085F)",
+    "jap": "rng/PutEggWithDesiredPIDInDaycareJAPThumb.txt",
     "cat": ["rng"]
   },
   {
