@@ -2,8 +2,6 @@
 @@ author = "Sleipnir"
 @@ exit = "CertificateFull{LANG}"
 
-; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
-
 item_index = 0
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
