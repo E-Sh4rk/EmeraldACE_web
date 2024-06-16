@@ -1,4 +1,4 @@
-@@ title = "Change and freeze PRNG Seed (ENG/FRA)"
+@@ title = "Change and freeze PRNG Seed"
 @@ author = "E-Sh4rk & Shao"
 @@ exit = "Bootstrapped"
 
@@ -33,7 +33,7 @@ seed = 0x1234ABCD     ; Should not be 0
 
 ; For wild pokemons, you should use sweet scent just after executing the code,
 ; without exiting the menu to avoid additional cycles. For that,
-; you must have a stable way of triggering ACE (for instance 0x40E9 (ENG) or 0x40ED (FRA)),
+; you must have a stable way of triggering ACE (cf. https://e-sh4rk.github.io/ACE3/emerald/getting-started/stable-ace/),
 ; then you should capture a new pokemon and rename it ␣ ␣ D n ’ J k l ␣ ␣
 ; and place it in the pc, in the slot just after your exit code bootstrap
 ; (it should not be the last slot of box 14 and the next slot should be free).
