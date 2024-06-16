@@ -1,0 +1,28 @@
+@@ title = "Catch Trainer Pokemon (SPA)"
+@@ author = "Desco + E-Sh4rk"
+@@ exit = "Bootstrapped"
+
+; /!\ For now, this code is only available for console or accurate emulators (mGBA >= 0.9)
+; /!\ THIS CODE NEEDS A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14 AND
+; /!\ A POKEMON NICKNAMED ␣ ␣ D n ’ J k l ␣ ␣ RIGHT AFTER IT
+; /|\ This code has the side effect of changing your TID and SID when used.
+; /|\ If your pokemon is taken to or under 20% HP, the target pokemon will flee and the battle will end.
+
+pokemon_index = 0 ; The index of the pokemon on the team you are trying to catch, starting at 0 (0-5)
+; If you are unsure of what this is, check the Bulbapedia page of the trainer.
+; For example, Drake's Salamence has an index of 4
+; (https://bulbapedia.bulbagarden.net/wiki/Drake#Pok%C3%A9mon_Emerald)
+; 0=Shelgon, 1=Altaria, 2=Kingdra, 3=Flygon, 4=Salamence
+; Getting this wrong will turn your catch into a Bad Egg.
+
+@@
+
+sbc r10, pc, {0xD0F7} ?                             ; Store the address of the player's TID and SID
+movs r11, {0x02024748 + 100 * pokemon_index} ?      ; Store the address of the target's OT
+ldrh r12, [r11]                                     ;
+strh r12, [r10]                                     ; Change the player's TID to the target's OT TID
+ldrh r12, [r11, 2]                                  ;
+strh r12, [r10, 2]                                  ; Change the player's SID to the target's OT SID
+sbc r11, r11, {0x1758 + 100 * pokemon_index} ?      ; Store the address of the battle flags
+movs r12, {52} ?                                    ; Change the battle flags to 52, 0b110100
+str r12, [r11]!

@@ -21,7 +21,7 @@
 ; before being able to use the exit code Bootstrapped again.
 ; Finally, please note that you cannot use the exit code Bootstrapped
 ; if the code you are trying to execute modify the value of r0.
-; In this case, you have to use the exit code CerificateShortFRA instead.
+; In this case, you have to use the exit code CertificateShortFRA instead.
 
 ; === WRITE POKEMON NAME 0-3 ===
 sbc r11, r15, #0x2940            ; r11 = &Box10Slot19 + 9
