@@ -334,7 +334,7 @@
   {
     "name": "Catch Trainer Pokemon",
     "spa": "misc/CatchTrainerPokemon.txt",
-    "cat": [ "pkmn" ]
+    "cat": [ "misc" ]
   },
   {
     "name": "Level Pokemon in DayCare to 100",
