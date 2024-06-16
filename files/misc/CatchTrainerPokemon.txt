@@ -1,9 +1,10 @@
 @@ title = "Catch Trainer Pokemon (SPA)"
-@@ author = "Desco"
+@@ author = "Desco + E-Sh4rk"
 @@ exit = "Bootstrapped"
 
 ; /!\ For now, this code is only available for console or accurate emulators (mGBA >= 0.9)
-; /!\ THIS CODE NEEDS AN **OLD GUY** EXIT CERTIFICATE POKEMON IN BOX 14
+; /!\ THIS CODE NEEDS A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14 AND
+; /!\ A POKEMON NICKNAMED ␣ ␣ D n ’ J k l ␣ ␣ RIGHT AFTER IT
 ; /|\ This code has the side effect of changing your TID and SID when used.
 ; /|\ If your pokemon is taken to or under 20% HP, the target pokemon will flee and the battle will end.
 

@@ -268,11 +268,6 @@
     "cat": ["bootstraps"]
   },
   {
-    "name": "Old Guy Exit Code Bootstrap",
-    "spa": "bootstraps/OldGuyExitCodeBootstrapSPA.txt",
-    "cat": ["bootstraps"]
-  },
-  {
     "name": "Restore 'BX r0' in box 14 name",
     "eng": "bootstraps/RestoreBox14Name.txt",
     "fra": "bootstraps/RestoreBox14Name.txt",
