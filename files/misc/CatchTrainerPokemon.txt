@@ -22,6 +22,6 @@ ldrh r12, [r11]                                     ;
 strh r12, [r10]                                     ; Change the player's TID to the target's OT TID
 ldrh r12, [r11, 2]                                  ;
 strh r12, [r10, 2]                                  ; Change the player's SID to the target's OT SID
-sbc r11, r11, 0x1758 ?                              ; Store the address of the battle flags
+sbc r11, r11, {0x1758 + 100 * pokemon_index} ?      ; Store the address of the battle flags
 movs r12, {52} ?                                    ; Change the battle flags to 52, 0b110100
 str r12, [r11]!
