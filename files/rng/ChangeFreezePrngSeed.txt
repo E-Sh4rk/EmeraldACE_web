@@ -3,15 +3,8 @@
 @@ exit = "Bootstrapped"
 
 seed = 0x1234ABCD     ; Should not be 0
-; The seed you write above must be:
-; For wild pokemons with Sweet Scent (will always be H1): 2 cycles before your target seed
-; For mass outbreaks with Sweet Scent (will always be H1): 1 cycle before your target seed
-; For Rayquaza, Deoxys, Kyogre, Regirock (and probably others): 3 cycles before your target seed
-; For Sudowoodo: 6 cycles before your target seed (3 + 3 for the menu navigation involved for using the Wailmer Pail)
-; For Beldum (pokeball): 4 cycles before your target seed (battle must be engaged as fast as possible after closing the menu)
-; For Electrode: 5 cycles before your target seed if both Electrodes are present, 4 cycles otherwise
-; For Hoenn starter: 7 cycles before your target seed
-; For Johto starter: 8 cycles before your target seed
+; The seed to write above is NOT directly the seed you obtain using PokeFinder.
+; You first have to compute the real target seed using this tool: https://e-sh4rk.github.io/CodeGenerator/scripts/seed/
 
 ; In general: Exiting the pokemon menu (or the bag, or the pokedex, etc) advances 3 cycles due the the ASLR.
 ; Additionaly, moving npc's and some other map elements will advance some cycles when closing the menu,
@@ -19,8 +12,6 @@ seed = 0x1234ABCD     ; Should not be 0
 
 ; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
 ; but for those without NPCs the results are very consistent.
-
-; Here is a tool to show the vicinity of your target seed: https://e-sh4rk.github.io/CodeGenerator/scripts/seed/
 
 @@
 
