@@ -55,13 +55,13 @@ address = 0x03005AE0
 ; ldr r0 [pc, #0x20] ; 4808 @ r0 = inBattle (0x03002799)
 0x210200FF
 ; 00FF @ filler
-; mov r0, #0x2 ; 2102 @ bit 1 of inBattle must be activated (but preferably not bit 0 and 2)
+; mov r1, #0x2 ; 2102 @ bit 1 of inBattle must be activated (but preferably not bit 0 and 2)
 0xE0007001
 ; strb r1, [r0] ; 7001
 ; b #0x4 ; E000
 0x4807FFFF
 ; FFFF @ bad filler
-; ldr r0, [pc, #0x1C] ; 4807 @ r0 = PRNG state (0x0x03005AE0)
+; ldr r0, [pc, #0x1C] ; 4807 @ r0 = PRNG state (0x03005AE0)
 0x4A0A4908
 ; ldr r1, [pc, #0x20] ; 4908 @ r1 = uuUUvvVV
 ; ldr r2, [pc, #0x28] ; 4A0A @ r2 = wwWWzzZZ
