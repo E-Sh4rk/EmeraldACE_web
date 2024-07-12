@@ -699,6 +699,15 @@ adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworld
 
 ====================
 
+@@ filename = "GrabACEExit"
+@@ start = 84
+@@
+
+movs r0, #0x0
+movs pc, #0x354
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@
