@@ -35,9 +35,9 @@ seed = 0x1234ABCD     ; Should not be 0
 ; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
 ; thus it avoids some additional cycles advance that might have depended on the map.
 ; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
-; Also note that if you are using a semi-stable species such as the french 0x40ED,
-; you might need to open the summary of an adjacent pokemon, go to the moves
-; page, and then switch to the 0x40ED moves page to avoid a crash.
+; Also note that if you are using a semi-stable ACE species such as the french 0x40ED,
+; you might need to open the summary of an adjacent pokemon, go to the statistics, moves or contest summary
+; page (it depends on the semi-stable ACE species), and then switch to 0x40ED to avoid a crash.
 
 
 
