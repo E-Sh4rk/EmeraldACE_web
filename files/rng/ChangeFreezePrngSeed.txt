@@ -13,8 +13,6 @@ seed = 0x1234ABCD     ; Should not be 0
 ; Method 1 mons with NPCs in the vicinity like Wynaut egg and fossils might be less consistent as a result,
 ; but for those without NPCs the results are very consistent.
 
-@@
-
 ; As this code uses the exit code Bootstrapped,
 ; you have to setup the certificate exit code bootstrap before using it.
 
@@ -34,12 +32,13 @@ seed = 0x1234ABCD     ; Should not be 0
 ; ldrh r12, [pc], 0x44
 ; Doing that will prevent closing the menu and having to open it back for the sweet scent method,
 ; thus it avoids some additional cycles advance that might have depended on the map.
-; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
-; Also note that if you are using a semi-stable ACE species such as the french 0x40ED,
+; Note 1: you shouldn't stay too long in the summary or it will crash (exit it with B).
+; Note 2: if you are using a semi-stable ACE species such as the french 0x40ED,
 ; you might need to open the summary of an adjacent pokemon, go to the statistics, moves or contest summary
 ; page (it depends on the semi-stable ACE species), and then switch to 0x40ED to avoid a crash.
+; Note 3: the first Pokémon of your party shouldn't be a Pokémon with an ability that alters the RNG (eg: Synchronize, Pressure).
 
-
+@@
 
 ; gBattleTypeFlags: 02022fec
 ; bit 24,21,20,19,18,17,16 or 1 (LE) of gBattleTypeFlags must be activated
