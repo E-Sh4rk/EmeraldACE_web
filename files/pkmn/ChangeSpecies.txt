@@ -7,8 +7,8 @@
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
 otid = 0
-cur_species = 0
-new_species = 0
+cur_species = 0               @input:species
+new_species = 0               @input:species
 
 pmod = pid % 24
 growth_substructure_position = \

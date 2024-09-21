@@ -2,7 +2,7 @@
 @@ author = "Sleipnir"
 @@ exit = "CertificateFull{LANG}"
 
-item_index = 0
+item_index = 0                 @input:item
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 @@

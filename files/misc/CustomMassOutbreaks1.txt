@@ -9,10 +9,10 @@
 
 days_left = 0xFFFF
 encounter_probability = 100 ; 0-100
-move1 = 0xA6
-move2 = 0xA6
-move3 = 0xA6
-move4 = 0xA6
+move1 = 0xA6                @input:move
+move2 = 0xA6                @input:move
+move3 = 0xA6                @input:move
+move4 = 0xA6                @input:move
 
 @@
 

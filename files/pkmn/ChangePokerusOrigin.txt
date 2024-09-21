@@ -9,8 +9,8 @@ inaccurate_emu =       0    ; Set to 1 if you are using an emulator < mgba 0.9
 pid =         0xA7C3510F    ; Set to PID of pokemon to change data of
 otid =        0xABCD1234    ; Set to OTID (SIDTID) of pokemon to change data of
 
-cur_loc =           0x0F    ; 0x0-0xFF   
-new_loc =           0xFF    ; 0x0-0xFF
+cur_loc =           0x0F    ; 0x0-0xFF   @input:location
+new_loc =           0xFF    ; 0x0-0xFF   @input:location
 
 cur_met_lvl =         31    ; 0-127 (0 if hatched from an egg)
 new_met_lvl =        127    ; 0-127 (0 if hatched from an egg)

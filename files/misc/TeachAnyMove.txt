@@ -2,8 +2,8 @@
 @@ author = "Sleipnir"
 @@ exit = "Bootstrapped"
 
-move = 0
-slot = 0   ; Starts at 0 (0-3)
+move = 0              @input:move
+slot = 0            ; Starts at 0 (0-3)
 inaccurate_emu = 0
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14

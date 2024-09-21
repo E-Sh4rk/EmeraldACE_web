@@ -2,7 +2,7 @@
 @@ author = "E-Sh4rk"
 @@ exit = "Bootstrapped"
 
-species = 0xFF     ; Please set the species you want (it should not be 0)
+species = 0xFF     ; Please set the species you want (it should not be 0)       @input:species
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14

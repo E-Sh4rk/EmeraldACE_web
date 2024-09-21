@@ -6,7 +6,8 @@
 ; level or location of the current custom mass outbreaks.
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
 
-species = 1      ; You can set it to 0 to disable the custom mass outbreak
+; You can set it to 0 to disable the custom mass outbreak 
+species = 1                                 @input:species
 ; https://github.com/pret/pokeemerald/blob/master/include/constants/map_groups.h
 map_group = 0
 map_num = 16
