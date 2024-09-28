@@ -547,6 +547,151 @@ ADD r0, r0, #0xee
 
 ====================
 
+@@ filename = "LoadMapFullENG"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
+mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+
+adc r12, lr, 0xB0000              ;  R12=LR+B0000
+sbc r12, r12, 0x30000             ;  R2=R12-30000-1
+sbc r12, r12, 0xB00               ;  R12=R12-B00-1
+adc r0, r12, 0xE8                 ;  R0=R12+E8=CB2_LoadMap2ENG
+0
+
+====================
+
+@@ filename = "LoadMapShortENG"
+@@ start = 92
+@@
+
+adc r12, lr, 0xB0000              ;  R12=LR+B0000
+sbc r12, r12, 0x30000             ;  R2=R12-30000-1
+sbc r12, r12, 0xB00               ;  R12=R12-B00-1
+adc r0, r12, 0xE8                 ;  R0=R12+E8=CB2_LoadMap2ENG
+
+====================
+
+@@ filename = "LoadMapFullITA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
+mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+
+adc r12,lr,0xB0000              ;  R12=LR+B0000
+sbc r12,r12,0x30000             ;  R2=R12-30000-1
+sbc r12,r12,0xAE0               ;  R12=R12-AE0-1
+adc r0,r12,0xDC                 ;  R0=R12+DC=CB2_LoadMap2ITA=CB2_LoadMap2SPA
+0
+
+====================
+
+@@ filename = "LoadMapShortITA"
+@@ start = 92
+@@
+
+adc r12,lr,0xB0000              ;  R12=LR+B0000
+sbc r12,r12,0x30000             ;  R2=R12-30000-1
+sbc r12,r12,0xAE0               ;  R12=R12-AE0-1
+adc r0,r12,0xDC                 ;  R0=R12+DC=CB2_LoadMap2ITA=CB2_LoadMap2SPA
+
+====================
+
+@@ filename = "LoadMapFullSPA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
+mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+
+adc r12,lr,0xB0000              ;  R12=LR+B0000
+sbc r12,r12,0x30000             ;  R2=R12-30000-1
+sbc r12,r12,0xAE0               ;  R12=R12-AE0-1
+adc r0,r12,0xDC                 ;  R0=R12+DC=CB2_LoadMap2ITA=CB2_LoadMap2SPA
+0
+
+====================
+
+@@ filename = "LoadMapShortSPA"
+@@ start = 92
+@@
+
+adc r12,lr,0xB0000              ;  R12=LR+B0000
+sbc r12,r12,0x30000             ;  R2=R12-30000-1
+sbc r12,r12,0xAE0               ;  R12=R12-AE0-1
+adc r0,r12,0xDC                 ;  R0=R12+DC=CB2_LoadMap2ITA=CB2_LoadMap2SPA
+
+====================
+
+@@ filename = "LoadMapFullGER"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
+mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+
+adc r12,lr,0xB0000            ; R12=LR+B0000
+sbc r12,r12,0x30000           ; R2=R12-30000-1
+sbc r12,r12,0xAE0             ; R12=R12-AE0-1
+adc r0,r12,0xE4               ; R0=R12+E4=CB2_LoadMap2GER
+0
+
+====================
+
+@@ filename = "LoadMapShortGER"
+@@ start = 92
+@@
+
+adc r12,lr,0xB0000            ; R12=LR+B0000
+sbc r12,r12,0x30000           ; R2=R12-30000-1
+sbc r12,r12,0xAE0             ; R12=R12-AE0-1
+adc r0,r12,0xE4               ; R0=R12+E4=CB2_LoadMap2GER
+
+====================
+
+@@ filename = "LoadMapFullFRA"
+@@ start = 64
+@@
+
+adcs r12, pc, #0x30           ;  R12=&Box14Name + 3
+mvn r11, 0xEE                 ;  R11=notEE=FFFFFF11
+bic r11, r11, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r11, r11, 0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+str r11, [r12, #0]!           ;  Store bx r0 opcode in [r12]
+
+adc r12,lr,0xB0000              ; R12=LR+B0000
+sbc r12,r12,0x30000             ; R2=R12-30000-1
+sbc r12,r12,0xAE0               ; R12=R12-AE0-1
+adc r0,r12,0xD8                 ; R0=R12+D8=CB2_LoadMap2FRA
+0
+
+====================
+
+@@ filename = "LoadMapShortFRA"
+@@ start = 92
+@@
+
+adc r12,lr,0xB0000              ; R12=LR+B0000
+sbc r12,r12,0x30000             ; R2=R12-30000-1
+sbc r12,r12,0xAE0               ; R12=R12-AE0-1
+adc r0,r12,0xD8                 ; R0=R12+D8=CB2_LoadMap2FRA
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@

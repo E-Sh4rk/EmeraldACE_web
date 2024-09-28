@@ -8,9 +8,8 @@
 
 ; You can set it to 0 to disable the custom mass outbreak 
 species = 1                                 @input:species
-; https://github.com/pret/pokeemerald/blob/master/include/constants/map_groups.h
-map_group = 0
-map_num = 16
+; List of map_id: https://pastebin.com/Wqsi1EcZ
+map_id = 0x1000
 level = 0
 
 @@
@@ -25,5 +24,5 @@ movs r12, { level } ?
 str r12, [r11, 0xC00]!
 sbc r11, r11, 3
 
-movs r12, { (map_group << 24) | (map_num << 16) | species } ?
+movs r12, { (map_id << 16) | species } ?
 str r12, [r11, 0]!

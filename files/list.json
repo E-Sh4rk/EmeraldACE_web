@@ -349,8 +349,12 @@
     "cat": [ "misc" ]
   },
   {
-    "name": "Warp in any map",
-    "fra": "misc/WarpFRA.txt",
+    "name": "Teleport to any map",
+    "eng": "misc/Warp.txt",
+    "fra": "misc/Warp.txt",
+    "ger": "misc/Warp.txt",
+    "spa": "misc/Warp.txt",
+    "ita": "misc/Warp.txt",
     "cat": [ "misc" ]
   },
   {

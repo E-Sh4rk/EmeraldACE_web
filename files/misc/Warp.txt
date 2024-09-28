@@ -1,0 +1,15 @@
+@@ title = "Teleport to any map"
+@@ author = "Sleipnir17, adapted by E-Sh4rk"
+@@ exit = "LoadMapFull{LANG}"
+
+; List of map_id: https://pastebin.com/Wqsi1EcZ
+map_id = 0x0000
+
+@@
+
+sbc r12, lr, 0xD00               ;  R12=LR-D00-1
+adcs r12, r12, 0x3000000         ;  R12=R12+3000000
+bic r12, r12, 0xC8000000         ;  R12=R12 and notC8000000
+ldr r11, [r12, 0xA6]!            ;  Load map id address in R11
+movs r12, {map_id} ?
+strh r12, [r11, 4]               ;  store map id
