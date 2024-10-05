@@ -20,7 +20,7 @@ seed = 0x1234ABCD     ; Should not be 0
 ; exited the menu, you should start the encounter as soon as possible to
 ; avoid additional rng cycles due to the map events (moving npc's, etc).
 
-; For wild pokemons, you should use sweet scent just after executing the code,
+; For wild pokemons, you should use sweet scent / rock smash / rod just after executing the code,
 ; without exiting the menu to avoid additional cycles. For that,
 ; you must have a stable way of triggering ACE (cf. https://e-sh4rk.github.io/ACE3/emerald/getting-started/stable-ace/),
 ; then you should capture a new pokemon and rename it ␣ ␣ D n ’ J k l ␣ ␣
