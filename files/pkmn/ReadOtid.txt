@@ -1,9 +1,10 @@
-@@ title = "Read OTID"
+@@ title = "Read Pokemon OTID (TID and SID)"
 @@ exit = "CertificateFull{LANG}"
 @@
 
-; Store the Original Trainer ID of the second pokemon in the team in its attack and defense stats
-; OTID=attack + (defense*65536)
+; Store the Original Trainer ID of the second pokemon in the team in its attack and defense stats.
+; The original trainer TID will be stored in the attack stat, and the original trainer SID will be stored in the defense stat.
+; OTID = attack + (defense*65536)
 
 ; NOTE: This code does NOT work for Deoxys because Deoxys stats are computed differently.
 ; If you want to apply this code on Deoxys, please use Sleipnir's code instead: https://pastebin.com/kYfBzVE3

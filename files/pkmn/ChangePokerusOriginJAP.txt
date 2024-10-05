@@ -4,9 +4,10 @@
 
 ; The Pokemon to modify the data of must be located in Box 10 Slot 19.
 
-inaccurate_emu =       0    ; Set to 1 if you are using an emulator < mgba 0.9
-pid =         0xA7C3510F    ; Set to PID of pokemon to change data of
-otid =        0xABCD1234    ; Set to OTID (SIDTID) of pokemon to change data of
+inaccurate_emu =    0    ; Set to 1 if you are using an emulator < mgba 0.9
+pid =               0
+tid =               0    ; TID of the original trainer
+sid =               0    ; SID of the original trainer
 
 cur_loc =           0x0F    ; 0x0-0xFF   @input:location
 new_loc =           0xFF    ; 0x0-0xFF   @input:location
@@ -32,6 +33,7 @@ cur_pkrs =          0x00    ; 0x0-0xFF
 new_pkrs =          0x00    ; 0x0-0xFF
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
+otid = tid + (sid << 16)
 key = pid ^ otid
 cur_pkrs = cur_encoded_pkrs == 0x100 ? cur_pkrs : cur_encoded_pkrs ^ (key & 255)
 new_field = new_pkrs | (new_loc << 8) | ((new_met_lvl & 127) << 16) |\

@@ -6,11 +6,13 @@
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
-otid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
 cur_move = 0                   @input:move
 new_move = 0                   @input:move
 which_move = 0; 0-3
 
+; DO NOT MODIFY THE PARAMETERS BELOW
 pmod = pid % 24
 attack_substructure_position = \
     pmod == 6  | pmod == 7  | pmod == 8  | pmod == 9  | \
@@ -19,6 +21,7 @@ attack_substructure_position = \
     pmod == 20 | pmod == 21 ? 1 : \
     pmod == 2  | pmod == 4 | pmod == 12 | pmod == 17 | \
     pmod == 18 | pmod == 23 ? 2 : 3
+otid = tid + (sid << 16)
 key = pid ^ otid
 encoded_move = (new_move ^ (key >> (which_move % 2 ? 16:0))) & 0xFFFF
 offset = 32 + 12*attack_substructure_position + 2*which_move

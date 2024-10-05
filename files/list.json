@@ -100,7 +100,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Read Pokemon OTID",
+    "name": "Read Pokemon OTID (TID and SID)",
     "eng": "pkmn/ReadOtid.txt",
     "fra": "pkmn/ReadOtid.txt",
     "ger": "pkmn/ReadOtid.txt",

@@ -7,7 +7,8 @@
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
-otid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
 new_coolness = 255
 new_beauty = 255
 new_cuteness = 255
@@ -27,6 +28,7 @@ cur_toughness = 0
 cur_feel = 0
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
+otid = tid + (sid << 16)
 key = pid ^ otid
 
 cur_1_computed = cur_coolness | (cur_beauty << 8)

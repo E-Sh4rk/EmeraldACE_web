@@ -5,12 +5,12 @@
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
 ; This code changes the EVs of the pokemon in Box 10 Slot 19.
 ; Stat changes due to the EV change will be applied immediately, as opposed to requiring a level up.
-; The value of OTID is TID + (SID * 65536)
 ; the current stat parameters below represent the current EVs the pokemon has in the corresponding stat, NOT the value of the stat itself.
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
-otid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
 new_hp = 0
 new_atk = 0
 new_def = 0
@@ -30,6 +30,7 @@ cur_spe_atk = 0
 cur_spe_def = 0
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
+otid = tid + (sid << 16)
 key = pid ^ otid
 
 cur_evs1_computed = cur_hp | (cur_atk << 8)

@@ -7,7 +7,8 @@
 
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 pid = 0
-otid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
 new_hp = 31
 new_atk = 31
 new_def = 31
@@ -28,6 +29,7 @@ cur_ability = 0      ; First ability: 0  /  Second ability: 1
 cur_is_egg = 0       ; No: 0  /  Yes: 1
 
 ; DO NOT MODIFY THE PARAMETERS BELOW
+otid = tid + (sid << 16)
 key = pid ^ otid
 cur_ivea_computed = (cur_ability << 31) | (cur_is_egg << 30) | cur_hp | (cur_atk << 5) | (cur_def << 10) | \
            (cur_speed << 15) | (cur_spe_atk << 20) | (cur_spe_def << 25)

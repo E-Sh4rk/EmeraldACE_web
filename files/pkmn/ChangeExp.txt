@@ -5,11 +5,13 @@
 ; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
 
 pid = 0
-otid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
 cur_exp = 0
 new_exp = 0
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
+; DO NOT MODIFY THE PARAMETERS BELOW
 pmod = pid % 24
 growth_substructure_position = \
     pmod == 0  | pmod == 1  | pmod == 2  | pmod == 3  | \
@@ -18,6 +20,7 @@ growth_substructure_position = \
     pmod == 18 | pmod == 19 ? 1 : \
     pmod == 8  | pmod == 10 | pmod == 14 | pmod == 16 | \
     pmod == 20 | pmod == 22 ? 2 : 3
+otid = tid + (sid << 16)
 key = pid ^ otid
 encoded_exp = new_exp ^ key
 offset = 32 + 12*growth_substructure_position + 4
