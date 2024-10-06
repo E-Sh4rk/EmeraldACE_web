@@ -9,7 +9,7 @@
 ; some kind of refresh, such as going indoor or flying somewhere
 ; The species you must look the area for is still the regular roamer species, not the new one.
 
-species_index = 0
+species_index = 0       @input:species
 
 @@
 
