@@ -68,5 +68,12 @@
     "eng0": "misc/ReadPIDfromPartySlot4toPartySlot3.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Run script via NPC",
+    "eng1": "misc/RunScriptviaNPC.txt",
+    "eng0": "misc/RunScriptviaNPC.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
