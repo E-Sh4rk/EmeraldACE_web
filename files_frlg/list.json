@@ -71,8 +71,8 @@
   },
   {
     "name": "Run script via NPC",
-    "eng1": "misc/RunScriptviaNPC.txt",
-    "eng0": "misc/RunScriptviaNPC.txt",
+    "eng1": "misc/RunScriptViaNPC.txt",
+    "eng0": "misc/RunScriptViaNPC.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   }
