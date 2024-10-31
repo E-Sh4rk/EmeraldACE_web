@@ -1,0 +1,15 @@
+@@ title = "Change Level of Party Slot 6"
+@@ author = "PapaJefe"
+@@ exit = "GrabACEExit"
+
+
+
+; Stores an arbitrary level in Party Slot 6. 
+; Use Rare Candy to make permanent.
+
+level = 99
+@@
+
+movs r12, { 0x2024284 + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
+movs r11, {level} ? ; r11 = level
+strb r11,  [r12, #484]  ; Store level in Slot 6 

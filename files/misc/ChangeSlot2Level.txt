@@ -1,0 +1,16 @@
+@@ title = "Change Party Slot 2 Level"
+@@ Author = "Sleipnir, edited by PapaJefe"
+@@ exit = "CertificateFullENG" ; Note: Change to CertificateShortENG to preserve box 14 name
+
+; Please enter the level below in decimal.
+; Use a Rare Candy to make the temporary level permanent.
+; 98 allows for easy EV adjustments, and then a final Rare Candy to reach 100.
+; 49 allows Pokemon to re-enter Level 50 restricted battles.
+
+level = 98
+
+@@
+
+movs r11, 0x2823FFF ?            %%  R11=2823FFF=Party Slot 2 Level
+movs r12, {level} ?              %% R12 = User Level
+strb r12, [r11, 0x5A5]             %% Store level in R11+0x5a5
