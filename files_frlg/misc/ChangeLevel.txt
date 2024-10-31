@@ -1,5 +1,5 @@
 @@ title = "Change Level of Party Slot 6"
-@@ author = "Author"
+@@ author = "PapaJefe"
 @@ exit = "GrabACEExit"
 
 
