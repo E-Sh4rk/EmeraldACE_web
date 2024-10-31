@@ -435,5 +435,10 @@
     "ita": "pkmn/ReadPkrus.txt",
     "jap": "pkmn/ReadPkrusJAP.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Pokemon Level",
+    "eng": "pkmn/ChangeSlot2Level.txt",
+    "cat": ["pkmn"]
   }
 ]

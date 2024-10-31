@@ -64,10 +64,10 @@
   },
   {
     "name": "Read Pokemon PID",
-    "eng1": "misc/ReadPIDfromPartySlot4toPartySlot3.txt",
-    "eng0": "misc/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "eng1": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "eng0": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
     "game": ["fr", "lg"],
-    "cat": ["misc"]
+    "cat": ["pkmn"]
   },
   {
     "name": "Run script via NPC",
@@ -75,5 +75,19 @@
     "eng0": "misc/RunScriptViaNPC.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokemon Level",
+    "eng1": "pkmn/ChangeLevel.txt",
+    "eng0": "pkmn/ChangeLevel.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Perform PID or TID corruption",
+    "eng1": "pkmn/PIDorTIDCorrupt.txt",
+    "eng0": "pkmn/PIDorTIDCorrupt.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
