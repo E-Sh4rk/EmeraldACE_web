@@ -1,0 +1,14 @@
+@@ title = "Change TID SID (Grab or Move ACE)"
+@@ author = "Shao & Papa Jefe"
+@@ exit = "GrabACEExit" ; Use "CommonExit" for Crobat Move ACE
+
+tid = 00000
+sid = 00000
+
+@@
+
+sbc r12, r15, #0xd100
+movs r11, {tid} ?
+strh r11, [r12, #0x32] 
+movs r11, {sid} ?
+strh r11, [r12, #0x34] 
