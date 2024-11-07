@@ -1,6 +1,6 @@
-@@ title = "Change TID SID (Grab ACE)"
+@@ title = "Change TID SID (Move ACE)"
 @@ author = "Shao & Papa Jefe"
-@@ exit = "GrabACEExit"
+@@ exit = "CommonExit"
 
 tid = 00000
 sid = 00000
@@ -9,6 +9,6 @@ sid = 00000
 
 sbcs r12, r15, #0xd100
 movs r11, {tid} ?
-strh r11, [r12, #0x32]
-movs r11, {sid} ?
 strh r11, [r12, #0x34]
+movs r11, {sid} ?
+strh r11, [r12, #0x36]

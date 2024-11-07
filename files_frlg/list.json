@@ -13,13 +13,24 @@
     "cat": ["rng"]
   },
   {
-    "name": "Change TID and SID",
+    "name": "Change TID and SID (grab ACE)",
     "eng1": "rng/tidsid.txt",
     "eng0": "rng/tidsid.txt",
     "fra": "rng/tidsid.txt",
     "ger": "rng/tidsid.txt",
     "spa": "rng/tidsid.txt",
     "ita": "rng/tidsid.txt",
+    "game": ["fr", "lg"],
+    "cat": ["rng"]
+  },
+  {
+    "name": "Change TID and SID (move ACE)",
+    "eng1": "rng/tidsid_moveACE.txt",
+    "eng0": "rng/tidsid_moveACE.txt",
+    "fra": "rng/tidsid_moveACE.txt",
+    "ger": "rng/tidsid_moveACE.txt",
+    "spa": "rng/tidsid_moveACE.txt",
+    "ita": "rng/tidsid_moveACE.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
   },
