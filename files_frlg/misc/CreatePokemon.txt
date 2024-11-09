@@ -1,4 +1,4 @@
-@@ title = "Create Pokemon from Nothing (Box 9 Slot 27)"
+@@ title = "Create Pokemon from Nothing (Grab ACE)"
 @@ author = "Sleipnir (adapted by PapaJefe)"
 @@ exit = "GrabACEExit"
 
