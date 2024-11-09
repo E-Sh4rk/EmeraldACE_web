@@ -100,5 +100,18 @@
     "eng0": "pkmn/PIDorTIDCorrupt.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Create Pokemon from nothing (Grab ACE)",
+    "eng1": "misc/CreatePokemon.txt",
+    "eng0": "misc/CreatePokemon.txt",
+    "fra": "misc/CreatePokemon.txt",
+    "ger": "misc/CreatePokemon.txt",
+    "spa": "misc/CreatePokemon.txt",
+    "ita": "misc/CreatePokemon.txt",
+    "jap0": "misc/CreatePokemon.txt",
+    "jap1": "misc/CreatePokemon.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
