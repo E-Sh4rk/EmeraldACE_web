@@ -12,6 +12,10 @@ species = 1                                 @input:species
 map_id = 0x1000
 level = 0
 
+; Do not touch the parameters below
+group_id = map_id >> 8
+map_num = map_id & 0xFF
+
 @@
 
 ; CustomOutbreaks = BoxNames - 95BC
@@ -24,5 +28,5 @@ movs r12, { level } ?
 str r12, [r11, 0xC00]!
 sbc r11, r11, 3
 
-movs r12, { (map_id << 16) | species } ?
+movs r12, { (group_id << 16) | (map_num << 8) | species } ?
 str r12, [r11, 0]!
