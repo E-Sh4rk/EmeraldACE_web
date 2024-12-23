@@ -7,7 +7,7 @@ sid = 00000
 
 @@
 
-sbcs r12, r15, #0xd100
+sbc r12, r15, #0xd100
 movs r11, {tid} ?
 strh r11, [r12, #0x34]
 movs r11, {sid} ?
