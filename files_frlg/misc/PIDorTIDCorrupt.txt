@@ -10,23 +10,6 @@
 ; LOWER: 0x0FFF4FFFF -> 0x0FFF0FFF
 
 ID = 0xDB           ; 0xDB for OTID, 0xD7 for PID
-CTYPE = 0x00004000  ; 0x40000000 OR 0x00004000 
-
-
-@@
-
-@@ title = "Perform PID or OTID Corruption in Box 3 Slot 1 (Grab ACE)"
-@@ author = "PapaJefe"
-@@ exit = "GrabACEExit"
-
-; Allows for Pomeg-Style PID/OTID Corruption in FRLG.
-; Happens in the same slot as Mail Glitch PID/TID Rewriting.
-; Options to choose the Upper or Lower halves using CTYPE.
-;~EXAMPLES~
-; UPPER: 0x0FFF4FFFF -> 0x4FFF4FFF
-; LOWER: 0x0FFF4FFFF -> 0x0FFF0FFF
-
-ID = 0xDB           ; 0xDB for OTID, 0xD7 for PID
 CTYPE = 0x40000000  ; 0x40000000 OR 0x00004000 
 
 
