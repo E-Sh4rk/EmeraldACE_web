@@ -3,15 +3,17 @@
 @@ exit = "GrabACEExit"
 
 ; Allows for Pomeg-Style PID/OTID Corruption in FRLG.
-; Happens in the same slot as Mail Glitch PID/TID Rewriting.
-; Options to choose the Upper or Lower halves using CTYPE.
-;~EXAMPLES~
-; UPPER: 0x0FFF4FFFF -> 0x4FFF4FFF
-; LOWER: 0x0FFF4FFFF -> 0x0FFF0FFF
+; Default setting is a Pomeg Glitch PID corruption.
+;
+; Fast Double Corruption can be performed by changing ID to 0xDB 
+; for an OTID Corruption and executing the code immediately
+; without viewing Box 3 Slot 1.
+;
+; Advanced users can change CTYPE to corrupt PID/OTID in ways not possible 
+; using the Pomeg Glitch. Will likely need to Double Corrupt to avoid Bad Eggs.
 
-ID = 0xDB           ; 0xDB for OTID, 0xD7 for PID
+ID = 0xD7           ; 0xDB for OTID, 0xD7 for PID
 CTYPE = 0x40000000  ; 0x40000000 OR 0x00004000 
-
 
 @@
 
