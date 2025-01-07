@@ -113,5 +113,16 @@
     "jap1": "misc/CreatePokemon.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Get any item (Grab ACE)",
+    "eng1": "misc/GetAnyItem.txt",
+    "eng0": "misc/GetAnyItem.txt",
+    "fra": "misc/GetAnyItem.txt",
+    "ger": "misc/GetAnyItem.txt",
+    "spa": "misc/GetAnyItem.txt",
+    "ita": "misc/GetAnyItem.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
