@@ -10,7 +10,7 @@ item_index ? = 1 @input:item
 
 SBC r12, pc, #{inaccurate_emu ? 0xEE : 0xEC}
 SBC r12, r12, #0xBE00
-MOVS r11, #{(amount < 0xFFFF) ? amount : 0xFFFFFFFF} ?
+MOVS r11, #{amount & 0xFFFF} ?
 STRH r11, [r12, #0xC6] %% Store amount
 MOVS r11, #{item_index & 0xFFFF} ?
 STRH r11, [r12, #0xC4] %% Store item index
