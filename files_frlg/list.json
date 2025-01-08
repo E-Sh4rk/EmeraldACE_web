@@ -124,5 +124,18 @@
     "ita": "misc/GetAnyItem.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Create 6IV Egg from Nothing (Grab ACE)",
+    "eng1": "pkmn/Create6IVEgg.txt",
+    "eng0": "pkmn/Create6IVEgg.txt",
+    "fra": "pkmn/Create6IVEgg.txt",
+    "ger": "pkmn/Create6IVEgg.txt",
+    "spa": "pkmn/Create6IVEgg.txt",
+    "ita": "pkmn/Create6IVEgg.txt",
+    "jap0": "pkmn/Create6IVEgg.txt",
+    "jap1": "pkmn/Create6IVEgg.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
