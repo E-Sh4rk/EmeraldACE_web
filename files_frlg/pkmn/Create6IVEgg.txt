@@ -1,0 +1,29 @@
+@@ title = "Create 6IV Egg from Nothing (Grab ACE)"
+@@ author = "PapaJefe"
+@@ exit = "GrabACEExit"
+
+; This creates a hatchable Egg of any species, with 31 IVs in every stat in Box 9 Slot 27.
+; PID and OTID will both be 0x00000000, so Nature is always Hardy, and Ability is always 0.
+; However combined with FRLG Mail Glitch you can acheive any Nature/Ability combo.
+;
+; You can find a list of words for each Nature/Ability here:
+; https://raw.githubusercontent.com/papajefe/EmeraldACE_web/refs/heads/main/files_frlg/naturewords.txt
+;
+; Place the resulting Egg in Box 3 Slot 1 using the White Hand. 
+; Enter the chosen words into first four slots of the glitched Mail Message.
+; After entering the words, you can hatch the Egg normally.
+
+
+species = 0x0199 ; Enter the species index number in hex. Default is Jirachi
+ability = 0 ; Either 0 or 1
+
+@@
+
+sbc r12, pc, 0x3040 ; Offset for Box 9 Slot 27
+mov r11, {species} ? ;Store Species in r11
+mov r10, 0xFFFFFFFF ? ; Store IVs in R10
+strh r11, [r12, 0x38] ;store Species
+strh r10, [r12, {ability? 0x54:0x60}] ;store 1st IVs
+strh r10, [r12, {ability? 0x56:0x62}] ;store 2nd IVs
+mov r11, {species - 0x2} ? ; calc Checksum
+strh r11, [r12, 0x34] ;store Checksum
