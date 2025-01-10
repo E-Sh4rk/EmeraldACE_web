@@ -294,7 +294,12 @@
   },
   {
     "name": "Put Egg With Any PID In Daycare",
-    "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
+    "eng": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "fra": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "ger": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "spa": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "ita": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "jap": "rng/PutEggWithDesiredPIDInDaycare.txt",
     "cat": ["rng"]
   },
   {
