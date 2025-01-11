@@ -1,0 +1,24 @@
+These are competitive Hidden Power IVs for use with the "Create Egg with Custom Hidden Power" code in FRLG.
+Copy the Hex number and use it for the "IVs" variable in the code.
+In some cases, the code will be too long depending on species chosen. (Example: Ninjask)
+For these cases, alternate Hex values are provided which yield the same IVs.
+If your chosen Hidden Power + Species is still too long, then try something else in the evolution line.
+
+Hidden Power Bug:	31/30/30/31/30/31	0xFDFFFBDF	0x7DFFFBDF
+Hidden Power Dark:	31/31/31/31/31/31	0xFFFFFFFF	0x7FFFFFFF
+Hidden Power Dragon:	31/31/30/31/31/31	0xFFFFFBFF	0x7FFFFBFF
+Hidden Power Electric:	31/31/31/30/31/31	0xFFEFFFFF	0x7FEFFFFF
+Hidden Power Fighting:	31/31/30/30/30/30	0xFDEF7BFF	0x7DEF7BFF
+Hidden Power Fire:	31/31/30/30/31/30	0xFFEF7BFF	0x7FEF7BFF
+Hidden Power Flying:	30/30/30/30/30/31	0xFDEFFBDE	0x7DEFFBDE
+Hidden Power Ghost:	31/31/30/31/30/31	0xFDFFFBFF	0x7DFFFBFF
+Hidden Power Grass:	31/30/31/30/31/31	0xFFEFFFDF	0x7FEFFFDF
+Hidden Power Grass:	31/31/30/30/31/31	0xFFEFFBFF	0x7FEFFBFF
+Hidden Power Ground:	31/31/31/30/30/31	0xFDEFFFFF	0x7DEFFFFF
+Hidden Power Ice:	31/30/30/31/31/31	0xFFFFFBDF	0x7FEFFFDF
+Hidden Power Poison:	31/31/30/30/30/31	0xFDEFFBFF	0x7DEFFBFF
+Hidden Power Psychic:	31/30/31/31/31/30	0xFFFF7FDF	0x7FFF7FDF
+Hidden Power Rock:	31/31/30/31/30/30	0xFDFF7BFF	0x7DFF7BFF
+Hidden Power Steel:	31/31/31/31/30/31	0xFDFFFFFF	0x7DFFFFFF
+Hidden Power Water:	30/30/30/30/31/31	0xFFEFFBDE	0x7FEFFBDE
+Hidden Power Water:	31/30/30/30/31/31	0xFFEFFBDF	0x7FEFFBDF

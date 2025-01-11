@@ -1,0 +1,39 @@
+@@ title = "Create Egg with Custom Hidden Power (bootstrapped)"
+@@ author = "PapaJefe & it_is_final"
+@@ exit = "Bootstrapped"
+
+; This code requires the FRLG Exit Code bootstrap to work.
+; It requires a single code and can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md#explanation
+;
+; This code will create an Egg with the species of your choice in Box 10 Slot 2.
+; You can select custom IVs to have any Hidden Power Type.
+; You can find a list of compatible Hex values for IVs here:
+; https://github.com/papajefe/EmeraldACE_web/blob/main/doc/HiddenPowerHex.txt
+;
+; The PID and OTID will be 0x00000000, so nature is always Hardy and Ability is 0.
+; However combined with FRLG Mail Glitch you can acheive any Nature/Ability combo.
+;
+; You can find a list of words for each Nature/Ability here:
+; https://e-sh4rk.github.io/EmeraldACE_web/doc/naturewords.txt
+;
+; If using ability = 1, the result will be a Pokemon, rather than an Egg (at first).
+; Place the resulting Pokemon in Box 3 Slot 1 using the White Hand. 
+; Enter the chosen words into first four slots of the glitched Mail Message.
+; After entering the words, you can hatch the Egg normally.
+
+species = 306 @input:species
+ability = 0
+IVs = 0xFDFFFFFF
+Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + 0x0180)
+@@
+
+SBC r11, pc, #0x2F00
+MOV r12, {species} ?
+STRH r12, [r11, #0x88] ; Store species
+MOV r12, 0x0180 ?
+STRH r12, [r11, #{ability ? 0xA2 : 0xAE}] ; Store origin data
+MOV r12, {Checksum} ?
+STRH r12, [r11, #0x84] ; Store checksum
+MOV r12, {IVs} ?
+STR r12, [r11, #{ability ? 0xA4 : 0xB0}]! ; Store IVs
