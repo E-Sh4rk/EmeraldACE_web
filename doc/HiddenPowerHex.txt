@@ -1,4 +1,4 @@
-These are competitive Hidden Power IVs for use with the "Create Custom Hidden Power Egg" code in FRLG.
+These are competitive Hidden Power IVs for use with the "Create Egg with Custom Hidden Power" code in FRLG.
 Copy the Hex number and use it for the "IVs" variable in the code.
 In some cases, the code will be too long depending on species chosen. (Example: Ninjask)
 For these cases, alternate Hex values are provided which yield the same IVs.
