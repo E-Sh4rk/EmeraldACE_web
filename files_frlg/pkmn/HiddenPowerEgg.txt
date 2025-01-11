@@ -9,7 +9,7 @@
 ; This code will create an Egg with the species of your choice in Box 10 Slot 2.
 ; You can select custom IVs to have any Hidden Power Type.
 ; You can find a list of compatible Hex values for IVs here:
-; https://github.com/papajefe/EmeraldACE_web/blob/main/doc/HiddenPowerHex.txt
+; https://e-sh4rk.github.io/EmeraldACE_web/doc/HiddenPowerHex.txt
 ;
 ; The PID and OTID will be 0x00000000, so nature is always Hardy and Ability is 0.
 ; However combined with FRLG Mail Glitch you can acheive any Nature/Ability combo.

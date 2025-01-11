@@ -137,5 +137,18 @@
     "jap1": "pkmn/Create6IVEgg.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Create Egg with Custom Hidden Power (bootstrapped)",
+    "eng1": "pkmn/HiddenPowerEgg.txt",
+    "eng0": "pkmn/HiddenPowerEgg.txt",
+    "fra": "pkmn/HiddenPowerEgg.txt",
+    "ger": "pkmn/HiddenPowerEgg.txt",
+    "spa": "pkmn/HiddenPowerEgg.txt",
+    "ita": "pkmn/HiddenPowerEgg.txt",
+    "jap0": "pkmn/HiddenPowerEgg.txt",
+    "jap1": "pkmn/HiddenPowerEgg.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
