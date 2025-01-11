@@ -24,7 +24,6 @@ Seed = 0x1234ABCD     ; Should not be 0
 ; avoid additional rng cycles due to the map events (moving npc's, etc).
 
 ; Note that you shouldn't stay too long in the summary or it will crash (exit it with B).
-; Also, the first Pokémon of your party shouldn't be a Pokémon with an ability that alters the RNG (eg: Synchronize, Pressure).
 
 xx ?= (Seed & 0xFF000000)>>24
 XX ?= (Seed & 0xFF0000)>>16

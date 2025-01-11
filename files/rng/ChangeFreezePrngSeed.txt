@@ -36,7 +36,7 @@ seed = 0x1234ABCD     ; Should not be 0
 ; Note 2: if you are using a semi-stable ACE species such as the french 0x40ED,
 ; you might need to open the summary of an adjacent pokemon, go to the statistics, moves or contest summary
 ; page (it depends on the semi-stable ACE species), and then switch to 0x40ED to avoid a crash.
-; Note 3: the first Pokémon of your party shouldn't be a Pokémon with an ability that alters the RNG (eg: Synchronize, Pressure).
+; Note 3: remember to use the correct lead if any (eg: Synchronize, Pressure) according to the calculated target.
 
 @@
 
