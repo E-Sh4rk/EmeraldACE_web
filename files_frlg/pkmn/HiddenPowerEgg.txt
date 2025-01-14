@@ -4,7 +4,7 @@
 
 ; This code requires the FRLG Exit Code bootstrap to work.
 ; It requires a single code and can be found here:
-; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md#explanation
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
 ;
 ; This code will create an Egg with the species of your choice in Box 10 Slot 2.
 ; You can select custom IVs to have any Hidden Power Type.
