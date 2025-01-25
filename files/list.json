@@ -445,5 +445,14 @@
     "name": "Change Pokemon Level",
     "eng": "pkmn/ChangeSlot2Level.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Add Item in Wrong Pocket",
+    "eng": "misc/AddItemWrongPocket.txt",
+    "fra": "misc/AddItemWrongPocket.txt",
+    "ger": "misc/AddItemWrongPocket.txt",
+    "spa": "misc/AddItemWrongPocket.txt",
+    "ita": "misc/AddItemWrongPocket.txt",
+    "cat": ["misc"]
   }
 ]

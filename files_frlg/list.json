@@ -150,5 +150,16 @@
     "jap1": "pkmn/HiddenPowerEgg.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Add Item in Wrong Pocket",
+    "eng1": "misc/AddItemWrongPocket.txt",
+    "eng0": "misc/AddItemWrongPocket.txt",
+    "fra": "misc/AddItemWrongPocket.txt",
+    "ger": "misc/AddItemWrongPocket.txt",
+    "spa": "misc/AddItemWrongPocket.txt",
+    "ita": "misc/AddItemWrongPocket.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
