@@ -1,0 +1,42 @@
+@@ title = "Add Item in Wrong Pocket"
+@@ author = "Adrichu00"
+@@ exit = "CertificateFull{LANG}"
+
+; IMPORTANT: The code has a small chance of failng, if you run it and don't see
+;  the item in the pocket, restart the game without saving and try again. This
+;  is due to how item quantities are encrypted and the simple approach taken by
+;  this code (Unfortunately, decrypting becomes a nightmare without the EOR instruction)
+
+; Make sure to have at least one empty slot in the Pocket.
+; In other case, the item in the last slot would be overwritten.
+; (Total Key Item slots = 30; Total Ball slots = 16)
+
+; USAGE
+
+;  If you want to USE the item, use Key Items Pocket.
+;  If you want to GIVE the item, use Balls Pocket.
+
+;  Don't use Berries or TMs, they probably won't work.
+
+;  When using the item in the Wrong Pocket, the game will try to reduce the
+;  item quantity in the correct pocket. You can avoid this by moving the item
+;  in that slot to the PC.
+
+; Offsets
+;  Key Items -> 0xBB0A
+;  Balls     -> 0xBACA
+
+
+; PARAMETERS
+
+offset  = 0xBB0A        ; Last Item Slot in that pocket
+item_id = 0x0044        ; @input:item
+
+@@
+
+SUB r11, pc, {offset} ? ; Load Address (Last slot key items pocket)
+MOV r12, {item_id} ?    ; Load Item Id
+STRH r12, [r11], 0x02   ; Write Item Id
+LDRH r12, [r11]         ; Get Item Quantity
+ADC r12, 0xB            ; Increase Quantity
+STRH r12, [r11]         ; Write Quantity
