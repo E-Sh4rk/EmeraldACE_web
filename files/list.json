@@ -447,7 +447,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Add Item in Wrong Pocket",
+    "name": "Add/Remove Item in Wrong Pocket",
     "eng": "misc/AddItemWrongPocket.txt",
     "fra": "misc/AddItemWrongPocket.txt",
     "ger": "misc/AddItemWrongPocket.txt",

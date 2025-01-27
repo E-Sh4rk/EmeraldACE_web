@@ -152,7 +152,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Add Item in Wrong Pocket",
+    "name": "Add/Remove Item in Wrong Pocket",
     "eng1": "misc/AddItemWrongPocket.txt",
     "eng0": "misc/AddItemWrongPocket.txt",
     "fra": "misc/AddItemWrongPocket.txt",
