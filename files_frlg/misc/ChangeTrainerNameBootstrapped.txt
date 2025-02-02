@@ -1,0 +1,55 @@
+@@ title = "Change Trainer Name (Grab ACE)"
+@@ author = "Theocatic"
+@@ exit = "Bootstrapped"
+
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
+
+
+
+;Reference chart for Letters
+; A = BB | G = C1 | M = C7 | S = CD | Y = D3 | e = D9 | k = DF | q = E5 | w = EB
+; B = BC | H = C2 | N = C8 | T = CE | Z = D4 | f = DA | l = E0 | r = E6 | x = EC
+; C = BD | I = C3 | O = C9 | U = CF | a = D5 | g = DB | m = E1 | s = E7 | y = ED
+; D = BE | J = C4 | P = CA | V = D0 | b = D6 | H = DC | n = E2 | t = E8 | z = EE
+; E = BF | K = C5 | Q = CB | W = D1 | c = D7 | i = DD | o = E3 | u = E9 | 
+; F = C0 | L = C6 | R = CC | X = D2 | d = D8 | j = DE | p = E4 | v = EA |
+
+
+; A full list of characters can be found at https://github.com/pret/pokeemerald/blob/95aa41f0d42e1089e4bb082a614cab02419ad701/include/constants/characters.h
+
+; Set Each Letter according to the chart above. All of these must have 0x at the beginning
+; Use 0xFF for all unused Letters
+
+L1 = 0xCE
+L2 = 0xBF
+L3 = 0xCD
+L4 = 0xCE 
+L5 = 0xFF
+L6 = 0xFF 
+L7 = 0xFF
+
+
+
+; Do not modify these
+L8 = 0xFF00 ; Letter 8 Must be a termination character
+L2 = L2 * 100
+L4 = L4 * 100
+L6 = L6 * 100
+name1 = L2 + L1
+name2 = L4 + L3
+name3 = L5 + L6
+name4 = L7 + L8
+
+@@
+
+sbcs r12, r15, #0xD100
+mov r11, {name1} ?
+strh r11, [r12, #0x28]
+mov r11, {name2} ?
+strh r11, [r12, #0x2A]
+mov r11, {name3}?
+strh r11, [r12, #0x2C]
+mov r11, {name4}?
+strh r11, [r12, #0x2E]

@@ -1,0 +1,27 @@
+@@ title = "Set up wild battle with any Pokemon"				
+@@ author = "Theocatic / it-is-final"				
+@@ exit = "GrabACEExit"		
+
+;This code needs the Run Script Via NPC code in order to work. After executing this code execute the Run script via NPC code with the script address set to 0x02039AB0 and speak to the NPC to start the encounter
+
+
+;The hex data for a pokemon can be found at
+;bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_III 
+
+
+PokemonHex = 0x00C4
+PokemonLV = 25
+
+
+;Do not modify these values
+ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
+ScriptEnd = 0x02B70000	
+@@				
+
+adc r11, r4, 0x300
+;mov r11, {Address} ?
+mov r12, {ScriptStart} ?
+str r12, [r11]!
+mov r12, {ScriptEnd} ?
+add r11, 0x4 ?
+str r12, [r11]!
