@@ -1,4 +1,4 @@
-@@ title = "Read PID from Party Slot 4"
+@@ title = "Read PID from Party Slot 4 (move ACE)"
 @@ author = "Papa Jefe & im a blisy"
 @@ exit = "CommonExit"
 @@

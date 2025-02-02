@@ -1,6 +1,6 @@
 [
   {
-    "name": "Change PRNG seed and teleport",
+    "name": "Change PRNG seed and teleport (move ACE)",
     "eng1": "rng/SeedChangeAndWarpENG.txt",
     "eng0": "rng/SeedChangeAndWarpENG.txt",
     "fra": "rng/SeedChangeAndWarpEU.txt",
@@ -13,7 +13,7 @@
     "cat": ["rng"]
   },
   {
-    "name": "Change TID and SID (grab ACE)",
+    "name": "Change TID and SID",
     "eng1": "rng/tidsid.txt",
     "eng0": "rng/tidsid.txt",
     "fra": "rng/tidsid.txt",
@@ -61,7 +61,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Change Roamer Species",
+    "name": "Change Roamer Species (move ACE)",
     "eng1": "misc/ChangeRoamerSpecies.txt",
     "eng0": "misc/ChangeRoamerSpecies.txt",
     "fra": "misc/ChangeRoamerSpecies.txt",
@@ -74,7 +74,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Change Roamer IVs",
+    "name": "Change Roamer IVs (move ACE)",
     "eng1": "misc/ChangeRoamerIVs.txt",
     "eng0": "misc/ChangeRoamerIVs.txt",
     "fra": "misc/ChangeRoamerIVs.txt",
@@ -87,7 +87,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Change Roamer PID",
+    "name": "Change Roamer PID (move ACE)",
     "eng1": "misc/ChangeRoamerPID.txt",
     "eng0": "misc/ChangeRoamerPID.txt",
     "fra": "misc/ChangeRoamerPID.txt",
@@ -100,7 +100,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Read Pokemon PID",
+    "name": "Read Pokemon PID (move ACE)",
     "eng1": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
     "eng0": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
     "game": ["fr", "lg"],
@@ -128,7 +128,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Create Pokemon from nothing (Grab ACE)",
+    "name": "Create Pokemon from nothing",
     "eng1": "misc/CreatePokemon.txt",
     "eng0": "misc/CreatePokemon.txt",
     "fra": "misc/CreatePokemon.txt",
@@ -141,7 +141,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Get any item (Grab ACE)",
+    "name": "Get any item",
     "eng1": "misc/GetAnyItem.txt",
     "eng0": "misc/GetAnyItem.txt",
     "fra": "misc/GetAnyItem.txt",
@@ -152,7 +152,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Create 6IV Egg from Nothing (Grab ACE)",
+    "name": "Create 6IV Egg from Nothing",
     "eng1": "pkmn/Create6IVEgg.txt",
     "eng0": "pkmn/Create6IVEgg.txt",
     "fra": "pkmn/Create6IVEgg.txt",

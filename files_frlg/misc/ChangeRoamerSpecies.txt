@@ -1,4 +1,4 @@
-@@ title = "Change Roamer Species"
+@@ title = "Change Roamer Species (move ACE)"
 @@ author = "Sleipnir"
 @@ exit = "CommonExit"
 
