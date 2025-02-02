@@ -1,4 +1,4 @@
-@@ title = "Change PRNG seed and teleport (EU)"
+@@ title = "Change PRNG seed and teleport (Move ACE, EU)"
 @@ author = "Sleipnir17"
 @@ exit = "LoadMapShort_{LANG}"
 

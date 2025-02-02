@@ -1,4 +1,4 @@
-@@ title = "Set up wild battle with any Pokemon"				
+@@ title = "Set up wild battle with any Pokemon (bootstrapped)"				
 @@ author = "Theocatic / it-is-final"				
 @@ exit = "Bootstrapped"
 

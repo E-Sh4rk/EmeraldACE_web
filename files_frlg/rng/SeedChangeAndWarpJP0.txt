@@ -1,4 +1,4 @@
-@@ title = "Change PRNG seed and teleport (JAP 1.0)"
+@@ title = "Change PRNG seed and teleport (Move ACE, JAP 1.0)"
 @@ author = "Sleipnir17"
 @@ exit = "LoadMapShort_JAP0"
 

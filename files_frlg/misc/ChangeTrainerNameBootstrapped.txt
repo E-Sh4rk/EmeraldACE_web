@@ -1,4 +1,4 @@
-@@ title = "Change Trainer Name (Grab ACE)"
+@@ title = "Change Trainer Name (ootstrapped)"
 @@ author = "Theocatic"
 @@ exit = "Bootstrapped"
 
