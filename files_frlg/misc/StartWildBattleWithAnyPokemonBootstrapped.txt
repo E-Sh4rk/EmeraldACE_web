@@ -1,9 +1,12 @@
 @@ title = "Set up wild battle with any Pokemon"				
 @@ author = "Theocatic / it-is-final"				
-@@ exit = "GrabACEExit"		
+@@ exit = "Bootstrapped"
 
-;This code needs the Run Script Via NPC code in order to work. After executing this code execute the Run script via NPC code with the script address set to 0x02039AB0 and speak to the NPC to start the encounter
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
 
+;After Executing this code talk to the Old Gentleman NPC in the Viridian City Pokemon Center similar to the Run script via NPC code.
 
 ;The hex data for a pokemon can be found at
 ;bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_III 
@@ -18,8 +21,9 @@ ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
 ScriptEnd = 0x02B70000	
 @@				
 
+sbc r10, pc, 0xBA00
 adc r11, r4, 0x300
-;mov r11, {Address} ?
+str r11, [r10, 0x1d5]!
 mov r12, {ScriptStart} ?
 str r12, [r11]!
 mov r12, {ScriptEnd} ?
