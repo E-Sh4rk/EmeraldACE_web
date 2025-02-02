@@ -35,6 +35,32 @@
     "cat": ["rng"]
   },
   {
+    "name": "Change Trainer Gender",
+    "eng1": "misc/ChangeTrainerGender.txt",
+    "eng0": "misc/ChangeTrainerGender.txt",
+    "fra": "misc/ChangeTrainerGender.txt",
+    "ger": "misc/ChangeTrainerGender.txt",
+    "spa": "misc/ChangeTrainerGender.txt",
+    "ita": "misc/ChangeTrainerGender.txt",
+    "jap0": "misc/ChangeTrainerGender.txt",
+    "jap1": "misc/ChangeTrainerGender.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Trainer Name (Bootstrapped)",
+    "eng1": "misc/ChangeTrainerNameBootstrapped.txt",
+    "eng0": "misc/ChangeTrainerNameBootstrapped.txt",
+    "fra": "misc/ChangeTrainerNameBootstrapped.txt",
+    "ger": "misc/ChangeTrainerNameBootstrapped.txt",
+    "spa": "misc/ChangeTrainerNameBootstrapped.txt",
+    "ita": "misc/ChangeTrainerNameBootstrapped.txt",
+    "jap0": "misc/ChangeTrainerNameBootstrapped.txt",
+    "jap1": "misc/ChangeTrainerNameBootstrapped.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
     "name": "Change Roamer Species",
     "eng1": "misc/ChangeRoamerSpecies.txt",
     "eng0": "misc/ChangeRoamerSpecies.txt",
@@ -148,6 +174,19 @@
     "ita": "pkmn/HiddenPowerEgg.txt",
     "jap0": "pkmn/HiddenPowerEgg.txt",
     "jap1": "pkmn/HiddenPowerEgg.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "start wild battle with any Pokemon",
+    "eng1": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "eng0": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "fra": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ger": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "spa": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ita": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "jap0": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "jap1": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
