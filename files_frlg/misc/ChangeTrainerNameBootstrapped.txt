@@ -1,4 +1,4 @@
-@@ title = "Change Trainer Name (Grab ACE)"
+@@ title = "Change Trainer Name (Bootstrapped)"
 @@ author = "Theocatic"
 @@ exit = "Bootstrapped"
 
@@ -34,9 +34,9 @@ L7 = 0xFF
 
 ; Do not modify these
 L8 = 0xFF00 ; Letter 8 Must be a termination character
-L2 = L2 * 100
-L4 = L4 * 100
-L6 = L6 * 100
+L2 = L2 * 0x100
+L4 = L4 * 0x100
+L6 = L6 * 0x100
 name1 = L2 + L1
 name2 = L4 + L3
 name3 = L5 + L6
