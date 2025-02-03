@@ -178,17 +178,17 @@
     "cat": ["misc"]
   },
   {
-    "name": "Start wild battle with any Pokemon (bootstrapped)",
-    "eng1": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "eng0": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "fra": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "ger": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "spa": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "ita": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "jap0": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "jap1": "misc/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "name": "start wild battle with any Pokemon",
+    "eng1": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "eng0": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "fra": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "ger": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "spa": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "ita": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "jap0": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "jap1": "pkmn/StartWildBattleWithAnyPokemon.txt",
     "game": ["fr", "lg"],
-    "cat": ["misc"]
+    "cat": ["pkmn"]
   },
   {
     "name": "Add/Remove Item in Wrong Pocket",

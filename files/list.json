@@ -453,5 +453,16 @@
     "spa": "misc/AddItemWrongPocket.txt",
     "ita": "misc/AddItemWrongPocket.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Start Wild Battle With Any Pokemon (With Exit Code Bootstrap)",
+    "eng": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "fra": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ger": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "spa": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ita": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "jap": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "cat":["pkmn"]
   }
+
 ]

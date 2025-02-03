@@ -1,0 +1,31 @@
+@@ title = "Set up wild battle with any Pokemon (With Exit Code Bootstrap)"				
+@@ author = "Theocatic / it-is-final / Adrichu00"				
+@@ exit = "Bootstrapped"
+
+;After Executing this code talk to the Old Gentleman NPC in the Old Dale Pokemon Center similar to the Run script via NPC code.
+
+;The hex data for a pokemon can be found at
+;bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_III 
+
+
+PokemonHex = 0x00C4
+PokemonLV = 25
+
+obj_id = 2 ;the ID of the NPC to execute through
+inaccurate_emu = 0
+
+
+;Do not modify these values
+ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
+ScriptEnd = 0x02B70000    
+script_offset = obj_id * 0x18
+@@                
+
+sub r10, pc, {(inaccurate_emu? 0xB5AC: 0xB5AE) - (script_offset & ~0x1F)} ?
+adc r11, r4, 0xEE00
+adc r11, r11, 0xC200
+str r11, [r10, {0xC0 + (script_offset & 0x1F)}]!
+mov r12, {ScriptStart} ?
+str r12, [r11]!
+mov r12, {ScriptEnd} ?
+0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
