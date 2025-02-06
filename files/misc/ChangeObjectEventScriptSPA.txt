@@ -1,6 +1,6 @@
 @@ title = "Change any ObjectEvent Script Pointer"
 @@ author = "Adrichu00 / Theocatic"
-@@ exit = "CertificateFullENG"
+@@ exit = "CertificateFullSPA"
 ; It may need a "Bootstrapped" exit depending on the script and the obj_id
 
 ; Generalized version for any ObjectID.
@@ -18,8 +18,8 @@
 ; | OldSeaMapMysteryGift    | 0x08677DA9 |
 
 ; Parameters
-script = 0x0821EA0B ; This is MoveDeleter's script
-obj_id = 2          ; Object ID (from 1 to 64)
+script = 0x08277631 ; Script Address
+obj_id = 2          ; Object ID
 inaccurate_emu = 0  ; Set to 1 if you are using an emulator < mgba 0.9
 
 ; Do not modify this
