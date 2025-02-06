@@ -463,6 +463,15 @@
     "ita": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
     "jap": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
     "cat":["pkmn"]
+  },
+  {
+    "name": "Change any ObjectEvent Script Pointer",
+    "eng": "misc/ChangeObjectEventScriptENG.txt",
+    "fra": "misc/ChangeObjectEventScriptFRA.txt",
+    "ger": "misc/ChangeObjectEventScriptGER.txt",
+    "spa": "misc/ChangeObjectEventScriptSPA.txt",
+    "ita": "misc/ChangeObjectEventScriptITA.txt",
+    "cat": ["misc"]
   }
 
 ]
