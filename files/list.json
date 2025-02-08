@@ -472,6 +472,10 @@
     "spa": "misc/ChangeObjectEventScriptSPA.txt",
     "ita": "misc/ChangeObjectEventScriptITA.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Mass Clone/Declone Pokémon (for 0x085F)",
+    "jap": "misc/MassClonePokemonJAPThumb.txt",
+    "cat": ["misc"]
   }
-
 ]
