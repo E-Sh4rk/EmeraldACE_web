@@ -1,0 +1,37 @@
+@@ title = "Mass Clone/Declone Pokémon (for 0x085F)"
+@@ author = "final"
+
+; ⚠️ This code is written in Thumb. Do not execute with an ARM Pokémon (like 0x615 or 0x6789)!
+
+; ⚠️ You should not be requesting quantities that cause clones to populate Box 12 or later, they can cause the game to crash.
+; ⚠️ Certain quantities (such as 12) are not available due to charset limitations
+; ℹ️ This will clone a Pokémon on Box 9, Slot 1, leave it empty to declone and populate following slots with Pokemon to remove.
+
+num_copy = 1
+
+swi_param = 0x4000000 | (((num_copy * 0x50)/4) & 0x1FFFFF) ; Refer to GBATek for more information on CpuSet parameters
+@@
+
+0x48084679
+; 4679 MOV r1, pc
+; 4808 LDR r0, [pc, #0x20] ; r0 = 0x3844
+0x46081A09
+; 1A09 SUB r1, r1, r0 ; r1-r0 = Box 9, Slot 1
+; 4608 MOV r0, r1
+0x315000FF
+; 00FF ; filler
+; 3150 ADD r1, #0x50 ; r1 = Box 9, Slot 2
+0xE000B404
+; B404 PUSH {r2}
+; E000 B r15 ; skip bad filler
+0x4A02FFFF
+; FFFF ; bad filler
+; 4A02 LDR r2, [pc, #0x8] ; r2 = swi_param
+0xBC04DF0B
+; DF0B SWI 0xB ; Call CpuSet with parameters described in r2
+; BC04 POP {r2}
+0x00FF4770
+; 4770 BX lr
+; 00FF ; (filler)
+{swi_param}
+0x3844 ; 0x2EE4 for Box 10, Slot 1, 0x2584 for Box 11, Slot 1

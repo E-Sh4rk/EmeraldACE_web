@@ -1,0 +1,18 @@
+@@ title = "Change Trainer Gender (Grab ACE)"
+@@ author = "Theocatic"
+@@ exit = "GrabACEExit"
+
+
+;do not change these
+male = 00
+female = 01
+
+
+;change this line to male or female
+gender = female
+
+@@
+
+sbcs r12, r15, #0xd100
+movs r11, {gender} ?
+strh r11, [r12, #0x30]

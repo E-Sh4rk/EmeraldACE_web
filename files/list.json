@@ -46,6 +46,15 @@
     "cat": ["misc"]
   },
   {
+    "name": "Temporarily boost your second Pokemon stats",
+    "eng": "misc/BoostSecondPkmn.txt",
+    "fra": "misc/BoostSecondPkmn.txt",
+    "ger": "misc/BoostSecondPkmn.txt",
+    "spa": "misc/BoostSecondPkmn.txt",
+    "ita": "misc/BoostSecondPkmn.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Teach any move to a pokemon (with exit code bootstrap)",
     "eng": "misc/TeachAnyMove.txt",
     "fra": "misc/TeachAnyMove.txt",
@@ -232,16 +241,6 @@
   },
   {
     "name": "Create Pokemon species from nothing",
-    "eng": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "fra": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "ger": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "spa": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "ita": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "jap": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "cat": ["pkmn","bootstraps"]
-  },
-  {
-    "name": "Create Pokemon species from nothing (with exit code bootstrap)",
     "eng": "pkmn/PokemonFromNothing.txt",
     "fra": "pkmn/PokemonFromNothing.txt",
     "ger": "pkmn/PokemonFromNothing.txt",
@@ -294,7 +293,12 @@
   },
   {
     "name": "Put Egg With Any PID In Daycare",
-    "eng": "rng/PutEggWithDesiredPIDInDaycareENG.txt",
+    "eng": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "fra": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "ger": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "spa": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "ita": "rng/PutEggWithDesiredPIDInDaycare.txt",
+    "jap": "rng/PutEggWithDesiredPIDInDaycare.txt",
     "cat": ["rng"]
   },
   {
@@ -440,5 +444,38 @@
     "name": "Change Pokemon Level",
     "eng": "pkmn/ChangeSlot2Level.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Add/Remove Item in Wrong Pocket",
+    "eng": "misc/AddItemWrongPocket.txt",
+    "fra": "misc/AddItemWrongPocket.txt",
+    "ger": "misc/AddItemWrongPocket.txt",
+    "spa": "misc/AddItemWrongPocket.txt",
+    "ita": "misc/AddItemWrongPocket.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Start Wild Battle With Any Pokemon (With Exit Code Bootstrap)",
+    "eng": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "fra": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ger": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "spa": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "ita": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "jap": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "cat":["pkmn"]
+  },
+  {
+    "name": "Change any ObjectEvent Script Pointer",
+    "eng": "misc/ChangeObjectEventScriptENG.txt",
+    "fra": "misc/ChangeObjectEventScriptFRA.txt",
+    "ger": "misc/ChangeObjectEventScriptGER.txt",
+    "spa": "misc/ChangeObjectEventScriptSPA.txt",
+    "ita": "misc/ChangeObjectEventScriptITA.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Mass Clone/Declone Pokémon (for 0x085F)",
+    "jap": "misc/MassClonePokemonJAPThumb.txt",
+    "cat": ["misc"]
   }
 ]

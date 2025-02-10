@@ -1,0 +1,32 @@
+@@ title = "Change any ObjectEvent Script Pointer"
+@@ author = "Adrichu00 / Theocatic"
+@@ exit = "CertificateFullSPA"
+; It may need a "Bootstrapped" exit depending on the script and the obj_id
+
+; Generalized version for any ObjectID.
+; Based on the adaptation made by PapaJefe and im a blisy ._. of Sleipnir17's scripts:
+;   "Run Script via Old Man NPC (Grab ACE)" code at the FRLG generator
+
+; Addresses extracted from Sleipnir17's Pastebin
+; | SCRIPT                  | ADDRESS    |
+; |:------------------------|:-----------|
+; | NicknameFirstBoxMon     | 0x08277631 |
+; | OnSaleDecorationsShop   | 0x08221FCC |
+; | PichuEggUnreleasedEvent | 0x08677283 |
+; | AuroraTicketMysteryGift | 0x086778CF |
+; | MysticTicketMysteryGift | 0x08677AB0 |
+; | OldSeaMapMysteryGift    | 0x08677DA9 |
+
+; Parameters
+script = 0x08277631 ; Script Address
+obj_id = 2          ; Object ID
+inaccurate_emu = 0  ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify this
+script_offset = obj_id * 0x18
+
+@@                
+                
+sub r11, pc, {(inaccurate_emu? 0xB5AC: 0xB5AE) - (script_offset & ~0x1F)} ?
+mov r12, {script} ?
+str r12, [r11, {0xC0 + (script_offset & 0x1F)}]!

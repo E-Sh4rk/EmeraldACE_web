@@ -1,8 +1,8 @@
 @@ title = "Put Egg With Desired PID In Daycare"
 @@ author = "Shao"
-@@ exit = "CertificateENG"; 
+@@ exit = "Certificate{LANG}"; 
 
-;Note: Change exit to "CertificateShortENG" to keep bx r0 in box 14 name if desired
+; Note: Change exit to "CertificateShort{LANG}" to keep bx r0 in box 14 name if desired
 
 ; Breeding Outcomes
 ; With Ditto + Any species, you get the Any species, including Ditto

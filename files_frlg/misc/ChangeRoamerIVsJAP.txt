@@ -1,4 +1,4 @@
-@@ title = "Change Roamer IVs"
+@@ title = "Change Roamer IVs (move ACE)"
 @@ author = "Sleipnir"
 @@ exit = "CommonExitJAP"
 

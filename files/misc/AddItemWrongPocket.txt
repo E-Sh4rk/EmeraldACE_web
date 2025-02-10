@@ -1,0 +1,74 @@
+@@ title = "Add/Remove Item in Wrong Pocket"
+@@ author = "Adrichu00"
+@@ exit = "CertificateFull{LANG}"
+; Recommended Bootstrapped exit if it doesn't fit
+
+
+; DISCLAIMER
+;  The item slot that this code would generate is glitched and it will not be
+;  deleted when tossed, given, sold... (although you will earn money). You can
+;  read how to get rid of this glitched item slots in the DELETE MODE section
+;  below.
+
+
+; EXPLANATION
+;  When the game tries to reduce the item quantity, it will look for it in the
+;  correct pocket and won't be able to reduce its amount, but the effect of the
+;  action (use, give, sell...) should be applied.
+
+
+; IMPORTANT
+;  Having at least one empty slot in the selected pocket is highly recommended.
+;  (Total Key Item slots = 30; Total Ball slots = 16)
+;  In other case, the item in the last slot would be overwritten. In addition,
+;  the code would have a small chance of failing. If you don't see the item in
+;  the selected pocket, try again.
+;  More information about why at:
+;    https://gist.github.com/Adrichu00/7088b5f37e4507c563e69a9933df957c#the-code
+
+
+; USAGE
+;  * If you want to USE the item, use Key Items Pocket.
+;  * If you want to GIVE the item, use Balls Pocket.
+
+;  Don't use Berries or TMs, they probably won't work if you try to use them
+;  from the wrong pocket.
+
+;  As mentioned above, when the item is used from the wrong pocket, the game will
+;  try to reduce the item quantity in the correct pocket. You can avoid losing
+;  that item by moving it to the PC.
+
+
+; DELETE MODE
+;  You can delete an item in the FIRST slot of the selected pocket by leaving
+;  the last slot in that pocket EMPTY and setting delete_mode to 1. This may
+;  be the only way to get rid of a slot generated with this code.
+
+
+; PARAMETERS
+
+; Modify these to configure
+
+pocket      = 0      ; 0 for Key Items, 1 for Balls
+item_id     = 0x0044 ; @input:item
+; 0 for normal mode (insert in last slot), 1 for delete mode (delete first slot)
+delete_mode = 0
+
+
+; Do not modify anything below
+
+offset = pocket? (delete_mode? 0xBB06: 0xBACA): (delete_mode? 0xBB7E: 0xBB0A)
+
+@@
+
+; Load Address (Target Slot in Pocket)
+SUB r11, pc, {offset} ?
+; Write Item ID
+MOV r12, {item_id & (delete_mode? 0x0000: 0xFFFF)} ?
+STRH r12, [r11], 0x02
+; Load quantity from last slot (Should be 0 (empty). Must be 0 for delete_mode = 1)
+LDRH r12, [r11, {delete_mode? (pocket? 0x3C: 0x74): 0x00}]
+; Write quantity or Increase it
+{delete_mode? 0xE1CBC0B0: 0xE2ACC2B0} ; STRH r12, [r11] or ADC r12, r12, 0x0B
+; Nothing or Write
+{delete_mode? 0x000000FF: 0xE1CBC0B0} ; Filler or STRH r12, [r11]
