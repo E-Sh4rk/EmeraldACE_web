@@ -11,7 +11,7 @@
 ; After execution, move the Egg/Pokemon to Box 3 Slot 1.
 ;
 ; Choose ONE word that matches your desired Nature/Ability from this list:
-; https://raw.githubusercontent.com/papajefe/EmeraldACE_web/refs/heads/main/files_frlg/naturewords.txt
+; https://e-sh4rk.github.io/EmeraldACE_web/doc/naturewords.txt
 ;
 ; Activate the Glitched Mail Message, and enter the same word into the first four slots.
 ;
