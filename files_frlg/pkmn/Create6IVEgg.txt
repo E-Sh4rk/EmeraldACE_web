@@ -3,19 +3,26 @@
 @@ exit = "GrabACEExit"
 
 ; This creates a hatchable Egg of any species, with 31 IVs in every stat in Box 9 Slot 27.
+; Make sure Box 9 Slot 27 is empty beforehand.
 ; PID and OTID will both be 0x00000000, so Nature is always Hardy, and Ability is always 0.
-; However combined with FRLG Mail Glitch you can acheive any Nature/Ability combo.
+; If using ability = 1, the Pokemon created in Box 9 Slot 27 won't be an Egg (at first).
+; You can change Nature/Ability by combining with the Mail Glitch.
 ;
-; You can find a list of words for each Nature/Ability here:
+; After execution, move the Egg/Pokemon to Box 3 Slot 1.
+;
+; Choose ONE word that matches your desired Nature/Ability from this list:
 ; https://raw.githubusercontent.com/papajefe/EmeraldACE_web/refs/heads/main/files_frlg/naturewords.txt
 ;
-; If using ability = 1, the result will be a Pokemon, rather than an Egg (at first).
-; Place the resulting Pokemon in Box 3 Slot 1 using the White Hand. 
-; Enter the chosen words into first four slots of the glitched Mail Message.
-; After entering the words, you can hatch the Egg normally.
+; Activate the Glitched Mail Message, and enter the same word into the first four slots.
+;
+; For example, Adamant/Ability 0 would be:
+; CHORES CHORES
+; CHORES CHORES
+;
+; After entering the words, hatch the Egg.
 
 
-species = 0x003F ; Enter the species index number in hex.
+species = 0x003F ; @input:species
 ability = 0 ; Either 0 or 1
 
 @@
