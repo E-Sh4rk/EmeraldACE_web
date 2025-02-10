@@ -1,0 +1,33 @@
+@@ title = "Start Fateful Mew Battle"                
+@@ author = "PapaJefe"                
+@@ exit = "Bootstrapped"     
+
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md   
+
+; This code must be run at Indigo Plateau
+; After running, talk to far right Bookshelf.
+; Refuse the Yes/No Box regarding Berry Powder
+; Walk to the PokeMart NPC.
+; Talk to him to battle a Level 30 Mew, with the Obedience Flag.        
+                
+; Script Location FR 1.0 = 0x081652F8
+; Script Location FR 1.1 = 0x08165370
+
+; Script Location LG 1.0 = 0x081652D4
+; Script Location LG 1.1 = 0x0816534C
+
+; REPLACE script with the hex value your correct Version
+                
+script = REPLACE
+    
+@@
+sbc r11,pc, 0xBA00        ; Store NPC Offset Location in R11        
+mov r12, {script} ?    ; Store Deoxys Script Pre-Battle in R12            
+str r12, [r11, 0x1bd]!    ; Write Deoxys Script to NPC 0
+adc r12, r12, 0x5D9C ? ; ADC from Deoxys to Berry Powder Script
+str r12, [r11, 0xA8]!  ; Write Berry Powder to NPC 7
+mov r11, 0x02037000 ?    ; Store SpecialVar Location R11                    
+mov r12, {0x0097} ?    ; Store Mew Species in R12
+strh r12, [r11, 0xCA]    ; Write Mew Species to SpecialVar 0x8009
