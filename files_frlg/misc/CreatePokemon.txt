@@ -1,5 +1,5 @@
 @@ title = "Create Pokemon from Nothing (Grab ACE)"
-@@ author = "Sleipnir (adapted by PapaJefe)"
+@@ author = "Sleipnir (adapted by PapaJefe and Final)"
 @@ exit = "GrabACEExit"
 
 ; Will create a shiny Pokemon of any species in Box 9 Slot 27.
@@ -10,14 +10,16 @@
 ; Reference Sleipnir's Video for usage instructions:
 ; https://www.youtube.com/watch?v=Sa9nEZBU3DI
 
-species = 0x3200 ; Enter the species index number in hex.
+species = 0x3200  ; Please set the species you want (it should not be 0)       @input:species
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 
 @@
 
-sbc r12, pc, 0x3040 ; Offset for Box 9 Slot 27
-mov r11, {species} ? ;Store Species in r11
-mov r10, 0x200 ? ;store hasSpecies Flag in r10
-strh r10, [r12, 0x2A]!
-strh r11, [r12, 0xA] ;store Checksum
-strh r11, [r12, 0xE] ;store Species
+sbc r11, pc, 0x3040 ; Offset for Box 9 Slot 27
+movs r12, #0xE200
+bic r12, r12, #0xFF000 ; r12 = 200, hasSpecies set
+strh r12, [r11, {0x2A + (inaccurate_emu ? 2 : 0)}]!
+mov r12, {species} ? ;Store Species in r12
+strh r12, [r11, 0xA] ;store Checksum
+strh r12, [r11, 0xE] ;store Species
