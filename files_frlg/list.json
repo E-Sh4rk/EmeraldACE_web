@@ -200,5 +200,23 @@
     "ita": "misc/AddItemWrongPocket.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Start Fateful Mew Battle",
+    "eng1": "pkmn/FatefulMew.txt",
+    "eng0": "pkmn/FatefulMew.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Re-enable Single Use Move Tutors",
+    "eng1": "misc/EnableTutors.txt",
+    "eng0": "misc/EnableTutors.txt",
+    "fra": "misc/EnableTutors.txt",
+    "ger": "misc/EnableTutors.txt",
+    "spa": "misc/EnableTutors.txt",
+    "ita": "misc/EnableTutors.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
