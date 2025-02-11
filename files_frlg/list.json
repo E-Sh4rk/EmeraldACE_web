@@ -128,17 +128,17 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Create Pokemon from nothing",
-    "eng1": "misc/CreatePokemon.txt",
-    "eng0": "misc/CreatePokemon.txt",
-    "fra": "misc/CreatePokemon.txt",
-    "ger": "misc/CreatePokemon.txt",
-    "spa": "misc/CreatePokemon.txt",
-    "ita": "misc/CreatePokemon.txt",
-    "jap0": "misc/CreatePokemon.txt",
-    "jap1": "misc/CreatePokemon.txt",
+    "name": "Create Pokemon species from nothing",
+    "eng1": "pkmn/PokemonFromNothing.txt",
+    "eng0": "pkmn/PokemonFromNothing.txt",
+    "fra": "pkmn/PokemonFromNothing.txt",
+    "ger": "pkmn/PokemonFromNothing.txt",
+    "spa": "pkmn/PokemonFromNothing.txt",
+    "ita": "pkmn/PokemonFromNothing.txt",
+    "jap0": "pkmn/PokemonFromNothing.txt",
+    "jap1": "pkmn/PokemonFromNothing.txt",
     "game": ["fr", "lg"],
-    "cat": ["misc"]
+    "cat": ["pkmn"]
   },
   {
     "name": "Get any item",
