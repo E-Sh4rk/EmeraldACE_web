@@ -48,6 +48,17 @@
     "cat": ["misc"]
   },
   {
+    "name": "Change Trainer Name",
+    "eng1": "misc/ChangeTrainerName.txt",
+    "eng0": "misc/ChangeTrainerName.txt",
+    "fra": "misc/ChangeTrainerName.txt",
+    "ger": "misc/ChangeTrainerName.txt",
+    "spa": "misc/ChangeTrainerName.txt",
+    "ita": "misc/ChangeTrainerName.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
     "name": "Change Trainer Name (Bootstrapped)",
     "eng1": "misc/ChangeTrainerNameBootstrapped.txt",
     "eng0": "misc/ChangeTrainerNameBootstrapped.txt",

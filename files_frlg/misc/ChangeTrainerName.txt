@@ -1,0 +1,24 @@
+@@ title = "Change Trainer Name"
+@@ author = "Theocatic | Adrichu00 | Final"
+@@ exit = "GrabACEExit"
+
+; This code is for a legal trainer name. If you want a not normally writable
+; name, use the code Change Trainer Name (Bootstrapped)
+
+; Write your trainer name in BOX 13's name with no trailing spaces
+; Don't use the last char, leave it empty (not space, but 0xFF)
+
+; For example, for the name "Test", BOX 13's name would be:
+; (...)
+; Box 11: … o _ _ _ _ _ _ […o      ]
+; Box 12 doesn't matter
+; Box 13: T e s t         [Test]
+
+@@
+
+SUB r11, pc, 0xD0DA ? ; Pointer to Trainer Name
+ADD r10, pc, 0x56 ?   ; Pointer to Box 13's Name
+LDR r12, [r10]!       ; Get first 4 chars
+STR r12, [r11]!       ; Write first 4 chars
+0xE7BACCAE            ; (LDR r12, [r10, lr, LSR 0x19]!) Get last 4 chars
+0xE7ABCCAE            ; (STR r12, [r11, lr, LSR 0x19]!) Write last 4 chars
