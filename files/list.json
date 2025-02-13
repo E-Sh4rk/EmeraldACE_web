@@ -37,7 +37,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Change trainer name",
+    "name": "Change full trainer name (legal)",
     "eng": "misc/ChangeFullTrainerName.txt",
     "fra": "misc/ChangeFullTrainerName.txt",
     "ger": "misc/ChangeFullTrainerName.txt",
