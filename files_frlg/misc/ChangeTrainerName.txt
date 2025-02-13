@@ -16,9 +16,7 @@
 
 @@
 
-SUB r11, pc, 0xD0DA ? ; Pointer to Trainer Name
-ADD r10, pc, 0x56 ?   ; Pointer to Box 13's Name
-LDR r12, [r10]!       ; Get first 4 chars
-STR r12, [r11]!       ; Write first 4 chars
-0xE7BACCAE            ; (LDR r12, [r10, lr, LSR 0x19]!) Get last 4 chars
-0xE7ABCCAE            ; (STR r12, [r11, lr, LSR 0x19]!) Write last 4 chars
+SUB r12, pc, 0xD0DA ? ; Pointer to Trainer Name
+ADD r11, pc, 0x56 ?   ; Pointer to Box 13's Name
+0xE8BB00C0            ; (LDMIA r11! {r6, r7}) Load name in r6 & r7
+0xE8AC00C0            ; (STMIA r12! {r6, r7}) Write trainer name
