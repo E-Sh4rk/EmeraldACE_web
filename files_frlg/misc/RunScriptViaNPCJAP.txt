@@ -1,0 +1,50 @@
+@@ title = "Run script via NPC (JAP)"
+@@ author = "Sleipnir / PapaJefe / im a blisy ._. / Final"
+
+mode = !!1 ; 0 for CallScript, 1 for CallASM
+address = 0x02031591 ; Default address is address of box names at ASLR 0
+
+; DO NOT TOUCH BELOW PARAMETERS
+
+script1 ? = (address << 8) | (mode ? 0x23 : 0x05 )
+script2 ? = 0xFFFF0200 | (address >> 24)
+gSaveDataBufferPtr = 0x020399B0
+gSaveBlock1Ptr = 0x03004FA8
+offset = 0x0000090A ; offset from gSaveBlock1Ptr to NPC script
+
+@@
+
+0xA10DB504
+; B504    PUSH {R2, LR} ; Preserve R2, and return address
+; A10D    ADD R1, PC, #0x34 ; R1 @ gSaveBlock1Ptr
+0x6800C907
+; C907    LDMIA R1!, {R0, R1, R2} ; Load gSaveBlock1Ptr address in R0 and offset in R2
+; 6800    LDR R0, [R0] ; Load gSaveBlock1Ptr
+0x1880D0FF
+; D0FF    ; (filler)
+; 1880    ADD R0, R0, R2 ; R0 = NPC script
+0xE0004A08
+; 4A08    LDR R2, [PC, #0x20] ; R2 = gSaveDataBufferPtr
+; E000    B PC+4
+0x6002FFFF
+; FFFF    ; (bad filler)
+; 6002    STR R2, [R0] ; Store gSaveDataBufferPtr as script location
+0xC903A103
+; A103    ADD R1, PC, #0xC ; R1 = address of script1
+; C903    LDMIA R1!, {R0, R1} ; Load script 1 and 2 into R0 and R1
+0xD0FFC203
+; C203    STMIA R2!, {R0, R1} ; Store script in gSaveDataBufferPtr
+; D0FF    ; (filler)
+0xBD042000
+; 2000    MOV R0, #0x0 ; end task
+; BD04    POP {R2, PC} ; Pop preserved registers and exit
+0xFFFFFFFF
+{ script1 }
+{ script2 }
+0x515151FF ; (filler)
+{ gSaveDataBufferPtr }
+0x5151FFFF ; (filler)
+{ gSaveBlock1Ptr }
+0x51FFFFFF ; (filler)
+{ offset }
+0xFFFFFFFF

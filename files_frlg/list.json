@@ -121,6 +121,8 @@
     "name": "Run script via NPC",
     "eng1": "misc/RunScriptViaNPC.txt",
     "eng0": "misc/RunScriptViaNPC.txt",
+    "jap1": "misc/RunScriptViaNPCJAP.txt",
+    "jap0": "misc/RunScriptViaNPCJAP.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
