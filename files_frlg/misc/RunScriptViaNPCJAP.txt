@@ -1,0 +1,61 @@
+@@ title = "Run script via NPC (JAP)"
+@@ author = "Sleipnir / PapaJefe / im a blisy ._. / Final"
+
+address = 0x02031590 ; Default address is address of box names at ASLR 0
+
+; DO NOT TOUCH BELOW PARAMETERS
+
+xx = (address & 0xFF000000)>>24
+XX = (address & 0xFF0000)>>16
+yy = (address & 0xFF00)>>8
+YY = (address & 0xFF)
+neg = 0x80000000
+
+ww= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+zz= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
+ZWdata = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
+
+gSaveBlock1Ptr = 0x03004FA8
+offset = 0x0000090A ; offset from gSaveBlock1Ptr to NPC 1 script
+
+@@
+
+0xA10BB504
+; B504    PUSH {R2, LR} ; Preserve R2
+; A10B    ADD R1, PC, #0x2C
+0x6800C907
+; C907    LDMIA R1!, {R0, R1, R2} ; R0 = address of gSaveBlock1Ptr, R2 = offset
+; 6800    LDR R0, [R0] ; R0 = gSaveBlock1Ptr
+0x1880D0FF
+; D0FF    ; (filler)
+; 1880    ADD R0, R0, R2 ; R0 = NPC 1 script pointer
+0xE000A105
+; A105    ADD R1, PC, #0x14
+; E000    B PC+0x4
+0xC906FFFF
+; FFFF    ; (bad filler)
+; C906    LDMIA R1!, {R1, R2} ; R1 = uUvV, R2 = zZwW
+0x60011889
+; 1889    ADD R1, R1, R2 ; R1 = xXyY, script address
+; 6001    STR R1, [R0] ; Set script pointer as address
+0xD0FF2000
+; 2000    MOV R0, #0x0 ; End task
+; D0FF    ; (filler)
+0xFFFFBD04
+; BD04    POP {R2, PC} ; Restore R2, and exit
+0xFFFFFFFF ; (filler)
+{ UVdata }
+{ ZWdata }
+0x515151FF ; (filler)
+{ gSaveBlock1Ptr }
+0x5151FFFF ; (filler)
+{ offset }
