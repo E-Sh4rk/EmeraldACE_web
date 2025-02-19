@@ -1,0 +1,23 @@
+@ title = "Create Tradeback NPC"				
+@@ author = "Theocatic"				
+@@ exit = "GrabACEExit"
+
+
+;After Executing this code talk to the Old Gentleman NPC in the Viridian City Pokemon Center similar to the Run script via NPC code. 
+
+;This code will trade the first pokemon in your party for an empty Decamark. Talk to the NPC again to recieve back your original Pokemon
+
+
+NPC = 2 ;sets which NPC on the map to run though. NPC 1, 2 and 3 are usable. 
+
+
+;Do not modify these values
+ScriptEnd = 0x0200FE25
+NPCOffset = 0x1A5 + (NPC * 0x18)
+@@				
+
+sbc r10, pc, 0xBA00
+adc r11, r4, 0x300
+str r11, [r10, {NPCOffset}]!
+mov r12, {ScriptEnd} ?
+str r12, [r11]!
