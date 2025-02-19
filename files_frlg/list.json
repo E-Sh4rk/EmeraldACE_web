@@ -198,10 +198,30 @@
     "ger": "pkmn/StartWildBattleWithAnyPokemon.txt",
     "spa": "pkmn/StartWildBattleWithAnyPokemon.txt",
     "ita": "pkmn/StartWildBattleWithAnyPokemon.txt",
-    "jap0": "pkmn/StartWildBattleWithAnyPokemon.txt",
-    "jap1": "pkmn/StartWildBattleWithAnyPokemon.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Create any Gift Pokemon (Bootstrapped)",
+    "eng1": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "eng0": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "fra": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "ger": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "spa": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "ita": "pkmn/CreateAnyGiftPokemonBootstrapped.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Create Tradeback NPC",
+    "eng1": "misc/CreateTradebackNPC.txt",
+    "eng0": "misc/CreateTradebackNPC.txt",
+    "fra": "misc/CreateTradebackNPC.txt",
+    "ger": "misc/CreateTradebackNPC.txt",
+    "spa": "misc/CreateTradebackNPC.txt",
+    "ita": "misc/CreateTradebackNPC.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   },
   {
     "name": "Add/Remove Item in Wrong Pocket",

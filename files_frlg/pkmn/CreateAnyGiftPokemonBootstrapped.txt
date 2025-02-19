@@ -1,22 +1,20 @@
-@ title = "Start wild battle with any Pokemon"				
-@@ author = "Theocatic / it-is-final"				
-@@ exit = "GrabACEExit"
+@ title = "Create any Gift Pokemon (Bootstrapped)"				
+@@ author = "Theocatic"				
+@@ exit = "Bootstrapped"
 
 
 ;After Executing this code talk to the Old Gentleman NPC in the Viridian City Pokemon Center similar to the Run script via NPC code.
 
-;The hex data for a pokemon can be found at
-;bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_III 
 
 
-PokemonHex = 0x00C4
+PokemonHex = 133  @input:species
 PokemonLV = 25
 
 NPC = 2 ;sets which NPC on the map to run though. NPC 1, 2 and 3 are usable. 
 
 ;Do not modify these values
-ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
-ScriptEnd = 0x02B70000
+ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0x79
+ScriptEnd = 0x00000000
 NPCOffset = 0x1A5 + (NPC * 0x18)
 @@				
 
@@ -26,4 +24,8 @@ str r11, [r10, {NPCOffset}]!
 mov r12, {ScriptStart} ?
 str r12, [r11]!
 mov r12, {ScriptEnd} ?
+0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
+0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
+0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
+Adc r12, 0x02 ?
 0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
