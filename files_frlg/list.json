@@ -42,8 +42,6 @@
     "ger": "misc/ChangeTrainerGender.txt",
     "spa": "misc/ChangeTrainerGender.txt",
     "ita": "misc/ChangeTrainerGender.txt",
-    "jap0": "misc/ChangeTrainerGender.txt",
-    "jap1": "misc/ChangeTrainerGender.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -66,8 +64,6 @@
     "ger": "misc/ChangeTrainerNameBootstrapped.txt",
     "spa": "misc/ChangeTrainerNameBootstrapped.txt",
     "ita": "misc/ChangeTrainerNameBootstrapped.txt",
-    "jap0": "misc/ChangeTrainerNameBootstrapped.txt",
-    "jap1": "misc/ChangeTrainerNameBootstrapped.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -222,6 +218,17 @@
     "ita": "misc/CreateTradebackNPC.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Teach Pokemon Any Move",
+    "eng1": "pkmn/TeachPokemonAnyMove.txt",
+    "eng0": "pkmn/TeachPokemonAnyMove.txt",
+    "fra": "pkmn/TeachPokemonAnyMove.txt",
+    "ger": "pkmn/TeachPokemonAnyMove.txt",
+    "spa": "pkmn/TeachPokemonAnyMove.txt",
+    "ita": "pkmn/TeachPokemonAnyMove.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   },
   {
     "name": "Add/Remove Item in Wrong Pocket",
