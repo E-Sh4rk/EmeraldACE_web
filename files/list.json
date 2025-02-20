@@ -37,12 +37,30 @@
     "cat": ["misc"]
   },
   {
+    "name": "Change full trainer name (legal)",
+    "eng": "misc/ChangeFullTrainerName.txt",
+    "fra": "misc/ChangeFullTrainerName.txt",
+    "ger": "misc/ChangeFullTrainerName.txt",
+    "spa": "misc/ChangeFullTrainerName.txt",
+    "ita": "misc/ChangeFullTrainerName.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Change trainer name",
     "eng": "misc/ChangeTrainerName.txt",
     "fra": "misc/ChangeTrainerName.txt",
     "ger": "misc/ChangeTrainerName.txt",
     "spa": "misc/ChangeTrainerName.txt",
     "ita": "misc/ChangeTrainerName.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Temporarily boost your second Pokemon stats",
+    "eng": "misc/BoostSecondPkmn.txt",
+    "fra": "misc/BoostSecondPkmn.txt",
+    "ger": "misc/BoostSecondPkmn.txt",
+    "spa": "misc/BoostSecondPkmn.txt",
+    "ita": "misc/BoostSecondPkmn.txt",
     "cat": ["misc"]
   },
   {
@@ -232,16 +250,6 @@
   },
   {
     "name": "Create Pokemon species from nothing",
-    "eng": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "fra": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "ger": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "spa": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "ita": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "jap": "pkmn/PokemonFromNothingNoBootstrap.txt",
-    "cat": ["pkmn","bootstraps"]
-  },
-  {
-    "name": "Create Pokemon species from nothing (with exit code bootstrap)",
     "eng": "pkmn/PokemonFromNothing.txt",
     "fra": "pkmn/PokemonFromNothing.txt",
     "ger": "pkmn/PokemonFromNothing.txt",
@@ -464,6 +472,19 @@
     "ita": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
     "jap": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
     "cat":["pkmn"]
+  },
+  {
+    "name": "Change any ObjectEvent Script Pointer",
+    "eng": "misc/ChangeObjectEventScriptENG.txt",
+    "fra": "misc/ChangeObjectEventScriptFRA.txt",
+    "ger": "misc/ChangeObjectEventScriptGER.txt",
+    "spa": "misc/ChangeObjectEventScriptSPA.txt",
+    "ita": "misc/ChangeObjectEventScriptITA.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Mass Clone/Declone Pokémon (for 0x085F)",
+    "jap": "misc/MassClonePokemonJAPThumb.txt",
+    "cat": ["misc"]
   }
-
 ]

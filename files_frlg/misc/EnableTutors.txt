@@ -1,0 +1,29 @@
+@@ title = "Re-enable Single Use Move Tutors (Bootstrapped)"
+@@ author = "Sleipnir"
+@@ exit = "Bootstrapped"
+
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
+
+; After executing, all single-use Move Tutors will be usable again.
+; It doesn't matter whether they have been used before or not.
+
+@@
+
+0xE3A1B0EE  ; mov r12, 0xEE
+sbc r0,r11,0xEC
+0xE3B0CCFF ; mov r12,0xC000003F
+sbc r10,pc,0xB300
+bic r12,r12,0xC8000
+ldrh r11, [r10, 0xFD]
+bic r11,r11,r0
+strh r11, [r10, 0xFD]
+adc r12,r12,0xC000003F
+adc r0,r12,0xC0
+adc r10,r10,0x30
+0xE5BAC0C9 ; ldrt r12, [r10, C9]!
+bic r12,r12,r0
+sbc r11, pc, 0x2E
+sbc r0, r11, 0xFF
+0xE5AAC000 ;strt r12, [r10]

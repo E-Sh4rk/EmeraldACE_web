@@ -1,0 +1,28 @@
+@@ title = "Create Pokemon from nothing (Grab ACE)"
+@@ author = "Sleipnir (adapted by PapaJefe, Final and Adrichu00)"
+@@ exit = "GrabACEExit"
+
+; Will create a shiny Pokemon of any species in Box 10 Slot 19
+; Make sure that Box space is empty before running.
+; Pokemon will have no data other than species.
+; HasSpecies Flag is set, so it won't disappear with group select.
+
+; Species 0x3200 is the "Fast Clone" species (ENG FRLG).
+; Reference Sleipnir's Video for usage instructions:
+; https://www.youtube.com/watch?v=Sa9nEZBU3DI
+
+
+species = 0x3200   ; Please set the species you want (it should not be 0)      @input:species
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+
+@@
+
+
+sbc r11, pc, 0x2940           ; r11 = &Box10Slot19 + 9 (+7 if inaccurate_emu)
+movs r12, #0xE200
+bic r12, r12, #0xFF000        ; r12 = 0x0200, hasSpecies flag set
+strh r12, [r11, {inaccurate_emu? 0x0C : 0x0A}]! ; Store MiscFlags
+mov r12, {species & 0xFFFF} ? ; Load Species in r12
+strh r12, [r11, 0xA]          ; Store Checksum
+strh r12, [r11, 0xE]          ; Store Species

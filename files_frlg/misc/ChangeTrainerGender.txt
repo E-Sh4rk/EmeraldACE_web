@@ -1,4 +1,4 @@
-@@ title = "Change Trainer Gender(Grab ACE)"
+@@ title = "Change Trainer Gender (Grab ACE)"
 @@ author = "Theocatic"
 @@ exit = "GrabACEExit"
 

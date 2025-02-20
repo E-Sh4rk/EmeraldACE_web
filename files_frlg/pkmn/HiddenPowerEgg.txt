@@ -7,20 +7,27 @@
 ; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
 ;
 ; This code will create an Egg with the species of your choice in Box 10 Slot 2.
-; You can select custom IVs to have any Hidden Power Type.
+; Make sure Box 10 Slot 2 is empty beforehand.
+; If using ability = 1, the result will be a Pokemon, rather than an Egg (at first).
+;
+; Replace the IVs variable below with the Hex value for desired IVs.
 ; You can find a list of compatible Hex values for IVs here:
 ; https://e-sh4rk.github.io/EmeraldACE_web/doc/HiddenPowerHex.txt
 ;
 ; The PID and OTID will be 0x00000000, so nature is always Hardy and Ability is 0.
-; However combined with FRLG Mail Glitch you can acheive any Nature/Ability combo.
+; You can change Nature/Ability by combining with the Mail Glitch.
 ;
-; You can find a list of words for each Nature/Ability here:
+; After execution, move the Egg/Pokemon to Box 3 Slot 1.
+;
+; Choose ONE word that matches your desired Nature/Ability from this list:
 ; https://e-sh4rk.github.io/EmeraldACE_web/doc/naturewords.txt
+; Activate the Glitched Mail Message, and enter the chosen word into the first four slots.
 ;
-; If using ability = 1, the result will be a Pokemon, rather than an Egg (at first).
-; Place the resulting Pokemon in Box 3 Slot 1 using the White Hand. 
-; Enter the chosen words into first four slots of the glitched Mail Message.
-; After entering the words, you can hatch the Egg normally.
+; For example, Adamant/Ability 0 would be:
+; CHORES CHORES
+; CHORES CHORES
+;
+; After entering the words, hatch the Egg.
 
 species = 306 @input:species
 ability = 0

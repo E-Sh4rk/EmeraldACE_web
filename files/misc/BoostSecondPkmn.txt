@@ -1,0 +1,16 @@
+@@ title = "Temporarily boost your second Pokemon stats"
+@@ author = "E-Sh4rk"
+@@ exit = "Certificate{LANG}"
+@@
+
+; This code sets the stats of the second Pokemon in your team to 65535, making it near invincible.
+; Its current HPs won't be updated, thus it is recommended to heal your Pokemons after executing this code.
+; The stats will go back to normal after putting the Pokemon in the PC or after a level up.
+
+movs r12, { 0x20244ec + 100 + 96 } ? ; r12 = &Trainer_party + 100 (second pkmn) + 96
+mvn r11, 0 
+str r11, [r12,0]!
+sbc r12, r12, 3
+str r11, [r12,0]!
+sbc r12, r12, 3
+str r11, [r12,0]!

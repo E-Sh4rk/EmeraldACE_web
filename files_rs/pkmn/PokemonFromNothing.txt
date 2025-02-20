@@ -1,16 +1,18 @@
-@@ title = "Create pokemon from nothing (without exit code bootstrap)"
-@@ author = "E-Sh4rk"
-@@ exit = "ReturnToOverworldFull_{LANGNR}"
+@@ title = "Create pokemon from nothing"
+@@ author = "E-Sh4rk & Final"
+@@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
 
-species = 0xFF     ; Please set the species you want (it should not be 0)
+species = 0xFF     ; Please set the species you want (it should not be 0)       @input:species
 
 ; The Box 10 Slot 19 must be empty. A pokemon will appear there after execution of the code.
-; NOTE: The Pokemon created with this method will disappear if moved using the group selection.
+; HasSpecies Flag is set, so it won't disappear with group select.
 
 @@
 
-sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
-
-mov r12, {species & 0xFFFF} ?
-strh r12, [r11, 0x15]!
-strh r12, [r11, 0x4]!
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 7
+movs r12, #0xE200
+bic r12, r12, #0xFF000         ; r12 = 0x0200, hasSpecies flag set
+strh r12, [r11, #12]!          ; Store MiscFlags
+mov r12, {species & 0xFFFF} ?  ; Load Species
+strh r12, [r11, #10]           ; Store Checksum
+strh r12, [r11, #14]           ; Store Species

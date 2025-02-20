@@ -1,4 +1,4 @@
-@@ title = "Change Roamer PID"
+@@ title = "Change Roamer PID (move ACE)"
 @@ author = "Sleipnir"
 @@ exit = "CommonExitJAP"
 

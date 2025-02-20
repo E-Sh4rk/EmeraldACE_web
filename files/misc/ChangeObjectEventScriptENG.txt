@@ -1,0 +1,37 @@
+@@ title = "Change any ObjectEvent Script Pointer"
+@@ author = "Adrichu00 / Theocatic"
+@@ exit = "CertificateFullENG"
+; It may need a "Bootstrapped" exit depending on the script and the obj_id
+
+; Generalized version for any ObjectID.
+; Based on the adaptation made by PapaJefe and im a blisy ._. of Sleipnir17's scripts:
+;   "Run Script via Old Man NPC (Grab ACE)" code at the FRLG generator
+
+; | SCRIPT                         | ADDRESS    | NOTES                      |
+; |:-------------------------------|:-----------|:---------------------------|
+; | NicknameFirstBoxMon            | 0x08273797 | From Sleipnir17's Pastebin |
+; | OnSaleDecorationsShop          | 0x0822022F | From Sleipnir17's Pastebin |
+; | PichuEggUnreleasedEvent        | 0x08674D3D | From Sleipnir17's Pastebin |
+; | AuroraTicketMysteryGift        | 0x0867533C | From Sleipnir17's Pastebin |
+; | MysticTicketMysteryGift        | 0x0867550B | From Sleipnir17's Pastebin |
+; | OldSeaMapMysteryGift           | 0x086757F4 | From Sleipnir17's Pastebin |
+; | MoveDeleter                    | 0x0821EA0B |                            |
+; | MoveReminder                   | 0x08201383 | Before Scale Check         |
+; | MoveReminder                   | 0x082013D6 | After Scale Check          |
+; | UpgradeToNationalDex           | 0x081F9E80 |                            |
+; | BattleFrontierL7LeftMoveTutor  | 0x08265255 | Still Requires BP          |
+; | BattleFrontierL7RightMoveTutor | 0x08265445 | Still Requires BP          |
+
+; Parameters
+script = 0x0821EA0B ; Script Address
+obj_id = 2          ; Object ID
+inaccurate_emu = 0  ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify this
+script_offset = obj_id * 0x18
+
+@@                
+                
+sub r11, pc, {(inaccurate_emu? 0xB5AC: 0xB5AE) - (script_offset & ~0x1F)} ?
+mov r12, {script} ?
+str r12, [r11, {0xC0 + (script_offset & 0x1F)}]!

@@ -1,23 +1,19 @@
-@@ title = "Create pokemon from nothing (with exit code bootstrap)"
-@@ author = "E-Sh4rk"
-@@ exit = "Bootstrapped"
+@@ title = "Create pokemon from nothing"
+@@ author = "E-Sh4rk & Final"
+@@ exit = "CertificateFull{LANG}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
 
 species = 0xFF     ; Please set the species you want (it should not be 0)       @input:species
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
-; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
 ; The Box 10 Slot 19 must be empty. A pokemon will appear there after execution of the code.
-; This code should be preferred to the version without an exit code bootstrap:
-; it sets the hasSpecies flag so that the pokemon can be moved with group selection.
+; HasSpecies Flag is set, so it won't disappear with group select.
 
 @@
 
-sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
-
-mov r12, 0x0202 ?
-adc r11, {18-(inaccurate_emu?7:9)} ?
-strh r12, [r11]
-
-movs r12, {species & 0xFFFF} ?
-strh r12, [r11, 10]!
-strh r12, [r11, 4]!
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9 (+7 for inaccurate_emu)
+movs r12, #0xE200
+bic r12, r12, #0xFF000         ; r12 = 0x0200, hasSpecies flag set
+strh r12, [r11, {inaccurate_emu? 0x0C : 0x0A}]!  ; Store MiscFlags
+mov r12, {species & 0xFFFF} ?  ; Load Species in r12
+strh r12, [r11, #10]           ; Store Checksum
+strh r12, [r11, #14]           ; Store Species
