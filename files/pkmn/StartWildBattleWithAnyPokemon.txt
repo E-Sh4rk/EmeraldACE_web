@@ -1,6 +1,6 @@
 @@ title = "Set up wild battle with any Pokemon"				
 @@ author = "Theocatic / it-is-final / Adrichu00"				
-@@ exit = "CertificateShortENG" ; change to "Bootstrapped" if you want to use your Certificate Exit Bootstrap
+@@ exit = "CertificateShort{LANG}" ; change to "Bootstrapped" if you want to use your Certificate Exit Bootstrap
 
 ; After Executing this code talk to the old guy in Mauville City Pokemon Center
 
