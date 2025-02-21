@@ -15,13 +15,14 @@ PokemonLV = 25
 ;Do not modify these values
 ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
 ScriptEnd = 0x02B70000    
+
 @@                
 
 adcs r11, pc, #0xE000 ; r11 = 0x203FB** (masked address), unused memory
 sbc r12, pc, #0xB500
 bic r11, r11, #0xFC000003 ; Word align address stored in r11
-0xE7ACBAAE ; STR R11, [R12, LR, LSR #21]! ; Store r11 in NPC 2 script pointer (r12+0x40)
+0xE7ACBAAE ; str r11, [r12, lr, lsr #21]! ; Store r11 in NPC 2 script pointer (r12+0x40)
 mov r12, {ScriptStart} ?
 str r12, [r11]!
 mov r12, {ScriptEnd} ?
-0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!, store r12 in r11+0x4
+0xE7ABCCCE ; STR r12, [r11, lr, asr #25]!, store r12 in r11+0x4
