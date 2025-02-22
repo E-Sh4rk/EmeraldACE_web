@@ -18,10 +18,11 @@ ScriptEnd = 0x02B70000
 
 @@                
 
+sbc r12, pc, #0xB400
 adcs r11, pc, #0xE000 ; r11 = 0x203FB** (masked address), unused memory
-sbc r12, pc, #0xB500
 bic r11, r11, #0xFC000003 ; Word align address stored in r11
-0xE7ACBAAE ; str r11, [r12, lr, lsr #21]! ; Store r11 in NPC 2 script pointer (r12+0x40)
+sbc r12, r12, #0xBA ; r12 = NPC 2 script pointer
+str r11, [r12]! ; Store r11 in NPC 2 script pointer
 mov r12, {ScriptStart} ?
 str r12, [r11]!
 mov r12, {ScriptEnd} ?
