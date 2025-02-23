@@ -464,13 +464,13 @@
     "cat": ["misc"]
   },
   {
-    "name": "Start Wild Battle With Any Pokemon (With Exit Code Bootstrap)",
-    "eng": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "fra": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "ger": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "spa": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "ita": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
-    "jap": "pkmn/StartWildBattleWithAnyPokemonBootstrapped.txt",
+    "name": "Start wild battle with any Pokemon",
+    "eng": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "fra": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "ger": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "spa": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "ita": "pkmn/StartWildBattleWithAnyPokemon.txt",
+    "jap": "pkmn/StartWildBattleWithAnyPokemon.txt",
     "cat":["pkmn"]
   },
   {

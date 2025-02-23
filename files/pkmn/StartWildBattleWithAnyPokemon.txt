@@ -1,0 +1,29 @@
+@@ title = "Set up wild battle with any Pokemon"				
+@@ author = "Theocatic / it-is-final / Adrichu00"				
+@@ exit = "CertificateShort{LANG}" ; change to "Bootstrapped" if you want to use your Certificate Exit Bootstrap
+
+; After Executing this code talk to the old guy in Mauville City Pokemon Center
+
+;The hex data for a pokemon can be found at
+;bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_index_number_in_Generation_III 
+
+
+PokemonHex = 0x00C4      @input:species
+PokemonLV = 25
+
+
+;Do not modify these values
+ScriptStart = (PokemonLV * 0x1000000) + (PokemonHex * 0x100) + 0xB6
+ScriptEnd = 0x02B70000    
+
+@@                
+
+sbc r12, pc, #0xB400
+adcs r11, pc, #0xE000 ; r11 = 0x203FB** (masked address), unused memory
+bic r11, r11, #0xFC000003 ; Word align address stored in r11
+sbc r12, r12, #0xBA ; r12 = NPC 2 script pointer
+str r11, [r12]! ; Store r11 in NPC 2 script pointer
+mov r12, {ScriptStart} ?
+str r12, [r11]!
+mov r12, {ScriptEnd} ?
+0xE7ABCCCE ; STR r12, [r11, lr, asr #25]!, store r12 in r11+0x4
