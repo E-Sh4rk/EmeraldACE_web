@@ -1,7 +1,7 @@
 @@ title = "Change any ObjectEvent Script Pointer"
-@@ author = "Adrichu00 / Theocatic"
+@@ author = "Adrichu00 / Theocatic / Final"
 @@ exit = "CertificateFullENG"
-; It may need a "Bootstrapped" exit depending on the script and the obj_id
+; It may need a "CertificateShortENG"/"Bootstrapped" exit depending on the script address
 
 ; Generalized version for any ObjectID.
 ; Based on the adaptation made by PapaJefe and im a blisy ._. of Sleipnir17's scripts:
@@ -25,13 +25,12 @@
 ; Parameters
 script = 0x0821EA0B ; Script Address
 obj_id = 2          ; Object ID
-inaccurate_emu = 0  ; Set to 1 if you are using an emulator < mgba 0.9
 
 ; Do not modify this
-script_offset = obj_id * 0x18
+aux_offset ?= 0xB5B4 - obj_id * 0x18
 
 @@                
                 
-sub r11, pc, {(inaccurate_emu? 0xB5AC: 0xB5AE) - (script_offset & ~0x1F)} ?
+sub r11, pc, {(aux_offset & ~0x0F) + 2} ?
 mov r12, {script} ?
-str r12, [r11, {0xC0 + (script_offset & 0x1F)}]!
+str r12, [r11, {0xCA - (aux_offset & 0x0F)}]!
