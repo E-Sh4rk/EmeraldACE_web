@@ -242,10 +242,25 @@
     "cat": ["misc"]
   },
   {
-    "name": "Start Fateful Mew Battle",
-    "eng1": "pkmn/FatefulMew.txt",
-    "eng0": "pkmn/FatefulMew.txt",
-    "game": ["fr", "lg"],
+    "name": "Start Fateful Mew Battle (Bootstrapped)",
+    "eng1": "pkmn/FatefulMew_FR_Rev1_ENG.txt",
+    "eng0": "pkmn/FatefulMew_FR_ENG.txt",
+    "fra": "pkmn/FatefulMew_FR_FRA.txt",
+    "ger": "pkmn/FatefulMew_FR_GER.txt",
+    "spa": "pkmn/FatefulMew_FR_SPA.txt",
+    "ita": "pkmn/FatefulMew_FR_ITA.txt",
+    "game": ["fr"],
+    "cat": ["pkmn"]
+  },
+    {
+    "name": "Start Fateful Mew Battle (Bootstrapped)",
+    "eng1": "pkmn/FatefulMew_LG_Rev1_ENG.txt",
+    "eng0": "pkmn/FatefulMew_LG_ENG.txt",
+    "fra": "pkmn/FatefulMew_LG_FRA.txt",
+    "ger": "pkmn/FatefulMew_LG_GER.txt",
+    "spa": "pkmn/FatefulMew_LG_SPA.txt",
+    "ita": "pkmn/FatefulMew_LG_ITA.txt",
+    "game": ["lg"],
     "cat": ["pkmn"]
   },
   {
