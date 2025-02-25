@@ -115,11 +115,28 @@
   },
   {
     "name": "Run script via NPC",
-    "eng1": "misc/RunScriptViaNPC.txt",
-    "eng0": "misc/RunScriptViaNPC.txt",
+    "eng1": "misc/RunScriptViaNPC_FR_Rev1_ENG.txt",
+    "eng0": "misc/RunScriptViaNPC_FR_ENG.txt",
+    "fra": "misc/RunScriptViaNPC_FR_FRA.txt",
+    "ger": "misc/RunScriptViaNPC_FR_GER.txt",
+    "spa": "misc/RunScriptViaNPC_FR_SPA.txt",
+    "ita": "misc/RunScriptViaNPC_FR_ITA.txt",
     "jap1": "misc/RunScriptViaNPCJAP.txt",
     "jap0": "misc/RunScriptViaNPCJAP.txt",
-    "game": ["fr", "lg"],
+    "game": ["fr"],
+    "cat": ["misc"]
+  },
+    {
+    "name": "Run script via NPC",
+    "eng1": "misc/RunScriptViaNPC_LG_Rev1_ENG.txt",
+    "eng0": "misc/RunScriptViaNPC_LG_ENG.txt",
+    "fra": "misc/RunScriptViaNPC_LG_FRA.txt",
+    "ger": "misc/RunScriptViaNPC_LG_GER.txt",
+    "spa": "misc/RunScriptViaNPC_LG_SPA.txt",
+    "ita": "misc/RunScriptViaNPC_LG_ITA.txt",
+    "jap1": "misc/RunScriptViaNPCJAP.txt",
+    "jap0": "misc/RunScriptViaNPCJAP.txt",
+    "game": ["lg"],
     "cat": ["misc"]
   },
   {
