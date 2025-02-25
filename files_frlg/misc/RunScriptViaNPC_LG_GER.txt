@@ -1,0 +1,29 @@
+@@ title = "Run Script via Old Man NPC (Grab ACE)"    
+@@ author = "Sleipnir / PapaJefe / im a blisy ._."    
+@@ exit = "GrabACEExit"  
+
+; This code inserts a script into the Old Gentleman NPC in Viridian City Pokemon Center.
+; Activate the code, and then speak to him and the script should play.
+; Works for all non-Japanese games/versions.
+; Make sure to select your Language/Version from dropdowns above.
+  
+; -GER LeafGreen SCRIPT LOCATIONS-
+ 
+; NationalDexScene = 0x08168F7C
+; GiveCelioSapphire = 0x08170EF1
+; GiveRainbowPass =  0x08170FFE
+; MysticTicket =  0x08486DF9
+; AuroraTicket  =  0x08486C19
+; MoveManiac =  0x0817160A
+; MoveDeleter =  0x0816D7F8
+; NameBox1Slot1Mon =  0x081ABA41
+
+; Replace 0x00000000 below with the address of the script
+    
+script = 0x00000000
+
+@@    
+    
+sbc r11,pc, 0xBA00    
+mov r12, {script} ?    
+str r12, [r11, 0x1d5]!  
