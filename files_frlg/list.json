@@ -13,6 +13,17 @@
     "cat": ["rng"]
   },
   {
+    "name": "Change PRNG seed and teleport (Bootstrapped)",
+    "eng1": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "eng0": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "fra": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "ger": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "spa": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "ita": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "game": ["fr", "lg"],
+    "cat": ["rng"]
+  },
+  {
     "name": "Change TID and SID",
     "eng1": "rng/tidsid.txt",
     "eng0": "rng/tidsid.txt",
