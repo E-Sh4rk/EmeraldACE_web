@@ -1,5 +1,5 @@
 @ title = "Start wild battle with any Pokemon"				
-@@ author = "Theocatic / it-is-final"				
+@@ author = "Theocatic / final"				
 @@ exit = "GrabACEExit"
 
 
