@@ -2,11 +2,11 @@
 @@ author = "imablisy"
 @@ exit = "Bootstrapped"
 
-This is a modified CertificateENG exit code that runs from box 1 to launch the unused Mystery Event function.
+; This is a modified CertificateENG exit code that runs from box 1 to launch the unused Mystery Event function.
 
-It inserts bx r0 into box 8 and jumps from there. 
+; It inserts bx r0 into box 8 and jumps from there. 
 
-Make sure you save before executing this code, as mystery event corrupts the map. Alternatively, just use it in a place you can fly from. 
+; Make sure you save before executing this code, as mystery event corrupts the map. Alternatively, just use it in a place you can fly from. 
 
 @@
 
