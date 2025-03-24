@@ -1,0 +1,19 @@
+@@ title = "Use Mystery Event"
+@@ author = "imablisy"
+@@ exit = "Bootstrapped"
+
+; This is a modified CertificateENG exit code that runs from box 1 to launch the unused Mystery Event function.
+
+; It inserts bx r0 into box 8 and jumps from there. 
+
+; Make sure you save before executing this code, as mystery event corrupts the map. Alternatively, just use it in a place you can fly from. 
+
+@@
+
+mvn r11, 0xEE00000            %% R11=notEE00000=F11FFFFF
+sbc r11, r11, 0xED            %%  R11=R11-ED-1=F11FFF11
+sbc r11, r11, 0xFF00000       %% R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+adcs r12,pc, #0x2C            %%  R12=PC+30
+str r11, [r12, #0]!           %%  Store bx r0 opcode in [r12]
+movs r12, 0x08178976 ?        %% CB2_InitMysteryEventMenu in r12
+sbc r0,r12, #0x0              %%  sbc = 0x08178976-1
