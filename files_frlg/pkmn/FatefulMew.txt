@@ -4,7 +4,7 @@
 
 ; This code requires a Box 14 exit code for grab ACE.
 ; It can be found here:
-; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md   
+; https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
 ; This code must be run at Indigo Plateau
 ; After running, talk to far right Bookshelf.
