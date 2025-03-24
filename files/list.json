@@ -486,5 +486,10 @@
     "name": "Mass Clone/Declone Pokémon (for 0x085F)",
     "jap": "misc/MassClonePokemonJAPThumb.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Use Mystery Event",
+    "eng": "misc/UseMysteryEvent.txt",
+    "cat": ["misc"]
   }
 ]
