@@ -1,6 +1,6 @@
 @@ title = "Use Mystery Event"
 @@ author = "imablisy"
-@@ exit = "Bootstrapped"
+@@ exit = null
 
 ; This is a modified CertificateENG exit code that runs from box 1 to launch the unused Mystery Event function.
 
@@ -17,3 +17,4 @@ adcs r12,pc, #0x2C            %%  R12=PC+30
 str r11, [r12, #0]!           %%  Store bx r0 opcode in [r12]
 movs r12, 0x08178976 ?        %% CB2_InitMysteryEventMenu in r12
 sbc r0,r12, #0x0              %%  sbc = 0x08178976-1
+0xB0000000
