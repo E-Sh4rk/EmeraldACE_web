@@ -3,11 +3,15 @@
 @@ exit = "GrabACEExit"
 
 // Place the Pokémon to be read in the 2nd party slot
-// Place a low level Pokémon in the 3rd party slot
+// Place a low level Pokémon with stats less than 256 in the 3rd party slot
 //
 // cur_encoded_ivea be calculated by following the below steps:
-// 1. Convert each stat (total HP, Attack, Defense, and Speed) into their hexadecimal forms
-// 2. Perform the following calculation: (speed * 0x1000000) + (defense * 0x10000) + (attack * 0x100) + hp
+// 1. Convert each stat (Attack, Defense, Sp.Attack, Sp.Defense) into their hexadecimal forms
+// 2. The hexadecimal stats will form the following number (pad the start of each hexadecimal with 0 if necessary): AABBCCDD
+//     -   AA is Attack
+//     -   BB is Defense
+//     -   CC is Sp.Attack
+//     -   DD is Sp.Defense
 // 3. The result of step 2 is the cur_encoded_ivea of the Pokémon in the 2nd party slot
 
 pid = 0x0
@@ -30,11 +34,11 @@ target ?= 0x20 + misc_offset + 4
 MOVS    r12, #0x2A4000
 ADC     r12, #0x2840000
 ADC     r11, r12, #0x2E8        ; r11 = &gPlayerParty + 100 (2nd party member)
-LDRSB   r12, [r11, #{target}]
-STRB    r12, [r11, #188]
-LDRSB   r12, [r11, #{target+1}]
-STRB    r12, [r11, #190]
-LDRSB   r12, [r11, #{target+2}]
-STRB    r12, [r11, #192]
 LDRSB   r12, [r11, #{target+3}]
-STRB    r12, [r11, #194]
+STRB    r12, [r11, #190]        ; Store in Attack
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #192]        ; Store in Defense
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #196]        ; Store in Sp.Attack
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #198]        ; Store in Sp.Defense

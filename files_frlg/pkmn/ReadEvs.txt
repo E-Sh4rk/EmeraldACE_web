@@ -9,11 +9,26 @@
 // Place the Pokémon to be read in the 2nd party slot
 // Place a low level Pokémon in the 3rd party slot
 //
-// The cur_encoded_evs input values can calculated using the below formulae:
-//
-// cur_encoded_evs1 = total_hp + (attack * 256)
-// cur_encoded_evs2 = defense + (speed * 256)
-// cur_encoded_evs3 = sp_attack + (sp_defense * 256)
+// cur_encoded_evs1, cur_encoded_evs2, and cur_encoded_evs3 can 
+// be calculated by following the below steps:
+// 1.  Convert each stat
+//     (total HP, Attack, Defense, Sp.Attack, Sp.Defense, Speed)
+//     into their hexadecimal forms.
+// 2.  The hexadecimal stats (padded with 0 at the start if necessary)
+//     form the following numbers:
+//     -   HHAA
+//         -   HH is total HP
+//         -   AA is Attack
+//     -   BBCC
+//         -   BB is Defense
+//         -   CC is Sp.Attack
+//     -   DDSS
+//         -   DD is Sp.Defense
+//         -   SS is Speed
+// 3. The resulting numbers from step 2 forms the following:
+//     -   HHAA forms cur_encoded_evs1
+//     -   BBCC forms cur_encoded_evs2
+//     -   DDSS forms cur_encoded_evs3
 
 pid = 0x0
 
@@ -35,15 +50,15 @@ target = 0x20 + ev_offset
 MOVS    r12, #0x2A4000
 ADC     r12, #0x2840000
 ADC     r11, r12, #0x2E8        ; r11 = &gPlayerParty + 100 (2nd party member)
-LDRSB   r12, [r11, #{target}]
-STRB    r12, [r11, #188]
 LDRSB   r12, [r11, #{target+1}]
-STRB    r12, [r11, #190]
-LDRSB   r12, [r11, #{target+2}]
-STRB    r12, [r11, #192]
+STRB    r12, [r11, #188]        ; Store in total HP
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #190]        ; Store in Attack
 LDRSB   r12, [r11, #{target+3}]
-STRB    r12, [r11, #194]
-LDRSB   r12, [r11, #{target+4}]
-STRB    r12, [r11, #196]
+STRB    r12, [r11, #192]        ; Store in Defense
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #196]        ; Store in Sp.Attack
 LDRSB   r12, [r11, #{target+5}]
-STRB    r12, [r11, #198]
+STRB    r12, [r11, #198]        ; Store in Sp.Defense
+LDRSB   r12, [r11, #{target+4}]
+STRB    r12, [r11, #194]        ; Store in Speed
