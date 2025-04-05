@@ -301,5 +301,71 @@
     "ita": "misc/EnableTutors.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Read Pokemon PID",
+    "eng1": "pkmn/ReadPid.txt",
+    "eng0": "pkmn/ReadPid.txt",
+    "fra": "pkmn/ReadPid.txt",
+    "ger": "pkmn/ReadPid.txt",
+    "spa": "pkmn/ReadPid.txt",
+    "ita": "pkmn/ReadPid.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read Pokemon IVEA field",
+    "eng1": "pkmn/ReadIvea.txt",
+    "eng0": "pkmn/ReadIvea.txt",
+    "fra": "pkmn/ReadIvea.txt",
+    "ger": "pkmn/ReadIvea.txt",
+    "spa": "pkmn/ReadIvea.txt",
+    "ita": "pkmn/ReadIvea.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read EVs field",
+    "eng1": "pkmn/ReadEvs.txt",
+    "eng0": "pkmn/ReadEvs.txt",
+    "fra": "pkmn/ReadEvs.txt",
+    "ger": "pkmn/ReadEvs.txt",
+    "spa": "pkmn/ReadEvs.txt",
+    "ita": "pkmn/ReadEvs.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read contest stats field",
+    "eng1": "pkmn/ReadContestStats.txt",
+    "eng0": "pkmn/ReadContestStats.txt",
+    "fra": "pkmn/ReadContestStats.txt",
+    "ger": "pkmn/ReadContestStats.txt",
+    "spa": "pkmn/ReadContestStats.txt",
+    "ita": "pkmn/ReadContestStats.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read Pokemon Pokerus field",
+    "eng1": "pkmn/ReadPkrus.txt",
+    "eng0": "pkmn/ReadPkrus.txt",
+    "fra": "pkmn/ReadPkrus.txt",
+    "ger": "pkmn/ReadPkrus.txt",
+    "spa": "pkmn/ReadPkrus.txt",
+    "ita": "pkmn/ReadPkrus.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read Pokemon ribbons and obedience field",
+    "eng1": "pkmn/ReadRibbonsAndObedience.txt",
+    "eng0": "pkmn/ReadRibbonsAndObedience.txt",
+    "fra": "pkmn/ReadRibbonsAndObedience.txt",
+    "ger": "pkmn/ReadRibbonsAndObedience.txt",
+    "spa": "pkmn/ReadRibbonsAndObedience.txt",
+    "ita": "pkmn/ReadRibbonsAndObedience.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
