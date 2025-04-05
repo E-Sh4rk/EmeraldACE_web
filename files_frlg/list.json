@@ -118,9 +118,13 @@
     "cat": ["misc"]
   },
   {
-    "name": "Read Pokemon PID (move ACE)",
+    "name": "Read Pokemon PID",
     "eng1": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
     "eng0": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "fra": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "ger": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "spa": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
+    "ita": "pkmn/ReadPIDfromPartySlot4toPartySlot3.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
@@ -301,17 +305,6 @@
     "ita": "misc/EnableTutors.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
-  },
-  {
-    "name": "Read Pokemon PID",
-    "eng1": "pkmn/ReadPid.txt",
-    "eng0": "pkmn/ReadPid.txt",
-    "fra": "pkmn/ReadPid.txt",
-    "ger": "pkmn/ReadPid.txt",
-    "spa": "pkmn/ReadPid.txt",
-    "ita": "pkmn/ReadPid.txt",
-    "game": ["fr", "lg"],
-    "cat": ["pkmn"]
   },
   {
     "name": "Read Pokemon IVEA field",

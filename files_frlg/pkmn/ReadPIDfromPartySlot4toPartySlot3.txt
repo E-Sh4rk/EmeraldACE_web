@@ -1,6 +1,6 @@
-@@ title = "Read PID from Party Slot 4 (move ACE)"
+@@ title = "Read PID from Party Slot 4"
 @@ author = "Papa Jefe & im a blisy"
-@@ exit = "CommonExit"
+@@ exit = "GrabACEExit" // Use "CommonExit" for move ACE.
 @@
 
 ; Store the PID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
