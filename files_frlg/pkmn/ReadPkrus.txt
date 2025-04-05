@@ -1,24 +1,13 @@
 @@ title = "Read Pokérus field"
-@@ author = "final"
+@@ author = "final / Papa Jefé / Blisy"
 @@ exit = "GrabACEExit"
 
-// Place the Pokémon to be read in Box 10, Slot 19
+// Place the Pokémon to be read in the 2nd party slot
+// Place a low level Pokémon in the 3rd party slot
 //
-// This code modifies your trainer ID!
-// Note down your current TID to restore afterwards before proceeding
-// or save now, and reset after performing the process.
-//
-// This code must be executed twice
-// - The first execution should have `upper` set to 0
-// - The second execution should have `upper` set to 1
-//
-// Note down your new trainer ID after each execution
-//
-// current_encoded_pkrus can be calculated with the below formula
-// current_encoded_pkrus = (TID_1) + (TID_2 * 65536)
-
-inaccurate_emu = 0
-upper = 0
+// This code stores the encoded Pokérus of the Pokémon in the
+// 2nd party slot in the attack stat of Pokémon in the 3rd party
+// slot.
 
 pid = 0x0
 
@@ -33,15 +22,12 @@ misc_substructure_position = \
     pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
     pmod == 13 | pmod == 15 ? 2 : 3
 misc_offset = 0xC * misc_substructure_position
+target ?= 0x20 + misc_offset
 
 @@
 
-SBC     r11, pc, #0xD100        ; r11 = &TID - 0x3?
-SBC     r12, pc, #0x2980        ; r12 = &Box 10, Slot 19 - 0x3?
-BIC     r12, #0xFC000003        ; Word-align address in r12
-LDRH    r12, [r12, #{\
-    (!!inaccurate_emu ? 0x38 : 0x34) \
-    + (0x20 + misc_offset) \
-    + (!!upper ? 0x2 : 0x0) \
-}]
-STRH    r12, [r11, #{!!inaccurate_emu ? 0x34 : 0x32}] ; Store in TID
+MOVS    r12, #0x2A4000
+ADC     r12, #0x2840000
+ADC     r11, r12, #0x2E8        ; r11 = &gPlayerParty + 100 (2nd party member)
+LDRSB   r12, [r11, #{target}]
+STRB    r12, [r11, #190]

@@ -1,22 +1,19 @@
 @@ title = "Read contest stats field"
-@@ author = "final"
-@@ exit = "GrabACEExit"
+@@ author = "final / Papa Jefé / Blisy"
+@@ exit = "Bootstrapped"
 
-// Place the Pokémon to be read in Box 10, Slot 19
-//
-// This code modifies your trainer ID!
-// Note down your current TID to restore afterwards before proceeding
-// or save now, and reset after performing the process.
-//
-// This code must be executed twice
-// - The first execution should have `field` set to 0
-// - The second execution should have `field` set to 1
-// - The third execution should have `field` set to 2
-//
-// Note down your new trainer ID after each execution
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
-inaccurate_emu = 0
-field = 0
+// Place the Pokémon to be read in the 2nd party slot
+// Place a low level Pokémon in the 3rd party slot
+//
+// The cur_encoded_evs input values can calculated using the below formulae:
+//
+// cur_encoded_1 = total_hp + (attack * 256)
+// cur_encoded_2 = defense + (speed * 256)
+// cur_encoded_3 = sp_attack + (sp_defense * 256)
 
 pid = 0x0
 
@@ -31,15 +28,22 @@ ev_substructure_position = \
     pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
     pmod == 19 | pmod == 21 ? 2 : 3
 ev_offset = 0xC * ev_substructure_position
+target = 0x20 + ev_offset + 6
 
 @@
 
-SBC     r11, pc, #0xD100        ; r11 = &TID - 0x3?
-SBC     r12, pc, #0x2980        ; r12 = &Box 10, Slot 19 - 0x3?
-BIC     r12, #0xFC000003        ; Word-align address in r12
-LDRH    r12, [r12, #{\
-    (!!inaccurate_emu ? 0x38 : 0x34) \
-    + (0x20 + ev_offset + 6) \
-    + (2 * field) \
-}]
-STRH    r12, [r11, #{!!inaccurate_emu ? 0x34 : 0x32}] ; Store in TID
+MOVS    r12, #0x2A4000
+ADC     r12, #0x2840000
+ADC     r11, r12, #0x2E8        ; r11 = &gPlayerParty + 100 (2nd party member)
+LDRSB   r12, [r11, #{target}]
+STRB    r12, [r11, #188]
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #190]
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #192]
+LDRSB   r12, [r11, #{target+3}]
+STRB    r12, [r11, #194]
+LDRSB   r12, [r11, #{target+4}]
+STRB    r12, [r11, #196]
+LDRSB   r12, [r11, #{target+5}]
+STRB    r12, [r11, #198]
