@@ -1,0 +1,34 @@
+@@ title = "Read PID"
+@@ author = "final"
+@@ exit = "GrabACEExit"
+
+// Place the Pokémon to be read in Box 10, Slot 19
+//
+// This code modifies your trainer ID!
+// Note down your current TID to restore afterwards before proceeding
+// or save now, and reset after performing the process.
+//
+// This code must be executed twice
+// - The first execution should have `upper` set to 0
+// - The second execution should have `upper` set to 1
+//
+// Note down your new trainer ID after each execution
+//
+// PID can be calculated with the below formula
+// PID = (TID_1) + (TID_2 * 65536)
+
+inaccurate_emu = 0
+upper = 0
+
+// Do not touch the parameters below!
+
+@@
+
+SBC     r11, pc, #0xD100        ; r11 = &TID - 0x3?
+SBC     r12, pc, #0x2980        ; r12 = &Box 10, Slot 19 - 0x3?
+BIC     r12, #0xFC000003        ; Word-align address in r12
+LDRH    r12, [r12, #{\
+    (!!inaccurate_emu ? 0x38 : 0x34) \
+    + (!!upper ? 0x2 : 0x0) \
+}]
+STRH    r12, [r11, #{!!inaccurate_emu ? 0x34 : 0x32}] ; Store in TID

@@ -1,0 +1,45 @@
+@@ title = "Read EVs field"
+@@ author = "final"
+@@ exit = "GrabACEExit"
+
+// Place the Pokémon to be read in Box 10, Slot 19
+//
+// This code modifies your trainer ID!
+// Note down your current TID to restore afterwards before proceeding
+// or save now, and reset after performing the process.
+//
+// This code must be executed three times
+// - The first execution should have `evs` set to 0
+// - The second execution should have `evs` set to 1
+// - The third execution should have `evs` set to 2
+//
+// Note down your new trainer ID after each execution
+
+inaccurate_emu = 0
+evs = 0
+
+pid = 0x0
+
+// Do not touch the parameters below!
+
+pmod = pid % 24
+ev_substructure_position = \
+    pmod == 12 | pmod == 13 | pmod == 14 | pmod == 15 | \
+    pmod == 16 | pmod == 17 ? 0 : \
+    pmod == 2  | pmod == 3  | pmod == 8  | pmod == 9  | \
+    pmod == 22 | pmod == 23 ? 1 : \
+    pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
+    pmod == 19 | pmod == 21 ? 2 : 3
+ev_offset = 0xC * ev_substructure_position
+
+@@
+
+SBC     r11, pc, #0xD100        ; r11 = &TID - 0x3?
+SBC     r12, pc, #0x2980        ; r12 = &Box 10, Slot 19 - 0x3?
+BIC     r12, #0xFC000003        ; Word-align address in r12
+LDRH    r12, [r12, #{\
+    (!!inaccurate_emu ? 0x38 : 0x34) \
+    + (0x20 + ev_offset) \
+    + (2 * evs) \
+}]
+STRH    r12, [r11, #{!!inaccurate_emu ? 0x34 : 0x32}] ; Store in TID
