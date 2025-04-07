@@ -1,0 +1,64 @@
+@@ title = "Read EVs field"
+@@ author = "final / Papa Jefé / Blisy"
+@@ exit = "Bootstrapped"
+
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+
+// Place the Pokémon to be read in the 2nd party slot
+// Place a low level Pokémon in the 3rd party slot
+//
+// cur_encoded_evs1, cur_encoded_evs2, and cur_encoded_evs3 can 
+// be calculated by following the below steps:
+// 1.  Convert each stat
+//     (total HP, Attack, Defense, Sp.Attack, Sp.Defense, Speed)
+//     into their hexadecimal forms.
+// 2.  The hexadecimal stats (padded with 0 at the start if necessary)
+//     form the following numbers:
+//     -   HHAA
+//         -   HH is total HP
+//         -   AA is Attack
+//     -   BBCC
+//         -   BB is Defense
+//         -   CC is Sp.Attack
+//     -   DDSS
+//         -   DD is Sp.Defense
+//         -   SS is Speed
+// 3. The resulting numbers from step 2 forms the following:
+//     -   HHAA forms cur_encoded_evs1
+//     -   BBCC forms cur_encoded_evs2
+//     -   DDSS forms cur_encoded_evs3
+
+pid = 0x0
+
+// Do not touch the parameters below!
+
+pmod = pid % 24
+ev_substructure_position = \
+    pmod == 12 | pmod == 13 | pmod == 14 | pmod == 15 | \
+    pmod == 16 | pmod == 17 ? 0 : \
+    pmod == 2  | pmod == 3  | pmod == 8  | pmod == 9  | \
+    pmod == 22 | pmod == 23 ? 1 : \
+    pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
+    pmod == 19 | pmod == 21 ? 2 : 3
+ev_offset = 0xC * ev_substructure_position
+target = 0x20 + ev_offset
+
+@@
+
+MOVS    r12, #0x2F00000
+ADC     r11, r12, #0xE4000
+ADC     r11, #0x2E8             ; r11 = &gPlayerParty + 100 (2nd party member)
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #188]        ; Store in total HP
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #190]        ; Store in Attack
+LDRSB   r12, [r11, #{target+3}]
+STRB    r12, [r11, #192]        ; Store in Defense
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #196]        ; Store in Sp.Attack
+LDRSB   r12, [r11, #{target+5}]
+STRB    r12, [r11, #198]        ; Store in Sp.Defense
+LDRSB   r12, [r11, #{target+4}]
+STRB    r12, [r11, #194]        ; Store in Speed

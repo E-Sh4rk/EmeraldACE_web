@@ -1,0 +1,49 @@
+@@ title = "Read ribbons and obedience field"
+@@ author = "final / Papa Jefé / Blisy"
+@@ exit = "GrabACEExit"
+
+// Place the Pokémon to be read in the 2nd party slot
+// Place a low level Pokémon in the 3rd party slot
+//
+// cur_ribbons and obedience can be calculated by following the below steps:
+// 1. Convert each stat (Attack, Defense, Sp.Attack, Sp.Defense) into their hexadecimal forms
+// 2. The hexadecimal stats will form the following number (pad the start of each hexadecimal with 0 if necessary): AABBCCDD
+//     -   AA is Attack
+//     -   BB is Defense
+//     -   CC is Sp.Attack
+//     -   DD is Sp.Defense
+// 3. With the resulting number of step 2, perform the following calculation: result XOR (PID XOR ((SID * 0x10000) + TID))
+//     -   Note that the SID, and TID are those of the Pokémon rather than those of the player.
+// 4. From step 3's result, we can derive the following values using these calculations:
+//     -   cur_ribbons   = result mod 0x80000000
+//     -   cur_obedience = result / 0x80000000
+
+
+pid = 0x0
+
+// Do not touch the parameters below!
+
+pmod = pid % 24
+misc_substructure_position = \
+    pmod == 18 | pmod == 19 | pmod == 20 | pmod == 21 | \
+    pmod == 22 | pmod == 23 ? 0 : \
+    pmod == 4  | pmod == 5  | pmod == 10 | pmod == 11 | \
+    pmod == 16 | pmod == 17 ? 1 : \
+    pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
+    pmod == 13 | pmod == 15 ? 2 : 3
+misc_offset = 0xC * misc_substructure_position
+target ?= 0x20 + misc_offset + 8
+
+@@
+
+MOVS    r12, #0x2F00000
+ADC     r11, r12, #0xE4000
+ADC     r11, #0x2E8             ; r11 = &gPlayerParty + 100 (2nd party member)
+LDRSB   r12, [r11, #{target+3}]
+STRB    r12, [r11, #190]        ; Store in Attack
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #192]        ; Store in Defense
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #196]        ; Store in Sp.Attack
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #198]        ; Store in Sp.Defense
