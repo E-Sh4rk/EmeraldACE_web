@@ -47,9 +47,9 @@ target = 0x20 + ev_offset
 
 @@
 
-MOVS    r12, #0x2A4000
-ADC     r12, #0x2840000
-ADC     r11, r12, #0x2E8        ; r11 = &gPlayerParty + 100 (2nd party member)
+MOVS    r12, #0x2F00000
+ADC     r11, r12, #0xE4000
+ADC     r11, #0x2E8             ; r11 = &gPlayerParty + 100 (2nd party member)
 LDRSB   r12, [r11, #{target+1}]
 STRB    r12, [r11, #188]        ; Store in total HP
 LDRSB   r12, [r11, #{target+0}]
