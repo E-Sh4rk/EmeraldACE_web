@@ -2,12 +2,14 @@
 @@ author = "final / Papa Jefé / Blisy"
 @@ exit = "GrabACEExit"
 
-// Place the Pokémon to be read in the 2nd party slot
-// Place a low level Pokémon in the 3rd party slot
-//
-// This code stores the encoded Pokérus of the Pokémon in the
-// 2nd party slot in the attack stat of Pokémon in the 3rd party
-// slot.
+// 1.  Place the Pokémon to be read in the 2nd party slot.
+// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
+// 3.  Place any Pokémon in the 3rd party slot.
+//     -   For simplicity’s sake make sure that the third Pokémon
+//         in your party does not have a stat that is greater than 255.
+// 4.  After triggering ACE, the attack stat of the third Pokémon
+//     in your party should be the encoded Pokérus of the second
+//     party Pokémon.
 
 pid = 0x0
 

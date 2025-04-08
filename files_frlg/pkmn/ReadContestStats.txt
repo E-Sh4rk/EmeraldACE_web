@@ -6,16 +6,22 @@
 // It can be found here:
 // https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
-// Place the Pokémon to be read in the 2nd party slot
-// Place a low level Pokémon in the 3rd party slot
-//
+// 1.  Place the Pokémon to be read in the 2nd party slot.
+// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
+// 3.  Place any Pokémon in the 3rd party slot.
+//     -   For simplicity’s sake make sure that the third Pokémon
+//         in your party does not have a stat that is greater than 255.
+// 4.  After triggering ACE, follow the further instructions to calculate
+//     the cur_encoded_1, cur_encoded_2, and cur_encoded_3 variables.
+
+pid = 0x0
+
 // cur_encoded_1, cur_encoded_2, and cur_encoded_3 can 
 // be calculated by following the below steps:
-// 1.  Convert each stat
-//     (total HP, Attack, Defense, Sp.Attack, Sp.Defense, Speed)
-//     into their hexadecimal forms.
-// 2.  The hexadecimal stats (padded with 0 at the start if necessary)
-//     form the following numbers:
+// 1.  Convert the new total HP, Attack, Defense, Sp.Attack, Sp.Defense,
+//     and Speed stats of the third Pokémon in your party into into 2-digit
+//     hexadecimal (pad the start with zero if they do not form two digits).
+// 2.  The stats will form the following hexadecimal numbers:
 //     -   HHAA
 //         -   HH is total HP
 //         -   AA is Attack
@@ -25,12 +31,10 @@
 //     -   DDSS
 //         -   DD is Sp.Defense
 //         -   SS is Speed
-// 3. The resulting numbers from step 2 forms the following:
-//     -   HHAA forms cur_encoded_1
-//     -   BBCC forms cur_encoded_2
-//     -   DDSS forms cur_encoded_3
-
-pid = 0x0
+// These numbers are the encoded data of the second Pokémon in your party where:
+// -   HHAA is cur_encoded_1
+// -   BBCC is cur_encoded_2
+// -   DDSS is cur_encoded_3
 
 // Do not touch the parameters below!
 
@@ -51,6 +55,7 @@ MOVS    r12, #0x2F00000
 ADC     r11, r12, #0xE4000
 ADC     r11, #0x2E8             ; r11 = &gPlayerParty + 100 (2nd party member)
 LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #186]        ; Store in current HP
 STRB    r12, [r11, #188]        ; Store in total HP
 LDRSB   r12, [r11, #{target+0}]
 STRB    r12, [r11, #190]        ; Store in Attack
