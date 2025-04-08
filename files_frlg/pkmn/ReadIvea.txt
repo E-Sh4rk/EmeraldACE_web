@@ -2,19 +2,26 @@
 @@ author = "final / Papa Jefé / Blisy"
 @@ exit = "GrabACEExit"
 
-// Place the Pokémon to be read in the 2nd party slot
-// Place a low level Pokémon with stats less than 256 in the 3rd party slot
-//
+// 1.  Place the Pokémon to be read in the 2nd party slot.
+// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
+// 3.  Place any Pokémon in the 3rd party slot.
+//     -   For simplicity’s sake make sure that the third Pokémon
+//         in your party does not have a stat that is greater than 255.
+// 4.  After triggering ACE, follow the further instructions to calculate
+//     the cur_encoded_ivea variable.
+
+pid = 0x0
+
 // cur_encoded_ivea be calculated by following the below steps:
-// 1. Convert each stat (Attack, Defense, Sp.Attack, Sp.Defense) into their hexadecimal forms
-// 2. The hexadecimal stats will form the following number (pad the start of each hexadecimal with 0 if necessary): AABBCCDD
+// 1.  Convert the new Attack, Defense, Sp.Attack, and Sp.Defense stats of
+//     the third Pokémon in your party into 2-digit hexadecimal (pad the start 
+//     with zero if they do not form two digits).
+// 2.  The stats will form the hexadecimal number AABBCCDD where:
 //     -   AA is Attack
 //     -   BB is Defense
 //     -   CC is Sp.Attack
 //     -   DD is Sp.Defense
-// 3. The result of step 2 is the cur_encoded_ivea of the Pokémon in the 2nd party slot
-
-pid = 0x0
+// This is the cur_encoded_ivea of the second Pokémon in your party
 
 // Do not touch the parameters below!
 
