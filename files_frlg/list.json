@@ -128,6 +128,17 @@
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
+    {
+    "name": "Read Pokemon TID/SID",
+    "eng1": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "eng0": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "fra": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "ger": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "spa": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "ita": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
   {
     "name": "Run script via NPC",
     "eng1": "misc/RunScriptViaNPC_FR_Rev1_ENG.txt",
