@@ -5,13 +5,13 @@
 
 ; Store the PID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
 ; Pokemon in 3rd Party Slot must have no stats bigger than 2 digits. 
-; PID1 = Atk, PID2 = Def, PID3 = SpA, PID4 = SpDef
-; Input the values you see in-game below, and then click Compute again to get PID readout.
+; Stat changes will reverse themselves after depositing to the PC.
+; After running, input the values you see in-game below, and then click Compute again to get PID readout.
 
-Atk ?= 153
-Def ?= 237
-SpA ?= 88
-SpD ?= 4
+Atk ?= 0
+Def ?= 0
+SpA ?= 0
+SpD ?= 0
 PID ?= ((Atk<<24)+(Def<<16)+(SpA<<8)+SpD) & 0xFFFFFFFF
 
 @@
