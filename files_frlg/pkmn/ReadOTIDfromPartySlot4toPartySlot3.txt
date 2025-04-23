@@ -11,10 +11,10 @@
 
 ; Input the values you see in-game below, and then click Compute again.
 
-Atk ?= 153
-Def ?= 237
-SpA ?= 88
-SpD ?= 4
+Atk ?= 0
+Def ?= 0
+SpA ?= 0
+SpD ?= 0
 
 TID ?= (SpA<<8)+SpD & 0xFFFF
 SID ?= (Atk<<8)+Def & 0xFFFF
