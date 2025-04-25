@@ -1,0 +1,53 @@
+@@ title = "Generate egg with any PID"
+@@ author = "final"
+@@ exit = "Bootstrapped"
+
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+
+// Make sure that Box 10, Slot 2 is empty before proceeding with this
+// code.
+//
+// Upon triggering ACE, an egg with the requested personality value
+// will appear in Box 10, Slot 2.
+// Its data will be mostly 0, so further modifications must be made
+// if other attributes (e.g. perfect stats) are desired.
+
+inaccurate_emu = 0
+species = 0                    @input:species
+pid = 0x0
+
+pmod = pid % 24
+
+growth_substructure_position = \
+    pmod == 0  | pmod == 1  | pmod == 2  | pmod == 3  | \
+    pmod == 4  | pmod == 5  ? 0 : \
+    pmod == 6  | pmod == 7  | pmod == 12 | pmod == 13 | \
+    pmod == 18 | pmod == 19 ? 1 : \
+    pmod == 8  | pmod == 10 | pmod == 14 | pmod == 16 | \
+    pmod == 20 | pmod == 22 ? 2 : 3
+
+misc_substructure_position = \
+    pmod == 18 | pmod == 19 | pmod == 20 | pmod == 21 | \
+    pmod == 22 | pmod == 23 ? 0 : \
+    pmod == 4  | pmod == 5  | pmod == 10 | pmod == 11 | \
+    pmod == 16 | pmod == 17 ? 1 : \
+    pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
+    pmod == 13 | pmod == 15 ? 2 : 3
+
+growth_offset = 0x1C + (12 * growth_substructure_position)
+misc_offset = 0x1C + (12 * misc_substructure_position)
+
+@@
+
+SBC     	r11, pc, #0x2F40
+MOV     	r12, { pid } ?          	; Store PID
+STR     	r12, [r11, #{!!inaccurate_emu ? 0xA9 : 0xA7}]!
+STR     	r12, [r11, lr, ASR #25]!	; Store temporary egg TID
+MOVS    	r12, { species } ?
+STRH    	r12, [r11, { growth_offset }]	; Store species 
+ADC     	r12, #0xC4000           	; r12 = checksum
+STRH    	r12, [r11, #0x18]       	; Store checksum
+MOVS    	r12, #0xC4000
+STRH    	r12, [r11, { misc_offset + 6 }]	; Store egg flag
