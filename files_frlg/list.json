@@ -360,5 +360,16 @@
     "ita": "pkmn/ReadRibbonsAndObedience.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Generate egg with any PID",
+    "eng1": "pkmn/PIDEggFromNothing.txt",
+    "eng0": "pkmn/PIDEggFromNothing.txt",
+    "fra": "pkmn/PIDEggFromNothing.txt",
+    "ger": "pkmn/PIDEggFromNothing.txt",
+    "spa": "pkmn/PIDEggFromNothing.txt",
+    "ita": "pkmn/PIDEggFromNothing.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
