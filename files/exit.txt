@@ -692,6 +692,146 @@ adc r0,r12,0xD8                 ; R0=R12+D8=CB2_LoadMap2FRA
 
 ====================
 
+@@ filename = "TeleportFullENG"
+@@ start = 72
+@@
+
+0xe3e1c0ee ; mvn r12, #0xEE but SBZ = 0x1;  R11=notEE=FFFFFF11
+bic r12, r12, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r12, r12, #0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r11, r15, #0xbb
+str r12, [r11, #0xd8]!           ;  Store bx r0 opcode in [r12]
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xb2
+0
+
+====================
+
+@@ filename = "TeleportShortENG"
+@@ start = 100
+@@
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xb2
+0
+
+====================
+
+@@ filename = "TeleportFullGER"
+@@ start = 72
+@@
+
+0xe3e1c0ee ; mvn r12, #0xEE but SBZ = 0x1;  R11=notEE=FFFFFF11
+bic r12, r12, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r12, r12, #0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r11, r15, #0xbb
+str r12, [r11, #0xd8]!           ;  Store bx r0 opcode in [r12]
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xce
+0
+
+====================
+
+@@ filename = "TeleportShortGER"
+@@ start = 100
+@@
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xce
+0
+
+====================
+
+@@ filename = "TeleportFullFRA"
+@@ start = 72
+@@
+
+0xe3e1c0ee ; mvn r12, #0xEE but SBZ = 0x1;  R11=notEE=FFFFFF11
+bic r12, r12, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r12, r12, #0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r11, r15, #0xbb
+str r12, [r11, #0xd8]!           ;  Store bx r0 opcode in [r12]
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
+@@ filename = "TeleportShortFRA"
+@@ start = 100
+@@
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
+@@ filename = "TeleportFullSPA"
+@@ start = 72
+@@
+
+0xe3e1c0ee ; mvn r12, #0xEE but SBZ = 0x1;  R11=notEE=FFFFFF11
+bic r12, r12, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r12, r12, #0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r11, r15, #0xbb
+str r12, [r11, #0xd8]!           ;  Store bx r0 opcode in [r12]
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
+@@ filename = "TeleportShortSPA"
+@@ start = 100
+@@
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
+@@ filename = "TeleportFullITA"
+@@ start = 72
+@@
+
+0xe3e1c0ee ; mvn r12, #0xEE but SBZ = 0x1;  R11=notEE=FFFFFF11
+bic r12, r12, #0xEE00000      ;  R11=R11 and notEE00000=F12FFF11
+sbc r12, r12, #0xFF00000       ;  R11=R11-FF00000-1=E12FFF10="bx r0" opcode
+sbc r11, r15, #0xbb
+str r12, [r11, #0xd8]!           ;  Store bx r0 opcode in [r12]
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
+@@ filename = "TeleportShortITA"
+@@ start = 100
+@@
+
+ADC r11, r14, #0xae000
+ADC r11, r11, #0x3700
+ADC r0, r11, #0xc6
+0
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@
