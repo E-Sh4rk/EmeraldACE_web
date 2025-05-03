@@ -491,5 +491,10 @@
     "name": "Use Mystery Event",
     "eng": "misc/UseMysteryEvent.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokemon data (for 0x085F)",
+    "jap": "misc/CallSetMonDataJAP.txt",
+    "cat": ["pkmn"]
   }
 ]
