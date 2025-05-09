@@ -5,14 +5,14 @@ This doucment lists each valid value for the `field` parameter
 and what each value corresponds to according to the property label enum at:
 https://github.com/pret/pokeemerald/blob/263026e4320cdce6e160e6a8551d6c217d61b75d/include/pokemon.h#L7
 
- 0: MON_DATA_PERSONALITY
- 1: MON_DATA_OT_ID
- 2: MON_DATA_NICKNAME
+ 0: MON_DATA_PERSONALITY (NOT USABLE)
+ 1: MON_DATA_OT_ID (NOT USABLE)
+ 2: MON_DATA_NICKNAME (NOT USABLE)
  3: MON_DATA_LANGUAGE
  4: MON_DATA_SANITY_IS_BAD_EGG
  5: MON_DATA_SANITY_HAS_SPECIES
  6: MON_DATA_SANITY_IS_EGG
- 7: MON_DATA_OT_NAME
+ 7: MON_DATA_OT_NAME (NOT USABLE)
  8: MON_DATA_MARKINGS
  9: MON_DATA_CHECKSUM
 10: MON_DATA_ENCRYPT_SEPARATOR
