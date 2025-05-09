@@ -1,0 +1,73 @@
+@@ title  = "Call SetMonData (JPN, Thumb)"
+@@ author = "final / Adrichu00 / Mettrich / Shao / Papa Jefe"
+@@ exit   = null
+
+// This ACE code is written in Thumb.
+// It must be executed with a Thumb ACE species (like 0x085F).
+
+// This code modifies the Pokemon (or empty slot) in party slot 3
+
+// The "へ" character in the name of Box 3 must be written
+// from the Hiragana (blue) layer.
+
+// For more information on what to input into the `field` parameter
+// consult the index-field map in the link below:
+// https://e-sh4rk.github.io/EmeraldACE_web/doc/SetMonDataFields.txt
+
+// Bulbapedia can be consulted for what values to write into `dataArg`
+
+field   = 66
+dataArg = 0b1111111111111111111111111
+
+// DO NOT TOUCH BELOW PARAMETERS
+
+xx      = (dataArg & 0xFF000000)>>24
+XX      = (dataArg & 0xFF0000)>>16
+yy      = (dataArg & 0xFF00)>>8
+YY      = (dataArg & 0xFF)
+neg     = 0x80000000
+
+ww      = ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu      = ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW      = ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU      = ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+
+zz      = ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv      = ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ      = ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV      = ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata  = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
+ZWdata  = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
+
+field_opcode = 0x2100 | (field & 0xFF)
+
+@@
+
+0xE006A000
+@ A000  ADD     r0, pc, #0x0    ; r0 = &UVdata
+@ E006  B       pc+0x10         ; Jump to .part2
+{ UVdata }
+0x020242FF                      ; &gPlayerParty + 300 + 0xA7
+{ ZWdata }
+0xC807FFFF
+@       .part2:
+@ C807  LDMIA   r0!, {r0-r2}    ; r0 = UVdata, r1 = (&gPlayerParty + 300 + 0xA7), r2 = ZWdata
+0xA21D1880
+@ 1880  ADD     r0, r0, r2      ; r0 = dataArg
+@ A21D  ADD     r2, pc, #0x74   ; r2 = &(gPokemonStorage->boxWallpapers) + 0xE
+0xE7FF6010
+@ 6010  STR     r0, [r2]        ; Store dataArg after wallpapers
+@ E7FF  B       pc+0            ; (filler)
+0x1C0839A7
+@ 39A7  SUB     r1, #0xA7       ; r1 = &gPlayerParty + 200
+@ 1C08  MOV     r0, r1          ; r0 = r1
+0xFFFFE000
+@ E000  B pc+0x4                ; (skip bad filler)
+{ field_opcode | (0x4B02 << 16) }
+@ 21XX  MOV     r1, { field }   ; r1 = field
+@ 4B02  LDR     r3, [pc, #0x8]  ; r3 = &SetMonData
+0xFFFF4718
+@ 4718  BX      r3              ; call SetMonData and exit
+0x515151FF                      ; (filler)
+0x0806A775                      ; &SetMonData
