@@ -60,7 +60,7 @@ field_opcode = 0x2100 | (field & 0xFF)
 @ 6010  STR     r0, [r2]        ; Store dataArg after wallpapers
 @ E7FF  B       pc+0            ; (filler)
 0x1C0839A7
-@ 39A7  SUB     r1, #0xA7       ; r1 = &gPlayerParty + 300
+@ 39A7  SUB     r1, #0xA7       ; r1 = &gPlayerParty + 200
 @ 1C08  MOV     r0, r1          ; r0 = r1
 0xFFFFE000
 @ E000  B pc+0x4                ; (skip bad filler)
