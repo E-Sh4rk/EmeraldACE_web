@@ -494,7 +494,7 @@
   },
   {
     "name": "Change Pokemon data (for 0x085F)",
-    "jap": "misc/CallSetMonDataJAP.txt",
+    "jap": "pkmn/CallSetMonDataJAP.txt",
     "cat": ["pkmn"]
   }
 ]
