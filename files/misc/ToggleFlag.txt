@@ -1,0 +1,29 @@
+@@ title = "Toggle Flag"
+@@ author = "Adrichu00"
+@@ exit = "CertificateShort{LANG}"
+
+; WARNINGS:
+; * This code only works on original HW or mGBA >= 0.9
+; * This code modifies r0
+; * This code needs `BX r0` in box 14's name (`Œ`). You can execute any code
+;   with the "CertificateFull{LANG}" exit to write it
+
+; Full list of flags: https://github.com/pret/pokeemerald/blob/master/include/constants/flags.h
+flag_no = 0x000
+
+
+; Do not modify these:
+flag_offset = 0xAEE6 - (flag_no >> 3)
+flag_mask = 0x01 << (flag_no & 0x0F)
+
+@@
+
+; r11 = &gSaveBlock1Ptr->flags[(flag_no >> 3) + ((flag_no >> 3) & 0x01)]
+SUB r11, pc, {flag_offset + (flag_offset & 0x01)} ?
+MOV r12, {flag_mask} ?
+MOV r10, 0x2C
+0x00FF0000
+STRB r10, [pc, lr, LSR #0x19]  ; Write EOR op (STRB r10, [pc, #0x04])
+LDRH r0, [r11]                 ; Load Current Value
+0xE000C000                     ; Becomes EOR r12, r12, r0
+STRH r12, [r11]                ; Store Updated Value

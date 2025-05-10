@@ -496,5 +496,14 @@
     "name": "Change Pokemon data (for 0x085F)",
     "jap": "pkmn/CallSetMonDataJAP.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Toggle Flag",
+    "eng": "misc/ToggleFlag.txt",
+    "fra": "misc/ToggleFlag.txt",
+    "ger": "misc/ToggleFlag.txt",
+    "spa": "misc/ToggleFlag.txt",
+    "ita": "misc/ToggleFlag.txt",
+    "cat": ["misc"]
   }
 ]
