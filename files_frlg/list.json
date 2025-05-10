@@ -382,5 +382,16 @@
     "ita": "pkmn/PIDEggFromNothing.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Toggle Flag",
+    "eng1": "misc/ToggleFlag.txt",
+    "eng0": "misc/ToggleFlag.txt",
+    "fra": "misc/ToggleFlag.txt",
+    "ger": "misc/ToggleFlag.txt",
+    "spa": "misc/ToggleFlag.txt",
+    "ita": "misc/ToggleFlag.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
