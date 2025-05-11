@@ -4,7 +4,7 @@
 
 // This code requires a Box 14 exit code for grab ACE.
 // It can be found here:
-// https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+// https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
 // 1.  Place the Pokémon to be read in the 2nd party slot.
 // 2.  Enter that Pokémon’s personality value into the `pid` parameter.
