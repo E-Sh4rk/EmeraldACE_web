@@ -1,0 +1,26 @@
+@@ title = "Change Flag"
+@@ author = "Adrichu00 | Final"
+@@ exit = "GrabACEExit"
+
+; WARNINGS:
+; * This code only works on original HW or mGBA >= 0.9
+; * This code modifies r0
+
+; Full list of flags: https://github.com/pret/pokefirered/blob/master/include/constants/flags.h
+flag  = 0x000
+value = 0     ; 0 for clear, 1 for set
+
+
+; Do not modify these:
+flag_offset = 0xB256 - ((flag >> 3) & ~0x01)
+flag_mask   = 0x0001 << (flag & 0x0F)
+
+@@
+
+; r11 = &gSaveBlock1Ptr->flags[(flag >> 3) & ~0x01]
+SUB r11, pc, {flag_offset} ?
+MOV r12, {flag_mask} ?
+LDRH r0, [r11]                  ; Load Current Value
+BIC r0, r12, r0
+{value? 0xE0AC0000: 0x00000000} ; ADC r0, r12, r0
+STRH r12, [r11]                 ; Store Updated Value

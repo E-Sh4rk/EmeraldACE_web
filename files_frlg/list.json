@@ -384,13 +384,13 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Toggle Flag",
-    "eng1": "misc/ToggleFlag.txt",
-    "eng0": "misc/ToggleFlag.txt",
-    "fra": "misc/ToggleFlag.txt",
-    "ger": "misc/ToggleFlag.txt",
-    "spa": "misc/ToggleFlag.txt",
-    "ita": "misc/ToggleFlag.txt",
+    "name": "Change Flag",
+    "eng1": "misc/ChangeFlag.txt",
+    "eng0": "misc/ChangeFlag.txt",
+    "fra": "misc/ChangeFlag.txt",
+    "ger": "misc/ChangeFlag.txt",
+    "spa": "misc/ChangeFlag.txt",
+    "ita": "misc/ChangeFlag.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   }
