@@ -496,5 +496,14 @@
     "name": "Change Pokemon data (for 0x085F)",
     "jap": "pkmn/CallSetMonDataJAP.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Change Flag",
+    "eng": "misc/ChangeFlag.txt",
+    "fra": "misc/ChangeFlag.txt",
+    "ger": "misc/ChangeFlag.txt",
+    "spa": "misc/ChangeFlag.txt",
+    "ita": "misc/ChangeFlag.txt",
+    "cat": ["misc"]
   }
 ]
