@@ -4,7 +4,7 @@
 
 ; This code requires a Box 14 exit code for grab ACE.
 ; It can be found here:
-; https://it-is-final.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 ;
 ; This code will create an Egg with the species of your choice in Box 10 Slot 2.
 ; Make sure Box 10 Slot 2 is empty beforehand.
