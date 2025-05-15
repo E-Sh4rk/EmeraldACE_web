@@ -393,5 +393,16 @@
     "ita": "misc/ChangeFlag.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Variable",
+    "eng1": "misc/ChangeVar.txt",
+    "eng0": "misc/ChangeVar.txt",
+    "fra": "misc/ChangeVar.txt",
+    "ger": "misc/ChangeVar.txt",
+    "spa": "misc/ChangeVar.txt",
+    "ita": "misc/ChangeVar.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]

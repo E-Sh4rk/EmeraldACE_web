@@ -505,5 +505,14 @@
     "spa": "misc/ChangeFlag.txt",
     "ita": "misc/ChangeFlag.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Variable",
+    "eng": "misc/ChangeVar.txt",
+    "fra": "misc/ChangeVar.txt",
+    "ger": "misc/ChangeVar.txt",
+    "spa": "misc/ChangeVar.txt",
+    "ita": "misc/ChangeVar.txt",
+    "cat": ["misc"]
   }
 ]

@@ -1,0 +1,19 @@
+@@ title = "Change Variable"
+@@ author = "Adrichu00"
+@@ exit = "CertificateFull{LANG}"
+
+; Full list of vars: https://github.com/pret/pokeemerald/blob/master/include/constants/vars.h
+; This code won't work with special variables (0x80XX)
+; It will work just with normal variables (0x40XX)
+var   = 0x00       ; You can use just the lower byte
+value = 0x0000     ; From 0x0000 to 0xFFFF
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify this
+var_offset = (inaccurate_emu? 0xADB8: 0xADBA) - ((var & 0xFF) << 1)
+
+@@
+
+SUB r11, pc, {var_offset} ? ; r11 = &gSaveBlock1Ptr->vars[var]
+MOV r12, {value} ?          ; r12 = value
+STRH r12, [r11]             ; gSaveBlock1Ptr->vars[var] = value
