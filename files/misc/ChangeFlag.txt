@@ -2,21 +2,40 @@
 @@ author = "Adrichu00 | Final"
 @@ exit = "CertificateShort{LANG}"
 
+
 ; WARNINGS:
 ; * This code modifies r0
 ; * This code needs `BX r0` in box 14's name (`Œ`). You can execute any code
 ;   with the "CertificateFull{LANG}" exit to write it. You can also try to
 ;   compile this code with "CertificateFull{LANG}", but it may not fit
 
+
 ; Full list of flags: https://github.com/pret/pokeemerald/blob/master/include/constants/flags.h
 flag  = 0x000
 value = 0          ; 0 for clear, 1 for set
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
+; Multiple Flags
+;   This halfword (2 bytes) will be bitwise ORed with the flag_mask, changing
+;   also those flags. Keep in mind that this value has to be 2-byte-aligned in
+;   memory. Only flags within the same halfword as the target flag can be
+;   modified. Your flag above doesn't need to be added (1 << (flag & 0x0F)).
+;   Setting this parameter to 0 just changes the target flag
+
+multi_flag = 0x0000
+
+; For example:
+;   In order to clear FLAG_DEFEATED_MEW and FLAG_CAUGHT_MEW (flags 0x1C7 and
+;   0x1CA), you can set the parameters to:
+;     flag = 0x1C7
+;     value = 0
+;     multi_flag = 0x0400 ; or 0x0480
+
 
 ; Do not modify these
 flag_offset = (inaccurate_emu? 0xAEE4: 0xAEE6) - ((flag >> 3) & ~0x01)
-flag_mask   = 0x0001 << (flag & 0x0F)
+flag_mask   = (0x0001 << (flag & 0x0F)) | (multi_flag & 0xFFFF)
+
 
 @@
 
