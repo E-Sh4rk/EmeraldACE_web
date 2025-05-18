@@ -2,9 +2,7 @@
 @@ author = "Adrichu00 | Final"
 @@ exit = "GrabACEExit"
 
-
 ; WARNING: This code modifies r0
-
 
 ; Full list of flags: https://github.com/pret/pokefirered/blob/master/include/constants/flags.h
 flag  = 0x000
@@ -28,11 +26,9 @@ multi_flag = 0x0000
 ;     value = 0
 ;     multi_flag = 0xE000 ; or 0xF000
 
-
 ; Do not modify these:
 flag_offset = (inaccurate_emu? 0xB254: 0xB256) - ((flag >> 3) & ~0x01)
 flag_mask   = (0x0001 << (flag & 0x0F)) | (multi_flag & 0xFFFF)
-
 
 @@
 
