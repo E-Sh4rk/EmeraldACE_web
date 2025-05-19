@@ -9,10 +9,26 @@ flag  = 0x000
 value = 0          ; 0 for clear, 1 for set
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
+; Multiple Flags
+;   This halfword (2 bytes) will be bitwise ORed with the flag_mask, changing
+;   also those flags. Keep in mind that this value has to be 2-byte-aligned in
+;   memory. Only flags within the same halfword as the target flag can be
+;   modified. Your flag above doesn't need to be added (1 << (flag & 0x0F)).
+;   Setting this parameter to 0 just changes the target flag
+
+multi_flag = 0x0000
+
+; For example:
+;   In order to clear FLAG_FOUGHT_MEWTWO, FLAG_FOUGHT_MOLTRES,
+;   FLAG_FOUGHT_ARTICUNO and FLAG_FOUGHT_ZAPDOS (flags 0x2BC to 0x2BF), you can
+;   set the parameters to:
+;     flag = 0x2BC
+;     value = 0
+;     multi_flag = 0xE000 ; or 0xF000
 
 ; Do not modify these:
 flag_offset = (inaccurate_emu? 0xB254: 0xB256) - ((flag >> 3) & ~0x01)
-flag_mask   = 0x0001 << (flag & 0x0F)
+flag_mask   = (0x0001 << (flag & 0x0F)) | (multi_flag & 0xFFFF)
 
 @@
 
