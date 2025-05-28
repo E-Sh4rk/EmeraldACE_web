@@ -1,0 +1,16 @@
+@@ title = "Change Battle Points"
+@@ author = "Sleipnir (adapted by Adrichu00)"
+@@ exit = "CertificateFull{LANG}"
+
+; Based on Sleipnir's *Increase the amount of Battle Points* code
+
+value = 0xFFFF
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+; r11 = gSaveBlock2Ptr->frontier.battlePoints
+SBC  r11, pc, 0xC400
+ADC  r11, r11, {inaccurate_emu? 0xE9: 0xE7}
+MOV  r12, {value & 0xFFFF} ?  ; r12 = value & 0xFFFF
+STRH r12, [r11, 0xD0]         ; Write BPs
