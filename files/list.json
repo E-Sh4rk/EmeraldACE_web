@@ -516,7 +516,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Max Battle Points",
+    "name": "Change Battle Points",
     "eng": "misc/ChangeBPs.txt",
     "fra": "misc/ChangeBPs.txt",
     "ger": "misc/ChangeBPs.txt",
