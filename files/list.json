@@ -514,5 +514,14 @@
     "spa": "misc/ChangeVar.txt",
     "ita": "misc/ChangeVar.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Max Battle Points",
+    "eng": "misc/ChangeBPs.txt",
+    "fra": "misc/ChangeBPs.txt",
+    "ger": "misc/ChangeBPs.txt",
+    "spa": "misc/ChangeBPs.txt",
+    "ita": "misc/ChangeBPs.txt",
+    "cat": ["misc"]
   }
 ]
