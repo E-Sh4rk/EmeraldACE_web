@@ -5,6 +5,7 @@
 ; Based on https://docs.google.com/document/d/1q5alCGdi71nj_6XD8Qvn8sCCtDcSMz3fCN04uaxwxMo
 ; Before executing, make sure you have already passed the initial roamer generation in the story.
 ; This code must only be executed once. Executing it multiple times will alter other flags.
+; This code must be reexecuted if you reset the clock event using Sleipnir's third list of codes.
 
 @@
 
