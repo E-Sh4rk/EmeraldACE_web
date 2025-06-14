@@ -523,5 +523,14 @@
     "spa": "misc/ChangeBPs.txt",
     "ita": "misc/ChangeBPs.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Game Stat",
+    "eng": "misc/ChangeGS.txt",
+    "fra": "misc/ChangeGS.txt",
+    "ger": "misc/ChangeGS.txt",
+    "spa": "misc/ChangeGS.txt",
+    "ita": "misc/ChangeGS.txt",
+    "cat": ["misc"]
   }
 ]
