@@ -1,0 +1,19 @@
+@@ title = "Disable Music"
+@@ auhtor = "imablisy"
+@@ exit = "Bootstrapped"
+
+; This code does 2 things.
+; 1. It disables the games music when you run it until you reset the game.
+; 2. If you run the code, then save the game, on save load the current map will have no music. Music will return when you change maps, though. 
+; If you run it immediately after a save load, you'll never hear any music.
+
+inaccurate_emu = 0
+
+@@
+
+sbc r11,pc,{0xC120-1+(inaccurate_emu ? 8 : 10)} ? %% savedMusic location in SaveBlock1
+movs r12, 0x10F ?                                 %% Silent Song for savedMusic
+strh r12, [r11]                                   %% Store song in savedMusic
+movs r12, 0x03005df8 ?                            %% gDisableMusic location
+movs r11, 0x3                                     %% Any value above 0 will turn off music
+strb r11, [r12]                                   %% Store value in gDisableMusic 

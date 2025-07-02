@@ -532,5 +532,10 @@
     "spa": "misc/ChangeGS.txt",
     "ita": "misc/ChangeGS.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Disable Music",
+    "eng": "misc/DisableMusic.txt",
+    "cat": ["misc"]
   }
 ]
