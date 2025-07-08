@@ -6,15 +6,15 @@
 
 ; Use this code after a battle with the Pokemon(s) you want to copy.
 ; This code can copy only one Pokemon at a time.
-; It will overwrite data in Box 10 Slots 19–24.
+; The Pokemon will be at Box 10 Slot 19.
 
 slot ?= 0          ; Starts at 0 (0–5, use 0 for wild encounters)
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
 @@
 
-; r12 = &Box10Slot19 + slot*80
-SBC r12, r15, {0x2940 + (inaccurate_emu? 7: 9) - slot*80} ?2
+; r12 = &Box10Slot19
+SBC r12, r15, {0x2940 + (inaccurate_emu? 7: 9)} ?2
 
 ; r11 = &sSavedOpponentParty + slot*100
 SUB r11, r14, {0x080069E7 - (0x0203CA18 + slot*100)} ?5
