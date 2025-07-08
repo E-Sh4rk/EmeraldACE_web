@@ -537,5 +537,14 @@
     "name": "Disable Music",
     "eng": "misc/DisableMusic.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Copy Opponent Pokemon",
+    "eng": "misc/CopyOpponentPokemon.txt",
+    "fra": "misc/CopyOpponentPokemon.txt",
+    "ger": "misc/CopyOpponentPokemon.txt",
+    "spa": "misc/CopyOpponentPokemon.txt",
+    "ita": "misc/CopyOpponentPokemon.txt",
+    "cat": ["misc"]
   }
 ]
