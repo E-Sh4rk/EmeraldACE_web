@@ -546,5 +546,23 @@
     "spa": "misc/CopyOpponentPokemon.txt",
     "ita": "misc/CopyOpponentPokemon.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Weather",
+    "eng": "misc/ChangeWeather.txt",
+    "fra": "misc/ChangeWeather.txt",
+    "ger": "misc/ChangeWeather.txt",
+    "spa": "misc/ChangeWeather.txt",
+    "ita": "misc/ChangeWeather.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Weather Cycle",
+    "eng": "misc/ChangeWeatherCycle.txt",
+    "fra": "misc/ChangeWeatherCycle.txt",
+    "ger": "misc/ChangeWeatherCycle.txt",
+    "spa": "misc/ChangeWeatherCycle.txt",
+    "ita": "misc/ChangeWeatherCycle.txt",
+    "cat": ["misc"]
   }
 ]
