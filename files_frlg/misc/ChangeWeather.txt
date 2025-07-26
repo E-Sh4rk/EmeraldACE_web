@@ -1,0 +1,21 @@
+@@ title = "Change Weather"
+@@ author = "Sleipnir17 (ported by Adrichu00)"
+@@ exit = "GrabACEExit"
+
+; Notes: after executing this code the weather of the map you're on will change
+; into the one you chose (it depends on box 2 name). You can use the code
+; anywhere, including indoors and underwater. The effect of this code will last
+; until you change map. Unused weathers are available.
+
+; You can check the list of possible weathers at:
+; https://github.com/pret/pokefirered/blob/4f5fe2a27941770cb1d7c33fcc1fd4c9495838af/include/constants/weather.h#L4
+weather = 0x00
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+SBC r11, r15, 0xC100
+SBC r11, r11, 0xC6
+MOV r12, {weather & 0xFF} ?
+STRB r12, [r11, {inaccurate_emu? 0xC2: 0xC0}]

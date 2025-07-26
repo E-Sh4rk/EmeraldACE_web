@@ -1,0 +1,20 @@
+@@ title = "Change Weather"
+@@ author = "Sleipnir17 (ported by Adrichu00)"
+@@ exit = "CertificateFull{LANG}"
+
+; Notes: after executing this code the weather of the map you're on will change
+; into the one you chose (it depends on box 2 name). You can use the code
+; anywhere, including indoors and underwater. The effect of this code will last
+; until you change map. Unused weathers are available.
+
+; You can check the list of possible weathers at:
+; https://github.com/pret/pokeemerald/blob/6f8a1bbdb8a5ef75c4372cc625164a41e95ec2a4/include/constants/weather.h#L4
+weather = 0x00
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+@@
+
+SBC r11, r15, 0xC200
+MOV r12, {weather & 0xFF} ?
+STRB r12, [r11, {inaccurate_emu? 0xDB: 0xD9}]

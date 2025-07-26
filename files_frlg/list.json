@@ -404,5 +404,16 @@
     "ita": "misc/ChangeVar.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Weather",
+    "eng1": "misc/ChangeWeather.txt",
+    "eng0": "misc/ChangeWeather.txt",
+    "fra": "misc/ChangeWeather.txt",
+    "ger": "misc/ChangeWeather.txt",
+    "spa": "misc/ChangeWeather.txt",
+    "ita": "misc/ChangeWeather.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]

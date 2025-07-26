@@ -1,0 +1,26 @@
+@@ title = "Change Weather Cycle"
+@@ author = "Sleipnir17 (ported by Adrichu00)"
+@@ exit = "CertificateFull{LANG}"
+
+; Notes: this code will solve one of the possible side effects of long
+; corruptions, the one that makes the game crash while in Route 119 or 123. That
+; side effect is caused by the corruption of the weather cycle status and this
+; code will set it to the status you desire, depending on the cycle parameter.
+; On dry battery games the weather cycle is never updated: this code is useful
+; to those who still want to change their weather.
+
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+cycle = 0x00       ; Set to 0, 1, 2 or 3
+
+; | Cycle | Route 119    | Route 123 |
+; |:-----:|:------------:|:---------:|
+; |   0   | SUNNY        | SUNNY     |
+; |   1   | RAIN         | SUNNY     |
+; |   2   | THUNDERSTORM | RAIN      |
+; |   3   | RAIN         | SUNNY     |
+
+@@
+
+SBC r11, r15, 0xC200
+MOV r12, {cycle & 0x03} ?
+STRB r12, [r11, {inaccurate_emu? 0xDC: 0xDA}]
