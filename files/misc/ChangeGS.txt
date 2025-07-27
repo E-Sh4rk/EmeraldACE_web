@@ -2,36 +2,32 @@
 @@ author = "Gui64977 | Adrichu00"
 @@ exit = "CertificateShort{LANG}"
 
-; [!] This code needs `BX r0` (Œ) in BOX 14 name, you can
-; execute any code with "CertificateFull{LANG}" exit
-; to write `BX r0` (Œ) in BOX 14 name
-
-; [!] For now this code isn't available for inaccurate emulators (mgba < 0.9)
+; This code requires `BX r0` (Œ) in BOX 14 name, you can
+; execute any code with "CertificateFullENG" exit or execute
+; "Restore 'BX r0' in box 14 name" code to write it.
 
 ; Full list of game stats: https://github.com/pret/pokeemerald/blob/master/include/constants/game_stat.h
 gameStat ?= 0          ; 0-51
 value    ?= 0x00000000 ; Not all values are possible
+inaccurate_emu = 0     ; Set to 1 if you are using an emulator < mgba 0.9
 
 ; Do not modify the parameters below
 
-gameStat = gameStat > 51 ? 51 : gameStat
-
 @@
 
-; r11 = &gSaveBlock2Ptr->encryptionKey
-SBC r11, r15, #0xD100
-MOV r12, {value} ?4
-; r0 = value
-BIC r0, r12, #0x0
+SBC r11, r15, #0xD100           ; r11 = &gSaveBlock2Ptr->encryptionKey - (inaccurate_emu? 0xAD: 0xAB)
+
 MOV r10, #0x2C
-STRB r10, [r15, r14, LSR #0x17]
-; r12 = gSaveBlock2Ptr->encryptionKey
-LDR r12, [r11, #0xAB]!
-; r11 = &gSaveBlock1Ptr->gameStats[gameStat]
-ADC r11, r11, #0x3140
-; r12 = value ^ gSaveBlock2Ptr->encryptionKey
-; Becomes `EOR r12, r12, r0`:
-AND r12, r0, r0
-SBC r11, r11, {gameStat > 36? 0xCB0: (gameStat > 16? 0xD00: 0xD50)}
-; gSaveBlock1Ptr->gameStats[gameStat] = encryptedValue
-STR r12, [r11, {(gameStat > 36? 0xD: (gameStat > 16? 0x5D: 0xAD)) + gameStat*4}]!
+SBC r12, r15, #0xA70
+STRB r10, [r12, {inaccurate_emu? 0xAAB: 0xAA9}] ; Write EOR opcode
+
+MOV r12, {value} ?4
+
+LDR r0, [r11, {inaccurate_emu? 0xAD: 0xAB}]! ; r0 = gSaveBlock2Ptr->encryptionKey
+
+ADC r11, r11, #0x3140           ; r11 = &gSaveBlock1Ptr->gameStats + 0xCA4
+SBC r11, r11, {gameStat > 48? 0xCB0: (gameStat > 36? 0xCD0: (gameStat > 24? 0xD00: (gameStat > 12? 0xD30: 0xD60)))}
+
+AND r12, r0, r0                 ; Becomes `EOR r12, r12, r0`: r12 = value ^ gSaveBlock2Ptr->encryptionKey
+
+STR r12, [r11, {(gameStat > 48? 0xD: (gameStat > 36? 0x2D: (gameStat > 24? 0x5D: (gameStat > 12? 0x8D: 0xBD)))) + gameStat*4}]!

@@ -1,0 +1,30 @@
+@@ title = "Change Coins"
+@@ author = "Gui64977 | Adrichu00"
+@@ exit = "CertificateShort{LANG}"
+
+; This code requires `BX r0` (Œ) in BOX 14 name, you can
+; execute any code with "CertificateFullENG" exit or execute
+; "Restore 'BX r0' in box 14 name" code to write it.
+
+coins ?= 0x0000
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify the parameters below
+
+@@
+
+SBC r11, r15, #0xD100           ; r11 = &gSaveBlock2Ptr->encryptionKey - (inaccurate_emu? 0xAD: 0xAB)
+
+MOV r10, #0x2C
+SBC r12, r15, #0xA70
+STRB r10, [r12, {inaccurate_emu? 0xAA7: 0xAA5}] ; Write EOR opcode
+
+MOV r12, {coins & 0xFFFF} ?4
+
+LDR r0, [r11, {inaccurate_emu? 0xAD: 0xAB}]! ; r0 = gSaveBlock2Ptr->encryptionKey
+
+ADC r11, r11, #0xDE0            ; r11 = &gSaveBlock1Ptr->coins - 0x5B4
+
+AND r12, r0, r0                 ; Becomes `EOR r12, r12, r0`: r12 = value ^ gSaveBlock2Ptr->encryptionKey
+
+STR r12, [r11, #0x5B4]!         ; Store coins in gSaveBlock1Ptr->coins
