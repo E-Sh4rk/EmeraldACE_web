@@ -1,6 +1,6 @@
 @@ title = "Change Variable"
 @@ author = "Adrichu00"
-@@ exit = "ReturnToOverworldFull_ENG"
+@@ exit = "ReturnToOverworldFull_{LANGNR}"
 
 ; Full list of vars: https://github.com/pret/pokeruby/blob/master/include/constants/vars.h
 ; This code won't work with special variables (0x80XX)

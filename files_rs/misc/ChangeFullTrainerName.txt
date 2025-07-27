@@ -1,6 +1,6 @@
 @@ title = "Change full trainer name (legal)"
 @@ author = "Sleipnir17 (ported by Adrichu00)"
-@@ exit = "ReturnToOverworldFull_{LANG}"
+@@ exit = "ReturnToOverworldFull_{LANGNR}"
 
 ; Write your desired name in BOX 5's name
 ; Don't use the last char slot, leave it empty

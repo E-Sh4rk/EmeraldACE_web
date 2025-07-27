@@ -1,12 +1,12 @@
 @@ title = "Change Flag"
 @@ author = "Adrichu00 | final"
-@@ exit = "ReturnToOverworldShort_ENG"
+@@ exit = "ReturnToOverworldShort_{LANGNR}"
 
 ; WARNINGS:
 ; * This code modifies r0
 ; * This code needs `BX r0` in box 14's name (`Œ`). You can execute any code
-;   with the "ReturnToOverworldFull_ENG" exit to write it. You can also try to
-;   compile this code with "ReturnToOverworldFull_ENG", but it may not fit
+;   with the "ReturnToOverworldFull_{LANGNR}" exit to write it. You can also try to
+;   compile this code with "ReturnToOverworldFull_{LANGNR}", but it may not fit
 
 ; Full list of flags: https://github.com/pret/pokeruby/blob/master/include/constants/flags.h
 flag  = 0x000

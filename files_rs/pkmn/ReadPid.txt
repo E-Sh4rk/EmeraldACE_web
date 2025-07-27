@@ -1,6 +1,6 @@
 @@ title = "Read PID"
 @@ author = "E-Sh4rk (Ported by Adrichu00)"
-@@ exit = "ReturnToOverworldFull_{LANG}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
+@@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
 
 ; Store the PID of the second pokemon in the team in its attack and defense stats
 ; PID = attack + (defense*65536)

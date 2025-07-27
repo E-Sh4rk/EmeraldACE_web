@@ -1,6 +1,6 @@
 @@ title = "Change Party Slot 2 Level"
 @@ Author = "Sleipnir, edited by PapaJefe (Ported by Adrichu00)"
-@@ exit = "ReturnToOverworldFull_{LANG}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
+@@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
 
 ; Please enter the level below in decimal.
 ; Use a Rare Candy to make the temporary level permanent.
@@ -10,9 +10,9 @@
 level = 98
 
 ; Do not change the parameters below:
-offset_{lang} = 0x0A20
+offset_{langnr} = 0x0A20
 offset_ger = 0x0A30
-offset = offset_{lang}
+offset = offset_{langnr}
 
 @@
 
