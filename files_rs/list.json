@@ -71,7 +71,23 @@
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
   },
-    {
+  {
+    "name": "Read PID",
+    "eng2": "pkmn/ReadPid.txt",
+    "eng1": "pkmn/ReadPid.txt",
+    "eng0": "pkmn/ReadPid.txt",
+    "fra1": "pkmn/ReadPid.txt",
+    "fra0": "pkmn/ReadPid.txt",
+    "ger1": "pkmn/ReadPid.txt",
+    "ger0": "pkmn/ReadPid.txt",
+    "spa1": "pkmn/ReadPid.txt",
+    "spa0": "pkmn/ReadPid.txt",
+    "ita1": "pkmn/ReadPid.txt",
+    "ita0": "pkmn/ReadPid.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Create Pokemon species from nothing",
     "eng2": "pkmn/PokemonFromNothing.txt",
     "eng1": "pkmn/PokemonFromNothing.txt",
@@ -88,6 +104,22 @@
     "jap1": "pkmn/PokemonFromNothingJAP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["pkmn","bootstraps"]
+  },
+  {
+    "name": "Change Pokemon Level",
+    "eng2": "pkmn/ChangeLevel.txt",
+    "eng1": "pkmn/ChangeLevel.txt",
+    "eng0": "pkmn/ChangeLevel.txt",
+    "fra1": "pkmn/ChangeLevel.txt",
+    "fra0": "pkmn/ChangeLevel.txt",
+    "ger1": "pkmn/ChangeLevel.txt",
+    "ger0": "pkmn/ChangeLevel.txt",
+    "spa1": "pkmn/ChangeLevel.txt",
+    "spa0": "pkmn/ChangeLevel.txt",
+    "ita1": "pkmn/ChangeLevel.txt",
+    "ita0": "pkmn/ChangeLevel.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["pkmn"]
   },
   {
     "name": "Return Exit Code Bootstrap",
@@ -107,7 +139,7 @@
     "game": ["ruby", "sapp"],
     "cat": ["bootstraps"]
   },
-    {
+  {
     "name": "Change PRNG seed and teleport",
     "eng2": "rng/SeedChangeAndWarpENG.txt",
     "eng1": "rng/SeedChangeAndWarpENG.txt",
@@ -124,5 +156,53 @@
     "jap1": "rng/SeedChangeAndWarpJP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["rng"]
+  },
+  {
+    "name": "Change full trainer name (legal)",
+    "eng2": "misc/ChangeFullTrainerName.txt",
+    "eng1": "misc/ChangeFullTrainerName.txt",
+    "eng0": "misc/ChangeFullTrainerName.txt",
+    "fra1": "misc/ChangeFullTrainerName.txt",
+    "fra0": "misc/ChangeFullTrainerName.txt",
+    "ger1": "misc/ChangeFullTrainerName.txt",
+    "ger0": "misc/ChangeFullTrainerName.txt",
+    "spa1": "misc/ChangeFullTrainerName.txt",
+    "spa0": "misc/ChangeFullTrainerName.txt",
+    "ita1": "misc/ChangeFullTrainerName.txt",
+    "ita0": "misc/ChangeFullTrainerName.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Flag",
+    "eng2": "misc/ChangeFlag.txt",
+    "eng1": "misc/ChangeFlag.txt",
+    "eng0": "misc/ChangeFlag.txt",
+    "fra1": "misc/ChangeFlag.txt",
+    "fra0": "misc/ChangeFlag.txt",
+    "ger1": "misc/ChangeFlag.txt",
+    "ger0": "misc/ChangeFlag.txt",
+    "spa1": "misc/ChangeFlag.txt",
+    "spa0": "misc/ChangeFlag.txt",
+    "ita1": "misc/ChangeFlag.txt",
+    "ita0": "misc/ChangeFlag.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Variable",
+    "eng2": "misc/ChangeVar.txt",
+    "eng1": "misc/ChangeVar.txt",
+    "eng0": "misc/ChangeVar.txt",
+    "fra1": "misc/ChangeVar.txt",
+    "fra0": "misc/ChangeVar.txt",
+    "ger1": "misc/ChangeVar.txt",
+    "ger0": "misc/ChangeVar.txt",
+    "spa1": "misc/ChangeVar.txt",
+    "spa0": "misc/ChangeVar.txt",
+    "ita1": "misc/ChangeVar.txt",
+    "ita0": "misc/ChangeVar.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
   }
 ]

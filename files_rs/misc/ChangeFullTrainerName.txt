@@ -1,0 +1,25 @@
+@@ title = "Change full trainer name (legal)"
+@@ author = "Sleipnir17 (ported by Adrichu00)"
+@@ exit = "ReturnToOverworldFull_{LANGNR}"
+
+; Write your desired name in BOX 5's name
+; Don't use the last char slot, leave it empty
+
+; This method can only produce legal names that you would be able to write in a
+; normal case.
+
+@@
+
+; r11 = &gSaveBlock2.playerName - 4
+; SUB r11, 0x1354C ?
+SBC r11, r15, #0x3580
+SBC r11, r11, #0xC9
+SBC r11, r11, #0xFF00
+ADCS r12, pc, 0x0C    ; r12: Pointer to BOX 5 Name (-4)
+0xE9BC00C0            ; (LDMIB r12!, {r6, r7}) Load name in r6 & r7
+ldrh r12, [pc, 0x0C]! ; Skip BOX 5 Name
+0x00000000            ; Filler
+0xD9E1D5C8            ; ("Name")     Data
+0xFFFFFFFF            ; (Terminator) Data
+0xE9AB00C0            ; (STMIB r11!, {r6, r7}) Write trainer name
+

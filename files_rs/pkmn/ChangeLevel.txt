@@ -1,0 +1,26 @@
+@@ title = "Change Party Slot 2 Level"
+@@ Author = "Sleipnir, edited by PapaJefe (Ported by Adrichu00)"
+@@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
+
+; Please enter the level below in decimal.
+; Use a Rare Candy to make the temporary level permanent.
+; 98 allows for easy EV adjustments, and then a final Rare Candy to reach 100.
+; 49 allows Pokemon to re-enter Level 50 restricted battles.
+
+level = 98
+
+; Do not change the parameters below:
+offset_{langnr} = 0x0A20
+offset_ger = 0x0A30
+offset = offset_{langnr}
+
+@@
+
+; r12 = &gPlayerParty[1].level = 0x03004360 + 0x64 + 0x54 = 0x03004418
+; MOV r12, 0x03004418 ?
+MOV r12, 0x03000000
+ADC r12, r12, 0x39C0
+ADC r12, r12, {offset}
+ADC r12, r12, 0x38
+MOV r11, {level & 0xFF} ?  ; r11 = level
+STRB r11, [r12]            ; gPlayerParty[1].level = level

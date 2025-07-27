@@ -1,0 +1,18 @@
+@@ title = "Change Variable"
+@@ author = "Adrichu00"
+@@ exit = "ReturnToOverworldFull_{LANGNR}"
+
+; Full list of vars: https://github.com/pret/pokeruby/blob/master/include/constants/vars.h
+; This code won't work with special variables (0x80XX)
+; It will work just with normal variables (0x40XX)
+var   = 0x00       ; You can use just the lower byte
+value = 0x0000     ; From 0x0000 to 0xFFFF
+
+; Do not modify this
+var_offset = 0x011978 - ((var & 0xFF) << 1)
+
+@@
+
+SUB r11, pc, {var_offset} ? ; r11 = &gSaveBlock1.vars[var]
+MOV r12, {value} ?          ; r12 = value
+STRH r12, [r11]             ; gSaveBlock1Ptr->vars[var] = value
