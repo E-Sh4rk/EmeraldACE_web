@@ -172,5 +172,21 @@
     "ita0": "misc/ChangeFullTrainerName.txt",
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Variable",
+    "eng2": "misc/ChangeVar.txt",
+    "eng1": "misc/ChangeVar.txt",
+    "eng0": "misc/ChangeVar.txt",
+    "fra1": "misc/ChangeVar.txt",
+    "fra0": "misc/ChangeVar.txt",
+    "ger1": "misc/ChangeVar.txt",
+    "ger0": "misc/ChangeVar.txt",
+    "spa1": "misc/ChangeVar.txt",
+    "spa0": "misc/ChangeVar.txt",
+    "ita1": "misc/ChangeVar.txt",
+    "ita0": "misc/ChangeVar.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
   }
 ]
