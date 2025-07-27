@@ -564,5 +564,23 @@
     "spa": "misc/ChangeWeatherCycle.txt",
     "ita": "misc/ChangeWeatherCycle.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Money",
+    "eng": "misc/ChangeMoney.txt",
+    "fra": "misc/ChangeMoney.txt",
+    "ger": "misc/ChangeMoney.txt",
+    "spa": "misc/ChangeMoney.txt",
+    "ita": "misc/ChangeMoney.txt",
+    "cat": ["misc"]
+  },
+  {
+    "name": "Change Coins",
+    "eng": "misc/ChangeCoins.txt",
+    "fra": "misc/ChangeCoins.txt",
+    "ger": "misc/ChangeCoins.txt",
+    "spa": "misc/ChangeCoins.txt",
+    "ita": "misc/ChangeCoins.txt",
+    "cat": ["misc"]
   }
 ]
