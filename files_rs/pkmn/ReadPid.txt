@@ -12,9 +12,9 @@
 use_third_mon = 0 ; Set this to 1 in order to write the PID of the second mon in the stats of the third mon instead of its own stats.
 
 ; Do not change the parameters below:
-offset_{lang} = 0x0A10
+offset_{langnr} = 0x0A10
 offset_ger = 0x0A20
-offset = offset_{lang}
+offset = offset_{langnr}
 
 @@
 
