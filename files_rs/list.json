@@ -156,5 +156,21 @@
     "jap1": "rng/SeedChangeAndWarpJP.txt",
     "game": ["ruby", "sapp"],
     "cat": ["rng"]
+  },
+  {
+    "name": "Change full trainer name (legal)",
+    "eng2": "misc/ChangeFullTrainerName.txt",
+    "eng1": "misc/ChangeFullTrainerName.txt",
+    "eng0": "misc/ChangeFullTrainerName.txt",
+    "fra1": "misc/ChangeFullTrainerName.txt",
+    "fra0": "misc/ChangeFullTrainerName.txt",
+    "ger1": "misc/ChangeFullTrainerName.txt",
+    "ger0": "misc/ChangeFullTrainerName.txt",
+    "spa1": "misc/ChangeFullTrainerName.txt",
+    "spa0": "misc/ChangeFullTrainerName.txt",
+    "ita1": "misc/ChangeFullTrainerName.txt",
+    "ita0": "misc/ChangeFullTrainerName.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
   }
 ]
