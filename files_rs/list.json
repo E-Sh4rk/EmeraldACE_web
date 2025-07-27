@@ -106,6 +106,22 @@
     "cat": ["pkmn","bootstraps"]
   },
   {
+    "name": "Change Pokemon Level",
+    "eng2": "pkmn/ChangeLevel.txt",
+    "eng1": "pkmn/ChangeLevel.txt",
+    "eng0": "pkmn/ChangeLevel.txt",
+    "fra1": "pkmn/ChangeLevel.txt",
+    "fra0": "pkmn/ChangeLevel.txt",
+    "ger1": "pkmn/ChangeLevel.txt",
+    "ger0": "pkmn/ChangeLevel.txt",
+    "spa1": "pkmn/ChangeLevel.txt",
+    "spa0": "pkmn/ChangeLevel.txt",
+    "ita1": "pkmn/ChangeLevel.txt",
+    "ita0": "pkmn/ChangeLevel.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["pkmn"]
+  },
+  {
     "name": "Return Exit Code Bootstrap",
     "eng2": "bootstraps/ReturnExitCodeBootstrapENG.txt",
     "eng1": "bootstraps/ReturnExitCodeBootstrapENG.txt",
