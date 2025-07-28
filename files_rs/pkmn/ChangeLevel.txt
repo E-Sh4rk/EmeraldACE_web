@@ -1,5 +1,5 @@
 @@ title = "Change Party Slot 2 Level"
-@@ Author = "Sleipnir, edited by PapaJefe (Ported by Adrichu00)"
+@@ author = "Sleipnir, edited by PapaJefe (Ported by Adrichu00)"
 @@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
 
 ; Please enter the level below in decimal.
@@ -10,14 +10,15 @@
 level = 98
 
 ; Do not change the parameters below:
-offset_{langnr} = 0x0A20
-offset_ger = 0x0A30
+offset_{langnr} = 0x0A30
+offset_eng = 0x0A20
 offset = offset_{langnr}
 
 @@
 
-; r12 = &gPlayerParty[1].level = 0x03004360 + 0x64 + 0x54 = 0x03004418
-; MOV r12, 0x03004418 ?
+; r12 = &gPlayerParty[1].level = 0x03004370 + 0x64 + 0x54 = 0x03004428
+; (For ENG versions, &gPlayerParty = 0x03004360)
+; MOV r12, 0x03004428 ?
 MOV r12, 0x03000000
 ADC r12, r12, 0x39C0
 ADC r12, r12, {offset}
