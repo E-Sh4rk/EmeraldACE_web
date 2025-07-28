@@ -12,14 +12,15 @@
 use_third_mon = 0 ; Set this to 1 in order to write the PID of the second mon in the stats of the third mon instead of its own stats.
 
 ; Do not change the parameters below:
-offset_{langnr} = 0x0A10
-offset_ger = 0x0A20
+offset_{langnr} = 0x0A20
+offset_eng = 0x0A10
 offset = offset_{langnr}
 
 @@
 
-; r12 = &gPokemonParty[1] = &gPlayerParty + 100 = 0x03004360 + 0x64 = 0x030043C4
-; MOV r12, 0x030043C4 ?
+; r12 = &gPlayerParty[1] = &gPlayerParty + 100 = 0x03004370 + 0x64 = 0x030043D4
+; (For ENG versions, &gPlayerParty = 0x03004360)
+; MOV r12, 0x030043D4 ?
 MOV r12, 0x03000000
 ADC r12, r12, 0x3980
 ADC r12, r12, {offset}

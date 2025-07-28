@@ -1,0 +1,33 @@
+@@ title = "Read Pokemon OTID (TID and SID)"
+@@ author = "E-Sh4rk (Ported by Adrichu00)"
+@@ exit = "ReturnToOverworldFull_{LANGNR}" ; You can set this to "Bootstrapped" if you have an exit code bootstrap
+
+; Store the OTID of the second pokemon in the team in its attack and defense stats
+; OTID = attack + (defense*65536)
+; TID = attack
+; SID = defense
+
+; NOTE: Deoxys stats are computed differently. For this reason, you can set this
+; parameter to 1 if you want to store its SID in the third pokemon in your
+; party. This can also be used for glitched mons whose summary is not stable.
+
+use_third_mon = 0 ; Set this to 1 in order to write the SID of the second mon in the stats of the third mon instead of its own stats.
+
+; Do not change the parameters below:
+offset_{langnr} = 0x0A20
+offset_eng = 0x0A10
+offset = offset_{langnr}
+
+@@
+
+; r12 = &gPlayerParty[1] = &gPlayerParty + 100 = 0x03004370 + 0x64 = 0x030043D4
+; (For ENG versions, &gPlayerParty = 0x03004360)
+; MOV r12, 0x030043D4 ?
+MOV r12, 0x03000000
+ADC r12, r12, 0x3980
+ADC r12, r12, {offset}
+ADC r12, r12, 0x34
+LDRH r11, [r12, 0x04]                       ; Load TID of Pkmn 2
+STRH r11, [r12, {use_third_mon? 190: 90}]   ; Store TID in Attack stat
+LDRH r11, [r12, 0x06]                       ; Load SID of Pkmn 2
+STRH r11, [r12, {use_third_mon? 192: 92}]   ; Store SID in Defense stat

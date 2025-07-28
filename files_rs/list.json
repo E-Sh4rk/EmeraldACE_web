@@ -72,7 +72,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Read PID",
+    "name": "Read Pokemon PID",
     "eng2": "pkmn/ReadPid.txt",
     "eng1": "pkmn/ReadPid.txt",
     "eng0": "pkmn/ReadPid.txt",
@@ -84,6 +84,22 @@
     "spa0": "pkmn/ReadPid.txt",
     "ita1": "pkmn/ReadPid.txt",
     "ita0": "pkmn/ReadPid.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read Pokemon OTID (TID and SID)",
+    "eng2": "pkmn/ReadOtid.txt",
+    "eng1": "pkmn/ReadOtid.txt",
+    "eng0": "pkmn/ReadOtid.txt",
+    "fra1": "pkmn/ReadOtid.txt",
+    "fra0": "pkmn/ReadOtid.txt",
+    "ger1": "pkmn/ReadOtid.txt",
+    "ger0": "pkmn/ReadOtid.txt",
+    "spa1": "pkmn/ReadOtid.txt",
+    "spa0": "pkmn/ReadOtid.txt",
+    "ita1": "pkmn/ReadOtid.txt",
+    "ita0": "pkmn/ReadOtid.txt",
     "game": ["ruby", "sapp"],
     "cat": ["pkmn"]
   },
