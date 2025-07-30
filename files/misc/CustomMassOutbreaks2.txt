@@ -9,12 +9,13 @@
 ; You can set it to 0 to disable the custom mass outbreak 
 species = 1                                 @input:species
 ; List of map_id: https://pastebin.com/Wqsi1EcZ
+; map_id = map_num << 8 | group_id
 map_id = 0x1000
 level = 0
 
 ; Do not touch the parameters below
-group_id = map_id >> 8
-map_num = map_id & 0xFF
+group_id = map_id & 0xFF
+map_num = (map_id & 0xFF00) >> 8
 
 @@
 
@@ -28,5 +29,5 @@ movs r12, { level } ?
 str r12, [r11, 0xC00]!
 sbc r11, r11, 3
 
-movs r12, { (group_id << 16) | (map_num << 8) | species } ?
+movs r12, { (group_id << 24) | (map_num << 16) | species } ?
 str r12, [r11, 0]!
