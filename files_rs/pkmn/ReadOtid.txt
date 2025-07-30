@@ -8,10 +8,10 @@
 ; SID = defense
 
 ; NOTE: Deoxys stats are computed differently. For this reason, you can set this
-; parameter to 1 if you want to store its SID in the third pokemon in your
+; parameter to 1 if you want to store its OTID in the third pokemon in your
 ; party. This can also be used for glitched mons whose summary is not stable.
 
-use_third_mon = 0 ; Set this to 1 in order to write the SID of the second mon in the stats of the third mon instead of its own stats.
+use_third_mon = 0 ; Set this to 1 in order to write the OTID of the second mon in the stats of the third mon instead of its own stats.
 
 ; Do not change the parameters below:
 offset_{langnr} = 0x0A20
