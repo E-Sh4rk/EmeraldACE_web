@@ -1,0 +1,24 @@
+@@ title = "End Custom Mass Outbreaks (with exit code bootstrap)"
+@@ author = "E-Sh4rk (ported by Adrichu00)"
+@@ exit = "Bootstrapped"
+
+; This code ends the current custom mass outbreak.
+; Alternatively, you can set the species of the current mass outbreak to 0
+; using code "Custom Mass Outbreaks (2)".
+; THIS CODE NEED A RETURN EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+
+@@
+
+; PC - &gSaveBlock1.outbreakPokemonSpecies = &gPokemonStorage + 0x8344 - &gSaveBlock1 - 0x2AFC
+; &gSaveBlock1.outbreakPokemonSpecies = PC - 0x101B4 = 0x2028230
+; SUB r11, pc, {0x101B4 + 8 + 0xC0} ?
+SBC r11, r15, #0xda00
+SBC r11, r11, #0x2840
+SBC r11, r11, #0x39
+
+MOV r12, 0x00
+STR r12, [r11, 0xC0]!
+STR r12, [r11, r14, LSR 0x19]!
+STR r12, [r11, r14, LSR 0x19]!
+STR r12, [r11, r14, LSR 0x19]!
+STR r12, [r11, r14, LSR 0x19]!
