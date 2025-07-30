@@ -1,4 +1,5 @@
 @@ title = "End Custom Mass Outbreaks (with exit code bootstrap)"
+@@ author = "E-Sh4rk (ported by Adrichu00)"
 @@ exit = "Bootstrapped"
 
 ; This code ends the current custom mass outbreak.

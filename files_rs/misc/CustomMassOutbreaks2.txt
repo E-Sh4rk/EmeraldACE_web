@@ -1,4 +1,5 @@
 @@ title = "Custom Mass Outbreaks (2) (with exit code bootstrap)"
+@@ author = "E-Sh4rk (ported by Adrichu00)"
 @@ exit = "Bootstrapped"
 
 ; Before executing this code, you should have executed code (1) once.
