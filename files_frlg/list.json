@@ -415,5 +415,12 @@
     "ita": "misc/ChangeWeather.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokémon data (grab ACE)",
+    "jap0": "pkmn/ChangePokemonData_JPN.txt",
+    "jap1": "pkmn/ChangePokemonData_JPN.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]

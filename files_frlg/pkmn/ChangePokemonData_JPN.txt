@@ -1,0 +1,122 @@
+@@ title = "Change Pokémon data (JPN, Thumb)"
+@@ author = "final / Adrichu00 / Mettrich / Shao / Papa Jefé"
+@@ exit = null
+
+// This ACE code is written in Thumb.
+// It must be executed with a Thumb ACE species (like 0xFFC9).
+
+// For more information on what to input into the `field` parameter
+// consult the index-field map in the link below:
+// https://e-sh4rk.github.io/EmeraldACE_web/doc/SetMonDataFields.txt
+
+// `dataArg` variable examples
+// - Setting `dataArg` to 1000000 with `field` set to 25 (experience), sets the Pokémon’s
+//   experience to 1000000.
+// - Setting `dataArg` to 1 with `field` set to 11 (species), turns a Pokémon
+//   into a Bulbasaur (whose index number is 1).
+// For more details on the `dataArg` value, consult these articles on Bulbapedia.
+// https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_data_structure_(Generation_III)
+// https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_data_substructures_(Generation_III)
+
+partySlot = 1  // partySlot starts at 1
+field     = 11
+dataArg   = 1  // new value of field
+
+// Do not touch the below parameters.
+
+dataArg0 = (dataArg >>  0) & 0xff
+dataArg1 = (dataArg >>  8) & 0xff
+dataArg2 = (dataArg >> 16) & 0xff
+dataArg3 = (dataArg >> 24) & 0xff
+
+dataArgBase0   = dataArg0 > 0xb6 && dataArg0 <= 0xb9 ? 0xb6 \
+	: dataArg0 > 0xee && dataArg0 <= 0xff ? 0xee \
+	: dataArg0
+dataArgOffset0 = dataArg0 > 0xb6 && dataArg0 <= 0xb9 ? dataArg0 - 0xb6 \
+	: dataArg0 > 0xee && dataArg0 <= 0xff ? dataArg0 - 0xee \
+	: 0
+dataArgBase1   = dataArg1 > 0xb6 && dataArg1 <= 0xb9 ? 0xb6 \
+	: dataArg1 > 0xee && dataArg1 <= 0xff ? 0xee \
+	: dataArg1
+dataArgOffset1 = dataArg1 > 0xb6 && dataArg1 <= 0xb9 ? dataArg1 - 0xb6 \
+	: dataArg1 > 0xee && dataArg1 <= 0xff ? dataArg1 - 0xee \
+	: 0
+dataArgBase2   = dataArg2 > 0xb6 && dataArg2 <= 0xb9 ? 0xb6 \
+	: dataArg2 > 0xee && dataArg2 <= 0xff ? 0xee \
+	: dataArg2
+dataArgOffset2 = dataArg2 > 0xb6 && dataArg2 <= 0xb9 ? dataArg2 - 0xb6 \
+	: dataArg2 > 0xee && dataArg0 <= 0xff ? dataArg2 - 0xee \
+	: 0
+dataArgBase3   = dataArg3 > 0xb6 && dataArg3 <= 0xb9 ? 0xb6 \
+	: dataArg3 > 0xee && dataArg3 <= 0xff ? 0xee \
+	: dataArg3
+dataArgOffset3 = dataArg3 > 0xb6 && dataArg3 <= 0xb9 ? dataArg3 - 0xb6 \
+	: dataArg3 > 0xee && dataArg3 <= 0xff ? dataArg3 - 0xee \
+	: 0
+
+dataArgBase   = dataArg == 0 ?  1 \
+	: (dataArgBase3 << 24) | (dataArgBase2 << 16) \
+	| (dataArgBase1 <<  8) | (dataArgBase0 <<  0)
+dataArgOffset = dataArg == 0 ? -1 \
+	: (dataArgOffset3 << 24) | (dataArgOffset2 << 16) \
+	| (dataArgOffset1 <<  8) | (dataArgOffset0 <<  0)
+
+// `field` is stored as field + 1 as the codes uses + 0xFF to "clear" the
+// upper 24 bits.
+fieldWord      = (field + 1 & 0xff) | 0xffffff00
+// `targetAddress` is &gPlayerParty - 0x10 as party slot 2 is not accessible
+// when written directly.
+targetAddress  = 0x020241e4 + (partySlot - 1) * 100 - 0x10
+
+SetMonDataAddrJAP0 = 0x0803fa71
+SetMonDataAddrJAP1 = 0x0803f9dd
+// 0x1000 is subtracted from the actual address of the SetMonData function
+// as that address is not directly writable with the character set. The code
+// will add 0x1000 to the loaded address before branching there.
+SetMonDataAddr     = SetMonDataAddr{LANG} - 0x1000
+
+@@
+
+0xA00FB540
+;	B540	PUSH	{r6, lr}	; lr will be overwritten to ensure execution returns here
+;	A00F	ADD	r0, pc, #0x3c	; r0 = &targetAddress
+0x3010C80F
+;	C80F	LDMIA	r0!, {r0-r3}	; load targetAddress, fieldWord, dataArgBase, and dataArgOffset
+;	3010	ADD	r0, #0x10	; &gPlayerParty + (100 * (partySlot - 1))
+0x189B31FF
+;	31FF	ADD	r1, #0xff	; r1 + 0xff = field
+;	189B	ADD	r3, r3, r2	; r3 = dataArg
+0xE000A21F
+;	A21F	ADD	r2, #0x7c	; &(gPokemonStorage->boxWallpapers) + 14
+;	E000	B	pc+4
+0x6013FFFF
+;	FFFF	; (bad filler)
+;	6013	STR	r3, [r2]	; Store dataArg after wallpapers
+0x3603A605
+;	A605	ADD	r6, pc, #20	; r6 = start of Box 6's name
+;	3603	ADD	r6, #3	; Set Thumb bit
+0xD0FF46B6
+;	D0FF	BEQ	pc+2	; (filler)
+;	46B6	MOV	lr, r6	; Ensure execution returns to Box 6's name
+0x26804B06
+;	4B06	LDR	r3, [pc, #24]	; r3 = &SetMonData
+;	2680	MOV	r6, #0x80
+0xFFFFE000	; (filler)
+0x199B0176
+;	0176	LSL	r6, #5	; r6 = 0x1000
+;	199B	ADD	r3, r3, r6	; r3 = &SetMonData
+0xFFFF4718
+;	4718	BX	r3	; Call SetMonData
+;	FFFF	; (bad filler)
+0x200051FF	; (filler)
+;	51FF	; (filler)
+;	2000	MOV	r0, #0	; Set return value to `false`
+0xFFFFBD40	; (filler)
+;	BD40	POP	{r6, pc}	; Exit via old lr address
+0x5151FFFF	; (filler)
+{ SetMonDataAddr }	; &SetMonData - 0x1000
+0x51FFFFFF	; (filler)
+{ targetAddress }
+{ fieldWord }
+{ dataArgBase }
+{ dataArgOffset }
