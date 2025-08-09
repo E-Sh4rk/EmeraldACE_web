@@ -70,8 +70,8 @@ targetAddress = 0x02024190 + (partySlot - 1) * 100 - 0x10
 
 @@
 
-0xA00FB540
-;	B540	PUSH	{r6, lr}	; lr will be overwritten to ensure execution returns here
+0xA00FB520
+;	B520	PUSH	{r5, lr}	; lr will be overwritten to ensure execution returns here
 ;	A00F	ADD	r0, pc, #0x3c	; r0 = &targetAddress
 0x3010C80F
 ;	C80F	LDMIA	r0!, {r0-r3}	; load targetAddress, fieldWord, dataArgBase, and dataArgOffset
@@ -85,19 +85,19 @@ targetAddress = 0x02024190 + (partySlot - 1) * 100 - 0x10
 0x6013FFFF
 ;	FFFF	; (bad filler)
 ;	6013	STR	r3, [r2]	; Store dataArg after wallpapers
-0x3601A603
-;	A603	ADD	r6, pc, #12	; r6 = start of Box 5's name
-;	3601	ADD	r6, #1	; Set Thumb bit
-0xD0FF46B6
+0x3501A503
+;	A503	ADD	r5, pc, #12	; r5 = start of Box 5's name
+;	3501	ADD	r5, #1	; Set Thumb bit
+0xD0FF46AE
 ;	D0FF	BEQ	pc+2	; (filler)
-;	46B6	MOV	lr, r6	; Ensure execution returns to Box 5's name
+;	46AE	MOV	lr, r5	; Ensure execution returns to Box 5's name
 0x47184B06
 ;	4B06	LDR	r3, [pc, #24]	; r3 = &SetMonData
 ;	4718	BX	r3	; Call SetMonData
 0xFFFFFFFF	; (filler)
 0xBD4087E4
 ;	87E4	STRH	r4, [r4, #0x3e]	; Sprite->inUse = 0, set up exit
-;	BD40	POP	{r6, pc}	; Exit via old lr address
+;	BD20	POP	{r5, pc}	; Exit via old lr address
 0xFFFFFFFF	; (filler)
 0x515151FF	; (filler)
 0xFFFFFFFF	; (filler)
