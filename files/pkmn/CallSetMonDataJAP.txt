@@ -95,7 +95,7 @@ targetAddress = 0x02024190 + (partySlot - 1) * 100 - 0x10
 ;	4B06	LDR	r3, [pc, #24]	; r3 = &SetMonData
 ;	4718	BX	r3	; Call SetMonData
 0xFFFFFFFF	; (filler)
-0xBD4087E4
+0xBD2087E4
 ;	87E4	STRH	r4, [r4, #0x3e]	; Sprite->inUse = 0, set up exit
 ;	BD20	POP	{r5, pc}	; Exit via old lr address
 0xFFFFFFFF	; (filler)
