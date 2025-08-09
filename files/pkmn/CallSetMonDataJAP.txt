@@ -1,73 +1,110 @@
-@@ title  = "Call SetMonData (JPN, Thumb)"
-@@ author = "final / Adrichu00 / Mettrich / Shao / Papa Jefe"
-@@ exit   = null
+@@ title = "Change Pokémon data (JPN, Thumb)"
+@@ author = "final / Adrichu00 / Mettrich / Shao / Papa Jefé"
+@@ exit = null
 
 // This ACE code is written in Thumb.
 // It must be executed with a Thumb ACE species (like 0x085F).
-
-// This code modifies the Pokemon (or empty slot) in party slot 3
-
-// The "へ" character in the name of Box 3 must be written
-// from the Hiragana (blue) layer.
 
 // For more information on what to input into the `field` parameter
 // consult the index-field map in the link below:
 // https://e-sh4rk.github.io/EmeraldACE_web/doc/SetMonDataFields.txt
 
-// Bulbapedia can be consulted for what values to write into `dataArg`
+// `dataArg` variable examples
+// - Setting `dataArg` to 1000000 with `field` set to 25 (experience), sets the Pokémon’s
+//   experience to 1000000.
+// - Setting `dataArg` to 1 with `field` set to 11 (species), turns a Pokémon
+//   into a Bulbasaur (whose index number is 1).
+// For more details on the `dataArg` value, consult these articles on Bulbapedia.
+// https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_data_structure_(Generation_III)
+// https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_data_substructures_(Generation_III)
 
-field   = 66
-dataArg = 0b1111111111111111111111111
+partySlot = 1  // partySlot starts at 1
+field     = 66
+dataArg   = 0x3FFFFFFF  // new value of field
 
-// DO NOT TOUCH BELOW PARAMETERS
+// Do not touch the below parameters.
 
-xx      = (dataArg & 0xFF000000)>>24
-XX      = (dataArg & 0xFF0000)>>16
-yy      = (dataArg & 0xFF00)>>8
-YY      = (dataArg & 0xFF)
-neg     = 0x80000000
+dataArg0 = (dataArg >>  0) & 0xff
+dataArg1 = (dataArg >>  8) & 0xff
+dataArg2 = (dataArg >> 16) & 0xff
+dataArg3 = (dataArg >> 24) & 0xff
 
-ww      = ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
-uu      = ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
-WW      = ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
-UU      = ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+dataArgBase0   = dataArg0 > 0xb6 && dataArg0 <= 0xb9 ? 0xb6 \
+	: dataArg0 > 0xee && dataArg0 <= 0xff ? 0xee \
+	: dataArg0
+dataArgOffset0 = dataArg0 > 0xb6 && dataArg0 <= 0xb9 ? dataArg0 - 0xb6 \
+	: dataArg0 > 0xee && dataArg0 <= 0xff ? dataArg0 - 0xee \
+	: 0
+dataArgBase1   = dataArg1 > 0xb6 && dataArg1 <= 0xb9 ? 0xb6 \
+	: dataArg1 > 0xee && dataArg1 <= 0xff ? 0xee \
+	: dataArg1
+dataArgOffset1 = dataArg1 > 0xb6 && dataArg1 <= 0xb9 ? dataArg1 - 0xb6 \
+	: dataArg1 > 0xee && dataArg1 <= 0xff ? dataArg1 - 0xee \
+	: 0
+dataArgBase2   = dataArg2 > 0xb6 && dataArg2 <= 0xb9 ? 0xb6 \
+	: dataArg2 > 0xee && dataArg2 <= 0xff ? 0xee \
+	: dataArg2
+dataArgOffset2 = dataArg2 > 0xb6 && dataArg2 <= 0xb9 ? dataArg2 - 0xb6 \
+	: dataArg2 > 0xee && dataArg0 <= 0xff ? dataArg2 - 0xee \
+	: 0
+dataArgBase3   = dataArg3 > 0xb6 && dataArg3 <= 0xb9 ? 0xb6 \
+	: dataArg3 > 0xee && dataArg3 <= 0xff ? 0xee \
+	: dataArg3
+dataArgOffset3 = dataArg3 > 0xb6 && dataArg3 <= 0xb9 ? dataArg3 - 0xb6 \
+	: dataArg3 > 0xee && dataArg3 <= 0xff ? dataArg3 - 0xee \
+	: 0
 
-zz      = ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
-vv      = ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
-ZZ      = ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
-VV      = ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+dataArgBase   = dataArg == 0 ?  1 \
+	: (dataArgBase3 << 24) | (dataArgBase2 << 16) \
+	| (dataArgBase1 << 8) | (dataArgBase0 << 0)
+dataArgOffset = dataArg == 0 ? -1 \
+	: (dataArgOffset3 << 24) | (dataArgOffset2 << 16) \
+	| (dataArgOffset1 <<  8) | (dataArgOffset0 <<  0)
 
-UVdata  = ((uu<<24)|(UU<<16)|(vv<<8)|VV)
-ZWdata  = ((ww<<24)|(WW<<16)|(zz<<8)|ZZ)
-
-field_opcode = 0x2100 | (field & 0xFF)
+// `field` is stored as field + 1 as the codes uses + 0xFF to "clear" the
+// upper 24 bits.
+fieldWord     = (field + 1 & 0xff) | 0xffffff00
+// `targetAddress` is &gPlayerParty - 0x10 as party slot 2 is not accessible
+// when written directly.
+targetAddress = 0x02024190 + (partySlot - 1) * 100 - 0x10
 
 @@
 
-0xE006A000
-@ A000  ADD     r0, pc, #0x0    ; r0 = &UVdata
-@ E006  B       pc+0x10         ; Jump to .part2
-{ UVdata }
-0x020242FF                      ; &gPlayerParty + 300 + 0xA7
-{ ZWdata }
-0xC807FFFF
-@       .part2:
-@ C807  LDMIA   r0!, {r0-r2}    ; r0 = UVdata, r1 = (&gPlayerParty + 300 + 0xA7), r2 = ZWdata
-0xA21D1880
-@ 1880  ADD     r0, r0, r2      ; r0 = dataArg
-@ A21D  ADD     r2, pc, #0x74   ; r2 = &(gPokemonStorage->boxWallpapers) + 0xE
-0xE7FF6010
-@ 6010  STR     r0, [r2]        ; Store dataArg after wallpapers
-@ E7FF  B       pc+0            ; (filler)
-0x1C0839A7
-@ 39A7  SUB     r1, #0xA7       ; r1 = &gPlayerParty + 200
-@ 1C08  MOV     r0, r1          ; r0 = r1
-0xFFFFE000
-@ E000  B pc+0x4                ; (skip bad filler)
-{ field_opcode | (0x4B02 << 16) }
-@ 21XX  MOV     r1, { field }   ; r1 = field
-@ 4B02  LDR     r3, [pc, #0x8]  ; r3 = &SetMonData
-0xFFFF4718
-@ 4718  BX      r3              ; call SetMonData and exit
-0x515151FF                      ; (filler)
-0x0806A775                      ; &SetMonData
+0xA00FB540
+;	B540	PUSH	{r6, lr}	; lr will be overwritten to ensure execution returns here
+;	A00F	ADD	r0, pc, #0x3c	; r0 = &targetAddress
+0x3010C80F
+;	C80F	LDMIA	r0!, {r0-r3}	; load targetAddress, fieldWord, dataArgBase, and dataArgOffset
+;	3010	ADD	r0, #0x10	; &gPlayerParty + (100 * (partySlot - 1))
+0x189B31FF
+;	31FF	ADD	r1, #0xff	; r1 + 0xff = field
+;	189B	ADD	r3, r3, r2	; r3 = dataArg
+0xE000A21F
+;	A21F	ADD	r2, #0x7c	; &(gPokemonStorage->boxWallpapers) + 14
+;	E000	B	pc+4
+0x6013FFFF
+;	FFFF	; (bad filler)
+;	6013	STR	r3, [r2]	; Store dataArg after wallpapers
+0x3601A603
+;	A603	ADD	r6, pc, #12	; r6 = start of Box 5's name
+;	3601	ADD	r6, #1	; Set Thumb bit
+0xD0FF46B6
+;	D0FF	BEQ	pc+2	; (filler)
+;	46B6	MOV	lr, r6	; Ensure execution returns to Box 5's name
+0x47184B06
+;	4B06	LDR	r3, [pc, #24]	; r3 = &SetMonData
+;	4718	BX	r3	; Call SetMonData
+0xFFFFFFFF	; (filler)
+0xBD4087E4
+;	87E4	STRH	r4, [r4, #0x3e]	; Sprite->inUse = 0, set up exit
+;	BD40	POP	{r6, pc}	; Exit via old lr address
+0xFFFFFFFF	; (filler)
+0x515151FF	; (filler)
+0xFFFFFFFF	; (filler)
+0x5151FFFF	; (filler)
+0x0806A775	; &SetMonData
+0x51FFFFFF	; (filler)
+{ targetAddress }
+{ fieldWord }
+{ dataArgBase }
+{ dataArgOffset }
