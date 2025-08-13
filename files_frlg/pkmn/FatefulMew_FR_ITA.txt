@@ -6,7 +6,8 @@
 ; It can be found here:
 ; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
-; This code must be run at Indigo Plateau
+; This code must be run at Indigo Plateau, and 
+; the save must have cleared the Elite Four.
 ; After running, talk to the PokeMart NPC
 ; Refuse the Yes/No Box regarding Berry Powder
 ; Talk to the rightmost Bookshelf by the PC, and
@@ -29,4 +30,5 @@ sbc r12, r12, {offset} ? ; SBC from Berry Powder Script to Deoxys
 str r12, [r11, 0xA8]!  ; Write Deoxys Battle to NPC 7 (Right Bookshelf)
 sbc r11, r4, 0x27AE ?    ; Use R4 offset to put Var 0x8009 in R11                    
 mov r12, {0x0097} ?    ; Store Mew Species in R12
+
 strh r12, [r11, 0xCA]    ; Write Mew Species to Var 0x8009
