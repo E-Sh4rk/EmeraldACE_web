@@ -6,7 +6,8 @@
 ; It can be found here:
 ; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
-; This code must be run at Indigo Plateau
+; This code must be run at Indigo Plateau, and 
+; the save must have cleared the Elite Four.
 ; After running, talk to far right Bookshelf.
 ; Refuse the Yes/No Box regarding Berry Powder
 ; Walk to the PokeMart NPC.
