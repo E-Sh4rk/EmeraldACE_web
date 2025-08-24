@@ -14,12 +14,12 @@
   },
   {
     "name": "Change PRNG seed and teleport (Bootstrapped)",
-    "eng1": "rng/SeedChangeAndWarpBootstrapped.txt",
-    "eng0": "rng/SeedChangeAndWarpBootstrapped.txt",
-    "fra": "rng/SeedChangeAndWarpBootstrapped.txt",
-    "ger": "rng/SeedChangeAndWarpBootstrapped.txt",
-    "spa": "rng/SeedChangeAndWarpBootstrapped.txt",
-    "ita": "rng/SeedChangeAndWarpBootstrapped.txt",
+    "eng1": "rng/SeedChangeAndWarpBootstrappedEN.txt",
+    "eng0": "rng/SeedChangeAndWarpBootstrappedEN.txt",
+    "fra": "rng/SeedChangeAndWarpBootstrappedEU.txt",
+    "ger": "rng/SeedChangeAndWarpBootstrappedEU.txt",
+    "spa": "rng/SeedChangeAndWarpBootstrappedEU.txt",
+    "ita": "rng/SeedChangeAndWarpBootstrappedEU.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
   },
