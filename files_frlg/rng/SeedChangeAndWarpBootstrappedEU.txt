@@ -1,0 +1,34 @@
+@@ title = "Change PRNG seed and teleport (Bootstrapped, EU)"                			
+@@ author = "Theocatic / final"				
+@@ exit = "Bootstrapped"
+
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+
+;this code will set PRNG to the desired seed when executed. Talk to the NPC you set in the map to warp afterwards. Best ran in the daycare
+
+
+;Map Bank andMap ID values can be found here https://pastebin.com/peDhNbEt
+
+
+MapID = 0x3802
+
+DesiredSeed = 0x1234ABCD
+
+NPC = 1 ;sets which NPC on the map to run though. NPC 1, 2 and 3 are usable. 
+
+;Do not modify these values
+ScriptStart =(MapID * 0x100) + 0x39
+NPCOffset = 0x1A5 + (NPC * 0x18)
+@@                
+
+sbc r10, pc, 0xBA00
+adc r11, r4, 0x300
+str r11, [r10, {NPCOffset}]!
+mov r12, {ScriptStart} ?
+str r12, [r11]!
+mov r12, {DesiredSeed} ?
+BIC r11, r13, #0x2F00 ;sets r11 to 0x03005000 gRNGValue
+SBC r11, r11, #0xB0
+str r12, [r11, lr, asr #27]!

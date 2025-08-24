@@ -1,4 +1,4 @@
-@@ title = "Change PRNG seed and teleport (Bootstrapped)"                			
+@@ title = "Change PRNG seed and teleport (Bootstrapped, EN)"                			
 @@ author = "Theocatic / final"				
 @@ exit = "Bootstrapped"
 
