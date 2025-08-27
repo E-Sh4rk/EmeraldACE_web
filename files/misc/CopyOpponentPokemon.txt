@@ -1,29 +1,30 @@
 @@ title = "Copy Opponent Pokemon"
 @@ author = "Gui64977"
-@@ exit = "Bootstrapped"
+@@ exit = "CertificateShortENG" ; or "Bootstrapped"
 
-; THIS CODE NEED A CERTIFICATE EXIT CODE BOOTSTRAP POKEMON IN BOX 14
+; Execute this code after an battle with the Pokemon(s) you want to copy.
+; The Pokemon will appear at Box 10 Slot 19.
 
-; Use this code after a battle with the Pokemon(s) you want to copy.
-; This code can copy only one Pokemon at a time.
-; The Pokemon will be at Box 10 Slot 19.
-
-slot ?= 0          ; Starts at 0 (0–5, use 0 for wild encounters)
+slot ?= 0          ; Starts at 0 (0–5, 0 for wild encounters)
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify the parameters below
 
 @@
 
-; r12 = &Box10Slot19
-SBC r12, r15, {0x2940 + (inaccurate_emu? 7: 9)} ?2
+; SBC r12, r15, {0x2940 + (inaccurate_emu? 7: 9)} ?2 ; r12 = &Box10Slot19
+SBC r12, r15, #0x2880                      ; r12 = &Box10Slot19 + (inaccurate_emu? 0xC7: 0xC9)
+SBC r12, r12, {inaccurate_emu? 0xC6: 0xC8} ; r12 = &Box10Slot19
 
-; r11 = &sSavedOpponentParty + slot*100
-SUB r11, r14, {0x080069E7 - (0x0203CA18 + slot*100)} ?5
+MOV r11, #0x3FC00                    ; r11 = 0x3FC00 (&sSavedOpponentParty - 0x01FFCE18)
+SUB r11, r11, {0x31E8 + slot*100} ?2 ; r11 = 0x3CA18 + slot*100 (&sSavedOpponentParty - 0x02000000 + slot*100)
+ADC r11, r11, r7, ROR #7             ; r11 = &sSavedOpponentParty + slot*100 (r7 is 0x1, so ROR(0x1, 0x7) == 0x02000000)
 
-0xE8BB00EE  ; LDMIA r11!, {r1-r3, r5-r7}
-0xE8AC00EE  ; STMIA r12!, {r1-r3, r5-r7}
-0xE8BB00EE  ; LDMIA r11!, {r1-r3, r5-r7}
-0xE8AC00EE  ; STMIA r12!, {r1-r3, r5-r7}
-0xE8BB00EE  ; LDMIA r11!, {r1-r3, r5-r7}
-0xE8AC00EE  ; STMIA r12!, {r1-r3, r5-r7}
-0xE8BB00C0  ; LDMIA r11!, {r6, r7}
-0xE8AC00C0  ; STMIA r12!, {r6, r7}
+0xE8BB00EE ; LDMIA r11!, {r1-r3, r5-r7}
+0xE8AC00EE ; STMIA r12!, {r1-r3, r5-r7}
+0xE8BB00EE ; LDMIA r11!, {r1-r3, r5-r7}
+0xE8AC00EE ; STMIA r12!, {r1-r3, r5-r7}
+0xE8BB00EE ; LDMIA r11!, {r1-r3, r5-r7}
+0xE8AC00EE ; STMIA r12!, {r1-r3, r5-r7}
+0xE8BB00C0 ; LDMIA r11!, {r6, r7}
+0xE8AC00C0 ; STMIA r12!, {r6, r7}
