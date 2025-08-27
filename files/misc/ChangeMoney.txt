@@ -6,6 +6,8 @@
 ; execute any code with "CertificateFullENG" exit or execute
 ; "Restore 'BX r0' in box 14 name" code to write it.
 
+; [!] If you win money and you have 9.999.999 Pk$ or more, it will be capped at 9.999.999 Pk$
+
 money ?= 0x00000000
 inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
 
