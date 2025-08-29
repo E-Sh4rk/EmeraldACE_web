@@ -1,0 +1,18 @@
+@@ title = "Change Trainer Gender"
+@@ author = "Sleipnir17 (adapted by Gui64977)"
+@@ exit = "CertificateShort{LANG}" ; or any other exit
+
+; If you use the Certificate exit, you will not see any
+; change in the player sprite until you reload your sprite
+
+gender ?= 0        ; 0 for male, 1 for female
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+; Do not modify the parameters below
+
+@@
+
+SBC r12, r15, #0xD100
+SBC r12, r12, #0xD0
+MOV r11, {gender & 0xFF} ?2
+STRB r11, [r12, {inaccurate_emu? 0xDA: 0xD8}]!

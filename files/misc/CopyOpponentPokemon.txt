@@ -1,6 +1,6 @@
 @@ title = "Copy Opponent Pokemon"
 @@ author = "Gui64977"
-@@ exit = "CertificateShortENG" ; or "Bootstrapped"
+@@ exit = "CertificateShort{LANG}" ; or "Bootstrapped"
 
 ; Execute this code after an battle with the Pokemon(s) you want to copy.
 ; The Pokemon will appear at Box 10 Slot 19.
@@ -17,8 +17,8 @@ SBC r12, r15, #0x2880                      ; r12 = &Box10Slot19 + (inaccurate_em
 SBC r12, r12, {inaccurate_emu? 0xC6: 0xC8} ; r12 = &Box10Slot19
 
 MOV r11, #0x3FC00                    ; r11 = 0x3FC00 (&sSavedOpponentParty - 0x01FFCE18)
-SUB r11, r11, {0x31E8 + slot*100} ?2 ; r11 = 0x3CA18 + slot*100 (&sSavedOpponentParty - 0x02000000 + slot*100)
-ADC r11, r11, r7, ROR #7             ; r11 = &sSavedOpponentParty + slot*100 (r7 is 0x1, so ROR(0x1, 0x7) == 0x02000000)
+ADC r11, r11, r7, ROR #7             ; r11 = 0x0203FC00 (&sSavedOpponentParty + 0x31E8) (r7 is 0x1, so ROR(0x1, 0x7) == 0x02000000)
+SUB r11, r11, {0x31E8 + slot*100} ?2 ; r11 = &sSavedOpponentParty + slot*100
 
 0xE8BB00EE ; LDMIA r11!, {r1-r3, r5-r7}
 0xE8AC00EE ; STMIA r12!, {r1-r3, r5-r7}
