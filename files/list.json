@@ -582,5 +582,14 @@
     "spa": "misc/ChangeCoins.txt",
     "ita": "misc/ChangeCoins.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Trainer Gender",
+    "eng": "misc/ChangeTrainerGender.txt",
+    "fra": "misc/ChangeTrainerGender.txt",
+    "ger": "misc/ChangeTrainerGender.txt",
+    "spa": "misc/ChangeTrainerGender.txt",
+    "ita": "misc/ChangeTrainerGender.txt",
+    "cat": ["misc"]
   }
 ]
