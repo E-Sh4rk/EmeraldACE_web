@@ -187,8 +187,6 @@
     "ger": "pkmn/PokemonFromNothing.txt",
     "spa": "pkmn/PokemonFromNothing.txt",
     "ita": "pkmn/PokemonFromNothing.txt",
-    "jap0": "pkmn/PokemonFromNothing.txt",
-    "jap1": "pkmn/PokemonFromNothing.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
@@ -211,8 +209,6 @@
     "ger": "pkmn/Create6IVEgg.txt",
     "spa": "pkmn/Create6IVEgg.txt",
     "ita": "pkmn/Create6IVEgg.txt",
-    "jap0": "pkmn/Create6IVEgg.txt",
-    "jap1": "pkmn/Create6IVEgg.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -224,8 +220,6 @@
     "ger": "pkmn/HiddenPowerEgg.txt",
     "spa": "pkmn/HiddenPowerEgg.txt",
     "ita": "pkmn/HiddenPowerEgg.txt",
-    "jap0": "pkmn/HiddenPowerEgg.txt",
-    "jap1": "pkmn/HiddenPowerEgg.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
