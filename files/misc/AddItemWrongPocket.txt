@@ -31,12 +31,13 @@
 ;  * If you want to USE the item, use Key Items Pocket.
 ;  * If you want to GIVE the item, use Balls Pocket.
 
-;  Don't use Berries or TMs, they probably won't work if you try to use them
-;  from the wrong pocket.
+;  Don't USE (Key Items Pocket) Berries or TMs, they probably won't work if you
+;  try to use them from the wrong pocket. However, you can GIVE (Balls Pocket)
+;  them to a mon if you want.
 
-;  As mentioned above, when the item is used from the wrong pocket, the game will
-;  try to reduce the item quantity in the correct pocket. You can avoid losing
-;  that item by moving it to the PC.
+;  As mentioned above, when the item is used (or given) from the wrong pocket,
+;  the game will try to reduce the item quantity in the correct pocket. You can
+;  avoid losing that item by moving it to the PC.
 
 
 ; DELETE MODE
