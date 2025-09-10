@@ -1,0 +1,24 @@
+@@ title = "Run script via GlobalScriptContext"
+@@ author = "final and Mettrich"
+@@ exit = "GrabACEExit"
+
+// This code inserts a custom script pointer into the global script
+// context (and also sets some other stuff) that will run as soon as
+// you leave Bill’s PC in a Pokémon Center or in the Daycare.
+//
+// Script addresses from "Run script via NPC" should work here.
+//
+// Trigger ACE, then leave the boxes, and then exit the menu, the
+// script should run.
+// Works for all non-Japanese games/versions.
+
+script_address = 0x0
+
+@@
+
+MOV r10, #0x3000000
+STRB r10, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus
+BIC r12, sp, #0x3fc00  ; r12 = 0x3000200, prepare mode and stackDepth
+STRH r12, [r10, #0x8]  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
+MOV r12, #{script_address} ?
+STR r12, [r10, lr, ASR #23]!  ; Store script pointer in sGlobalScriptContext->scriptPtr
