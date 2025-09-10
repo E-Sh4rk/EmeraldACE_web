@@ -2,6 +2,9 @@
 @@ author = "Theocatic"				
 @@ exit = "Bootstrapped"
 
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://github.com/it-is-final/PokeG3ACE/blob/main/ace_notes/ExitCodes/FRLG_GrabACE_ShortExit.md
 
 ;After Executing this code talk to the Old Gentleman NPC in the Viridian City Pokemon Center similar to the Run script via NPC code.
 
@@ -24,7 +27,6 @@ str r11, [r10, {NPCOffset}]!
 mov r12, {ScriptStart} ?
 str r12, [r11]!
 mov r12, {ScriptEnd} ?
-0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
 0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
 0xE7ABCCAE ; STR r12, [r11, lr, LSR #25]!
 Adc r12, 0x02 ?
