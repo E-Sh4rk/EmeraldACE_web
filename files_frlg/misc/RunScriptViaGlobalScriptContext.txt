@@ -10,7 +10,6 @@
 //
 // Trigger ACE, then leave the boxes, and then exit the menu, the
 // script should run.
-// Works for all non-Japanese games/versions.
 
 script_address = 0x0
 
