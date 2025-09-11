@@ -23,7 +23,7 @@ map_id = 3
 // Set this to 0xff if you want to control the exact coordinates you
 // want to warp to via the `x` and `y` variables.
 
-warp = 0  
+warp = 0
 
 // Leave these values at 0 if you are using any `warp` value other
 // than 0xff.
