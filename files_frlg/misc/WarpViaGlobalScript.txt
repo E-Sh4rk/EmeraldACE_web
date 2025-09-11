@@ -43,7 +43,7 @@ STRB r10, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus
 BIC r12, sp, #0x3fc00  ; r12 = 0x3000200, prepare mode and stackDepth
 ADC r11, r4, #0x300  ; Prepare script pointer
 STRH r12, [r10, #0x8]  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
-STR r11, [r10, lr, LSR #23]!  ; Store script pointer in sGlobalScriptContext->scriptPtr
+STR r11, [r10, lr, ASR #23]!  ; Store script pointer in sGlobalScriptContext->scriptPtr
 MOV r12, #{script0} ?
 STR r12, [r11, #0]!  ; Store script part 1
 MOV r12, #{script1} ?
