@@ -591,5 +591,10 @@
     "spa": "misc/ChangeTrainerGender.txt",
     "ita": "misc/ChangeTrainerGender.txt",
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokémon PID or TID",
+    "eng": "pkmn/ChangePIDTID_ENG.txt",
+    "cat": ["pkmn"]
   }
 ]

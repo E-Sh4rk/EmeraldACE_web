@@ -438,5 +438,12 @@
     "spa": "misc/WarpViaGlobalScript.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Change Pokémon PID or TID (Bootstrapped)",
+    "eng0": "pkmn/ChangePIDTID_ENG.txt",
+    "eng1": "pkmn/ChangePIDTID_ENG.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
