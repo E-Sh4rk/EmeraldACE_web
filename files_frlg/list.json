@@ -419,23 +419,11 @@
   },
   {
     "name": "Run script via GlobalScriptContext",
-    "eng0": "misc/RunScriptViaGlobalScriptContext.txt",
-    "eng1": "misc/RunScriptViaGlobalScriptContext.txt",
-    "fra": "misc/RunScriptViaGlobalScriptContext.txt",
-    "ita": "misc/RunScriptViaGlobalScriptContext.txt",
-    "ger": "misc/RunScriptViaGlobalScriptContext.txt",
-    "spa": "misc/RunScriptViaGlobalScriptContext.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
   {
     "name": "Teleport anywhere (Bootstrapped)",
-    "eng0": "misc/WarpViaGlobalScript.txt",
-    "eng1": "misc/WarpViaGlobalScript.txt",
-    "fra": "misc/WarpViaGlobalScript.txt",
-    "ita": "misc/WarpViaGlobalScript.txt",
-    "ger": "misc/WarpViaGlobalScript.txt",
-    "spa": "misc/WarpViaGlobalScript.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   }
