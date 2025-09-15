@@ -69,7 +69,7 @@ ADCS r12, #0x28800
 ADCS r12, #0xa6
 
 MOVS r11, #0x3fc  ; Clear N flag, BX r12 jump part 1
-ADCGTS lr, pc, sp, LSR #29
+ADCGTS lr, pc, sp, LSR #29  ; Set new return address, lr = pc + 4
 BICS pc, r11, #0x290  ; BX r12 jump part 2, pc = 0x16C
 
 0xffffffff  ; Returns here with C set
