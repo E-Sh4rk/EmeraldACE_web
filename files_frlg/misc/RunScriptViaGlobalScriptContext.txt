@@ -18,12 +18,11 @@ script_address = 0x0
 MOV r10, #0x3000000  ; Prepare sGlobalScriptContextStatus address part 1
 MOV r11, #0x2e0  ; Prepare stackDepth, and mode part 1
 BIC r12, r10, #0xff000000  ; r12 = 0
-
-STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus, address part 2
-
 SBC r11, #0xde  ; r11 = 0x0201, prepare stackDepth, and mode part 2
 
+STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus, address part 2
 STRH r11, [r10, #8]!  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
 STR r12, [r10, lr, ASR #25]!  ; Store in sGlobalScriptContext->nativePtr
+
 MOV r12, {script_address} ?
 STR r12, [r10, lr, ASR #25]!  ; Store in sGlobalScriptContext->scriptPtr
