@@ -1,5 +1,5 @@
 @@ title = "Teleport anywhere (Bootstrapped)"
-@@ author = "final and Mettrich"
+@@ author = "final, Theocatic and Mettrich"
 @@ exit = "Bootstrapped"
 @@ filler0 = 0xbbbbbbbb
 @@ filler1 = 0xbbbbbbff
@@ -38,13 +38,15 @@ script1 = ((y & 0xffff) << 16) | (x & 0xffff)
 
 @@
 
-MOV r10, #0x3000000
-STRB r10, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus
-BIC r12, sp, #0x3fc00  ; r12 = 0x3000200, prepare mode and stackDepth
-ADC r11, r4, #0x300  ; Prepare script pointer
-STRH r12, [r10, #0x8]  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
-STR r11, [r10, lr, ASR #23]!  ; Store script pointer in sGlobalScriptContext->scriptPtr
-MOV r12, #{script0} ?
+MOV r10, #0x3000000  ; Prepare sGlobalScriptContextStatus address part 1
+ADC r11, r4, #0x300  ; Prepare script pointer (within gSaveDataBuffer)
+BIC r12, sp, #0x3fc00  ; Prepare stackDepth, and mode
+
+STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus
+STRH r12, [r10, #8]  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
+STR r11, [r10, lr, ASR #23]!  ; Store in sGlobalScriptContext->scriptPtr
+
+MOV r12, {script0} ?  ; Move in script part 1
 STR r12, [r11, #0]!  ; Store script part 1
-MOV r12, #{script1} ?
-STR r12, [r11, lr, ASR #25]!  ; Store script part 2 in r11+4
+MOV r12, {script1} ?  ; Move in script part 2
+STR r12, [r11, lr, ASR #25]!  ; Store script part 2
