@@ -63,8 +63,8 @@ MOV r12, #{option ? otid : pid} ? 5
 ADCS r11, lr, #0x3fc0
 STR r12, [r10, #{0xa9 - (!aligned_pc << 1) + (!!option << 2)}]!  ; Store in PID or OTID
 ADCS r12, r11, #0x37000
-0xE1FFBACD  ; MVNS r11, sp, ASR #21
-STR lr, [sp, r11, ROR #3]!  ; Store lr in sp-4
+0xE1FFBACD  ; MVNS r11, sp, ASR #21, r11 ROR 3 = -4
+STR lr, [sp, r11, ROR #3]!  ; Push return address to stack
 ADCS r12, #0x28800
 ADCS r12, #0xa6
 
@@ -77,5 +77,5 @@ BICS pc, r11, #0x290  ; BX r12 jump part 2, pc = 0x16C
 0xffffffff  ; (filler)
 0xffffffff  ; (filler)
 
-LDR lr, [sp, sp, LSR #29]!
-ADCS sp, sp, #3 ; sp = sp+4, due to carry
+LDR lr, [sp, r0, ASR #29]!  ; Load return address from stack
+ADCS sp, sp, #3  ; sp = sp+4, due to carry
