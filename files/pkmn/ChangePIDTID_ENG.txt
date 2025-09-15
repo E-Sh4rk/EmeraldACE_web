@@ -56,7 +56,7 @@ otid = ((sid & 0xffff) << 16) | (tid & 0xffff)
 SBC r10, pc, #0x2f40
 ADC r0, r10, #{0xa9 - (!aligned_pc << 1)}
 
-MOV r12, #{otid} ? 5
+MOV r12, #{option ? otid : pid} ? 5
 
 ; ADC r12, lr, #{0x0806a24d-0x080069e7} ?
 ; Moving &DecryptBoxMon to r12

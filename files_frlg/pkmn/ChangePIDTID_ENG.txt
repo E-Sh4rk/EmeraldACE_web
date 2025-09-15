@@ -60,7 +60,7 @@ rev = {LANG}
 SBC r10, pc, #0x2f40
 ADC r0, r10, #{0xa9 - (!aligned_pc << 1)}
 
-MOV r12, #{option ? pid : otid} ? 5
+MOV r12, #{option ? otid : pid} ? 5
 
 ; MOV r12, #{rev > 0 ? 0x0803f90d : 0x0803f8f9} ?
 ; Moving &EncryptBoxMon to r12
