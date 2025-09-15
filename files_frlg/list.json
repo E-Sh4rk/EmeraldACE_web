@@ -419,6 +419,12 @@
   },
   {
     "name": "Run script via GlobalScriptContext",
+    "eng0": "misc/RunScriptViaGlobalScriptContext.txt",
+    "eng1": "misc/RunScriptViaGlobalScriptContext.txt",
+    "fra": "misc/RunScriptViaGlobalScriptContext.txt",
+    "ita": "misc/RunScriptViaGlobalScriptContext.txt",
+    "ger": "misc/RunScriptViaGlobalScriptContext.txt",
+    "spa": "misc/RunScriptViaGlobalScriptContext.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },

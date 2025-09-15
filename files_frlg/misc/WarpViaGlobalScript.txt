@@ -42,7 +42,7 @@ MOV r10, #0x3000000  ; Prepare sGlobalScriptContextStatus address part 1
 ADC r11, r4, #0x300  ; Prepare script pointer (within gSaveDataBuffer)
 BIC r12, sp, #0x3fc00  ; Prepare stackDepth, and mode
 
-STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus
+STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus, address part 2
 STRH r12, [r10, #8]  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
 STR r11, [r10, lr, ASR #23]!  ; Store in sGlobalScriptContext->scriptPtr
 
