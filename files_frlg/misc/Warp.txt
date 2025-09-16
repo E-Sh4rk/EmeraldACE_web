@@ -1,0 +1,59 @@
+@@ title = "Teleport anywhere (Bootstrapped)"
+@@ author = "final, Theocatic and Mettrich"
+@@ exit = "Bootstrapped"
+@@ filler4 = 0xffffffff
+
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+
+// Talk to the designated NPC to perform the teleportation after
+// executing this code.
+
+// The map list can be found here:
+// https://pastebin.com/peDhNbEt
+
+map_id = 3
+
+// `warp` determines which warp point you will teleport to.
+// Set this to 0xff if you want to control the exact coordinates you
+// want to warp to via the `x` and `y` variables.
+
+warp = 0
+
+// `npc` determines the NPC that will execute the custom script.
+// Default value `1` corresponds to the Pokémon Center Nurse in
+// all Pokémon Centers, or the man in the Route 5 daycare.
+
+npc = 1
+
+// Leave these values at 0 if you are using any `warp` value other
+// than 0xff.
+
+x = 0
+y = 0
+
+// `aligned_pc` should be set to 1 if you are using species 0x0351 on an old emulator, or using alternate ACE species that enter the boxes with an aligned PC (entrypoint % 2 == 0).
+
+aligned_pc = 0
+
+// Do not touch the below variables
+
+script0 = ((warp & 0xff) << 24) | ((map_id & 0xffff) << 8) | 0x39
+script1 = ((y & 0xffff) << 16) | (x & 0xffff)
+npc_offset = 0x1A5 + (npc * 0x18) + ((!!aligned_pc) << 1) + 0x400  // 0x400 added to avoid quote characters
+
+@@
+
+SBC r10, pc, 0xBE00
+ADC r11, r4, #0x300  ; Prepare script pointer (within gSaveDataBuffer)
+STR r11, [r10, {npc_offset}]!
+
+MOV r12, {script0} ?5  ; Move in script part 1
+STR r12, [r11, #0]!  ; Store script part 1
+
+MOV r12, {script1} ?5  ; Move in script part 2
+STR r12, [r11, lr, ASR #25]!  ; Store script part 2
+
+MOV r12, #0xfc000002  ; Not needed for NPCs, but if using this for setting up script for GlobalScriptContext, then it is needed due to GlobalScriptContext continuing to execute past 0x39.
+STRB r12, [r11, lr, ASR #25]  ; Store script part 3
