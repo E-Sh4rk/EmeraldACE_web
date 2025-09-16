@@ -430,12 +430,6 @@
   },
   {
     "name": "Teleport anywhere (Bootstrapped)",
-    "eng0": "misc/WarpViaGlobalScript.txt",
-    "eng1": "misc/WarpViaGlobalScript.txt",
-    "fra": "misc/WarpViaGlobalScript.txt",
-    "ita": "misc/WarpViaGlobalScript.txt",
-    "ger": "misc/WarpViaGlobalScript.txt",
-    "spa": "misc/WarpViaGlobalScript.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   }
