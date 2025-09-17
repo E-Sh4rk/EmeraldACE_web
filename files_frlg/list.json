@@ -34,6 +34,17 @@
     "game": ["fr", "lg"],
     "cat": ["rng"]
   },
+    {
+    "name": "Replace TID with SID",
+    "eng1": "misc/copySIDtoTID.txt",
+    "eng0": "misc/copySIDtoTID.txt",
+    "fra": "misc/copySIDtoTID.txt",
+    "ger": "misc/copySIDtoTID.txt",
+    "spa": "misc/copySIDtoTID.txt",
+    "ita": "misc/copySIDtoTID.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
   {
     "name": "Change TID and SID (move ACE)",
     "eng1": "rng/tidsid_moveACE.txt",
