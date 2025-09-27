@@ -234,6 +234,17 @@
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
+    {
+    "name": "Replace Pokemon OT w/ Trainer Name (bootstrapped)",
+    "eng1": "pkmn/ReplacePokemonOT.txt",
+    "eng0": "pkmn/ReplacePokemonOT.txt",
+    "fra": "pkmn/ReplacePokemonOT.txt",
+    "ger": "pkmn/ReplacePokemonOT.txt",
+    "spa": "pkmn/ReplacePokemonOT.txt",
+    "ita": "pkmn/ReplacePokemonOT.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
   {
     "name": "Start wild battle with any Pokemon",
     "eng1": "pkmn/StartWildBattleWithAnyPokemon.txt",
