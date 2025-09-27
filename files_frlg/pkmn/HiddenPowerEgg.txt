@@ -70,7 +70,7 @@ met_data ?= 0x29C0
 ; If used after executing "Replace TID with SID," all Eggs generated this way will be Shiny.
 
 ; Don't touch this variable.
-Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data)
+Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data) & 0xFFFF
 @@
 
 SBC r11, pc, #0x2F00
