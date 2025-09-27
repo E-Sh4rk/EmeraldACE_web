@@ -709,7 +709,7 @@ ADCS r15, r12, #0x370
 
 ====================
 
-@@ filename = "ROM_BX_r0_Box5"
+@@ filename = "ROM_BX_r0_Box6"
 @@ start = 48
 @@ fill = false
 @@
@@ -739,7 +739,7 @@ ADCS r15, r12, #0x398
 
 ====================
 
-@@ filename = "ROM_BX_lr_Box5"
+@@ filename = "ROM_BX_lr_Box6"
 @@ start = 48
 @@ fill = false
 @@
@@ -770,7 +770,7 @@ ADCS r15, r12, #0x398
 
 ====================
 
-@@ filename = "ROM_BX_lr_Box5_Grab"
+@@ filename = "ROM_BX_lr_Box6_Grab"
 @@ start = 44
 @@ fill = false
 @@
@@ -801,7 +801,7 @@ movs r15, #0x324
 
 ====================
 
-@@ filename = "BIOS_BX_r0_Box5"
+@@ filename = "BIOS_BX_r0_Box6"
 @@ start = 52
 @@ fill = false
 @@
@@ -828,7 +828,7 @@ movs r15, #0x354
 
 ====================
 
-@@ filename = "BIOS_BX_lr_Box5"
+@@ filename = "BIOS_BX_lr_Box6"
 @@ start = 52
 @@ fill = false
 @@
@@ -856,7 +856,7 @@ movs r15, #0x354
 
 ====================
 
-@@ filename = "BIOS_BX_lr_Box5_Grab"
+@@ filename = "BIOS_BX_lr_Box6_Grab"
 @@ start = 48
 @@ fill = false
 @@
