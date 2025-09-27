@@ -507,6 +507,55 @@ ADCS r15, r12, #0x33c
 
 ====================
 
+@@ filename = "ROM_BX_lr_Box2_ENG_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+// This is identical to `ROM_BX_lr_Box2_ENG`, this is created for
+// consistency with European versions of the exit code where they do
+// have a shorter method of doing BX lr by itself. Allows for easier
+// `LANG` substitution.
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_ENG_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+// This is identical to `ROM_BX_lr_Box6_ENG`, this is created for
+// consistency with European versions of the exit code where they do
+// have a shorter method of doing BX lr by itself. Allows for easier
+// `LANG` substitution.
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_ENG_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+// This is identical to `ROM_BX_lr_Box10_ENG`, this is created for
+// consistency with European versions of the exit code where they do
+// have a shorter method of doing BX lr by itself. Allows for easier
+// `LANG` substitution.
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+====================
+
 @@ filename = "ROM_BX_r0_Box2_EUR"
 @@ start = 12
 @@ fill = false
@@ -542,6 +591,11 @@ ADCS r15, r12, #0x348
 @@ fill = false
 @@
 
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
+
 0xe3bdc3c2 ; MOVS r12, #0x8000003
 ADCS r15, r12, #0x370
 
@@ -551,6 +605,11 @@ ADCS r15, r12, #0x370
 @@ start = 48
 @@ fill = false
 @@
+
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
 
 0xe3bdc3c2 ; MOVS r12, #0x8000003
 ADCS r15, r12, #0x370
@@ -562,6 +621,11 @@ ADCS r15, r12, #0x370
 @@ fill = false
 @@
 
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
+
 0xe3bdc3c2 ; MOVS r12, #0x8000003
 ADCS r15, r12, #0x370
 
@@ -571,6 +635,11 @@ ADCS r15, r12, #0x370
 @@ start = 8
 @@ fill = false
 @@
+
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
 
 BIC r0, r0, #0xff
 0xe3bdc3c2 ; MOVS r12, #0x8000003
@@ -583,6 +652,11 @@ ADCS r15, r12, #0x370
 @@ fill = false
 @@
 
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
+
 BIC r0, r0, #0xff
 0xe3bdc3c2 ; MOVS r12, #0x8000003
 ADCS r15, r12, #0x370
@@ -590,6 +664,384 @@ ADCS r15, r12, #0x370
 ====================
 
 @@ filename = "ROM_BX_lr_Box10_EUR_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+// French, Italian, German, and Spanish version of this exit code are
+// identical to this exit code. The individual language versions only
+// exist for ease of using `LANG` to substitute in the individual
+// language.
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+
+====================
+
+@@ filename = "ROM_BX_r0_Box2_FRA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6_FRA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_FRA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_FRA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_FRA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_FRA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_FRA_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_FRA_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_FRA_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box2_ITA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6_ITA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_ITA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_ITA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_ITA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_ITA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_ITA_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_ITA_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_ITA_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box2_GER"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6_GER"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_GER"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_GER"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_GER"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_GER"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_GER_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_GER_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_GER_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box2_SPA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6_SPA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_SPA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_SPA"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_SPA"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_SPA"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_SPA_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_SPA_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_SPA_Grab"
 @@ start = 80
 @@ fill = false
 @@
