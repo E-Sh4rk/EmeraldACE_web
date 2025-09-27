@@ -440,6 +440,250 @@ ldr r0, [r15, -0x4]             ;  Load CB2_LoadMap2SJAP
 
 ====================
 
+@@ filename = "ROM_BX_r0_Box2_ENG"
+@@ start = 8
+@@ fill = false
+@@
+
+0xe3e3c0ff ; MVN r12, #0xff
+BIC r12, r12, #0xf8000002
+ADCS r15, r12, #0x314
+
+====================
+
+@@ filename = "ROM_BX_r0_Box5_ENG"
+@@ start = 44
+@@ fill = false
+@@
+
+0xe3e3c0ff ; MVN r12, #0xff
+BIC r12, r12, #0xf8000002
+ADCS r15, r12, #0x314
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_ENG"
+@@ start = 80
+@@ fill = false
+@@
+
+0xe3e3c0ff ; MVN r12, #0xff
+BIC r12, r12, #0xf8000002
+ADCS r15, r12, #0x314
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_ENG"
+@@ start = 8
+@@ fill = false
+@@
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+
+====================
+
+@@ filename = "ROM_BX_lr_Box5_ENG"
+@@ start = 44
+@@ fill = false
+@@
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_ENG"
+@@ start = 80
+@@ fill = false
+@@
+
+0xe3e300ff ; MVN r0, #0xff
+BIC r12, r0, #0xf8000002
+ADCS r15, r12, #0x33c
+
+====================
+
+@@ filename = "ROM_BX_r0_Box2_EUR"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box5_EUR"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10_EUR"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x348
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_EUR"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box5_EUR"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_EUR"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_EUR_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box5_EUR_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_EUR_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box5"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box5"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2_Grab"
+@@ start = 12
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box5_Grab"
+@@ start = 48
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10_Grab"
+@@ start = 84
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@
