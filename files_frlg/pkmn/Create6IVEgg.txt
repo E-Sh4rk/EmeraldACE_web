@@ -56,7 +56,7 @@ met_data ?= 0x29C0
 
 ; Don't touch these variables.
 IVs = 0xFFFFFFFF
-Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data)
+Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data) & 0xFFFF
 @@
 
 SBC r11, pc, #0x2F00
