@@ -832,6 +832,271 @@ ADC r0, r11, #0xc6
 
 ====================
 
+@@ filename = "ROM_BX_r0_Box2"
+@@ start = 12
+@@ fill = false
+@@
+
+; This should be used mostly when a good escape function is in r0,
+; for example the Certificate, Teleport or a sprite clear function
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6"
+@@ start = 48
+@@ fill = false
+@@
+
+; This should be used mostly when a good escape function is in r0,
+; for example the Certificate, Teleport or a sprite clear function
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10"
+@@ start = 84
+@@ fill = false
+@@
+
+; This should be used mostly when a good escape function is in r0,
+; for example the Certificate, Teleport or a sprite clear function
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2"
+@@ start = 12
+@@ fill = false
+@@
+
+; This exit can be used with all (meta)stable Thumb species,
+; but not all (meta)stable ARM species.
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6"
+@@ start = 48
+@@ fill = false
+@@
+
+; This exit can be used with all (meta)stable Thumb species,
+; but not all (meta)stable ARM species.
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10"
+@@ start = 84
+@@ fill = false
+@@
+
+; This exit can be used with all (meta)stable Thumb species,
+; but not all (meta)stable ARM species.
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_Sprite"
+@@ start = 8
+@@ fill = false
+@@
+
+; This exit code works with any stable ACE species
+
+BICS r11, r14, #0xff00
+STRH r13, [r4, #0x3e]
+ADCS r15, r11, #0x2b4
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_Sprite"
+@@ start = 44
+@@ fill = false
+@@
+
+; This exit code works with any stable ACE species
+
+BICS r11, r14, #0xff00
+STRH r13, [r4, #0x3e]
+ADCS r15, r11, #0x2b4
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_Sprite"
+@@ start = 80
+@@ fill = false
+@@
+
+; This exit code works with any stable ACE species
+
+BICS r11, r14, #0xff00
+STRH r13, [r4, #0x3e]
+ADCS r15, r11, #0x2b4
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box6"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box6"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2_Sprite"
+@@ start = 12
+@@ fill = false
+@@
+
+strh r13, [r4, #0x3e]
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box6_Sprite"
+@@ start = 48
+@@ fill = false
+@@
+
+strh r13, [r4, #0x3e]
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10_Sprite"
+@@ start = 84
+@@ fill = false
+@@
+
+strh r13, [r4, #0x3e]
+movs pc, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2_Grab"
+@@ start = 12
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box6_Grab"
+@@ start = 48
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10_Grab"
+@@ start = 84
+@@ fill = false
+@@
+
+mov r0, #0x0
+movs pc, #0x354
+
+====================
+
 @@ filename = "Bootstrapped"
 @@ start = 116
 @@
+
