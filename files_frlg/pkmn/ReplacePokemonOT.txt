@@ -1,0 +1,20 @@
+@@ title = "Replace Pokemon OT with Your OT"
+@@ author = "Papa Jefe"
+@@ exit = "Bootstrapped"
+
+; Replaces the OT Name of the Pokemon in Box 10 Slot 2, with your OT Name
+
+
+@@
+
+sbc r12, r15, #0xD108 ? ; offset for OT Name
+sbc r10, pc, #0x2F10 ? ; offset for Box 10 Slot 2
+ldrh r11, [r12, #0x2F] ; Load 1st OT Halfword
+strh r11, [r10, #0x80] ; Store 1st OT Halfword
+ldrh r11, [r12, #0x31] ; Load 2nd OT Halfword
+strh r11, [r10, #0x82] ; Store 2nd OT Halfword
+ldrh r11, [r12, #0x33] ; Load 3rd OT Halfword
+strh r11, [r10, #0x84] ; Store 3rd OT Halfword
+ldrh r11, [r12, #0x35] ; Load 4th OT Halfword
+bic r11, r11, 0xFF00 ; Fix Marking Data
+strh r11, [r10, #0x85] ; Store 4th OT Halfword

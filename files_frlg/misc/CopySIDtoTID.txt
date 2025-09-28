@@ -1,0 +1,14 @@
+@@ title = "Replace TID with SID (Grab ACE)"
+@@ author = "Papa Jefe"
+@@ exit = "GrabACEExit"
+
+; Check Trainer Card after execution to quickly learn Secret ID.
+; Reset game to restore original Trainer ID.
+
+; After running, hatched Eggs made via "Create Egg from nothing" will always be Shiny.
+
+@@
+
+sbc r12, r15, #0xd100
+ldrh r11, [r12, #0x33]
+strh r11, [r12, #0x32]

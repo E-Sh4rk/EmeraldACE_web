@@ -2,7 +2,10 @@
 @@ author = "Papa Jefe & im a blisy"
 @@ exit = "GrabACEExit" // Use "CommonExit" for move ACE.
 
-; Store the TID/SID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
+; Allows user to check the Secret ID of traded Pokemon from other games.
+; Use "Replace TID with SID" to check personal Secret ID faster.
+
+; Stores the TID/SID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
 ; Pokemon in 3rd Party Slot must have no stats bigger than 2 digits. 
 ; Stat changes will reverse themselves after depositing to the PC.
 

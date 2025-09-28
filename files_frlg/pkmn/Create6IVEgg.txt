@@ -2,38 +2,69 @@
 @@ author = "PapaJefe & Adrichu00"
 @@ exit = "GrabACEExit"
 
-; This creates a hatchable Egg of any species, with 31 IVs in every stat in Box 9 Slot 27.
-; Make sure Box 9 Slot 27 is empty beforehand.
-; PID and OTID will both be 0x00000000, so Nature is always Hardy, and Ability is always 0.
-; If using ability = 1, the Pokemon created in Box 9 Slot 27 won't be an Egg (at first).
+; ~STEP 1: SELECT SPECIES~
+; This code will create an Egg with the species of your choice in Box 10 Slot 2.
+; Make sure Box 10 Slot 2 is empty beforehand.
+; Type in species name below, and select from the dropdown to select its Index Number.
+
+species = POKEMON @input:species
+
+;~STEP 2: SELECT ABILITY~
+; ability = 0 is First Ability (Ex. Staryu: Illuminate)
+; ability = 1 is Second Ability (Ex. Staryu: Natural Cure)
+; NOTE!: ability=1 won't appear until after hatching.
+
+ability = 0
+
+;~STEP 3: CHOOSE ORIGIN GAME~
+; Alternate game origin will be preserved upon hatching. All other Met Data will self correct.
+; Emerald=0x29C0, FireRed=0x0A30, LeafGreen=0x02A4, Ruby=0xA100, Sapphire=0x2880 , XDColo=0x2FC0
+
+met_data ?= 0x29C0
+
+;~STEP 4: GENERATE & EXECUTE CODE~
+; If ability=0 an Egg will appear in Box 10 Slot 2.
+; If ability=1 a Lvl 0 Shiny of your chosen Pokemon will appear.
+; Move the Egg/Pokemon to Box 3 Slot 1.
+
+;~STEP 5: CHOOSE PID for NATURE/ABILITY~
+; The PID and OTID will be 0x00000000, so Nature is always Hardy and Ability is 0.
 ; You can change Nature/Ability by combining with the Mail Glitch.
-;
-; After execution, move the Egg/Pokemon to Box 3 Slot 1.
-;
+
 ; Choose ONE word that matches your desired Nature/Ability from this list:
 ; https://e-sh4rk.github.io/EmeraldACE_web/doc/naturewords.txt
-;
-; Activate the Glitched Mail Message, and enter the same word into the first four slots.
-;
+
 ; For example, Adamant/Ability 0 would be:
+; GAEM Adamant	1800	LIFESTYLE	CHORES
+
+; Adamant/Ability 1 would be:
+; GAME Adamant	1C01	TIME	MORNING
+
+; Activate the Glitched Mail Message, and enter the chosen word into the first four slots.
+
+; ~EXAMPLE MAIL MESSAGE~
 ; CHORES CHORES
 ; CHORES CHORES
-;
-; After entering the words, hatch the Egg.
 
+; The Egg's PID is now 0x1800 1800
+; If ability=0, nothing about the Egg should visibly change.
+; If ability=1, the Lvl 0 Shiny Pokemon should become an Egg.
 
-species = 0x003F ; @input:species
-ability = 0 ; Either 0 or 1
+;~STEP 6: HATCH THE EGG~
+; Egg should contain desired Pokemon with chosen IVs, Nature & Ability.
+; If used after executing "Replace TID with SID," all Eggs generated this way will be Shiny.
 
+; Don't touch these variables.
+IVs = 0xFFFFFFFF
+Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data) & 0xFFFF
 @@
 
-sbc r11, pc, 0x3040 ; Offset for Box 9 Slot 27
-sbc r10, pc, 0x30C0
-mov r12, {species} ? ; Store Species in r12
-strh r12, [r11, 0x38] ; Write Species
-mov r12, 0xFFFFFFFF ? ; Store IVs in R12
-str r12, [r10, {ability? 0xD2: 0xDE}]! ; Write IVs
-mov r12, 0x02a4 ? ; Store Origin Data
-strh r12, [r11, {ability? 0x52:0x5E}] ; Write Origin Data
-mov r12, {species + 0x02A2} ? ; calc Checksum
-strh r12, [r11, 0x34] ; store Checksum
+SBC r11, pc, #0x2F00
+MOV r12, {species} ?
+STRH r12, [r11, #0x88] ; Store species
+MOV r12, {met_data} ?
+STRH r12, [r11, #{ability ? 0xA2 : 0xAE}] ; Store origin data
+MOV r12, {Checksum} ?
+STRH r12, [r11, #0x84] ; Store checksum
+MOV r12, {IVs} ?
+STR r12, [r11, #{ability ? 0xA4 : 0xB0}]! ; Store IVs
