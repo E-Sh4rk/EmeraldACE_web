@@ -15,14 +15,16 @@
 ID = 0xD7           ; 0xDB for OTID, 0xD7 for PID
 CTYPE = 0x40000000  ; 0x40000000 OR 0x00004000 
 
+aligned_pc = 0 ; Set to 1 for old emulators
+
 @@
 
 sbc r11,pc,0x7160 ? 
 movs r12, 0xE02C ?
-STRH r12,[pc,0x1C]
+STRH r12,[pc,{0x1e - (!aligned_pc * 2)}]
 movs r12,{CTYPE|0x30} ?
 0x0000FF00
 bic r0,r12, 0xB0 
-ldr r12,[r11,{ID}]!  ; 0xDB for TID, 0xD7 for PID
+ldr r12,[r11,{ID + (!!aligned_pc * 2)}]!  ; 0xDB for TID, 0xD7 for PID
 0xEEEEC000
 str r12,[r11]!

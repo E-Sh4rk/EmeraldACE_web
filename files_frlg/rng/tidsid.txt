@@ -5,10 +5,12 @@
 tid = 00000
 sid = 00000
 
+aligned_pc = 0 ; Set to 1 for old emulators
+
 @@
 
 sbc r12, r15, #0xd100
 movs r11, {tid} ?
-strh r11, [r12, #0x32]
+strh r11, [r12, #{0x34 - (!aligned_pc * 2)}]
 movs r11, {sid} ?
-strh r11, [r12, #0x34]
+strh r11, [r12, #{0x36 - (!aligned_pc * 2)}]

@@ -35,13 +35,11 @@ y = 0
 
 // `aligned_pc` should be set to 1 if you are using species 0x0351 on an old emulator, or using alternate ACE species that enter the boxes with an aligned PC (entrypoint % 2 == 0).
 
-aligned_pc = 0
-
 // Do not touch the below variables
 
 script0 = ((warp & 0xff) << 24) | ((map_id & 0xffff) << 8) | 0x39
 script1 = ((y & 0xffff) << 16) | (x & 0xffff)
-npc_offset = 0x1A5 + (npc * 0x18) + ((!!aligned_pc) << 1) + 0x400  // 0x400 added to avoid quote characters
+npc_offset = 0x1A5 + (npc * 0x18) + 0x400  // 0x400 added to avoid quote characters
 
 @@
 
