@@ -16,10 +16,10 @@
 
 ADCGTS r12, r15, r14, ASR #21  ; Pointer to Box 9's Name
 
-;; SUB r12, pc, 0xd0dc ? ; Pointer to Trainer Name
+;; SUB r11, pc, 0xd0dc ? ; Pointer to Trainer Name
 
-SBC r12, r15, #0xd000
-SBC r12, r15, #0xda
+SBC r11, r15, #0xd000
+SBC r11, r15, #0xda
 
-0xE8BB00C0            ; (LDMIA r11! {r6, r7}) Load name in r6 & r7
-0xE8AC00C0            ; (STMIA r12! {r6, r7}) Write trainer name
+0xE8BC00C0            ; (LDMIA r12! {r6, r7}) Load name in r6 & r7
+0xE8AB00C0            ; (STMIA r11! {r6, r7}) Write trainer name
