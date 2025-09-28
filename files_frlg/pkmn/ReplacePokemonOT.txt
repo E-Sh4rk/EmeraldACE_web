@@ -1,20 +1,33 @@
-@@ title = "Replace Pokemon OT with Your OT"
-@@ author = "Papa Jefe"
-@@ exit = "Bootstrapped"
+@@ title = "Replace Pokemon OT w/ Your Trainer Name"
+@@ author = "Papa Jefe and final"
+@@ exit = "ROM_BX_lr_Box6_Grab"
+@@ filler4 = 0xffffffff
 
-; Replaces the OT Name of the Pokemon in Box 10 Slot 2, with your OT Name
+// This code replaces the OT name of the Pokémon in Box 9, Slot 27 with
+// your trainer name.
 
+// Note: Soft resetting will not work after executing this code.
+
+aligned_pc = 0 ; Set to 1 for old emulators
 
 @@
 
-sbc r12, r15, #0xD108 ? ; offset for OT Name
-sbc r10, pc, #0x2F10 ? ; offset for Box 10 Slot 2
-ldrh r11, [r12, #0x2F] ; Load 1st OT Halfword
-strh r11, [r10, #0x80] ; Store 1st OT Halfword
-ldrh r11, [r12, #0x31] ; Load 2nd OT Halfword
-strh r11, [r10, #0x82] ; Store 2nd OT Halfword
-ldrh r11, [r12, #0x33] ; Load 3rd OT Halfword
-strh r11, [r10, #0x84] ; Store 3rd OT Halfword
-ldrh r11, [r12, #0x35] ; Load 4th OT Halfword
-bic r11, r11, 0xFF00 ; Fix Marking Data
-strh r11, [r10, #0x85] ; Store 4th OT Halfword
+;; sub r12, r15, #0xd0d8 ?
+
+SBC r12, r15, #0xd000
+SBC r12, r12, #0xd6  ; r10 = &gSaveBlock2, LDMIA ignores alignment
+
+SBC r10, r15, #0x3fc0 ; offset for Box 9 Slot 27 - 0xfa5
+
+0xe8bc00c0 ; LDMIA r12!, {r6-r7} ; Load OT name into r6 and r7
+
+STR r15, [r10, #0xfa5]! ; Set address, it will be overwritten
+
+0xe8ca00c0 ; STMIA r10, {r6-r7} ^ ; Store OT name from r6 and r7
+
+;; MVNS r12, #{aligned_pc ? 0xc0000000 : 0xd0000000}
+{aligned_pc ? 0xe3ffc4c0 : 0xe3ffc4d0}
+
+MOVS r11, #0xbc00
+STRB r11, [r10, r12, ASR #27]  ; Store in marking, r10+5 for misaligned r15, r10+7 for aligned r15
+0xffffffff ; (filler)

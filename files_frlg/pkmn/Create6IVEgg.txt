@@ -2,6 +2,8 @@
 @@ author = "PapaJefe & Adrichu00"
 @@ exit = "GrabACEExit"
 
+aligned_pc = 0 ; Set to 1 for old emulators
+
 ; ~STEP 1: SELECT SPECIES~
 ; This code will create an Egg with the species of your choice in Box 10 Slot 2.
 ; Make sure Box 10 Slot 2 is empty beforehand.
@@ -57,14 +59,15 @@ met_data ?= 0x29C0
 ; Don't touch these variables.
 IVs = 0xFFFFFFFF
 Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data) & 0xFFFF
+
 @@
 
 SBC r11, pc, #0x2F00
 MOV r12, {species} ?
-STRH r12, [r11, #0x88] ; Store species
+STRH r12, [r11, #{0x88 + (!!aligned_pc * 2)}] ; Store species
 MOV r12, {met_data} ?
-STRH r12, [r11, #{ability ? 0xA2 : 0xAE}] ; Store origin data
+STRH r12, [r11, #{(ability ? 0xA2 : 0xAE) + (!!aligned_pc * 2)}] ; Store origin data
 MOV r12, {Checksum} ?
-STRH r12, [r11, #0x84] ; Store checksum
+STRH r12, [r11, #{0x84 + (!!aligned_pc * 2)}] ; Store checksum
 MOV r12, {IVs} ?
-STR r12, [r11, #{ability ? 0xA4 : 0xB0}]! ; Store IVs
+STR r12, [r11, #{(ability ? 0xA4 : 0xB0) + (!!aligned_pc * 2)}]! ; Store IVs

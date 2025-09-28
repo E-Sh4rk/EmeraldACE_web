@@ -7,6 +7,8 @@
 ; It can be found here:
 ; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
+aligned_pc = 0 ; Set to 1 for old emulators
+
 ; Once the Bootstrap is set up, follow the instructions below.
 
 ; ~STEP 1: SELECT SPECIES~
@@ -75,10 +77,10 @@ Checksum ? = ((IVs & 0xFFFF) + (IVs >> 16) + species + met_data) & 0xFFFF
 
 SBC r11, pc, #0x2F00
 MOV r12, {species} ?
-STRH r12, [r11, #0x88] ; Store species
+STRH r12, [r11, #{0x88 + (!!aligned_pc * 2)}] ; Store species
 MOV r12, {met_data} ?
-STRH r12, [r11, #{ability ? 0xA2 : 0xAE}] ; Store origin data
+STRH r12, [r11, #{(ability ? 0xA2 : 0xAE) + (!!aligned_pc * 2)}] ; Store origin data
 MOV r12, {Checksum} ?
-STRH r12, [r11, #0x84] ; Store checksum
+STRH r12, [r11, #{0x84 + (!!aligned_pc * 2)}] ; Store checksum
 MOV r12, {IVs} ?
-STR r12, [r11, #{ability ? 0xA4 : 0xB0}]! ; Store IVs
+STR r12, [r11, #{(ability ? 0xA4 : 0xB0) + (!!aligned_pc * 2)}]! ; Store IVs

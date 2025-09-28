@@ -1,14 +1,16 @@
 @@ title = "Replace TID with SID (Grab ACE)"
 @@ author = "Papa Jefe"
-@@ exit = "GrabACEExit"
+@@ exit = "ROM_BX_lr_Box6_Grab"
 
 ; Check Trainer Card after execution to quickly learn Secret ID.
 ; Reset game to restore original Trainer ID.
 
 ; After running, hatched Eggs made via "Create Egg from nothing" will always be Shiny.
 
+aligned_pc = 0 ; Set to 1 for old emulators
+
 @@
 
 sbc r12, r15, #0xd100
-ldrh r11, [r12, #0x33]
-strh r11, [r12, #0x32]
+ldrh r11, [r12, #{0x35 - (!aligned_pc * 2)}]
+strh r11, [r12, #{0x34 - (!aligned_pc * 2)}]

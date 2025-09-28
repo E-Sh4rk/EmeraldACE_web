@@ -30,7 +30,7 @@ L5 = 0xFF
 L6 = 0xFF 
 L7 = 0xFF
 
-
+aligned_pc = 0 ; Set to 1 for old emulators
 
 ; Do not modify these
 L8 = 0xFF00 ; Letter 8 Must be a termination character
@@ -44,12 +44,12 @@ name4 = L7 + L8
 
 @@
 
-sbcs r12, r15, #0xD100
+sbc r12, r15, #0xD100
 mov r11, {name1} ?
-strh r11, [r12, #0x28]
+strh r11, [r12, #{0x2a - (!aligned_pc * 2)}]
 mov r11, {name2} ?
-strh r11, [r12, #0x2A]
+strh r11, [r12, #{0x2c - (!aligned_pc * 2)}]
 mov r11, {name3}?
-strh r11, [r12, #0x2C]
+strh r11, [r12, #{0x2e - (!aligned_pc * 2)}]
 mov r11, {name4}?
-strh r11, [r12, #0x2E]
+strh r11, [r12, #{0x30 - (!aligned_pc * 2)}]

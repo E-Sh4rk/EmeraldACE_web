@@ -1,0 +1,33 @@
+@@ title = "Read SID from Party Slot 2"
+@@ author = "Papa Jefe, im a blisy and final"
+@@ exit = "ROM_BX_lr_Box6_Grab" // Use "CommonExit" for move ACE.
+
+// Stores the SID of the second Pokémon in the party in its
+// Attack and Defense stats.
+//
+// Stat changes will reverse themselves after depositing to the PC.
+// After running, input the values you see in-game below, and then
+// click Compute again to get PID readout.
+
+Atk ?= 0
+Def ?= 0
+
+SID ?= (Atk<<8)+Def & 0xFFFF
+
+@@
+
+;; MOVS r11, { 0x2024284 + 100 } ? ; r11 = &Trainer_party + 100 (second pkmn)
+
+MOV r10, #0x2f00000
+ADCS r10, r10, #0xe4000
+SBC r12, r10, #0x3fc ; Make needed offset for SID writable
+ADCS r11, r10, #0x2ec ; r11 = &gPlayerParty + 100 + 4 ; (2nd party member)
+
+; STRH is used as stats are 16-bit numbers
+; This also allows this code to use any Pokémon for the PID readout.
+
+LDRB r10, [r12, #0x6eb] ; Load from &OTID+2
+STRH r10, [r11, #0x58] ; Store in Defense
+
+LDRB r10, [r12, #0x6ec] ; Load from &OTID+3
+STRH r10, [r11, #0x56] ; Store in Attack
