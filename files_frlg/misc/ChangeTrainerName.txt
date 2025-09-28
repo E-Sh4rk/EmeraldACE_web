@@ -1,22 +1,25 @@
 @@ title = "Change Trainer Name"
 @@ author = "Theocatic | Adrichu00 | Final"
-@@ exit = "GrabACEExit"
+@@ exit = "ROM_BX_lr_Box6_Grab"
 
 ; This code is for a legal trainer name. If you want a not normally writable
 ; name, use the code Change Trainer Name (Bootstrapped)
 
-; Write your trainer name in BOX 13's name with no trailing spaces
+; Write your trainer name in BOX 9's name with no trailing spaces
 ; Don't use the last char, leave it empty (not space, but 0xFF)
 
-; For example, for the name "Test", BOX 13's name would be:
+; For example, for the name "Test", BOX 9's name would be:
 ; (...)
-; Box 11: … o _ _ _ _ _ _ […o      ]
-; Box 12 doesn't matter
-; Box 13: T e s t         [Test]
+; Box  9: T e s t         [Test]
 
 @@
 
-SUB r12, pc, 0xD0DA ? ; Pointer to Trainer Name
-ADD r11, pc, 0x56 ?   ; Pointer to Box 13's Name
+ADCGTS r12, r15, r14, ASR #21  ; Pointer to Box 9's Name
+
+;; SUB r12, pc, 0xd0dc ? ; Pointer to Trainer Name
+
+SBC r12, r15, #0xd000
+SBC r12, r15, #0xda
+
 0xE8BB00C0            ; (LDMIA r11! {r6, r7}) Load name in r6 & r7
 0xE8AC00C0            ; (STMIA r12! {r6, r7}) Write trainer name
