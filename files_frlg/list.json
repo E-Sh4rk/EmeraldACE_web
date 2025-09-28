@@ -36,12 +36,12 @@
   },
     {
     "name": "Replace TID with SID",
-    "eng1": "misc/copySIDtoTID.txt",
-    "eng0": "misc/copySIDtoTID.txt",
-    "fra": "misc/copySIDtoTID.txt",
-    "ger": "misc/copySIDtoTID.txt",
-    "spa": "misc/copySIDtoTID.txt",
-    "ita": "misc/copySIDtoTID.txt",
+    "eng1": "misc/CopySIDtoTID.txt",
+    "eng0": "misc/CopySIDtoTID.txt",
+    "fra": "misc/CopySIDtoTID.txt",
+    "ger": "misc/CopySIDtoTID.txt",
+    "spa": "misc/CopySIDtoTID.txt",
+    "ita": "misc/CopySIDtoTID.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -139,8 +139,19 @@
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
-    {
-    "name": "Read Pokemon TID/SID",
+  {
+    "name": "Read Pokemon SID",
+    "eng1": "pkmn/ReadPokemonSID.txt",
+    "eng0": "pkmn/ReadPokemonSID.txt",
+    "fra": "pkmn/ReadPokemonSID.txt",
+    "ger": "pkmn/ReadPokemonSID.txt",
+    "spa": "pkmn/ReadPokemonSID.txt",
+    "ita": "pkmn/ReadPokemonSID.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Read Pokemon TID and SID",
     "eng1": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
     "eng0": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",
     "fra": "pkmn/ReadOTIDfromPartySlot4toPartySlot3.txt",

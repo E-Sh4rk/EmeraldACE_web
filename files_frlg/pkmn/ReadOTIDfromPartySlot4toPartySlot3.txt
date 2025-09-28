@@ -1,18 +1,16 @@
-@@ title = "Read TID/SID from Party Slot 4"
-@@ author = "Papa Jefe & im a blisy"
-@@ exit = "GrabACEExit" // Use "CommonExit" for move ACE.
+@@ title = "Read TID and SID from Party Slot 2"
+@@ author = "Papa Jefe, im a blisy and final"
+@@ exit = "ROM_BX_lr_Box10_Grab" // Use "CommonExit" for move ACE.
 
-; Allows user to check the Secret ID of traded Pokemon from other games.
-; Use "Replace TID with SID" to check personal Secret ID faster.
 
-; Stores the TID/SID of the 4th Slot Party Pokemon in the Atk thru SpDef of the 3rd Pokemon.
-; Pokemon in 3rd Party Slot must have no stats bigger than 2 digits. 
-; Stat changes will reverse themselves after depositing to the PC.
-
-; For verification, Trainer ID should match what's seen on 4th Pokemon's Summary Screen
-; Secret ID will be displayed in the output.
-
-; Input the values you see in-game below, and then click Compute again.
+// Stores the SID of the second Pokémon in the party in its
+// Attack and Defense stats.
+// Stores the TID of the second Pokémon in the party in its
+// Special Attack and Special Defense stats.
+//
+// Stat changes will reverse themselves after depositing to the PC.
+// After running, input the values you see in-game below, and then
+// click Compute again to get PID readout.
 
 Atk ?= 0
 Def ?= 0
@@ -24,16 +22,25 @@ SID ?= (Atk<<8)+Def & 0xFFFF
 
 @@
 
-movs r12, { 0x2024284 + 100 } ? ; r12 = &Trainer_party + 100 (second pkmn)
+;; MOVS r11, { 0x2024284 + 100 } ? ; r11 = &Trainer_party + 100 (second pkmn)
 
-ldrb r11, [r12, #204]  ; Load 1st OTID Byte of Pkmn 4
-strb r11, [r12, #198]   ; Store lowTID in SpD stat
+MOV r10, #0x2f00000
+ADCS r10, r10, #0xe4000
+ADCS r11, r10, #0x2ec ; r11 = &gPlayerParty + 100 + 4 ; (2nd party member)
 
-ldrb r11, [r12, #205]  ; Load 2nd OTID Byte of Pkmn 4
-strb r11, [r12, #196]   ; Store highTID in SpA stat
+; STRH is used as stats are 16-bit numbers
+; This also allows this code to use any Pokémon for the PID readout.
 
-ldrb r11, [r12, #206]  ; Load 3rd OTID Byte of Pkmn 4
-strb r11, [r12, #192]   ; Store lowSID in Def stat
+LDRB r12, [r10, #0x2ec] ; Load from &OTID+0
+STRH r12, [r11, #0x5e] ; Store in Special Defense
 
-ldrb r11,  [r12, #207]  ; Load 4th OTID Byte of Pkmn 4
-strb r11,  [r12, #190]    ; Store highSID in Atk stat
+LDRB r12, [r10, #0x2ed] ; Load from &OTID+1
+STRH r12, [r11, #0x5c] ; Store in Special Attack
+
+SBC r12, r10, #0x3fc ; Make needed offset for SID writable
+
+LDRB r10, [r12, #0x6eb] ; Load from &OTID+2
+STRH r10, [r11, #0x58] ; Store in Defense
+
+LDRB r10, [r12, #0x6ec] ; Load from &OTID+3
+STRH r10, [r11, #0x56] ; Store in Attack
