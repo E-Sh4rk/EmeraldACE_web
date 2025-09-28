@@ -1,0 +1,36 @@
+@@ title = "Change Pokémon OT Name"
+@@ author = "final"
+@@ exit = "ROM_BX_lr_Box6_Grab"
+@@ filler4 = 0xffffffff
+
+// This code replaces the OT name of the Pokémon in Box 9, Slot 27 with
+// the name of Box 9.
+
+// Simply set the name of Box 9 to the desired OT name for the Pokémon,
+// then execute this code.
+
+// Note: Soft resetting will not work after executing this code.
+
+aligned_pc = 0 // Set to 1 for old emulators
+
+@@
+
+;; add r12, r15, #64 ?
+
+ADCGTS r12, r15, r14, ASR #21  ; r12 = r15 + 64
+0xffffffff ; (filler)
+
+SBC r10, r15, #0x3fc0 ; r10 = (&Box9Slot27 + 20) - 0xfa5
+
+0xe8bc00c0 ; LDMIA r12!, {r6-r7} ; Load OT name into r6 and r7
+
+STR r15, [r10, #0xfa5]! ; Set address, it will be overwritten
+
+0xe8ca00c0 ; STMIA r10, {r6-r7} ^ ; Store OT name from r6 and r7
+
+;; MVNS r12, #{aligned_pc ? 0xc0000000 : 0xd0000000}
+{aligned_pc ? 0xe3ffc4c0 : 0xe3ffc4d0}
+
+MOVS r11, #0xbc00
+STRB r11, [r10, r12, ASR #27]  ; Store in marking, r10+5 for misaligned r15, r10+7 for aligned r15
+0xffffffff ; (filler)

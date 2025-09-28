@@ -234,8 +234,19 @@
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
-    {
-    "name": "Replace Pokemon OT w/ Trainer Name (bootstrapped)",
+  {
+    "name": "Change Pokémon OT Name",
+    "eng1": "pkmn/ChangePokemonOT.txt",
+    "eng0": "pkmn/ChangePokemonOT.txt",
+    "fra": "pkmn/ChangePokemonOT.txt",
+    "ger": "pkmn/ChangePokemonOT.txt",
+    "spa": "pkmn/ChangePokemonOT.txt",
+    "ita": "pkmn/ChangePokemonOT.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
+  },
+  {
+    "name": "Replace Pokemon OT w/ Your Trainer Name",
     "eng1": "pkmn/ReplacePokemonOT.txt",
     "eng0": "pkmn/ReplacePokemonOT.txt",
     "fra": "pkmn/ReplacePokemonOT.txt",
