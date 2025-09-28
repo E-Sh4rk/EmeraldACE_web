@@ -699,11 +699,179 @@ adc r0,r12, 0xC6                ;  R0=R12+C6=8015AC9=ReturnFromBattleToOverworld
 
 ====================
 
-@@ filename = "GrabACEExit"
-@@ start = 84
+@@ filename = "ROM_BX_r0_Box2"
+@@ start = 12
+@@ fill = false
 @@
 
-movs r0, #0x0
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box6"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_r0_Box10"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x370
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2"
+@@ start = 12
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6"
+@@ start = 48
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10"
+@@ start = 84
+@@ fill = false
+@@
+
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box2_Grab"
+@@ start = 8
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box6_Grab"
+@@ start = 44
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "ROM_BX_lr_Box10_Grab"
+@@ start = 80
+@@ fill = false
+@@
+
+BIC r0, r0, #0xff
+0xe3bdc3c2 ; MOVS r12, #0x8000003
+ADCS r15, r12, #0x398
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box6"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_r0_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x324
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2"
+@@ start = 16
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box6"
+@@ start = 52
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box10"
+@@ start = 88
+@@ fill = false
+@@
+
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box2_Grab"
+@@ start = 12
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "BIOS_BX_lr_Box6_Grab"
+@@ start = 48
+@@ fill = false
+@@
+
+mov r0, #0
+movs r15, #0x354
+
+====================
+
+@@ filename = "GrabACEExit"
+@@ start = 84
+@@ fill = false
+@@
+
+mov r0, #0x0
 movs pc, #0x354
 
 ====================
