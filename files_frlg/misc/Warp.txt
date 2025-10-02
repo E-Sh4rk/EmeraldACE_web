@@ -12,7 +12,7 @@
 // The map list can be found here:
 // https://pastebin.com/peDhNbEt
 
-map_id = 3
+map_id = 0x0003
 
 // `warp` determines which warp point you will teleport to.
 // Set this to 0xff if you want to control the exact coordinates you
@@ -46,7 +46,7 @@ MOV     r12, #{script0} ?5
 STR     r12, [r11, #0]!             ; Store script part 1
 
 MOV     r12, #{script1} ?5
-STR     r12, [r11, lr, ASR #25]!    ; Store script part 2
+STR     r12, [r11, r14, ASR #25]!   ; Store script part 2
 
 MOV     r12, #0xfc000002
-STRB    r12, [r11, lr, ASR #25]     ; Store script end
+STRB    r12, [r11, r14, ASR #25]    ; Store script end

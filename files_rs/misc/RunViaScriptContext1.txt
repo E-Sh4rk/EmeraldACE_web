@@ -1,6 +1,6 @@
 @@ title = "Run script via ScriptContext1"
 @@ author = "final and Mettrich"
-@@ exit = "ROM_BX_lr_Box10_{LANG}_Grab"
+@@ exit = "ROM_BX_lr_Box10_{LANGNR}_Grab"
 @@ filler4 = 0xffffffff
 
 // This code inserts a custom script pointer into the global script

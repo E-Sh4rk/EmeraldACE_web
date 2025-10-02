@@ -28,7 +28,7 @@ warp = 0
 
 // Input the desired RNG state here
 
-seed = 0
+seed = 0x0
 
 // Do not touch the below variables
 
@@ -41,18 +41,18 @@ script = ((warp & 0xff) << 24) | ((map_id & 0xffff) << 8) | 0x39
 
 @@
 
-MOV     r12, #0x3000000                 ; sScriptContext1 addressing
-ADCS    r11, r12, #0xc500               ; gRngValue addressing
+MOV     r12, #0x3000000         ; sScriptContext1 addressing
+ADCS    r10, r12, #0xc500       ; gRngValue addressing
 
-SBC     r10, r12, #0xff0                ; Prepare script pointer (in unused EWRAM)
-STR     r10, [r12, #0x5c0]!             ; Store pointer in sScriptContext1->scriptPtr
+SBC     r11, r12, #0xff         ; Prepare script pointer (in unused EWRAM)
+STR     r11, [r12, #0x5c0]!     ; Store pointer in sScriptContext1->scriptPtr
 
-MOV     r12, #{script} ?5               ; Move script
-STR     r12, [r10, r14, ASR #25]!       ; Store script
+MOV     r12, #{script} ?5       ; Move script
+STR     r12, [r11, #0]!         ; Store script
 
-0xe3ffcccc                              ; MVNS r12, #0xcc00
-STRH    r12, [r10, #8]                  ; Store script end
-ADCS    r11, r11, #0x328                ; r11 = &gRngValue, fix CPSR
+0xe3ffcccc                      ; MVNS r12, #0xcc00
+STRH    r12, [r11, #8]          ; Store script end
+ADCS    r11, r10, #0x328        ; r11 = &gRngValue, fix CPSR
 
 MOV     r12, #{seed} ?5
-STR     r12, [r11, #0]!                 ; Store seed in gRngValue
+STR     r12, [r11, #0]!         ; Store seed in gRngValue

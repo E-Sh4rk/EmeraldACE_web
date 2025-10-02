@@ -18,7 +18,7 @@
 // The teleportation will occur as soon as you log off the PC.
 
 // The map list can be found here:
-// https://pastebin.com/peDhNbEt
+// https://pastebin.com/kmrbJY0S
 
 map_id = 0x0000
 
@@ -48,13 +48,13 @@ script1 = ((y & 0xffff) << 16) | (x & 0xffff)
 
 MOV     r12, #0x3000000                 ; sGlobalScriptContext addressing
 SBC     r11, r12, #0xff                 ; Prepare script pointer (in unused EWRAM)
-STR     r11, [r12, #0xeb8]!             ; Store pointer in sGlobalScriptContext->scriptPtr
+STR     r11, [r12, #0x5c0]!             ; Store pointer in sGlobalScriptContext->scriptPtr
 
 MOV     r12, #{script0} ?5
-STR     r12, [r11, r14, ASR #25]!       ; Store script part 1
+STR     r12, [r11, #0]!                 ; Store script part 1
 
 MOV     r12, #{script1} ?5
 STR     r12, [r11, r14, ASR #25]!       ; Store script part 2
 
 MOV     r12, #0xfc000002
-STRB    r12, [r11, lr, ASR #25]         ; Store script end
+STRB    r12, [r11, r14, ASR #25]        ; Store script end

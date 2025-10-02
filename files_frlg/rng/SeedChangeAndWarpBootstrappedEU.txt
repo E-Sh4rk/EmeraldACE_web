@@ -22,7 +22,7 @@ warp = 0
 
 // Input the desired RNG state here
 
-seed = 0x1234abcd
+seed = 0x0
 
 // Do not touch the below variables
 
