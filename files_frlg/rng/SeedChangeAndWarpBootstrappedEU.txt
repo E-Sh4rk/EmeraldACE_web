@@ -1,35 +1,52 @@
-@@ title = "Change PRNG seed and teleport (Bootstrapped, EU)"                			
-@@ author = "Theocatic / final"				
+@@ title = "Change PRNG seed and teleport (EU)"
+@@ author = "final, Theocatic and Mettrich"
 @@ exit = "Bootstrapped"
+@@ filler4 = 0xffffffff
 
-; This code requires a Box 14 exit code for grab ACE.
-; It can be found here:
-; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
-;this code will set PRNG to the desired seed when executed. Talk to the NPC you set in the map to warp afterwards. Best ran in the daycare
+// The teleportation will occur as soon as you log off Bill’s PC.
+// This code is best ran in the Route 5 Daycare.
 
+// The map list can be found here:
+// https://pastebin.com/peDhNbEt
 
-;Map Bank and Map ID values can be found here https://pastebin.com/peDhNbEt
+map_id = 0x0003
 
-DesiredSeed = 0x1234ABCD
+// `warp` determines which warp point you will teleport to.
+// Use warp 3 for Zapdos
 
-npc_id = 1 ;Sets which NPC on the map to run the script through.
+warp = 0
 
-map_id = 0x3802
+// Input the desired RNG state here
 
-warp = 0 ;Change this to change which entrance you teleport to. Use Warp 3 for Zapdos
+seed = 0x1234abcd
 
-script0 = (warp << 24) | ((map_id & 0xffff) << 8) | 0x39
-npc_offset = 0x1A5 + (npc_id * 0x18) + 0x400  ; 0x400 added to avoid quote characters
+// Do not touch the below variables
 
-@@                
+// Teleport script:
+//
+// 39 YY XX WW 00 00 00 00 warp 0xYY 0xXX 0xWW
+// FF @ illegal command, terminates script execution
 
-sbc r10, pc, 0xBE00
-adc r11, r4, 0x300
-str r11, [r10, {npc_offset}]!
-mov r12, {script0} ?
-str r12, [r11]!
-mov r12, {DesiredSeed} ?
-BIC r11, r13, #0x2F00 ;sets r11 to 0x03005000 gRNGValue
-SBC r11, r11, #0xB0
-str r12, [r11, lr, asr #27]!
+script = ((warp & 0xff) << 24) | ((map_id & 0xffff) << 8) | 0x39
+
+@@
+
+MOV     r12, #0x3000000         ; sGlobalScriptContext addressing
+ADCS    r11, r12, #0xc300       ; gRngValue addressing
+
+ADC     r10, r4, #0xff0         ; Prepare script pointer (within gSaveDataBuffer)
+STR     r10, [r12, #0xeb8]!     ; Store pointer in sGlobalScriptContext->scriptPtr
+
+MOV     r12, #{script} ?5       ; Move script
+STR     r12, [r10, #0]!         ; Store script
+
+0xe3ffcccc                      ; MVNS r12, #0xcc00
+STRH    r12, [r10, #8]          ; Store script end
+ADCS    r11, r11, #0xc50        ; r11 = &gRngValue, fix CPSR
+
+MOV     r12, #{seed} ?5
+STR     r12, [r11, #0]!         ; Store seed in gRngValue

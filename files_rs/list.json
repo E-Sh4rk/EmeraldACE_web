@@ -156,7 +156,23 @@
     "cat": ["bootstraps"]
   },
   {
-    "name": "Change PRNG seed and teleport",
+    "name": "Teleport anywhere (Grab ACE)",
+    "eng2": "rng/Warp_Grab.txt",
+    "eng1": "rng/Warp_Grab.txt",
+    "eng0": "rng/Warp_Grab.txt",
+    "fra1": "rng/Warp_Grab.txt",
+    "fra0": "rng/Warp_Grab.txt",
+    "ger1": "rng/Warp_Grab.txt",
+    "ger0": "rng/Warp_Grab.txt",
+    "spa1": "rng/Warp_Grab.txt",
+    "spa0": "rng/Warp_Grab.txt",
+    "ita1": "rng/Warp_Grab.txt",
+    "ita0": "rng/Warp_Grab.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["rng"]
+  },
+  {
+    "name": "Change PRNG seed and teleport (Move ACE)",
     "eng2": "rng/SeedChangeAndWarpENG.txt",
     "eng1": "rng/SeedChangeAndWarpENG.txt",
     "eng0": "rng/SeedChangeAndWarpENG.txt",
@@ -170,6 +186,22 @@
     "ita0": "rng/SeedChangeAndWarpEU.txt",
     "jap0": "rng/SeedChangeAndWarpJP.txt",
     "jap1": "rng/SeedChangeAndWarpJP.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["rng"]
+  },
+  {
+    "name": "Change PRNG seed and teleport (Grab ACE)",
+    "eng2": "rng/SeedChangeAndWarpGrabEN.txt",
+    "eng1": "rng/SeedChangeAndWarpGrabEN.txt",
+    "eng0": "rng/SeedChangeAndWarpGrabEN.txt",
+    "fra1": "rng/SeedChangeAndWarpGrabEU.txt",
+    "fra0": "rng/SeedChangeAndWarpGrabEU.txt",
+    "ger1": "rng/SeedChangeAndWarpGrabEU.txt",
+    "ger0": "rng/SeedChangeAndWarpGrabEU.txt",
+    "spa1": "rng/SeedChangeAndWarpGrabEU.txt",
+    "spa0": "rng/SeedChangeAndWarpGrabEU.txt",
+    "ita1": "rng/SeedChangeAndWarpGrabEU.txt",
+    "ita0": "rng/SeedChangeAndWarpGrabEU.txt",
     "game": ["ruby", "sapp"],
     "cat": ["rng"]
   },
@@ -266,6 +298,22 @@
     "spa0": "misc/ChangeVar.txt",
     "ita1": "misc/ChangeVar.txt",
     "ita0": "misc/ChangeVar.txt",
+    "game": ["ruby", "sapp"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Run script via ScriptContext1",
+    "eng2": "misc/RunViaScriptContext1.txt",
+    "eng1": "misc/RunViaScriptContext1.txt",
+    "eng0": "misc/RunViaScriptContext1.txt",
+    "fra1": "misc/RunViaScriptContext1.txt",
+    "fra0": "misc/RunViaScriptContext1.txt",
+    "ger1": "misc/RunViaScriptContext1.txt",
+    "ger0": "misc/RunViaScriptContext1.txt",
+    "spa1": "misc/RunViaScriptContext1.txt",
+    "spa0": "misc/RunViaScriptContext1.txt",
+    "ita1": "misc/RunViaScriptContext1.txt",
+    "ita0": "misc/RunViaScriptContext1.txt",
     "game": ["ruby", "sapp"],
     "cat": ["misc"]
   }

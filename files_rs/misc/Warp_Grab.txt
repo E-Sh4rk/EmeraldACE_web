@@ -1,0 +1,60 @@
+@@ title = "Teleport anywhere (Grab ACE)"
+@@ author = "final, Theocatic and Mettrich"
+@@ exit = "Bootstrapped"
+@@ filler4 = 0xffffffff
+
+// This code works with grab ACE, however 0x44fc control code ACE must
+// perform extra steps in order for this code to work. Specifically
+// the ACE must be triggered while you are in the PC.
+//
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+//
+// Please note that the linked web page is for FireRed and LeafGreen but
+// the exit also works on Ruby and Sapphire. Substitute "STARS" with
+// "POLKA-DOT" or whatever the equivalent is in your language.
+
+// The teleportation will occur as soon as you log off the PC.
+
+// The map list can be found here:
+// https://pastebin.com/peDhNbEt
+
+map_id = 0x0000
+
+// `warp` determines which warp point you will teleport to.
+// Set this to 0xff if you want to control the exact coordinates you
+// want to warp to via the `x` and `y` variables.
+
+warp = 0
+
+// Leave these values at 0 if you are using any `warp` value other
+// than 0xff.
+
+x = 0
+y = 0
+
+// Do not touch the below variables
+
+// Teleport script:
+//
+// 39 BB MM WW xx xx yy yy warp 0xBB 0xMM 0xWW 0xXXXX 0xYYYY
+// 02 end
+
+script0 = ((warp & 0xff) << 24) | ((map_id & 0xffff) << 8) | 0x39
+script1 = ((y & 0xffff) << 16) | (x & 0xffff)
+
+@@
+
+MOV     r12, #0x3000000                 ; sGlobalScriptContext addressing
+SBC     r11, r12, #0xff                 ; Prepare script pointer (in unused EWRAM)
+STR     r11, [r12, #0xeb8]!             ; Store pointer in sGlobalScriptContext->scriptPtr
+
+MOV     r12, #{script0} ?5
+STR     r12, [r11, r14, ASR #25]!       ; Store script part 1
+
+MOV     r12, #{script1} ?5
+STR     r12, [r11, r14, ASR #25]!       ; Store script part 2
+
+MOV     r12, #0xfc000002
+STRB    r12, [r11, lr, ASR #25]         ; Store script end
