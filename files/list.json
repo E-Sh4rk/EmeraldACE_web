@@ -483,6 +483,15 @@
     "cat": ["misc"]
   },
   {
+    "name": "Run script via GlobalScriptContext",
+    "eng": "misc/RunScriptViaGlobalScriptContext.txt",
+    "fra": "misc/RunScriptViaGlobalScriptContext.txt",
+    "ger": "misc/RunScriptViaGlobalScriptContext.txt",
+    "spa": "misc/RunScriptViaGlobalScriptContext.txt",
+    "ita": "misc/RunScriptViaGlobalScriptContext.txt",
+    "cat": ["misc"]
+  },
+  {
     "name": "Mass Clone/Declone Pokémon (for 0x085F)",
     "jap": "misc/MassClonePokemonJAPThumb.txt",
     "cat": ["misc"]

@@ -1,28 +1,31 @@
 @@ title = "Run script via GlobalScriptContext"
 @@ author = "final and Mettrich"
-@@ exit = "GrabACEExit"
+@@ exit = "ROM_BX_lr_Box10_Grab"
+@@ filler4 = 0xffffffff
 
 // This code inserts a custom script pointer into the global script
 // context (and also sets some other stuff) that will run as soon as
-// you leave Bill’s PC in a Pokémon Center or in the Daycare.
+// you return to the overworld.
 //
 // Script addresses from "Run script via NPC" should work here.
 //
-// Trigger ACE, then leave the boxes, and then exit the menu, the
-// script should run.
+// Trigger ACE, then return to the overworld. The script should run
+// immediately.
 
 script_address = 0x0
 
 @@
 
-MOV r10, #0x3000000  ; Prepare sGlobalScriptContextStatus address part 1
-MOV r11, #0x2e0  ; Prepare stackDepth, and mode part 1
-BIC r12, r10, #0xff000000  ; r12 = 0
-SBC r11, #0xde  ; r11 = 0x0201, prepare stackDepth, and mode part 2
+; `ctx` refers to sGlobalScriptContext
 
-STRB r12, [r10, #0xea8]!  ; Store RUNNING status in sGlobalScriptContextStatus, address part 2
-STRH r11, [r10, #8]!  ; Store in sGlobalScriptContext->stackDepth, and sGlobalScriptContext->mode
-STR r12, [r10, lr, ASR #25]!  ; Store in sGlobalScriptContext->nativePtr
+MOV     r10, #0x3000000                 ; IWRAM addressing
 
-MOV r12, {script_address} ?
-STR r12, [r10, lr, ASR #25]!  ; Store in sGlobalScriptContext->scriptPtr
+MOV     r11, #0xbd00
+BIC     r11, r11, #0x3fc00              ; r11 = 0x100, mode=SCRIPT_MODE_BYTECODE, stackDepth=0
+
+STRB    r11, [r10, #0xea8]!             ; Store CONTEXT_RUNNING in sGlobalScriptContextStatus
+
+STRH    r11, [r10, #8]!                 ; Store in ctx->stackDepth, and ctx->mode
+
+MOV     r12, #{script_address} ?
+STR     r12, [r10, r11, ASR #5]!        ; Store in ctx->scriptPtr (r10 + 8)
