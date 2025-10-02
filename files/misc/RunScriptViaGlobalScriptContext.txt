@@ -11,7 +11,8 @@
 // moves, or contest moves page, then switch to the ACE species’ summary.
 //
 // Alternatively you can also use a different exit code such as
-// "Certificate", "WhiteOut" or "Bootstrapped" instead.
+// "Certificate" or "Bootstrapped" (with a Certificate exit bootstrap)
+// instead.
 
 // This code inserts a custom script pointer into the global script
 // context (and also sets some other stuff) that will run as soon as
