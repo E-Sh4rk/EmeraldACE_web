@@ -1,0 +1,59 @@
+@@ title = "Do in-game trade (FRA/SPA)"
+@@ author = "final, Mettrich and Theocatic"
+@@ exit = null // Do not change to "Bootstrapped"
+@@ fill = false
+@@ filler1 = 0xbbbbbbff
+@@ filler2 = 0xbbbbffff
+@@ filler3 = 0xbbffffff
+@@ filler4 = 0xffffffff
+
+// This code will initiate a trade for the first Pokémon in your party.
+
+// Before executing this code, make sure you have **entered** into a
+// battle at least once after loading your save. The battle type nor
+// the battle outcome matters for this code.
+
+// When ACE is triggered, the trade sequence will start, and the first
+// Pokémon in your party will be traded away. You should receive the
+// Pokémon you have last battled, or on repeated executions of this code
+// the Pokémon you have traded away.
+
+// Please note that you will only receive the Pokémon you have traded
+// away back if you did not enter any further battles after the first
+// execution of this code, or entered any trades other than the one
+// triggered by this code.
+
+// The trade sequence may have visual artifacts when running via ACE.
+// This is normal and can be safely ignored.
+
+@@
+
+; DoInGameTradeScene addresses
+;
+; French:     0x0807f0e1
+; Spanish:    0x0807f0e1
+
+; MOV r12, #0x02ff75e0 ?
+
+MOV r12, #0x2fc0000 ; EWRAM addressing part 1
+ADCS r12, r12, #0x37000 ; EWRAM addressing part 2, r12 = &gSpecialVar_0x8004 - 0x5e0
+
+BIC r11, r7, #0xff ; r11 = 0
+
+STR r11, [r12, #0x5e3]! ; Set gSpecialVar_0x8004 and gSpecialVar_0x8005 to zero, also avoid 'l'
+
+; MOV r12, #0xf0e00 ; 0x80069e7 (r14) + (0xf0e00 >> 1) = 0x807f0e7
+
+0xe3e3bcde ; MVN r11, #0xde00 ; Avoid problematic 'l'
+RSC r12, r11, #0xe3000 ; Can be done with only r12, but 'Pwn'
+SBC r12, r12, #11
+
+0xffffffff ; (filler)
+
+; Exit code
+
+BICS r11, r14, #0xff00 ; r11 = 0x80000e7
+
+ADCGTS r0, r14, r12, ASR #1 ; r0 = r14 + (r12 >> 1) = &DoInGameTradeScene
+
+ADCS r15, r11, #0x28c ; r15 = 0x8000370 (BX r0) -> DoInGameTradeScene (r0)
