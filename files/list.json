@@ -605,5 +605,14 @@
     "name": "Change Pokémon PID or TID",
     "eng": "pkmn/ChangePIDTID_ENG.txt",
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Do in-game trade",
+    "eng": "misc/DoInGameTrade_ENG_ITA.txt",
+    "fra": "misc/DoInGameTrade_FRA_SPA.txt",
+    "ita": "misc/DoInGameTrade_ENG_ITA.txt",
+    "ger": "misc/DoInGameTrade_GER.txt",
+    "spa": "misc/DoInGameTrade_FRA_SPA.txt",
+    "cat": ["misc"]
   }
 ]
