@@ -499,6 +499,7 @@
   {
     "name": "Use Mystery Event",
     "eng": "misc/UseMysteryEvent.txt",
+    "fra": "misc/UseMysteryEvent.txt",
     "cat": ["misc"]
   },
   {
