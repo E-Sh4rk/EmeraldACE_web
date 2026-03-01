@@ -19,8 +19,8 @@
 
 ; DON'T TOUCH THESE VARIABLES updated script ID
                 
-script = 0x0816ED3C  ; new script address for rev.A
-offset = 0x5DA0 ; offset
+script = 0x0816ED3C
+offset = 0x5DA0
     
 @@
 sbc r11,pc, 0xBA00        ; Store NPC Offset Location in R11        
