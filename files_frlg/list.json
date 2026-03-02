@@ -351,6 +351,19 @@
     "game": ["lg"],
     "cat": ["pkmn"]
   },
+
+    {
+    "name": "Make Starters Reappear",
+    "eng1": "misc/MakeStartersReappear.txt",
+    "eng0": "misc/MakeStartersReappear.txt",
+    "eng10": "misc/MakeStartersReappear.txt",
+    "fra": "misc/MakeStartersReappear.txt",
+    "ger": "misc/MakeStartersReappear.txt",
+    "spa": "misc/MakeStartersReappear.txt",
+    "ita": "misc/MakeStartersReappear.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
   {
     "name": "Re-enable Single Use Move Tutors",
     "eng1": "misc/EnableTutors.txt",
