@@ -193,6 +193,7 @@
     "name": "Change Pokemon Level",
     "eng1": "pkmn/ChangeLevel.txt",
     "eng0": "pkmn/ChangeLevel.txt",
+    "eng10": "pkmn/ChangeLevel_SWITCH.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
