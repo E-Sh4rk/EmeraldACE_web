@@ -1,0 +1,23 @@
+@@ title = "Make Starters Reappear"    
+@@ author = "Sleipnir"    
+@@ exit = "GrabACEExit"  
+
+; This code will make the three starters reappear in Oak's laboratory. 
+; To get a starter simply go to Pallet Town and move towards Route 1. 
+; The cutscene will be triggered just like when you first start the game 
+; (including the rival battle when exiting the lab)
+; Will also change the Roaming Beast if not already released.
+; To Re-Release the Roaming Beast, use "Run Script via NPC" and then run "GiveCelioSapphire"
+
+@@    
+    
+sbc r10, pc, 0xB300    
+movs r11, 0x300
+adc r11, r11, 0x320
+adc r0, r11, 0xE0
+ldrh r12, [r10, 0xAF]
+bic r12,r12,r0
+strh r12, [r10, 0xAF]
+MOVS r11, #0x00FF0000
+sbc r10, pc, 0xB100
+strh r11, [r10, 0x3B]

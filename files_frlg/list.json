@@ -165,6 +165,7 @@
     "name": "Run script via NPC",
     "eng1": "misc/RunScriptViaNPC_FR_Rev1_ENG.txt",
     "eng0": "misc/RunScriptViaNPC_FR_ENG.txt",
+    "eng10": "misc/RunScriptViaNPC_FR_ENG_SWITCH.txt",
     "fra": "misc/RunScriptViaNPC_FR_FRA.txt",
     "ger": "misc/RunScriptViaNPC_FR_GER.txt",
     "spa": "misc/RunScriptViaNPC_FR_SPA.txt",
@@ -178,6 +179,7 @@
     "name": "Run script via NPC",
     "eng1": "misc/RunScriptViaNPC_LG_Rev1_ENG.txt",
     "eng0": "misc/RunScriptViaNPC_LG_ENG.txt",
+    "eng10": "misc/RunScriptViaNPC_LG_ENG_SWITCH.txt",
     "fra": "misc/RunScriptViaNPC_LG_FRA.txt",
     "ger": "misc/RunScriptViaNPC_LG_GER.txt",
     "spa": "misc/RunScriptViaNPC_LG_SPA.txt",
@@ -191,6 +193,7 @@
     "name": "Change Pokemon Level",
     "eng1": "pkmn/ChangeLevel.txt",
     "eng0": "pkmn/ChangeLevel.txt",
+    "eng10": "pkmn/ChangeLevel_SWITCH.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
@@ -347,6 +350,19 @@
     "ita": "pkmn/FatefulMew_LG_ITA.txt",
     "game": ["lg"],
     "cat": ["pkmn"]
+  },
+
+    {
+    "name": "Make Starters Reappear",
+    "eng1": "misc/MakeStartersReappear.txt",
+    "eng0": "misc/MakeStartersReappear.txt",
+    "eng10": "misc/MakeStartersReappear.txt",
+    "fra": "misc/MakeStartersReappear.txt",
+    "ger": "misc/MakeStartersReappear.txt",
+    "spa": "misc/MakeStartersReappear.txt",
+    "ita": "misc/MakeStartersReappear.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   },
   {
     "name": "Re-enable Single Use Move Tutors",
