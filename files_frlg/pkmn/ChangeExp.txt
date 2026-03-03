@@ -1,0 +1,42 @@
+@@ title = "Change experience"
+@@ author = "leo60228"
+@@ exit = "Bootstrapped"
+
+; THIS CODE NEEDS A BOX 14 EXIT CODE:
+;   https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
+
+pid = 0
+tid = 0            ; TID of the original trainer
+sid = 0            ; SID of the original trainer
+cur_exp = 0
+new_exp = 0
+inaccurate_emu = 0 ; Set to 1 if you are using an emulator < mgba 0.9
+
+; DO NOT MODIFY THE PARAMETERS BELOW
+pmod = pid % 24
+growth_substructure_position = \
+    pmod == 0  | pmod == 1  | pmod == 2  | pmod == 3  | \
+    pmod == 4  | pmod == 5 ? 0 : \
+    pmod == 6  | pmod == 7  | pmod == 12 | pmod == 13 | \
+    pmod == 18 | pmod == 19 ? 1 : \
+    pmod == 8  | pmod == 10 | pmod == 14 | pmod == 16 | \
+    pmod == 20 | pmod == 22 ? 2 : 3
+otid = tid + (sid << 16)
+key = pid ^ otid
+encoded_exp = new_exp ^ key
+offset = 32 + 12*growth_substructure_position + 4
+checksum_diff = ((new_exp & 0xFFFF) + (new_exp >> 16)) - ((cur_exp & 0xFFFF) + (cur_exp >> 16))
+
+@@
+
+; The Pokemon must be located in Box 10 Slot 19.
+
+sbc r11, r15, #0x2940          ; r11 = &Box10Slot19 + 9
+
+LDRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Load checksum
+ADC r12, r12, {checksum_diff & 0xFFFF} ?
+STRH r12, [r11, {inaccurate_emu ? 0x15 : 0x13}]     ; Write checksum
+
+movs r12, {encoded_exp} ?
+adc r11, r11, {offset-(inaccurate_emu?7:9)} ?
+str r12, [r11, 0]!
