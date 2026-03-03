@@ -16,6 +16,7 @@
     "name": "Change PRNG seed and teleport (Bootstrapped)",
     "eng1": "rng/SeedChangeAndWarpBootstrappedEN.txt",
     "eng0": "rng/SeedChangeAndWarpBootstrappedEN.txt",
+    "eng10": "rng/SeedChangeAndWarpBootstrappedENSwitch.txt",
     "fra": "rng/SeedChangeAndWarpBootstrappedEU.txt",
     "ger": "rng/SeedChangeAndWarpBootstrappedEU.txt",
     "spa": "rng/SeedChangeAndWarpBootstrappedEU.txt",
