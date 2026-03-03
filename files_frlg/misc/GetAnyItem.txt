@@ -2,6 +2,9 @@
 @@ author = "Sleipnir"
 @@ exit = "GrabACEExit"
 
+; This code inject the chosen item into your User's PC.
+; It always goes to the bottom slot, so it doesn't interfere with any items currently stored there.
+
 inaccurate_emu = !!0 %% Set to 1 if you are using an emulator < mgba 0.9
 amount = 999 %% Maximum possible amount is 65535
 item_index ? = 1 @input:item
