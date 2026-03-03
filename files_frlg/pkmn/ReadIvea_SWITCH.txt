@@ -1,0 +1,51 @@
+@@ title = "Read IVEA field"
+@@ author = "final / Papa Jefé / Blisy"
+@@ exit = "GrabACEExit"
+
+// 1.  Place the Pokémon to be read in the 2nd party slot.
+// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
+// 3.  Place any Pokémon in the 3rd party slot.
+//     -   For simplicity’s sake make sure that the third Pokémon
+//         in your party does not have a stat that is greater than 255.
+// 4.  After triggering ACE, follow the further instructions to calculate
+//     the cur_encoded_ivea variable.
+
+pid = 0x0
+
+// cur_encoded_ivea be calculated by following the below steps:
+// 1.  Convert the new Attack, Defense, Sp.Attack, and Sp.Defense stats of
+//     the third Pokémon in your party into 2-digit hexadecimal (pad the start 
+//     with zero if they do not form two digits).
+// 2.  The stats will form the hexadecimal number AABBCCDD where:
+//     -   AA is Attack
+//     -   BB is Defense
+//     -   CC is Sp.Attack
+//     -   DD is Sp.Defense
+// This is the cur_encoded_ivea of the second Pokémon in your party
+
+// Do not touch the parameters below!
+
+pmod = pid % 24
+misc_substructure_position = \
+    pmod == 18 | pmod == 19 | pmod == 20 | pmod == 21 | \
+    pmod == 22 | pmod == 23 ? 0 : \
+    pmod == 4  | pmod == 5  | pmod == 10 | pmod == 11 | \
+    pmod == 16 | pmod == 17 ? 1 : \
+    pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
+    pmod == 13 | pmod == 15 ? 2 : 3
+misc_offset = 0xC * misc_substructure_position
+target ?= 0x30 + misc_offset + 4
+
+@@
+
+MOVS    r12, #0x2F00000
+ADC     r11, r12, #0xE4000
+ADC     r11, #0x2D4              ; r11 = &gPlayerParty[1] - 16
+LDRSB   r12, [r11, #{target+3}]
+STRB    r12, [r11, #0xCE]        ; Store in Attack
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #0xD0]        ; Store in Defense
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #0xD4]        ; Store in Sp.Attack
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #0xD6]        ; Store in Sp.Defense

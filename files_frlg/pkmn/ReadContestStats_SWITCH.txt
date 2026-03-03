@@ -1,0 +1,69 @@
+@@ title = "Read contest stats field"
+@@ author = "final / Papa Jefé / Blisy"
+@@ exit = "Bootstrapped"
+
+// This code requires a Box 14 exit code for grab ACE.
+// It can be found here:
+// https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
+
+// 1.  Place the Pokémon to be read in the 2nd party slot.
+// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
+// 3.  Place any Pokémon in the 3rd party slot.
+//     -   For simplicity’s sake make sure that the third Pokémon
+//         in your party does not have a stat that is greater than 255.
+// 4.  After triggering ACE, follow the further instructions to calculate
+//     the cur_encoded_1, cur_encoded_2, and cur_encoded_3 variables.
+
+pid = 0x0
+
+// cur_encoded_1, cur_encoded_2, and cur_encoded_3 can 
+// be calculated by following the below steps:
+// 1.  Convert the new total HP, Attack, Defense, Sp.Attack, Sp.Defense,
+//     and Speed stats of the third Pokémon in your party into into 2-digit
+//     hexadecimal (pad the start with zero if they do not form two digits).
+// 2.  The stats will form the following hexadecimal numbers:
+//     -   HHAA
+//         -   HH is total HP
+//         -   AA is Attack
+//     -   BBCC
+//         -   BB is Defense
+//         -   CC is Sp.Attack
+//     -   DDSS
+//         -   DD is Sp.Defense
+//         -   SS is Speed
+// These numbers are the encoded data of the second Pokémon in your party where:
+// -   HHAA is cur_encoded_1
+// -   BBCC is cur_encoded_2
+// -   DDSS is cur_encoded_3
+
+// Do not touch the parameters below!
+
+pmod = pid % 24
+ev_substructure_position = \
+    pmod == 12 | pmod == 13 | pmod == 14 | pmod == 15 | \
+    pmod == 16 | pmod == 17 ? 0 : \
+    pmod == 2  | pmod == 3  | pmod == 8  | pmod == 9  | \
+    pmod == 22 | pmod == 23 ? 1 : \
+    pmod == 0  | pmod == 5  | pmod == 6  | pmod == 11 | \
+    pmod == 19 | pmod == 21 ? 2 : 3
+ev_offset = 0xC * ev_substructure_position
+target = 0x30 + ev_offset + 6
+
+@@
+
+MOVS    r12, #0x2F00000
+ADC     r11, r12, #0xE4000
+ADC     r11, #0x2D4              ; r11 = &gPlayerParty[1] - 16
+LDRSB   r12, [r11, #{target+1}]
+STRB    r12, [r11, #0xCA]        ; Store in current HP
+STRB    r12, [r11, #0xCC]        ; Store in total HP
+LDRSB   r12, [r11, #{target+0}]
+STRB    r12, [r11, #0xCE]        ; Store in Attack
+LDRSB   r12, [r11, #{target+3}]
+STRB    r12, [r11, #0xD0]        ; Store in Defense
+LDRSB   r12, [r11, #{target+2}]
+STRB    r12, [r11, #0xD4]        ; Store in Sp.Attack
+LDRSB   r12, [r11, #{target+5}]
+STRB    r12, [r11, #0xD6]        ; Store in Sp.Defense
+LDRSB   r12, [r11, #{target+4}]
+STRB    r12, [r11, #0xD2]        ; Store in Speed
