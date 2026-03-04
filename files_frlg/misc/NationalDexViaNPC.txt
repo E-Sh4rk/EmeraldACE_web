@@ -1,0 +1,31 @@
+@@ title = "Get National Dex via NPC"
+@@ author = "Adrichu00 / Papa Jefe / Theocatic / final"
+@@ exit = null
+@@ fill = false
+
+// This code requires a BIOS, if playing on unofficial emulators (i.e. mGBA)
+
+// Run this code in Viridian Pokemon Center.
+// Perform the GrabACE Swap, then exit the PC.
+// Speak to the Old Man below the PC, you should hear a single beep sound, and no text appears.
+// Check Pokedex. National Dex should now be enabled, and Johto evolutions should work.
+// Professor Oak will still function normally in the post-game.
+
+NPC = 2 // sets which NPC on the map to run though. NPC 1, 2 and 3 are usable. 
+
+// Do not modify this parameter
+NPCOffset = 0x1A5 + (NPC * 0x18)
+
+@@
+
+SBC r10, pc, #0x0000BA00
+ADC r11, r4, #0x00000300
+STR r11, [r10, {NPCOffset}]!
+// MOV r12, #0x02016F25 ?
+MOV r12, #0x02A80000
+SBC r12, r12, #0x00A40000
+SBC r12, r12, #0x00029000
+SBC r12, r12, #0x000000D8
+BIC r0,  r0,  #0x000000FF     // GrabACE exit (part 1)
+STR r12, [r11]!
+MOV pc, #0x00000354           // GrabACE exit (part 2)

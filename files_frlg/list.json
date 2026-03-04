@@ -747,5 +747,21 @@
     "eng1": "pkmn/ChangePIDTID_ENG.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Get National Dex via NPC",
+    "eng1": "misc/NationalDexViaNPC.txt",
+    "eng0": "misc/NationalDexViaNPC.txt",
+    "eng10": "misc/NationalDexViaNPC.txt",
+    "fra": "misc/NationalDexViaNPC.txt",
+    "fra10": "misc/NationalDexViaNPC.txt",
+    "ger": "misc/NationalDexViaNPC.txt",
+    "ger10": "misc/NationalDexViaNPC.txt",
+    "spa": "misc/NationalDexViaNPC.txt",
+    "spa10": "misc/NationalDexViaNPC.txt",
+    "ita": "misc/NationalDexViaNPC.txt",
+    "ita10": "misc/NationalDexViaNPC.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
