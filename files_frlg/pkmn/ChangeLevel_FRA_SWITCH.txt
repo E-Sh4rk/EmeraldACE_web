@@ -1,4 +1,4 @@
-@@ title = "Change Level of Party Slot 6 (Grab ACE)"
+@@ title = "Change Level of Party Slot 6"
 @@ author = "Papa Jefe, RocaBOT"
 @@ exit = "GrabACEExit" 
 
