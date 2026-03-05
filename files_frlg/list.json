@@ -198,6 +198,7 @@
     "eng0": "misc/RunScriptViaNPC_FR_ENG.txt",
     "eng10": "misc/RunScriptViaNPC_FR_ENG_SWITCH.txt",
     "fra": "misc/RunScriptViaNPC_FR_FRA.txt",
+    "fra10": "misc/RunScriptViaNPC_FR_FRA_SWITCH.txt",
     "ger": "misc/RunScriptViaNPC_FR_GER.txt",
     "spa": "misc/RunScriptViaNPC_FR_SPA.txt",
     "ita": "misc/RunScriptViaNPC_FR_ITA.txt",
@@ -212,6 +213,7 @@
     "eng0": "misc/RunScriptViaNPC_LG_ENG.txt",
     "eng10": "misc/RunScriptViaNPC_LG_ENG_SWITCH.txt",
     "fra": "misc/RunScriptViaNPC_LG_FRA.txt",
+    "fra10": "misc/RunScriptViaNPC_LG_FRA_SWITCH.txt",    
     "ger": "misc/RunScriptViaNPC_LG_GER.txt",
     "spa": "misc/RunScriptViaNPC_LG_SPA.txt",
     "ita": "misc/RunScriptViaNPC_LG_ITA.txt",
@@ -225,6 +227,7 @@
     "eng1": "pkmn/ChangeLevel.txt",
     "eng0": "pkmn/ChangeLevel.txt",
     "eng10": "pkmn/ChangeLevel_SWITCH.txt",
+    "fra10": "pkmn/ChangeLevel_FRA_SWITCH.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   },
