@@ -10,11 +10,11 @@
 ; -FRA FireRed Switch SCRIPT LOCATIONS-
  
 ; NationalDexScene = 0x0816CCDC
-; GiveCelioSapphire = 0x08170FD1  TODO
-; GiveRainbowPass =  0x081710DE   TODO
-; MoveManiac =  0x081716EA        TODO
-; MoveDeleter =  0x0816D8D8       TODO
-; NameBox1Slot1Mon =  0x081A765C  TODO
+; GiveCelioSapphire = 0x08174C51
+; GiveRainbowPass =  0x08174D5E
+; MoveManiac =  0x0817536A
+; MoveDeleter =  0x08171558
+; NameBox1Slot1Mon =  0x081ab2dc
 
 ; Replace 0x00000000 below with the address of the script
     
