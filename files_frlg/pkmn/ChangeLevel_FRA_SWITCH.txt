@@ -1,0 +1,14 @@
+@@ title = "Change Level of Party Slot 6 (Grab ACE)"
+@@ author = "Papa Jefe, RocaBOT"
+@@ exit = "GrabACEExit" 
+
+// Changes the level of the second Pokémon in the party.
+// Choose level here. Use rare candy to make permanent.
+
+level = 99
+
+@@
+
+movs r12, { 0x2fe4284 + 100 } ? ; r12 = &Trainer_party + 100 (second Pokemon)
+movs r11, {level} ? ; Load level in r11
+strb r11, [r12, #480] ; Store r11 (level) in party member 6 
