@@ -1,4 +1,4 @@
-@@ title = "Run Script via Old Man NPC (Grab ACE)"    
+@@ title = "Run Script via Old Man NPC"    
 @@ author = "Sleipnir / PapaJefe / im a blisy ._. / RocaBOT"    
 @@ exit = "GrabACEExit"  
 
