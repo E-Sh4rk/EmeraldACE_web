@@ -213,6 +213,7 @@
     "eng0": "misc/RunScriptViaNPC_LG_ENG.txt",
     "eng10": "misc/RunScriptViaNPC_LG_ENG_SWITCH.txt",
     "fra": "misc/RunScriptViaNPC_LG_FRA.txt",
+    "fra10": "misc/RunScriptViaNPC_LG_FRA_SWITCH.txt",    
     "ger": "misc/RunScriptViaNPC_LG_GER.txt",
     "spa": "misc/RunScriptViaNPC_LG_SPA.txt",
     "ita": "misc/RunScriptViaNPC_LG_ITA.txt",
