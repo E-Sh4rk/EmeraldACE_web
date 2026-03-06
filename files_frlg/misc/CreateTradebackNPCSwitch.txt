@@ -27,4 +27,4 @@ STR r12, [r11]! ;writes 0x0200FE25
 MOV r10, #0x2fc0000
 0xe1ffc4c0  ; MVNS r12, r0, ASR #9
 ADCS r10, r10, #0x37000
-STR r12, [r10, #0xc0]!
+STR r12, [r10, #0xBC]!
