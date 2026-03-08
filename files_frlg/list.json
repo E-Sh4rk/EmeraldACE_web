@@ -770,5 +770,21 @@
     "ita10": "misc/NationalDexViaNPC.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Fateful Mew Battle at Daycare (Bootstrapped)",
+    "eng1": "pkmn/FatefulMew_Universal.txt",
+    "eng0": "pkmn/FatefulMew_Universal.txt",
+    "eng10": "pkmn/FatefulMew_Universal.txt",
+    "fra": "pkmn/FatefulMew_Universal.txt",
+    "fra10": "pkmn/FatefulMew_Universal.txt",
+    "ger": "pkmn/FatefulMew_Universal.txt",
+    "ger10": "pkmn/FatefulMew_Universal.txt",
+    "spa": "pkmn/FatefulMew_Universal.txt",
+    "spa10": "pkmn/FatefulMew_Universal.txt",
+    "ita": "pkmn/FatefulMew_Universal.txt",
+    "ita10": "pkmn/FatefulMew_Universal.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
