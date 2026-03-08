@@ -1,19 +1,32 @@
 @@ title = "Read Pokérus field"
 @@ author = "final / Papa Jefé / Blisy"
-@@ exit = "GrabACEExit"
+@@ exit = "BIOS_BX_lr_Box6_Grab"
 
-// 1.  Place the Pokémon to be read in the 2nd party slot.
-// 2.  Enter that Pokémon’s personality value into the `pid` parameter.
-// 3.  Place any Pokémon in the 3rd party slot.
-//     -   For simplicity’s sake make sure that the third Pokémon
-//         in your party does not have a stat that is greater than 255.
-// 4.  After triggering ACE, the attack stat of the third Pokémon
-//     in your party should be the encoded Pokérus of the second
-//     party Pokémon.
+// 1. Place the Pokémon to be read in the 1st party slot.
+// 2. Enter that Pokémon’s personality value into the `pid` parameter.
+// 3. Place any Pokémon in the 2nd party slot.
+// 4. Press "Calculate" and trigger ACE with the code provided.
+// 5. After triggering ACE, input the first Pokémon’s TID and SID into
+//    the `tid` and `sid`, and input the second Pokémon’s new stats into
+//    the parameters and click "Calculate" again. The calculated values
+//    of the cur_encoded_pkrs, cur_pkrs, and Pokérus status should be
+//    printed out in the "Results" window.
 
 pid = 0x0
 
-// Do not touch the parameters below!
+// Enter TID of the Pokémon to be read here!
+
+tid = 0
+
+// Enter the new stats of the second Pokémon here!
+
+out_atk = 0
+
+// +--------------------------------------+
+// |                                      |
+// |  Do not touch the parameters below!  |
+// |                                      |
+// +--------------------------------------+
 
 pmod = pid % 24
 misc_substructure_position = \
@@ -24,12 +37,21 @@ misc_substructure_position = \
     pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
     pmod == 13 | pmod == 15 ? 2 : 3
 misc_offset = 0xC * misc_substructure_position
-target ?= 0x30 + misc_offset
+target ?= 0x20 + misc_offset
+
+encryption_key = pid ^ tid
+
+cur_encoded_pkrs ?= out_atk
+cur_pkrs         ?= (encryption_key ^ out_atk) & 0xff
+
+pokerus_days   ?= cur_pkrs & 0xf
+pokerus_strain ?= cur_pkrs >> 4
 
 @@
 
-MOVS    r12, #0x2F00000
-ADC     r11, r12, #0xE4000
-ADC     r11, #0x2D4            ; r11 = &gPlayerParty[1] - 16
-LDRSB   r12, [r11, #{target}]
-STRB    r12, [r11, #0xCE]
+MOVS    r12, #0x2f00000
+ADCS    r10, r12, #0xe3000
+ADCS    r10, r10, #0xff0
+ADCS    r11, r10, #0x290        @ r11 = &gPlayerParty (1st party member)
+LDRB    r12, [r10, #{0x290 + target}]
+STRH    r12, [r11, #0xbe]       @ Store in Attack

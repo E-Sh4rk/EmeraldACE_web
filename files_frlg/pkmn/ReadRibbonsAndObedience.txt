@@ -1,27 +1,31 @@
 @@ title = "Read ribbons and obedience field"
 @@ author = "final / Papa Jefé / Blisy"
-@@ exit = "GrabACEExit"
+@@ exit = "ROM_BX_lr_Box10_Grab"
 
-// Place the Pokémon to be read in the 2nd party slot
-// Place a low level Pokémon in the 3rd party slot
-//
-// cur_ribbons and obedience can be calculated by following the below steps:
-// 1. Convert each stat (Attack, Defense, Sp.Attack, Sp.Defense) into their hexadecimal forms
-// 2. The hexadecimal stats will form the following number (pad the start of each hexadecimal with 0 if necessary): AABBCCDD
-//     -   AA is Attack
-//     -   BB is Defense
-//     -   CC is Sp.Attack
-//     -   DD is Sp.Defense
-// 3. With the resulting number of step 2, perform the following calculation: result XOR (PID XOR ((SID * 0x10000) + TID))
-//     -   Note that the SID, and TID are those of the Pokémon rather than those of the player.
-// 4. From step 3's result, we can derive the following values using these calculations:
-//     -   cur_ribbons   = result mod 0x80000000
-//     -   cur_obedience = result / 0x80000000
-
+// 1. Place the Pokémon to be read in the 1st party slot.
+// 2. Enter that Pokémon’s personality value into the `pid` parameter.
+// 3. Place any Pokémon in the 2nd party slot.
+// 4. Press "Calculate" and trigger ACE with the code provided.
+// 5. After triggering ACE, input the first Pokémon’s TID and SID into
+//    the `tid` and `sid`, and input the second Pokémon’s new stats into
+//    the parameters and click "Calculate" again. The calculated values
+//    of cur_ribbons and cur_obedience should be printed out in the
+//    "Results" window.
 
 pid = 0x0
 
-// Do not touch the parameters below!
+// Enter the new stats of the second Pokémon here!
+
+out_atk = 0
+out_def = 0
+out_spa = 0
+out_spd = 0
+
+// +--------------------------------------+
+// |                                      |
+// |  Do not touch the parameters below!  |
+// |                                      |
+// +--------------------------------------+
 
 pmod = pid % 24
 misc_substructure_position = \
@@ -34,16 +38,24 @@ misc_substructure_position = \
 misc_offset = 0xC * misc_substructure_position
 target ?= 0x20 + misc_offset + 8
 
+ribbons_obedience  = (out_atk <<  0) | (out_def <<  8) \
+                   | (out_spa << 16) | (out_spd << 24)
+
+cur_ribbons   ?= ribbons_obedience & 0x7fffffff
+cur_obedience ?= ribbons_obedience >> 31
+
 @@
 
-MOVS    r12, #0x2F00000
-ADC     r11, r12, #0xE4000
-ADC     r11, #0x2E8             ; r11 = &gPlayerParty + 100 (2nd party member)
-LDRSB   r12, [r11, #{target+3}]
-STRB    r12, [r11, #190]        ; Store in Attack
-LDRSB   r12, [r11, #{target+2}]
-STRB    r12, [r11, #192]        ; Store in Defense
-LDRSB   r12, [r11, #{target+1}]
-STRB    r12, [r11, #196]        ; Store in Sp.Attack
-LDRSB   r12, [r11, #{target+0}]
-STRB    r12, [r11, #198]        ; Store in Sp.Defense
+MOVS    r12, #0x2f00000
+ADCS    r10, r12, #0xe3000
+ADCS    r10, r10, #0xff0
+ADCS    r11, r10, #0x294        @ r11 = &gPlayerParty (1st party member)
+LDRB    r12, [r10], #{0x294 + target}
+LDRB    r12, [r10], r14, ASR #27
+STRH    r12, [r11, #0xbe]       @ Store in Attack
+LDRB    r12, [r10], r14, ASR #27
+STRH    r12, [r11, #0xc0]       @ Store in Defense
+LDRB    r12, [r10], r14, ASR #27
+STRH    r12, [r11, #0xc4]       @ Store in Sp.Attack
+LDRB    r12, [r10], r14, ASR #27
+STRH    r12, [r11, #0xc6]       @ Store in Sp.Defense
