@@ -14,6 +14,11 @@
 
 pid = 0x0
 
+// Enter TID and SID of the Pokémon to be read here!
+
+tid = 0
+sid = 0
+
 // Enter the new stats of the second Pokémon here!
 
 out_atk = 0
@@ -38,11 +43,14 @@ misc_substructure_position = \
 misc_offset = 0xC * misc_substructure_position
 target ?= 0x20 + misc_offset + 8
 
+otid = (tid << 0) | (sid << 16)
+encryption_key = pid ^ otid
+
 ribbons_obedience  = (out_atk <<  0) | (out_def <<  8) \
                    | (out_spa << 16) | (out_spd << 24)
 
-cur_ribbons   ?= ribbons_obedience & 0x7fffffff
-cur_obedience ?= ribbons_obedience >> 31
+cur_ribbons   ?= (ribbons_obedience ^ encryption_key) & 0x7fffffff
+cur_obedience ?= (ribbons_obedience ^ encryption_key) >> 31
 
 @@
 
