@@ -1,9 +1,14 @@
 @@ title = "Get National Dex via NPC"
 @@ author = "Adrichu00 / Papa Jefe / Theocatic / final"
-@@ exit = null
-@@ fill = false
+@@ exit = "ROM_BX_lr_Box10_Grab"
 
-// This code requires a BIOS, if playing on unofficial emulators (i.e. mGBA)
+// WARNING: After using this code, the second round of the E4 will be activated.
+// If you want to fight in the first round, you have to disable the national dex
+// and trades with Hoenn games. In order to do so, run "Change Flag" code with
+// the following parameters:
+// flag = 0x840
+// value = 0
+// multi_flag = 0x0011
 
 // Run this code in Viridian Pokemon Center.
 // Perform the GrabACE Swap, then exit the PC.
@@ -11,7 +16,14 @@
 // Check Pokedex. National Dex should now be enabled, and Johto evolutions should work.
 // Professor Oak will still function normally in the post-game.
 
-NPC = 2 // sets which NPC on the map to run though. NPC 1, 2 and 3 are usable. 
+// This code also enables trading with Hoenn games
+
+// The script will be:
+// special EnableNationalDex          // 25 6F 01
+// setflag FLAG_SYS_CAN_LINK_WITH_RS  // 29 44 08
+// end                                // 02
+
+NPC = 2 // sets which NPC on the map to run though. NPC 1, 2 and 3 are usable.
 
 // Do not modify this parameter
 NPCOffset = 0x1A5 + (NPC * 0x18)
@@ -21,11 +33,15 @@ NPCOffset = 0x1A5 + (NPC * 0x18)
 SBC r10, pc, #0x0000BA00
 ADC r11, r4, #0x00000300
 STR r11, [r10, {NPCOffset}]!
-// MOV r12, #0x02016F25 ?
-MOV r12, #0x02A80000
-SBC r12, r12, #0x00A40000
-SBC r12, r12, #0x00029000
+
+// MOV r12, #0x29016F25 ?
+MOV r12, #0x29400000
+SBC r12, r12, #0x003B8000
+SBC r12, r12, #0x00031000
 SBC r12, r12, #0x000000D8
-BIC r0,  r0,  #0x000000FF     // GrabACE exit (part 1)
 STR r12, [r11]!
-MOV pc, #0x00000354           // GrabACE exit (part 2)
+
+// ADD r12, r12, #{0x00020844 - 0x00016F25} ?
+ADC r12, r12, #0x0000A600
+SBC r12, r12, #0x00000CE0
+STR r12, [r11, lr, ASR #0x19]!

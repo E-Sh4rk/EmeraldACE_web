@@ -1,0 +1,57 @@
+@@ title = "Fateful Mew Battle at Daycare (Bootstrapped)"
+@@ author = "Adrichu00 and PapaJefe"
+@@ exit = "Bootstrapped"
+
+// THIS CODE NEEDS A BOX 14 EXIT CODE:
+//   https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
+
+// This code creates a battle with a Mew inside the Daycare on Route 5.
+// The Mew will have the fateful encounter flag set, so it will obey.
+
+// Execute the code, and then speak to the Daycare Man to start the battle.
+
+// By default the Level of the Encountered Mew will be 0.
+// You can influence the Level, by depositing a Pokemon in the Daycare before executing.
+// The Level is based on the Pokemon's Index Number.
+// For example, depositing Pikachu (#25) would make Mew Level 25.
+
+// The Daycare Man will continue to start the Mew battle, even after Runaway/KO/Capture.
+// He will reset upon leaving the building, and you can withdraw the Pokemon.
+
+// Script
+// setvar 0x8004 0x0097          // 16 04 80 97 00
+// special CreateEnemyEventMon   // 25 BB 01
+// special StartLegendaryBattle  // 25 38 01
+// end                           // 02
+
+@@
+
+SBC r10, pc, #0xBA00                 // r10 = &NPC1ScriptPointer - 0x01BD
+0xE3E2C2C7  // MVN r12, #0x7000000C  // r12 = 0x8FFFFFF3
+ADC  r11, r4, #0x03FC                // r11 = ScriptAddress
+STR  r11, [r10, #0x1BD]!             // NPC1ScriptPointer = ScriptAddress
+
+// ADD r12, r12, #{0x97800416 - 0x8FFFFFF3} ?
+ADC  r12, r12, #0x04000003           // r12 = 0x93FFFFF6
+0xE3FFA6E5 // MVNS r10, #0x0E500000  // r10 = 0xF1AFFFFF
+ADC  r12, r12, #0x03800000           // r12 = 0x977FFFF6
+ADC  r12, r12, #0x0000037C           // r12 = 0x97800372
+ADC  r12, r12, #0x000000A4           // r12 = 0x97800416 (script word 0)
+BIC r10, r10, #0xFC000003            // r10 = 0x01AFFFFC
+STR  r12, [r11]!                     // Write script word 0
+
+0xC0C0FFFF                           // Filler for N flag set
+
+// ADD r12, r10, #{0x01BB2500 - 0x01AFFFFC} ?
+ADCS r12, r10, #0x000A8000           // r12 = 0x01BA7FFC
+ADC  r12, r12, #0x0000A200           // r12 = 0x01BB21FC
+ADC  r12, r12, #0x00000304           // r12 = 0x01BB2500 (script word 1)
+STR  r12, [r11, lr, ASR #0x19]!      // Write script word 1
+
+ADC  r12, r12, #0x000FF000           // r12 = 0x01CB1500
+
+ADD r12, r12, #{0x02013825 - 0x01BB2500 - 0x000FF000} ?
+ADC r12, r12, #0x00370000            // r12 = 0x02021500
+SBC r12, r12, #0x0000DC00            // r12 = 0x020138FF
+SBC r12, r12, #0x000000D9            // r12 = 0x02013825
+STR  r12, [r11, lr, ASR #0x19]!      // Write script word 2
