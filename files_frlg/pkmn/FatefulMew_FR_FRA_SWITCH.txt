@@ -6,6 +6,9 @@
 ; It can be found here:
 ; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
+; There is a new version of this code: "Fateful Mew Battle at Daycare (Bootstrapped)"
+; The revised code doesn't require Elite Four completion, and doesn't interfere with the Deoxys event flags.
+
 ; This code must be run at Indigo Plateau, and 
 ; the save must have cleared the Elite Four.
 ; After running, talk to the PokeMart NPC
