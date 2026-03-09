@@ -37,7 +37,7 @@ misc_substructure_position = \
     pmod == 1  | pmod == 3  | pmod == 7  | pmod == 9  | \
     pmod == 13 | pmod == 15 ? 2 : 3
 misc_offset = 0xC * misc_substructure_position
-target ?= 0x20 + misc_offset
+target = 0x20 + misc_offset
 
 encryption_key = pid ^ tid
 
