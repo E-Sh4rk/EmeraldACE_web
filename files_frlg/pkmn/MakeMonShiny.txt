@@ -1,0 +1,50 @@
+@@ title = "Make any Pokémon shiny"
+@@ author = "Mettrich, final, Adrichu00 and PapaJefe"
+@@ exit = null
+@@ fill = false
+@@ filler1 = 0xBBBBBBFF
+@@ filler2 = 0xBBBBFFFF
+@@ filler3 = 0xBBFFFFFF
+@@ filler4 = 0xFFFFFFFF
+
+// Requirements:
+// - A BIOS
+//
+// Effects:
+// - Makes the Pokémon in Box 10 Slot 2 shiny
+
+inaccurate_emu = 0  // Set to 1 if you are using an emulator < mgba 0.9
+
+
+// Do not change these
+offset_eng0 = 0x0305
+offset_eng1 = 0x02F1
+offset_fra  = 0x042D
+offset_ita  = 0x0419
+offset_ger  = 0x0405
+offset_spa  = 0x0419
+offset = offset_{lang}
+
+@@
+
+SBCS r10, pc, 0x2F40
+ADC  r0, r10, {0xA8 - (!inaccurate_emu << 1)}   // r0 = &Box10Slot2
+
+MOV  r12, 0x03FC00
+
+SBCS r12, r12, 0xF8000002
+SUB  r12, r12, {offset} ?                       // r12 = &EncryptBoxMon
+
+MOV  r11, 0x03FC
+0xE2BFE100                                      // ADCS r14, r15, 0x00 (Set return address)
+BIC  pc, r11, 0x0290                            // Call EncryptBoxMon
+
+// Returns here, now C is set to 1
+LDR  lr, [sp, lr, ASR 0x1D]!                    // Get return address from stack
+ADCS sp, sp, 0x03                               // sp = sp+4 (Fix stack)
+
+ADC  r12, r10, {0xA9 - (!inaccurate_emu << 1)}  // r12 = &Box10Slot2
+LDR  r11, [r12]!                                // r11 = PID
+BIC  r0, r0, 0xFF                               // Prepare return value ((bool8) FALSE)
+STR  r11, [r12, lr, ASR 0x19]!                  // Store PID in OTID
+MOV  pc, 0x0354                                 // Return
