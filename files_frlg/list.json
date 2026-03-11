@@ -786,5 +786,21 @@
     "ita10": "pkmn/FatefulMew_Universal.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Make any Pokémon Shiny",
+    "eng1": "pkmn/MakeMonShiny.txt",
+    "eng0": "pkmn/MakeMonShiny.txt",
+    "eng10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "fra": "pkmn/MakeMonShiny.txt",
+    "fra10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "ger": "pkmn/MakeMonShiny.txt",
+    "ger10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "spa": "pkmn/MakeMonShiny.txt",
+    "spa10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "ita": "pkmn/MakeMonShiny.txt",
+    "ita10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "game": ["fr", "lg"],
+    "cat": ["pkmn"]
   }
 ]
