@@ -37,8 +37,7 @@ BIC  pc, r11, 0x0290            // Call EncryptBoxMon
 LDR  lr, [sp, lr, ASR 0x1D]!    // Get return address from stack
 ADCS sp, sp, 0x03               // sp = sp+4 (Fix stack)
 
-ADC  r12, r10, 0xA7             // r12 = &Box10Slot2
-LDR  r11, [r12]!                // r11 = PID
+LDR  r11, [r10, 0xA7]!          // r11 = PID
 BIC  r0, r0, 0xFF               // Prepare return value ((bool8) FALSE)
-STR  r11, [r12, lr, ASR 0x19]!  // Store PID in OTID
+STRGT r11, [r10, lr, ASR 0x19]! // Store PID in OTID
 MOV  pc, 0x0354                 // Return

@@ -33,18 +33,17 @@ ADC  r0, r10, {0xA8 - (!inaccurate_emu << 1)}   // r0 = &Box10Slot2
 MOV  r12, 0x03FC00
 
 SBCS r12, r12, 0xF8000002
-SUB  r12, r12, {offset} ?                       // r12 = &EncryptBoxMon
+SUB  r12, r12, {offset} ?                          // r12 = &EncryptBoxMon
 
 MOV  r11, 0x03FC
-0xE2BFE100                                      // ADCS r14, r15, 0x00 (Set return address)
-BIC  pc, r11, 0x0290                            // Call EncryptBoxMon
+0xE2BFE100                                         // ADCS r14, r15, 0x00 (Set return address)
+BIC  pc, r11, 0x0290                               // Call EncryptBoxMon
 
 // Returns here, now C is set to 1
-LDR  lr, [sp, lr, ASR 0x1D]!                    // Get return address from stack
-ADCS sp, sp, 0x03                               // sp = sp+4 (Fix stack)
+LDR  lr, [sp, lr, ASR 0x1D]!                       // Get return address from stack
+ADCS sp, sp, 0x03                                  // sp = sp+4 (Fix stack)
 
-ADC  r12, r10, {0xA9 - (!inaccurate_emu << 1)}  // r12 = &Box10Slot2
-LDR  r11, [r12]!                                // r11 = PID
-BIC  r0, r0, 0xFF                               // Prepare return value ((bool8) FALSE)
-STR  r11, [r12, lr, ASR 0x19]!                  // Store PID in OTID
-MOV  pc, 0x0354                                 // Return
+LDR  r11, [r10, {0xA9 - (!inaccurate_emu << 1)}]!  // r11 = PID
+BIC  r0, r0, 0xFF                                  // Prepare return value ((bool8) FALSE)
+STR  r11, [r10, lr, ASR 0x19]!                     // Store PID in OTID
+MOV  pc, 0x0354                                    // Return
