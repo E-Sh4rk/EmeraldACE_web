@@ -1,5 +1,5 @@
 @@ title = "Run Script via Old Man NPC"
-@@ author = "Sleipnir / PapaJefe / Drakon56
+@@ author = "Sleipnir / PapaJefe / Drakon56"
 @@ exit = "GrabACEExit"
 ; This code inserts a script into the Old Gentleman NPC in Viridian City Pokemon Center.
 ; Activate the code, and then speak to him and the script should play.
