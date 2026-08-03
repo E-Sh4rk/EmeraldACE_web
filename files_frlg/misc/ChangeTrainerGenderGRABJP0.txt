@@ -1,0 +1,12 @@
+@@ title = "Change Trainer Gender 1.0 & 1.1"
+@@ author = "Final; (JPN Port)"
+
+@@ filler1 = 0x720AE7FF
+
+gender = 1 // 0 = male, 1 = female
+
+@@
+
+0x39844629
+{((0x2200 | (gender & 1)) << 16) | 0x6809}
+0x47704040

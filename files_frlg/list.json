@@ -13,6 +13,13 @@
     "cat": ["rng"]
   },
   {
+    "name": "Change PRNG seed and teleport",
+    "jap0": "rng/SeedChangeAndWarpGRABJP0.txt",
+    "jap1": "rng/SeedChangeAndWarpGRABJP1.txt",
+    "game": ["fr", "lg"],
+    "cat": ["rng"]
+  },
+  {
     "name": "Change PRNG seed and teleport (Bootstrapped)",
     "eng1": "rng/SeedChangeAndWarpBootstrappedEN.txt",
     "eng0": "rng/SeedChangeAndWarpBootstrappedEN.txt",
@@ -41,6 +48,8 @@
     "spa10": "rng/tidsid.txt",
     "ita": "rng/tidsid.txt",
     "ita10": "rng/tidsid.txt",
+    "jap0": "rng/tidsidGRABJP0.txt",
+    "jap1": "rng/tidsidGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["rng"]
   },
@@ -84,6 +93,8 @@
     "spa10": "misc/ChangeTrainerGender.txt",
     "ita": "misc/ChangeTrainerGender.txt",
     "ita10": "misc/ChangeTrainerGender.txt",
+    "jap0": "misc/ChangeTrainerGenderGRABJP0.txt",
+    "jap1": "misc/ChangeTrainerGenderGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -375,6 +386,8 @@
     "spa10": "misc/CreateTradebackNPCSwitch.txt",
     "ita": "misc/CreateTradebackNPC.txt",
     "ita10": "misc/CreateTradebackNPCSwitch.txt",
+    "jap0": "misc/CreateTradebackNPCGRABJP0.txt",
+    "jap1": "misc/CreateTradebackNPCGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -407,6 +420,8 @@
     "spa10": "misc/AddItemWrongPocket.txt",
     "ita": "misc/AddItemWrongPocket.txt",
     "ita10": "misc/AddItemWrongPocket.txt",
+    "jap0": "misc/AddItemWrongPocketGRABJP0.txt",
+    "jap1": "misc/AddItemWrongPocketGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
@@ -811,6 +826,8 @@
     "spa10": "pkmn/MakeMonShiny_SWITCH.txt",
     "ita": "pkmn/MakeMonShiny.txt",
     "ita10": "pkmn/MakeMonShiny_SWITCH.txt",
+    "jap0": "pkmn/MakeMonShinyGRABJP0.txt",
+    "jap1": "pkmn/MakeMonShinyGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
   }

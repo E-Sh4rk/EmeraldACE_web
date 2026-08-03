@@ -1,0 +1,57 @@
+@@ title = "Change PRNG+Teleport 1.1"
+@@ author = "final, Theocatic and Mettrich (ported to JPN)"
+@@ exit = null
+@@ fill = false
+
+// The teleportation will occur as soon as you log off Bill’s PC.
+// This code is best ran in the Route 5 Daycare.
+
+// The map list can be found here:
+// https://pastebin.com/peDhNbEt
+
+map_id = 0
+
+// `warp` determines which warp point you will teleport to. Use warp 3 for Zapdos
+
+warp = 0
+
+// Input the desired RNG state here.
+
+seed = 0
+
+// Teleport script:
+//
+// 39 YY XX WW 00 00 00 00
+// warp 0xYY 0xXX 0xWW
+// FF @ illegal command, terminates script execution
+
+script = ((warp & 0xFF) << 24) | ((map_id & 0xFFFF) << 8) | 0x39
+
+@@
+
+0x4A114620 ; mov r0,r4 | ldr r2,[pc,#0x44]
+0x405A4B11 ; ldr r3,[pc,#0x44] | eor r2,r3
+0x490D23FF ; mov r3,#0xFF | ldr r1,[pc,#0x34]
+0xE000011B ; lsl r3,r3,#4 | b #0x4
+0x18C0FF00 ; FF00 | add r0,r0,r3
+0x60026088 ; str r0,[r1,#0x8] | str r2,[r0]
+0x28FF2200 ; mov r2,#0 | cmp r0,#0xFF
+0x43D26042 ; str r2,[r0,#0x4] | mvn r2,r2
+0xFF00E000 ; b #0x4 | FF00
+0x4B0B7202 ; strb r2,[r0,#0x8] | ldr r3,[pc,#0x2C]
+0x4A0E490C ; ldr r1,[pc,#0x30] | ldr r2,[pc,#0x38]
+0x405128FF ; cmp r0,#0xFF | eor r1,r2
+0xE0006219 ; str r1,[r3,#0x20] | b #0x4
+0x2000FF00 ; FF00 | mov r0,#0
+0x00004770 ; bx r14 | 0000
+0x00FF0000
+0x03000EB0
+0xFF000000
+{script & 0xAAAAAAAA}
+{script & 0x55555555}
+0x000000FF
+0x03004F80
+0x0000FF00
+{(seed & 0xAAAAAAAA) ^ 0x03030303}
+0x00FF0000
+{(seed & 0x55555555) ^ 0x03030303}
