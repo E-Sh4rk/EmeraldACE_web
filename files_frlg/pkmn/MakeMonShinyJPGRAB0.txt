@@ -1,0 +1,37 @@
+@@ title = "Make any Pokémon shiny"
+
+@@ author = "Mettrich, final, Adrichu00 and PapaJefe (JPN Port)"
+
+@@ exit = null
+
+@@ fill = false
+
+@@ filler1 = 0x46C0E7FF
+
+@@ filler2 = 0x46C0FFFF
+
+@@ filler3 = 0xE7FF46C0
+
+@@ filler4 = 0xFFFFE000
+
+// Makes the Pokémon in Box 1 Slot 1 shiny.
+
+@@
+
+0x3B80462B
+0x3304681B
+0xE0016818
+0x40486859
+0x0C124602
+0x04124042
+0x60594051
+0xE0013320
+0x68182104
+0x60184050
+0x68183304
+0x60184050
+0xE0013304
+0x40506818
+0x33046018
+0xD1E43901
+0x47704040
