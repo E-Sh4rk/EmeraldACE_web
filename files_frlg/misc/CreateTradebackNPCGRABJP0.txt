@@ -1,0 +1,38 @@
+@@ title = "Create Tradeback NPC"
+@@ author = "Theocatic, Final (JPN Port)"
+@@ exit = null
+@@ filler1 = 0x2227E7FF
+@@ filler2 = 0x0212FFFF
+@@ filler3 = 0xE7FF2302
+@@ filler4 = 0xFFFFE000
+
+; Just like the English version of this code, after executing this code,
+; talk to the Old Gentleman NPC in the Viridian City Pokémon Center
+; when using the default NPC value of 2.
+;
+; The code trades the first Pokémon in the party for an empty Decamark.
+; Talk to the NPC again to receive the original Pokémon back.
+
+NPC = 2 ; NPC values 1, 2, and 3 are usable.
+
+npc_offset = 0x08F0 + ((NPC - 1) * 0x18)
+npc_base = (npc_offset >> 6) & 0xFF
+npc_tail = npc_offset & 0x3F
+
+npc_base_word = ((0x2300 | npc_base) << 16) | 0x6002
+npc_tail_word = ((0x3300 | npc_tail) << 16) | 0x019B
+
+@@
+
+0x4629A0BF
+0x68093988
+0xE0003258
+0x32250052
+0x431A061B
+{npc_base_word}
+{npc_tail_word}
+0xE00018C9
+0x32086008
+0x405B1AA2
+0x40406013
+0x46C04770
