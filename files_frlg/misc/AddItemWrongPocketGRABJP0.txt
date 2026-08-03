@@ -1,0 +1,50 @@
+@@ title = "Add/Remove Item in Wrong Pocket"
+@@ author = "Adrichu00 (Ported to JPN)"
+@@ exit = null
+@@ filler1 = 0x4040E7FF
+@@ filler2 = 0x00C0FFFF
+@@ filler3 = 0xE7FF46C0
+@@ filler4 = 0xFFFFE000
+
+// pocket: 0 = Key Items, 1 = Poké Balls
+// delete_mode: 0 = add to last slot, 1 = delete first slot
+// Delete mode requires the selected pocket's last slot to be empty.
+// Item IDs:
+// https://bulbapedia.bulbagarden.net/wiki/List_of_items_by_index_number_in_Generation_III
+
+pocket = 0
+item_id = 0x0001
+delete_mode = 1
+
+p = pocket ? 1 : 0
+d = delete_mode ? 1 : 0
+
+target_offset = d ? (p ? 0x0430 : 0x03B8) : (p ? 0x0460 : 0x042C)
+target_base = (target_offset >> 3) & 0xFF
+target_tail = target_offset & 0x07
+
+quantity_delta = d ? (p ? 0x32 : 0x76) : 0x02
+quantity_base = (quantity_delta >> 3) & 0xFF
+quantity_tail = quantity_delta & 0x07
+
+quantity_xor = d ? 0 : 1
+stored_item = d ? 0 : (item_id & 0xFFFF)
+
+item_a = (stored_item & 0xAAAA) ^ 0x0303
+item_b = (stored_item & 0x5555) ^ 0x0303
+item_data = (item_b << 16) | item_a
+
+@@
+
+0x39884629
+0x4A056809
+{0xE0002000 | target_base}
+{0xE0053000 | target_tail}
+{item_data}
+0x0C131809
+0x800A405A
+{0xE0002000 | quantity_base}
+{0x5A0A3000 | quantity_tail}
+{0x405A2300 | quantity_xor}
+0x4040804A
+0x46C04770
