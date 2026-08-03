@@ -13,7 +13,7 @@
     "cat": ["rng"]
   },
   {
-    "name": "Change PRNG seed and teleport (Grab ACE)",
+    "name": "Change PRNG seed and teleport",
     "jap0": "rng/SeedChangeAndWarpGRABJP0.txt",
     "jap1": "rng/SeedChangeAndWarpGRABJP1.txt",
     "game": ["fr", "lg"],
