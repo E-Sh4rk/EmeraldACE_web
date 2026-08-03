@@ -1,4 +1,4 @@
-@@ title = "PRNG+Teleport JPN 1.0 Port"
+@@ title = "Change PRNG+Teleport"
 @@ author = "final, Theocatic and Mettrich (ported to JPN)"
 @@ exit = null
 @@ fill = false
