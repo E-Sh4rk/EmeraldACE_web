@@ -1,0 +1,15 @@
+@@ title = "Respawn Zapdos"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_ZAPDOS, allowing Zapdos to reappear at the Power Plant.
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0xC2000
+adc r0, r11, 0
+sbc r10, r10, 0
+ldrh r12, [r10, 0xB6]
+bic r12, r12, r0
+strh r12, [r10, 0xB6]

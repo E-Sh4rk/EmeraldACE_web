@@ -1,0 +1,15 @@
+@@ title = "Respawn Moltres"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_MOLTRES, allowing Moltres to reappear at Mt. Ember.
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0xC4
+sbc r0, r11, 0xBF
+sbc r10, r10, 0
+ldrh r12, [r10, 0xB6]
+bic r12, r12, r0
+strh r12, [r10, 0xB6]

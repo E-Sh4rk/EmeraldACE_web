@@ -1,0 +1,14 @@
+@@ title = "Respawn Lapras"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_GOT_LAPRAS_FROM_SILPH, allowing the gift Lapras from the Silph Co. employee to be received again.
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0xEE
+sbc r0, r11, 0xAD
+ldrh r12, [r10, 0xF3]
+bic r12, r12, r0
+strh r12, [r10, 0xF3]

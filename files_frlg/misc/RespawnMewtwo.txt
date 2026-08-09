@@ -1,0 +1,14 @@
+@@ title = "Respawn Mewtwo"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_MEWTWO, allowing Mewtwo to reappear at Cerulean Cave.
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0xC2
+sbc r0, r11, 0xBF
+ldrh r12, [r10, 0xBB]
+bic r12, r12, r0
+strh r12, [r10, 0xBB]

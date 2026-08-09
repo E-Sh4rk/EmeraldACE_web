@@ -1,0 +1,14 @@
+@@ title = "Respawn Articuno"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_ARTICUNO, allowing Articuno to reappear at the Seafoam Islands.
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0xC4
+sbc r0, r11, 0xBF
+ldrh r12, [r10, 0xBB]
+bic r12, r12, r0
+strh r12, [r10, 0xBB]
