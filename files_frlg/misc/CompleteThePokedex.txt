@@ -1,0 +1,60 @@
+@@ title = "Complete the Pokédex (Bootstrapped)"
+@@ author = "ComplexRobot"
+@@ exit = "Bootstrapped"
+
+; Requires the Box 14 Exit Code (Bootstrap) setup:
+; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
+
+; Completes the entire Pokédex, including the National Dex
+
+aligned_pc = 0 ; Set to 1 on old emulators
+
+; Do not modify these
+pc_base = 0x02029310 + 0x8344 + (aligned_pc ? 0 : 2)
+dex_start = 0x02024584 + 0x018 + 0x10
+offset_0 = 0x4b
+seen_1_offset = 0x02025528 + 0x5f8 - (dex_start - offset_0)
+seen_2_offset = seen_1_offset + 0x3a18 - 0x5f8
+offset_1 = seen_1_offset - 0x1582
+offset_2 = seen_2_offset - (0x1582 + 0x3401)
+
+@@
+
+; r12 = 0xFFFFFFFF
+MVN r12, #0
+; r11 = &gSaveBlock2.pokedex.owned - offset_0; carry_flag = 1
+SBCS r11, pc, #{pc_base - dex_start + 12 - 1 + offset_0}
+
+; r10 = 0x4e0
+MOV r10, #0xff0
+SBC r10, r10, #0xb10
+
+; Loop entry ->
+
+; gSaveBlock2.pokedex.owned[i] = 0xFFFF
+STRH r12, [r11, #{offset_0}]
+; gSaveBlock2.pokedex.seen[i] = 0xFFFF
+STRH r12, [r11, #{offset_0 + 52}]
+
+; r11 += 0x1582
+ADC r11, r11, #0xac0
+ADC r11, r11, #0xac0
+
+; gSaveBlock1.seen1[i] = 0xFFFF
+STRH r12, [r11, #{offset_1}]
+
+; r11 += 0x3401; carry_flag = 0
+ADCS r11, r11, #0x3400
+
+; gSaveBlock1.seen2[i] = 0xFFFF
+STRH r12, [r11, #{offset_2}]
+
+; r11 -= 0x4981; carry_flag = 1
+SBCS r11, r11, #0xe00
+SBC r11, r11, #0x3b80
+
+; r10 -= 0x30; carry_flag = 1
+SBCS r10, r10, #0x30
+
+; if r10 > 0, then jump back to loop entry: 26 Total iterations
+BGT #{-19 * 4}
