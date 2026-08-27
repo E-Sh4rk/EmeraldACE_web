@@ -9,6 +9,8 @@
 // THIS CODE NEEDS A BOX 14 EXIT CODE:
 //   https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
 
+// This code registers all species from 1 to 150
+
 @@
 
 MOVS  r10, #0xE1000000      // Loop Counter

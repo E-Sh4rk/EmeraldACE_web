@@ -9,6 +9,8 @@
 // THIS CODE NEEDS A BOX 14 EXIT CODE:
 //   https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
 
+// This code registers all species except Jirachi and Deoxys
+
 @@
 
 MOVS  r10, #0xD5000000      // Loop Counter
