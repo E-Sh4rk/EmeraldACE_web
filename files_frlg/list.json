@@ -958,5 +958,21 @@
     "ita10": "misc/CompleteNationalDex.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Complete the Pokédex (Bootstrapped)",
+    "eng1": "misc/CompleteThePokedex.txt",
+    "eng0": "misc/CompleteThePokedex.txt",
+    "eng10": "misc/CompleteThePokedex.txt",
+    "fra": "misc/CompleteThePokedex.txt",
+    "fra10": "misc/CompleteThePokedex.txt",
+    "ger": "misc/CompleteThePokedex.txt",
+    "ger10": "misc/CompleteThePokedex.txt",
+    "spa": "misc/CompleteThePokedex.txt",
+    "spa10": "misc/CompleteThePokedex.txt",
+    "ita": "misc/CompleteThePokedex.txt",
+    "ita10": "misc/CompleteThePokedex.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
