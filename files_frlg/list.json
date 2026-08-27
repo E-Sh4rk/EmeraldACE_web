@@ -926,5 +926,37 @@
     "jap1": "pkmn/MakeMonShinyGRABJP1.txt",
     "game": ["fr", "lg"],
     "cat": ["pkmn"]
+  },
+  {
+    "name": "Complete Kanto Dex",
+    "eng1": "misc/CompleteKantoDex.txt",
+    "eng0": "misc/CompleteKantoDex.txt",
+    "eng10": "misc/CompleteKantoDex.txt",
+    "fra": "misc/CompleteKantoDex.txt",
+    "fra10": "misc/CompleteKantoDex.txt",
+    "ger": "misc/CompleteKantoDex.txt",
+    "ger10": "misc/CompleteKantoDex.txt",
+    "spa": "misc/CompleteKantoDex.txt",
+    "spa10": "misc/CompleteKantoDex.txt",
+    "ita": "misc/CompleteKantoDex.txt",
+    "ita10": "misc/CompleteKantoDex.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
+    "name": "Complete National Dex",
+    "eng1": "misc/CompleteNationalDex.txt",
+    "eng0": "misc/CompleteNationalDex.txt",
+    "eng10": "misc/CompleteNationalDex.txt",
+    "fra": "misc/CompleteNationalDex.txt",
+    "fra10": "misc/CompleteNationalDex.txt",
+    "ger": "misc/CompleteNationalDex.txt",
+    "ger10": "misc/CompleteNationalDex.txt",
+    "spa": "misc/CompleteNationalDex.txt",
+    "spa10": "misc/CompleteNationalDex.txt",
+    "ita": "misc/CompleteNationalDex.txt",
+    "ita10": "misc/CompleteNationalDex.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]

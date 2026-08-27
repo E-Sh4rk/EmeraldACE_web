@@ -1,0 +1,35 @@
+@@ title = "Complete Kanto Dex"
+@@ author = "Adrichu00 (Based on Sleipnir's code)"
+@@ exit = "Bootstrapped"
+@@ filler1 = 0x000000FF
+@@ filler2 = 0x0000FFFF
+@@ filler3 = 0x00FFFFFF
+@@ filler4 = 0xFFFFFFFF
+
+// THIS CODE NEEDS A BOX 14 EXIT CODE:
+//   https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
+
+@@
+
+MOVS  r10, #0xE1000000      // Loop Counter
+// r11 = &gSaveBlock2Ptr->pokedex.owned - 0x4C
+SBC  r11, pc, #0xD100
+MOV  r12, #0xC000003F       // Flags for 145-150
+BIC  r11, r11, #0xB0000003  // Force Alignment
+
+// Loop
+// Iterates 10 times: first with r12 = 0x003F and 9 times with r12 = 0xFFFF
+// Ends on the next iteration after r10's overflow (0x75000000 > 0x0C000000)
+STRH r12, [r11, #0x5E]      // Set gSaveBlock2Ptr->pokedex.owned flags
+STRH r12, [r11, #0x92]      // Set gSaveBlock2Ptr->pokedex.seen flags
+SBC  r11, r11, #0x2A40
+ADC  r11, r11, #0x3FC0
+STRH r12, [r11, #0x51]      // Set gSaveBlock1Ptr->seen1 flags
+ADC  r11, r11, #0x3440
+STRH r12, [r11, #0x30]      // Set gSaveBlock1Ptr->seen2 flags
+ADC  r11, r11, #0x000B
+SBC  r11, r11, #0x0A10
+SBC  r11, r11, #0x3FC0      // r11 is 2 less than its value at the start of the iteration
+MVN  r12, #0x00             // Flags for 1-144
+SBCS r10, r10, #0x0C000000  // Decrease loop counter
+0xDAFFFFEB                  // Jump to STRH r12, [r11, #0x5E]
