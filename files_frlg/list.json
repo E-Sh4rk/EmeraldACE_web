@@ -928,7 +928,7 @@
     "cat": ["pkmn"]
   },
   {
-    "name": "Complete Kanto Dex",
+    "name": "Complete Kanto Pokédex (Bootstrapped)",
     "eng1": "misc/CompleteKantoDex.txt",
     "eng0": "misc/CompleteKantoDex.txt",
     "eng10": "misc/CompleteKantoDex.txt",
@@ -944,7 +944,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Complete National Dex",
+    "name": "Complete National Pokédex (Bootstrapped)",
     "eng1": "misc/CompleteNationalDex.txt",
     "eng0": "misc/CompleteNationalDex.txt",
     "eng10": "misc/CompleteNationalDex.txt",
@@ -960,7 +960,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Complete the Pokédex (Bootstrapped)",
+    "name": "Complete the full Pokédex (Bootstrapped)",
     "eng1": "misc/CompleteThePokedex.txt",
     "eng0": "misc/CompleteThePokedex.txt",
     "eng10": "misc/CompleteThePokedex.txt",
