@@ -235,7 +235,7 @@
     "spa": "misc/RunScriptViaNPC_LG_SPA.txt",
     "spa10": "misc/RunScriptViaNPC_LG_SPA_SWITCH.txt",
     "ita": "misc/RunScriptViaNPC_LG_ITA.txt",
-    "ita": "misc/RunScriptViaNPC_LG_ITA_SWITCH.txt",
+    "ita10": "misc/RunScriptViaNPC_LG_ITA_SWITCH.txt",
     "jap1": "misc/RunScriptViaNPCJAP.txt",
     "jap0": "misc/RunScriptViaNPCJAP.txt",
     "game": ["lg"],
