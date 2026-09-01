@@ -1,0 +1,88 @@
+@@ title = "Get All Poké Balls, TMs and Berries (Bootstrapped)"
+@@ author = "ComplexRobot"
+@@ exit = "Bootstrapped"
+
+; Requires the Box 14 Exit Code (Bootstrap) setup:
+; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg-box-14-exit/
+
+; Fills a pocket with ×952 of every item of that pocket
+; WARNING: Overwrites everything in that pocket
+
+; Select the pocket to fill:
+; 0 = Poké Balls
+; 1 = TMs and HMs
+; 2 = Berries
+pocket = 0
+
+; Do not modify these
+m = pocket
+pc_base = 0x2029310 + 0x8344 + 2
+pokeballs = 0x2025528 + 0x430
+tms = 0x2025528 + 0x464
+berries = 0x2025528 + 0x54c
+encryption_key = 0x2024584 + 0xf20
+offset_0 = 0x348
+offset_1 = !(m - 2) ? 0xff0 : 0x3fc
+offset_2 = !(m - 2) ? -(berries - encryption_key - offset_1) : !(m - 1) ? (tms - encryption_key - offset_1 - 2) : (pokeballs - encryption_key - offset_1 - 2)
+offset_3 = !(m - 2) ? 0x378 : !(m - 1) ? 0xed0 : 0
+offset_4 = !(m - 2) ? 0x3fc : !(m - 1) ? 0xff0 : 0
+loop_count_init = !(m - 2) ? 0xa10 : !(m - 1) ? 0xae0 : 0xa200
+loop_count_dec = !(m - 2) ? 0x3b : !(m - 1) ? 0x30 : 0xd80
+
+@@
+
+; r11 = &gSaveBlock2.encryptionKey; carry_flag = 1
+ADCS r11, pc, #{offset_0}
+SBCS r11, #{pc_base - encryption_key + 8 - 1 + offset_0 + 0xff}
+
+; r12 = gSaveBlock2.encryptionKey << 16
+LDR r0, [r11, #0xff]! ; 0xff used for asm compaction
+MOV r12, r0, LSL #16
+
+; zero_flag = 1 (activate LE condition)
+MOVS r0, #0
+
+; r12 = gSaveBlock2.encryptionKey ^ { 0, 952 }
+; calculates: a ^ b = a - b + 2 * (b & ~a)
+BICLE r10, r12, #0x3b80000 ; r10 = b & ~a
+
+; Loop entry ->
+
+; ADCLE r11, #{offset_2} or RSCLE r11, #{offset_2}
+; (moved up to bypass language filter)
+{!(m - 2) ? 0xD2EBBEA2 : !(m - 1) ? 0xD2ABB0EA : 0xD2ABB0B6}
+
+RSCLE r12, #0x3b80000 ; r12 = a - b
+
+; ADCLE r11, #{offset_1} or RSCLE r11, #{offset_1}
+{!(m - 2) ? 0xD2EBBEFF : 0xD2ABBFFF} ; compacted asm position
+
+ADCLE r12, r10, ROR #31 ; r12 += 2 * (b & ~a)
+BICLE r12, #0x3 ; clear leftover bits
+
+; SBCLE r12, #{offset_3} or filler
+{!(m - 2) ? 0xD2CCCFDE : !(m - 1) ? 0xD2CCCEED : 0xBBFFFFFF}
+
+; r10 = loop_count_init
+MOVLE r10, #{loop_count_init}
+
+; r12 += 1
+ADCGT r12, #0
+; r12 += offset_4 + 1
+ADCLE r12, #{offset_4}
+
+; r10 -= loop_count_dec; zero_flag = 0
+SBCS r10, #{loop_count_dec}
+
+; if r10 < 0, then skip the next command
+SBCLT pc, #0 ; compacted asm position
+
+; gSaveBlock1.bagPocket_...[i] = r12
+; r11 += 4
+STRT r12, [r11], lr, LSR #25
+
+; if r10 > 0, then jump back to loop entry; iterations: 12, 58, 43
+BGT #{-16 * 4}
+
+; negative_flag = 0 (prevent filler from executing)
+MOVS r11, #0xca
