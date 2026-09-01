@@ -976,5 +976,21 @@
     "ita10": "misc/CompleteThePokedex.txt",
     "game": ["fr", "lg"],
     "cat": ["misc"]
+  },
+  {
+    "name": "Get All Poké Balls, TMs and Berries (Bootstrapped)",
+    "eng1": "misc/GetAllBallsTmsBerries.txt",
+    "eng0": "misc/GetAllBallsTmsBerries.txt",
+    "eng10": "misc/GetAllBallsTmsBerries.txt",
+    "fra": "misc/GetAllBallsTmsBerries.txt",
+    "fra10": "misc/GetAllBallsTmsBerries.txt",
+    "ger": "misc/GetAllBallsTmsBerries.txt",
+    "ger10": "misc/GetAllBallsTmsBerries.txt",
+    "spa": "misc/GetAllBallsTmsBerries.txt",
+    "spa10": "misc/GetAllBallsTmsBerries.txt",
+    "ita": "misc/GetAllBallsTmsBerries.txt",
+    "ita10": "misc/GetAllBallsTmsBerries.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
   }
 ]
