@@ -1,0 +1,41 @@
+@@ title = "Wild Method 2 and 4 Helper (JP, 0x85F)"
+@@ author = "ShinkoNet"
+@@ exit = null
+
+; Execute this code once before using an encounter ACE code that uses
+; Method 2 or Method 4. (Method 1 does not need it)
+
+; The helper remains in unused IWRAM until next reset/power-off.
+@@
+
+0x4902A01E
+0x38012244
+0xE002E7FF
+0x03002FC4
+0x7803FF00
+0x0000E001
+0x2BFF0000
+0x3901D007
+0xFF00E000
+0x3A01700B
+0x4770D1ED
+0xE7EA00FF
+0xCB07A30B
+0x5A68FF23
+0x22181243
+0x04FF2460
+0x1AC0D502
+0xFF034348
+0x5B005B1C
+0x5200520C
+0x03D20CFF
+0x9204431A
+0x0198FF00
+0x04800121
+0x4BFF044C
+0x60734718
+0xFF9B0000
+0x6D114614
+0xE841C64E
+0x020243FF
+0x08067C6B

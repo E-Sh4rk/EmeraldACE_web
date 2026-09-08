@@ -14,6 +14,51 @@
     "cat": ["rng"]
   },
   {
+    "name": "Exact-seed Grass encounter (for 0x085F)",
+    "jap": "rng/ExactSeedGrassJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Exact-seed Surfing encounter (for 0x085F)",
+    "jap": "rng/ExactSeedSurfingJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Exact-seed Rock Smash encounter (for 0x085F)",
+    "jap": "rng/ExactSeedRockSmashJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Exact-seed Old Rod encounter (for 0x085F)",
+    "jap": "rng/ExactSeedOldRodJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Exact-seed Good Rod encounter (for 0x085F)",
+    "jap": "rng/ExactSeedGoodRodJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Exact-seed Super Rod encounter (for 0x085F)",
+    "jap": "rng/ExactSeedSuperRodJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Wild Method 2 and 4 Helper (for 0x085F)",
+    "jap": "rng/WildMethodHelperJAPThumb.txt",
+    "cat": ["rng", "bootstraps"]
+  },
+  {
+    "name": "Battle-outcome catch and accuracy hook (for 0x085F)",
+    "jap": "rng/BattleOutcomeCatchAccuracyJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
+    "name": "Persistent battle-only catch and accuracy RNG hook (for 0x085F)",
+    "jap": "rng/PersistentBattleRngJAPThumb.txt",
+    "cat": ["rng"]
+  },
+  {
     "name": "Change trainer TID and SID (with exit code bootstrap)",
     "eng": "misc/ChangeTrainerTidSid.txt",
     "fra": "misc/ChangeTrainerTidSid.txt",
