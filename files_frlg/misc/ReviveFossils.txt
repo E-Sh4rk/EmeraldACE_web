@@ -1,6 +1,10 @@
-@@ title = "Revive Fossils"
+@@ title = "Revive Fossils (Bootstrapped)"
 @@ author = "Sleipnir (ported by glu8716)"
 @@ exit = "Bootstrapped"
+
+; This code requires a Box 14 exit code for grab ACE.
+; It can be found here:
+; https://pomeg-letterbombers.github.io/pokemon-ace-notes/frlg/exit-codes/box-14-exit/
 
 ; IMPORTANT: only execute this code after reviving the original fossils (both Old Amber and either Helix Fossil or Dome Fossil). You don't need to have the fossils in your bag but if you have them they will disappare after reviving.
 ; This code will allow you to revive all three fossils (Helix Fossil, Dome Fossil and Old Amber) after every execution.
