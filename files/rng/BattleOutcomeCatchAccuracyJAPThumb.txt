@@ -1,0 +1,36 @@
+@@ title = "Battle-outcome catch and accuracy hook (JAP, 0x085F)"
+@@ author = "ShinkoNet"
+@@ exit = null
+
+; Change this value, then click Compute to repack all box names.
+; 0x00597575 gives catch success and accuracy roll 1 after battle VBlank.
+seed = 0x00597575
+
+; Execute from the party summary after a battle has started.
+; Seeds every VBlank until any battle outcome, then restores VBlank.
+@@
+
+0x3001A004
+0xE0004910
+0x600800FF
+0xE0004770
+0x46C0FF00
+0x7800480D
+0x00FFE000
+0xD10A2800
+0xFF00E000
+0x490D480B
+0xE0006001
+0x480400FF
+0x00004700
+0x4804FF00
+0x60014901
+0x00FF4708
+0x08000739
+0xFF000000
+0x030027C0
+0x02023FDE
+0x000000FF
+0x03005AE0
+0x0000FF00
+{seed}

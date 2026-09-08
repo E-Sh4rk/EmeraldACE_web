@@ -1,0 +1,46 @@
+@@ title = "Persistent battle-only catch and accuracy hook (JP, 0x085F)"
+@@ author = "ShinkoNet"
+@@ exit = null
+
+; Change this value, then click Compute to repack all box names.
+; 0x00597575 gives catch success and accuracy roll 1 at ordinary battle timing.
+; Custom seed bytes must not be B7-B9 or EF-FF.
+seed = 0x00597575
+
+; Execute once through 0x085F's party summary, preferably outside battle.
+; Seeds each battle VBlank but is inactive outside battle.
+; Affects both the player and the enemy mon/trainer.
+; Untested in link battles.
+@@
+
+0x4902A01E
+0x46C02238
+0xE00223FF
+0x03002F78
+0x469CFF00
+0x78033801
+0xE7FF4563
+0x3901D005
+0xFF00E000
+0x3A01700B
+0xE7EDD001
+0x01D8E7FF
+0xE00030BC
+0x1840FF00
+0x47706001
+0x00FFA000
+0xC01CE3A0
+0xFF0FE28F
+0x01E89C00
+0x00E3A0C3
+0xE59CC2FF
+0xE31C0801
+0xD220FF00
+0x12000215
+0x00FF0013
+0x80001581
+{0xFF00E893 | ((seed << 16) & 0x00FF0000)}
+{0xE0000000 | ((seed >> 8) & 0x000000FF) | ((seed >> 8) & 0x0000FF00) | ((seed >> 8) & 0x00FF0000)}
+0x9903005A
+0x030027FF
+0x080006D4

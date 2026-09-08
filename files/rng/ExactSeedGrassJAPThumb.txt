@@ -1,0 +1,73 @@
+@@ title = "Exact-seed Grass encounter (JP, 0x85F)"
+@@ author = "ShinkoNet"
+@@ exit = null
+
+; This ACE is for encounter type: Grass.
+; Stand on encounter-enabled grass or cave floor.
+; Open Party from the overworld Start menu and view 0x85F's Summary.
+; The encounter starts once you back out of Summary and Party.
+
+; Change Seed and Method, then click Compute.
+Seed = 0x243166BD
+Method = 1
+
+; Method must be 1, 2, or 4.
+; Methods 2 and 4 need Wild-method helper ACE installed after each reset!
+
+; Target the desired seed/PID at Advances = 0, Offset = 0.
+; A roamer or outbreak on this map can shift or replace the encounter.
+; Each failed preliminary roll consumes one advance.
+; A successful roll replaces the normal encounter.
+; Match the encounter type, Wild/H method and lead ability in PokeFinder.
+
+xx ?= (Seed & 0xFF000000)>>24
+XX ?= (Seed & 0xFF0000)>>16
+yy ?= (Seed & 0xFF00)>>8
+YY ?= (Seed & 0xFF)
+neg = 0x80000000
+
+ww?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(xx-0xEE):0):(xx-0xB6)):0
+uu?= ((0xB6-xx) & neg)? ( ((0xB9-xx)&neg)?(((0xEE-xx)&neg)?(0xEE):xx):(0xB6)):xx
+WW?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(XX-0xEE):0):(XX-0xB6)):0
+UU?= ((0xB6-XX) & neg)? ( ((0xB9-XX)&neg)?(((0xEE-XX)&neg)?(0xEE):XX):(0xB6)):XX
+zz?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(yy-0xEE):0):(yy-0xB6)):0
+vv?= ((0xB6-yy) & neg)? ( ((0xB9-yy)&neg)?(((0xEE-yy)&neg)?(0xEE):yy):(0xB6)):yy
+ZZ?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(YY-0xEE):0):(YY-0xB6)):0
+VV?= ((0xB6-YY) & neg)? ( ((0xB9-YY)&neg)?(((0xEE-YY)&neg)?(0xEE):YY):(0xB6)):YY
+
+UVdata = Seed ? ((uu<<24)|(UU<<16)|(vv<<8)|VV) : 0x12121212
+ZWdata = Seed ? ((ww<<24)|(WW<<16)|(zz<<8)|ZZ) : 0xEDEDEDEE
+
+@@
+
+{0x270FA01D}
+{0x22344901}
+{0xE002E7FF}
+{0x03002F64}
+{0x3801FF00}
+{0x37BE7803}
+{0x2BFF3901}
+{0x3101D102}
+{0xFF00E003}
+{0x3A01700B}
+{0xE7EED000}
+{0x19C81CFF}
+{0xE0003101}
+{0x6001FF00}
+{0x7001480F}
+{0x45FF4770}
+{(Method == 1) ? (0xA105B530) : ((Method == 2) ? (0xB085B510) : (0xB085B510))}
+{(Method == 1) ? (0xFF80C90D) : ((Method == 2) ? (0xFF15A106) : (0xFF15A106))}
+{(Method == 1) ? (0x18601818) : ((Method == 2) ? (0x201880C9) : (0x201880C9))}
+{(Method == 1) ? (0x008825C9) : ((Method == 2) ? (0x00C90C60) : (0x00C90C60))}
+{(Method == 1) ? (0x802222FF) : ((Method == 2) ? (0x200092FF) : (0x200092FF))}
+{(Method == 1) ? (0x31012000) : ((Method == 2) ? (0x20008010) : (0x20008010))}
+{(Method == 1) ? (0x1846FF8E) : ((Method == 2) ? (0x01A1FF0D) : (0x01A1FF0D))}
+{(Method == 1) ? (0x00000047 | ((UVdata << 8) & 0x0000FF00) | ((UVdata << 8) & 0x00FF0000) | ((UVdata << 8) & 0xFF000000)) : ((Method == 2) ? (0x18468E31) : (0x18468E31))}
+{(Method == 1) ? (0x00FF0000 | ((UVdata >> 24) & 0x000000FF) | ((ZWdata << 8) & 0x0000FF00) | ((ZWdata << 16) & 0xFF000000)) : ((Method == 2) ? (0x00FF0047 | ((UVdata << 8) & 0x0000FF00) | ((UVdata << 16) & 0xFF000000)) : (0x00FF0047 | ((UVdata << 8) & 0x0000FF00) | ((UVdata << 16) & 0xFF000000)))}
+{(Method == 1) ? (0x5AE00000 | ((ZWdata >> 16) & 0x000000FF) | ((ZWdata >> 16) & 0x0000FF00)) : ((Method == 2) ? (((UVdata >> 16) & 0x000000FF) | ((UVdata >> 16) & 0x0000FF00) | ((ZWdata << 16) & 0x00FF0000) | ((ZWdata << 16) & 0xFF000000)) : (((UVdata >> 16) & 0x000000FF) | ((UVdata >> 16) & 0x0000FF00) | ((ZWdata << 16) & 0x00FF0000) | ((ZWdata << 16) & 0xFF000000)))}
+{(Method == 1) ? (0xFFD10300) : ((Method == 2) ? (0xFFE00000 | ((ZWdata >> 16) & 0x000000FF) | ((ZWdata >> 16) & 0x0000FF00)) : (0xFFE00000 | ((ZWdata >> 16) & 0x000000FF) | ((ZWdata >> 16) & 0x0000FF00)))}
+{(Method == 1) ? (0x08080B4C) : ((Method == 2) ? (0x0803005A) : (0x080300DA))}
+{(Method == 1) ? (0x25040002) : ((Method == 2) ? (0xD1040002) : (0xD1040002))}
+{(Method == 1) ? (0xBD3080FF) : ((Method == 2) ? (0x080B4CFF) : (0x080B4CFF))}
+{0x0203CB94}
