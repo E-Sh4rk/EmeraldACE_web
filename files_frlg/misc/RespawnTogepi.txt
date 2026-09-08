@@ -1,0 +1,15 @@
+@@ title = "Respawn Togepi"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_GOT_TOGEPI_EGG, allowing the Togepi egg to be obtainable again in the Water Labyrinth
+
+@@
+
+sbc r10, pc, 0xB200
+movs r11, 0x330
+adc r0, r11, 0xD0
+sbc r10, r10, 0
+ldrh r12, [r10, 0x6]
+bic r12, r12, r0
+strh r12, [r10, 0x6]

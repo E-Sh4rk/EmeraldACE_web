@@ -1,0 +1,20 @@
+@@ title = "Respawn Hitmonlee and Hitmonchan"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_DOJO_HITMONLEE_BALL, FLAG_HIDE_DOJO_HITMONCHAN_BALL, FLAG_GOT_HITMON_FROM_DOJO, allowing Hitmonlee and Hitmonchan to be obtainable again in the Saffron City Fighting Dojo
+
+@@
+
+sbc r10, pc, 0xB300
+movs r12, 0xBF
+sbc r0, r12, 0xBB
+sbc r10, r10, 0
+ldrh r12, [r10, 0xB8]
+bic r12, r12, r0
+strh r12, [r10, 0xB8]
+rsc r12, r0, 0xC000003F
+adc r0, r12, 0xC5
+ldrh r12, [r10, 0xFA]
+bic r12, r12, r0
+strh r12, [r10, 0xFA]

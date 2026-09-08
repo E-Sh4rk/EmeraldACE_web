@@ -1,0 +1,26 @@
+@@ title = "Revive Fossils"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "Bootstrapped"
+
+; IMPORTANT: only execute this code after reviving the original fossils (both Old Amber and either Helix Fossil or Dome Fossil). You don't need to have the fossils in your bag but if you have them they will disappare after reviving.
+; This code will allow you to revive all three fossils (Helix Fossil, Dome Fossil and Old Amber) after every execution.
+; After executing the code check the scientist in Cinnabar: he should have Old Amber and either Helix or Dome Fossil available: save the game if that's the case, reset and check for mistakes in box names otherwise. 
+; IMPORTANT: if you wish to revive all three fossils the order in which you revive them is not free.
+; First you must revive non-amber fossil available, NOT the amber (as mentioned you'll not see all three options at once).
+; After reviving that you'll need to revive the other non-amber fossil, which will at that point be available.
+; Old Amber must be executed LAST. If you don't respect this order the non-amber fossil that isn't visible the first time will never show up (unless of course you execute the code again, which will reset everything and allow you to restart reviving). 
+
+@@
+
+sub  r11, pc, 0xB208 ?
+mov  r12, 0x000C ?
+bic  r0, r12, 0x00
+ldrh r12, [r11]
+bic  r12, r12, r0
+0xE0ACC000
+strh r12, [r11]
+mov  r12, 0x7000 ?
+bic  r0, r12, 0x00
+ldrh r12, [r11, 0x0E]
+bic  r12, r12, r0
+strh r12, [r11, 0x0E]
