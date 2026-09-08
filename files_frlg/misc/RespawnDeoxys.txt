@@ -1,0 +1,17 @@
+@@ title = "Respawn Deoxys"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_FOUGHT_DEOXYS and FLAG_DEOXYS_FLEW_AWAY, allowing Deoxys to respawn on Birth Island
+
+@@
+
+sbc r11, pc, 0xE4
+movs r12, 0xBF0000
+bic r12, r12, 0x3FC000
+adc r12, r12, 0xEE
+sbc r0, r12, 0xDD
+sbc r10, r11, 0xB200
+ldr r12, [r10, 0xEE]!
+bic r12, r12, r0
+str r12, [r10]!

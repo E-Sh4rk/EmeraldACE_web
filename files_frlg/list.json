@@ -535,6 +535,22 @@
     "cat": ["misc"]
   },
   {
+    "name": "Respawn Deoxys",
+    "eng1": "misc/RespawnDeoxys.txt",
+    "eng0": "misc/RespawnDeoxys.txt",
+    "eng10": "misc/RespawnDeoxys.txt",
+    "fra": "misc/RespawnDeoxys.txt",
+    "fra10": "misc/RespawnDeoxys.txt",
+    "ger": "misc/RespawnDeoxys.txt",
+    "ger10": "misc/RespawnDeoxys.txt",
+    "spa": "misc/RespawnDeoxys.txt",
+    "spa10": "misc/RespawnDeoxys.txt",
+    "ita": "misc/RespawnDeoxys.txt",
+    "ita10": "misc/RespawnDeoxys.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
     "name": "Respawn Lapras",
     "eng1": "misc/RespawnLapras.txt",
     "eng0": "misc/RespawnLapras.txt",
@@ -614,8 +630,24 @@
     "game": ["fr", "lg"],
     "cat": ["misc"]
   },
+  {  
+    "name": "Respawn Snorlax",
+    "eng1": "misc/RespawnSnorlax.txt",
+    "eng0": "misc/RespawnSnorlax.txt",
+    "eng10": "misc/RespawnSnorlax.txt",
+    "fra": "misc/RespawnSnorlax.txt",
+    "fra10": "misc/RespawnSnorlax.txt",
+    "ger": "misc/RespawnSnorlax.txt",
+    "ger10": "misc/RespawnSnorlax.txt",
+    "spa": "misc/RespawnSnorlax.txt",
+    "spa10": "misc/RespawnSnorlax.txt",
+    "ita": "misc/RespawnSnorlax.txt",
+    "ita10": "misc/RespawnSnorlax.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
   {
-    "name": "Revive Fossils",
+    "name": "Revive Fossils (Bootstrapped)",
     "eng1": "misc/ReviveFossils.txt",
     "eng0": "misc/ReviveFossils.txt",
     "eng10": "misc/ReviveFossils.txt",

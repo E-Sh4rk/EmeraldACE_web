@@ -1,0 +1,23 @@
+@@ title = "Respawn Snorlax"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_HIDE_ROUTE_12_SNORLAX or FLAG_HIDE_ROUTE_16_SNORLAX, allowing Snorlax to reappear on Route 12 or Route 16
+
+route = 12
+; Insert 12 to respawn Snorlax on Route 12
+; Insert 16 to respawn Snorlax on Route 16
+
+flag = route == 12 ? 0x054 : 0x080
+
+flag_offset = 0xB256 - ((flag >> 3) & ~0x01)
+flag_mask   = 0x0001 << (flag & 0x0F)
+
+@@
+
+sub  r11, pc, {flag_offset} ?
+mov  r12, {flag_mask} ?
+bic  r0, r12, 0x00
+ldrh r12, [r11]
+bic  r12, r12, r0
+strh r12, [r11]
