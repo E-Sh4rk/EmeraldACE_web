@@ -647,7 +647,7 @@
     "cat": ["misc"]
   },
   {
-    "name": "Revive Fossils",
+    "name": "Revive Fossils (Bootstrapped)",
     "eng1": "misc/ReviveFossils.txt",
     "eng0": "misc/ReviveFossils.txt",
     "eng10": "misc/ReviveFossils.txt",
