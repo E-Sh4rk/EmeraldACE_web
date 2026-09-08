@@ -1,0 +1,14 @@
+@@ title = "Respawn Magikarp"
+@@ author = "Sleipnir (ported by glu8716)"
+@@ exit = "GrabACEExit"
+
+; Clears FLAG_BOUGHT_MAGIKARP, allowing Magikarp to be bought again in the Pokémon Center on Route 4
+
+@@
+
+sbc r10, pc, 0xB300
+movs r11, 0x2E0
+sbc r0, r11, 0xDF
+ldrh r12, [r10, 0xF3]
+bic r12, r12, r0
+strh r12, [r10, 0xF3]
