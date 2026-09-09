@@ -1,6 +1,6 @@
-@@ title = "Change Roamer Species (move ACE)"
-@@ author = "Sleipnir"
-@@ exit = "CommonExit"
+@@ title = "Change Roamer Species"
+@@ author = "Sleipnir  (ported by Adrichu00)"
+@@ exit = "GrabACEExit"
 
 ; This code can be executed both if you already have an active roamer or not,
 ; either way the chosen roamer will be active.
@@ -9,14 +9,14 @@
 ; some kind of refresh, such as going indoor or flying somewhere
 ; The species you must look the area for is still the regular roamer species, not the new one.
 
-species_index = 0       @input:species
+species_index = 0     @input:species
 
 @@
 
 sbc r11,pc,0xBA00
 adc r11,r11,0X2900
 movs r12, {species_index & 0xFFFF} ?
-strh r12, [r11,0xA5]  %%    Store species index in roamer location
+strh r12, [r11, 0xA3]  %%    Store species index in roamer location
 movs r12,0XEE
 sbc r12,r12,0XEC
-strb r12, [r11,0xB0]  %%    Activate roamer
+strb r12, [r11, 0xAE] %%    Activate roamer
