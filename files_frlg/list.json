@@ -551,6 +551,22 @@
     "cat": ["misc"]
   },
   {
+    "name": "Respawn Lugia and Ho-Oh",
+    "eng1": "misc/RespawnLugiaHoOh.txt",
+    "eng0": "misc/RespawnLugiaHoOh.txt",
+    "eng10": "misc/RespawnLugiaHoOh.txt",
+    "fra": "misc/RespawnLugiaHoOh.txt",
+    "fra10": "misc/RespawnLugiaHoOh.txt",
+    "ger": "misc/RespawnLugiaHoOh.txt",
+    "ger10": "misc/RespawnLugiaHoOh.txt",
+    "spa": "misc/RespawnLugiaHoOh.txt",
+    "spa10": "misc/RespawnLugiaHoOh.txt",
+    "ita": "misc/RespawnLugiaHoOh.txt",
+    "ita10": "misc/RespawnLugiaHoOh.txt",
+    "game": ["fr", "lg"],
+    "cat": ["misc"]
+  },
+  {
     "name": "Respawn Lapras",
     "eng1": "misc/RespawnLapras.txt",
     "eng0": "misc/RespawnLapras.txt",
